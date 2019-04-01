@@ -64,11 +64,11 @@ class List extends React.Component {
                   render={props => (
                     <ExpandedListItem
                       {...props}
-                      id={sobayas[sobaya].id}
-                      name={sobayas[sobaya].name.jp}
-                      neighborhood={sobayas[sobaya].neighborhood}
-                      address={sobayas[sobaya].address}
-                      recommendation={sobayas[sobaya].recommendation}
+                      sobaya={sobayas[sobaya]}
+                      // name={sobayas[sobaya].name}
+                      // neighborhood={sobayas[sobaya].neighborhood}
+                      // address={sobayas[sobaya].address}
+                      // recommendation={sobayas[sobaya].recommendation}
                     />
                   )}
                 />
