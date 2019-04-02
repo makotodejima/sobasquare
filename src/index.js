@@ -87,7 +87,7 @@ class List extends React.Component {
                 />
               ) : (
                 <Route
-                  exact
+                  // exact
                   path="/"
                   render={props => <ListItem {...props} sobaya={sobaya} />}
                 />
