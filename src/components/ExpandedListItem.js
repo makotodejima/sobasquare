@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function ExpandedListItem(props) {
   return (
@@ -9,7 +9,7 @@ export default function ExpandedListItem(props) {
       <p>{props.sobaya.address}</p>
       <p>{props.sobaya.recommendation}</p>
       <Link
-        onClick={() => props.fetchFsqData(props.index)}
+        // onClick={() => props.fetchFsqData(props.index)}
         to={`${props.match.path}${props.index}`}
       >
         Detail

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import sobayas from "../data/sobaya.js";
 
 const Detail = ({ match }) => {
@@ -10,6 +10,7 @@ const Detail = ({ match }) => {
   return (
     <div>
       <p>rendered</p>
+      <p>{name.jp}</p>
       <p>{name.en}</p>
       <p>{neighborhood}</p>
       <p>{recommendation}</p>

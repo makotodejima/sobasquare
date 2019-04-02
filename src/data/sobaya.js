@@ -42,6 +42,50 @@ const sobaya = [
     address: "深大寺元町5-9-1, Chōfu-shi, Tokyo, 182-0017",
     fsq: "4b6fa4daf964a520e4f82ce3",
     recommendation: "湧水そば"
+  },
+  {
+    id: "nagasaka_sarashina_nunoya_tahee",
+    name: {
+      jp: "永坂更科 布屋太兵衛",
+      en: "Nagasaka Sarashina Nunoya Tahee"
+    },
+    neighborhood: "Azabu Juban",
+    address: "麻布十番1-8-7, Minato, Tokyo, 106-0045",
+    fsq: "4c3c53197f49c9b6a5aa6be3",
+    recommendation: "なめこそば（生粉打そば）"
+  },
+  {
+    id: "honmura_an",
+    name: {
+      jp: "HONMURA AN",
+      en: "Honmura An"
+    },
+    neighborhood: "Roppongi",
+    address: "六本木7-14-18, Minato, Tokyo, 106-0032",
+    fsq: "4c0b2058bbc676b0152c4bd5",
+    recommendation: "せいろ"
+  },
+  {
+    id: "itasoba_kaoriya",
+    name: {
+      jp: "板蕎麦 香り家",
+      en: "Itasoba Kaoriya"
+    },
+    neighborhood: "Ebisu",
+    address: "恵比寿4-3-10,Shibuya, Tokyo, 150-0013",
+    fsq: "4b5adf08f964a52030d828e3",
+    recommendation: "そば切り"
+  },
+  {
+    id: "kanda_yabusoba",
+    name: {
+      jp: "かんだやぶそば",
+      en: "Kanda Yabusoba"
+    },
+    neighborhood: "Kanda Awaji-cho",
+    address: "神田淡路町2-10, Chiyoda, Tokyo, 101-0063",
+    fsq: "4b8a2256f964a520646132e3",
+    recommendation: "せいろ"
   }
 ];
 
