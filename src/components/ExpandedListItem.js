@@ -8,7 +8,12 @@ export default function ExpandedListItem(props) {
       <p>{props.sobaya.neighborhood}</p>
       <p>{props.sobaya.address}</p>
       <p>{props.sobaya.recommendation}</p>
-      <Link to={`${props.match.path}${props.sobaya.id}`}>Detail</Link>
+      <Link
+        onClick={() => props.fetchFsqData(props.index)}
+        to={`${props.match.path}${props.index}`}
+      >
+        Detail
+      </Link>
     </div>
   );
 }

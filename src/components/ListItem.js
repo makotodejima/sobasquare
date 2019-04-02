@@ -3,7 +3,7 @@ import React from "react";
 export default function ListItem(props) {
   return (
     <div className="normal list">
-      <p>{props.sobaya}</p>
+      <p>{props.sobaya.name.jp}</p>
     </div>
   );
 }
