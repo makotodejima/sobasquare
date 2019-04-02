@@ -37,18 +37,6 @@ class List extends React.Component {
   render() {
     const { sobayas, selected } = this.state;
 
-    // fetch(
-    //   `https://api.foursquare.com/v2/venues/4bc3f589f8219c7427deb610/tips?client_id=${client_id}&client_secret=${client_secret}&v=20190401`
-    // )
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     const tips = data.response.tips.items;
-    //     console.log(tips[0].text);
-    //   })
-    //   .catch(function(err) {
-    //     console.log(err);
-    //   });
-
     return (
       <div>
         <div className="list-container">
@@ -69,7 +57,6 @@ class List extends React.Component {
                 <Route
                   exact
                   path="/"
-                  // render={() => <p>test</p>}
                   render={props => <ListItem {...props} sobaya={sobaya} />}
                 />
               )}
