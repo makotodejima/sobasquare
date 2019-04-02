@@ -9,9 +9,6 @@ import Detail from "./components/Detail";
 
 import data from "./data/sobaya.js";
 
-const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
-const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
-
 function App() {
   return (
     <Router>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
@@ -9,19 +9,37 @@ const Detail = props => {
   const { name, neighborhood, address, recommendation, fsq } = sobayas[
     match.params.id
   ];
+
+  const [data, setData] = useState();
+
   useEffect(() => {
+    if (data) {
+      return;
+    }
     fetch(
-      `https://api.foursquare.com/v2/venues/${fsq}/tips?client_id=${client_id}&client_secret=${client_secret}&v=20190401`
+      `https://api.foursquare.com/v2/venues/${fsq}?client_id=${client_id}&client_secret=${client_secret}&v=20190401`
     )
       .then(res => res.json())
-      .then(data => {
-        const tips = data.response.tips.items;
-        console.log(tips[0].text);
+      .then(json => {
+        const data = json.response.venue;
+        setData(data);
+        console.log(data);
+        const hours = data.hours.status;
+        const likeCount = data.likes.summary;
+        const rating = data.rating;
+        const ratingColor = data.ratingColor;
+        const shortUrl = data.shortUrl;
+
+        console.log(hours, likeCount, rating, ratingColor, shortUrl);
       })
       .catch(function(err) {
         console.log(err);
       });
   }, []);
+
+  if (!data) {
+    return <p>Loading</p>;
+  }
 
   return (
     <div>
@@ -30,6 +48,11 @@ const Detail = props => {
       <p>{neighborhood}</p>
       <p>{recommendation}</p>
       <p>{address}</p>
+      <p>{data.popular.status}</p>
+      <p>{data.likes.summary}</p>
+      <p>{data.rating}</p>
+
+      {/*  Likes count, rating in the colored box */}
 
       <Link to="/">back</Link>
     </div>
