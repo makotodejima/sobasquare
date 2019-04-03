@@ -28,6 +28,6 @@ export default function ExpandedListItem({ sobaya, match }) {
 
 const StyledImg = styled.img`
   width: 90%;
-  border-radius: 4px;
+  border-radius: 5px;
   filter: grayscale(50%);
 `;
