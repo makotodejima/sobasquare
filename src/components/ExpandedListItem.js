@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
+import Detail from "./Detail";
 
 export default function ExpandedListItem(props) {
   return (
@@ -14,6 +15,7 @@ export default function ExpandedListItem(props) {
       >
         Detail
       </Link>
+      <Route path="/:id" render={props => <Detail {...props} />} />
     </div>
   );
 }

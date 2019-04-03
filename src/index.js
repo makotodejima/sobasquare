@@ -28,7 +28,9 @@ class List extends React.Component {
     fsqData: {}
   };
 
-  handleClick = index => {
+  handleClick = (e, index) => {
+    if (e.target.tagName === "A") return;
+
     this.setState({
       selected: this.state.selected === index ? null : index
     });
@@ -72,7 +74,7 @@ class List extends React.Component {
             <div
               index={index}
               key={index}
-              onClick={() => this.handleClick(index)}
+              onClick={e => this.handleClick(e, index)}
             >
               {selected === index ? (
                 <Route
@@ -88,7 +90,6 @@ class List extends React.Component {
                 />
               ) : (
                 <Route
-                  // exact
                   path="/"
                   render={props => <ListItem {...props} sobaya={sobaya} />}
                 />

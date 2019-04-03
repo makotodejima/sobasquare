@@ -11,6 +11,7 @@ const Container = styled.div`
   transform: translate(-50%, -50%);
   background-color: beige;
   padding: 5rem 2rem;
+  z-index: 1;
 `;
 
 const Detail = ({ match }) => {
