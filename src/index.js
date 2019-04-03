@@ -5,7 +5,6 @@ import "./styles.css";
 
 import ListItem from "./components/ListItem";
 import ExpandedListItem from "./components/ExpandedListItem";
-import Detail from "./components/Detail";
 
 import sobayas from "./data/sobaya.js";
 
@@ -96,7 +95,6 @@ class List extends React.Component {
               )}
             </div>
           ))}
-          <Route path="/:id" render={props => <Detail {...props} />} />
         </div>
       </div>
     );

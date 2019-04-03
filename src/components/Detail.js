@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: beige;
@@ -14,14 +14,10 @@ const Container = styled.div`
   z-index: 1;
 `;
 
-const Detail = ({ match }) => {
-  const { name, neighborhood, address, recommendation, fsq } = sobayas[
-    match.params.id
-  ];
-
+const Detail = props => {
+  const { name, neighborhood, address, recommendation, fsq } = props.sobaya;
   return (
     <Container>
-      <p>rendered</p>
       <p>{name.jp}</p>
       <p>{name.en}</p>
       <p>{neighborhood}</p>

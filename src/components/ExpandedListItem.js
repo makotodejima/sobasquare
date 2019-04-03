@@ -2,20 +2,23 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import Detail from "./Detail";
 
-export default function ExpandedListItem(props) {
+export default function ExpandedListItem({ sobaya, match }) {
   return (
     <div className="expanded list">
-      <p>{props.sobaya.name.jp}</p>
-      <p>{props.sobaya.neighborhood}</p>
-      <p>{props.sobaya.address}</p>
-      <p>{props.sobaya.recommendation}</p>
+      <p>{sobaya.name.jp}</p>
+      <p>{sobaya.neighborhood}</p>
+      <p>{sobaya.address}</p>
+      <p>{sobaya.recommendation}</p>
       <Link
         // onClick={() => props.fetchFsqData(props.index)}
-        to={`${props.match.path}${props.index}`}
+        to={`${match.path}${sobaya.id}`}
       >
         Detail
       </Link>
-      <Route path="/:id" render={props => <Detail {...props} />} />
+      <Route
+        path="/:id"
+        render={props => <Detail {...props} sobaya={sobaya} />}
+      />
     </div>
   );
 }
