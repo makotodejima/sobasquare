@@ -34,32 +34,33 @@ class List extends React.Component {
     });
   };
 
-  // fetchFsqData = index => {
-  //   if (!this.state.fsqData[index]) {
-  //     //     fetch sobaya[index].fsq and set to index: response
+  fetchFsqData = index => {
+    if (!this.state.fsqData[index]) {
+      // fetchsobaya[index].fsq and set to index: response
 
-  //     fetch(
-  //       `https://api.foursquare.com/v2/venues/${
-  //         sobayas[index].fsq
-  //       }?client_id=${client_id}&client_secret=${client_secret}&v=20190401`
-  //     )
-  //       .then(res => res.json())
-  //       .then(json => {
-  //         const venueData = json.response.venue;
-  //         console.log(venueData);
+      console.log("fetching now!!");
+      fetch(
+        `https://api.foursquare.com/v2/venues/${
+          sobayas[index].fsq
+        }?client_id=${client_id}&client_secret=${client_secret}&v=20190401`
+      )
+        .then(res => res.json())
+        .then(json => {
+          const venueData = json.response.venue;
+          console.log(venueData);
 
-  //         this.setState(prevState => ({
-  //           fsqData: {
-  //             ...prevState.fsqData,
-  //             [index]: venueData
-  //           }
-  //         }));
-  //       })
-  //       .catch(function(err) {
-  //         console.log(err);
-  //       });
-  //   }
-  // };
+          this.setState(prevState => ({
+            fsqData: {
+              ...prevState.fsqData,
+              [index]: venueData
+            }
+          }));
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
+    }
+  };
 
   render() {
     const { selected } = this.state;
