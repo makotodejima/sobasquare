@@ -4,16 +4,6 @@ import sobayas from "../data/sobaya.js";
 
 import styled from "styled-components";
 
-const Container = styled.div`
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: beige;
-  padding: 5rem 2rem;
-  z-index: 1;
-`;
-
 const Detail = props => {
   const { name, neighborhood, address, recommendation, fsq } = props.sobaya;
   return (
@@ -33,3 +23,13 @@ const Detail = props => {
 };
 
 export default Detail;
+
+const Container = styled.div`
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: bisque;
+  padding: 5rem 2rem;
+  z-index: 1;
+`;

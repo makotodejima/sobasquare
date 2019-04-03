@@ -37,8 +37,6 @@ class List extends React.Component {
 
   fetchFsqData = index => {
     if (!this.state.fsqData[index]) {
-      // fetchsobaya[index].fsq and set to index: response
-
       console.log("fetching now!!");
       fetch(
         `https://api.foursquare.com/v2/venues/${

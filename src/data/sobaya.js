@@ -86,6 +86,29 @@ const sobaya = [
     address: "神田淡路町2-10, Chiyoda, Tokyo, 101-0063",
     fsq: "4b8a2256f964a520646132e3",
     recommendation: "せいろ"
+  },
+
+  {
+    id: "kanda_matsuya",
+    name: {
+      jp: "かんだまつや",
+      en: "Kanda Masuya"
+    },
+    neighborhood: "Kanda Awaji-cho",
+    address: "神田淡路町2-10, Chiyoda, Tokyo, 101-0063",
+    fsq: "4b8a2256f964a520646132e3",
+    recommendation: "せいろ"
+  },
+  {
+    id: "shirou",
+    name: {
+      jp: "しろう",
+      en: "Shirou"
+    },
+    neighborhood: "Omotesando",
+    address: "神田淡路町2-10, Chiyoda, Tokyo, 101-0063",
+    fsq: "4b8a2256f964a520646132e3",
+    recommendation: "せいろ"
   }
 ];
 
