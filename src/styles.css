@@ -44,6 +44,7 @@
 }
 
 .expanded {
+  border: 2px grey solid;
   /* height: 200px; */
-  background-color: pink;
+  /* background-color: pink; */
 }

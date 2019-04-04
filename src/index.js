@@ -7,7 +7,6 @@ import ListItem from "./components/ListItem";
 import ExpandedListItem from "./components/ExpandedListItem";
 
 import sobayas from "./data/sobaya.js";
-import sr from "./ScrollReveal";
 
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
@@ -82,6 +81,7 @@ class List extends React.Component {
         <div className="list-container">
           {sobayas.map((sobaya, index) => (
             <div
+              className="list-item-wrapper"
               index={index}
               key={index}
               onClick={e => this.handleClick(e, index)}

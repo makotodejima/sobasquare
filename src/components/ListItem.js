@@ -11,10 +11,10 @@ export default function ListItem(props) {
       easing: "ease",
       reset: true
     };
-    sr.reveal(".normal", config);
+    sr.reveal(".list-item-wrapper", config);
 
     return () => {
-      sr.reveal(".normal", config);
+      sr.reveal(".list-item-wrapper", config);
     };
   }, []);
 
