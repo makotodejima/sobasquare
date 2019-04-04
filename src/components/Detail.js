@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import sobayas from "../data/sobaya.js";
 
 import styled from "styled-components";
 
@@ -13,8 +12,16 @@ const Detail = props => {
       <p>{neighborhood}</p>
       <p>{recommendation}</p>
       <p>{address}</p>
+      <p>
+        my MEmo this place is awesome because i live nearby. Childhood memory
+        comes out.
+      </p>
+      <p>www.url.com by Foursquare</p>
+      <p>Information by Foursquare</p>
       <p>{fsq}</p>
 
+      {/* Website? */}
+      {/* Foursquare says 'Lots of people like this place. by reason */}
       {/*  Likes count, rating in the colored box */}
 
       <Link to="/">back</Link>

@@ -23,21 +23,24 @@
 }
 
 .list-container {
-  background-color: salmon;
+  /* background-color: salmon; */
   overflow-y: scroll;
   height: 600px;
   margin-top: 8rem;
 }
 
 .list {
+  border-radius: 5px;
   margin: 2rem 1rem;
   width: 300px;
-  color: white;
+  color: grey;
 }
 
 .normal {
   /* height: 50px; */
-  background-color: blue;
+  border: 2px grey solid;
+
+  /* background-color: blue; */
 }
 
 .expanded {

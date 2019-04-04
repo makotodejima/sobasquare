@@ -1,33 +1,27 @@
-import React from "react";
-import Fade from "react-reveal/Fade";
+import React, { useEffect } from "react";
+import sr from "../ScrollReveal";
 
 export default function ListItem(props) {
-  // useEffect(() => {
-  //   const listContainer = document.querySelector(".list-container");
-  //   listContainer.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    const config = {
+      container: document.querySelector(".list-container"),
+      duration: 800,
+      opacity: 0,
+      scale: 0.8,
+      easing: "ease",
+      reset: true
+    };
+    sr.reveal(".normal", config);
 
-  //   return () => {
-  //     listContainer.removeEventListener("scroll", handleScroll);
-  //   };
-  // });
-
-  // const handleScroll = () => {
-  //   const listContainer = document.querySelector(".list-container");
-  //   const topOfList = listContainer.offsetTop;
-  //   const bottomOfList = listContainer.offsetTop + listContainer.offsetHeight;
-
-  //   const normalList = document.querySelectorAll(".normal");
-  //   // const middleOfNoraml = normalList.offsetTop + normalList.offsetHeight / 2;
-  //   // if ()
-  //   console.log(normalList);
-  // };
+    return () => {
+      sr.reveal(".normal", config);
+    };
+  }, []);
 
   return (
-    <Fade opposite>
-      <div className="normal list">
-        <p>{props.sobaya.name.jp}</p>
-        <p>{props.sobaya.name.en}</p>
-      </div>
-    </Fade>
+    <div className="normal list">
+      <p>{props.sobaya.name.jp}</p>
+      <p>{props.sobaya.name.en}</p>
+    </div>
   );
 }

@@ -9,7 +9,7 @@ export default function ExpandedListItem({ sobaya, match }) {
     <div className="expanded list">
       <p>{sobaya.name.jp}</p>
       <p>{sobaya.neighborhood}</p>
-      <p>{sobaya.address}</p>
+      <p>Likely open</p>
       <p>{sobaya.recommendation}</p>
       <StyledImg src={img} alt={sobaya.id} />
       <Link

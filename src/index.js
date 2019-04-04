@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./styles.css";
@@ -7,6 +7,7 @@ import ListItem from "./components/ListItem";
 import ExpandedListItem from "./components/ExpandedListItem";
 
 import sobayas from "./data/sobaya.js";
+import sr from "./ScrollReveal";
 
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
@@ -26,6 +27,18 @@ class List extends React.Component {
     selected: undefined,
     fsqData: {}
   };
+
+  // componentDidMount = () => {
+  //   const config = {
+  //     container: document.querySelector(".list-container"),
+  //     duration: 1000,
+  //     scale: 0.9,
+  //     easing: "ease",
+  //     reset: true
+  //   };
+
+  //   sr.reveal(".normal", config);
+  // };
 
   handleClick = (e, index) => {
     if (e.target.tagName === "A") return;
