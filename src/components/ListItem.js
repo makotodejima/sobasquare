@@ -7,15 +7,11 @@ export default function ListItem(props) {
       container: document.querySelector(".list-container"),
       duration: 800,
       opacity: 0,
-      scale: 0.8,
+      scale: 0.5,
       easing: "ease",
       reset: true
     };
     sr.reveal(".item-wrapper", config);
-
-    return () => {
-      sr.clean(".normal");
-    };
   }, []);
 
   return (

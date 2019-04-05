@@ -23,12 +23,12 @@ class List extends React.Component {
     });
   };
 
-  fetchFsqData = index => {
-    if (!this.state.fsqData[index]) {
+  fetchFsqData = sobayaId => {
+    if (!this.state.fsqData[sobayaId]) {
       console.log("fetching now!!");
       fetch(
         `https://api.foursquare.com/v2/venues/${
-          sobayas[index].fsq
+          sobayas[sobayaId].fsq
         }?client_id=${client_id}&client_secret=${client_secret}&v=20190401`
       )
         .then(res => res.json())
@@ -39,7 +39,7 @@ class List extends React.Component {
           this.setState(prevState => ({
             fsqData: {
               ...prevState.fsqData,
-              [index]: venueData
+              [sobayaId]: venueData
             }
           }));
         })
@@ -54,7 +54,10 @@ class List extends React.Component {
 
     return (
       <div>
-        {/* <Route path="/:id" render={props => <Detail {...props} />} /> */}
+        <Route
+          path="/:id"
+          render={props => <Detail {...props} fsqData={this.state.fsqData} />}
+        />
 
         <div className="list-container">
           {Object.keys(sobayas).map((sobayaId, index) => (
@@ -72,7 +75,7 @@ class List extends React.Component {
                       {...props}
                       sobaya={sobayas[sobayaId]}
                       index={index}
-                      // fetchFsqData={this.fetchFsqData}
+                      fetchFsqData={this.fetchFsqData}
                     />
                   )}
                 />
