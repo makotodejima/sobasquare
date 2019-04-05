@@ -13,7 +13,7 @@ const Detail = props => {
       <p>{recommendation}</p>
       <p>{address}</p>
       <p>
-        my MEmo this place is awesome because i live nearby. Childhood memory
+        my memo this place is awesome because i live nearby. Childhood memory
         comes out.
       </p>
       <p>www.url.com by Foursquare</p>
