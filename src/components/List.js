@@ -7,9 +7,6 @@ import ExpandedListItem from "./ExpandedListItem";
 import Detail from "./Detail";
 import sobayas from "../data/sobayas.js";
 
-const shouldFlip = index => (prevDecisionData, currentDecisionData) =>
-  index === prevDecisionData || index === currentDecisionData;
-
 class List extends React.Component {
   state = {
     selected: undefined
@@ -43,7 +40,6 @@ class List extends React.Component {
               >
                 {selected === index ? (
                   <Route
-                    exact
                     path="/"
                     render={props => (
                       <ExpandedListItem
