@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
+import { Flipper, Flipped } from "react-flip-toolkit";
 import sr from "../ScrollReveal";
 
-export default function ListItem(props) {
+export default function ListItem({ index, sobaya }) {
   useEffect(() => {
     const config = {
       container: document.querySelector(".list-container"),
@@ -15,9 +16,15 @@ export default function ListItem(props) {
   }, []);
 
   return (
-    <div className="normal list">
-      <p>{props.sobaya.name.jp}</p>
-      <p>{props.sobaya.name.en}</p>
-    </div>
+    <Flipped flipId={`listItem-${index}`}>
+      <div className="normal list">
+        <Flipped inverseFlipId={`listItem-${index}`}>
+          <div>
+            <p>{sobaya.name.jp}</p>
+            <p>{sobaya.name.en}</p>
+          </div>
+        </Flipped>
+      </div>
+    </Flipped>
   );
 }

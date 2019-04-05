@@ -28,15 +28,18 @@
   height: 600px;
   margin-top: 8rem;
   z-index: -1;
+  width: 100vw;
 }
 
 .item-wrapper {
-  position: relative;
-  width: auto;
+  margin: auto;
+  width: 300px;
+}
+
+.list {
   color: grey;
   border-radius: 5px;
   border: 2px grey solid;
-  width: 300px;
   margin: 2rem auto;
 }
 
