@@ -27,8 +27,8 @@ export default function ListItem({ index, sobaya }) {
           <div>
             <Flipped flipId={`name-${index}`} shouldFlip={!shouldFlip(index)}>
               <div>
-                <p>{sobaya.name.jp}</p>
-                <p>{sobaya.name.en}</p>
+                <p className="jp">{sobaya.name.jp}</p>
+                <p className="en">{sobaya.name.en}</p>
               </div>
             </Flipped>
           </div>
