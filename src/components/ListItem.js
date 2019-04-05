@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import sr from "../ScrollReveal";
 
 export default function ListItem(props) {
-  let ref = React.createRef();
-
   useEffect(() => {
     const config = {
       container: document.querySelector(".list-container"),
@@ -21,7 +19,7 @@ export default function ListItem(props) {
   }, []);
 
   return (
-    <div className="normal list" ref={ref}>
+    <div className="normal list">
       <p>{props.sobaya.name.jp}</p>
       <p>{props.sobaya.name.en}</p>
     </div>

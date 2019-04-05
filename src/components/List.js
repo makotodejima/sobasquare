@@ -3,7 +3,8 @@ import { Route } from "react-router-dom";
 
 import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
-import sobayas from "../data/sobaya.js";
+import Detail from "./Detail";
+import sobayas from "../data/sobayas.js";
 
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
@@ -53,8 +54,10 @@ class List extends React.Component {
 
     return (
       <div>
+        {/* <Route path="/:id" render={props => <Detail {...props} />} /> */}
+
         <div className="list-container">
-          {sobayas.map((sobaya, index) => (
+          {Object.keys(sobayas).map((sobayaId, index) => (
             <div
               className="item-wrapper"
               index={index}
@@ -67,7 +70,7 @@ class List extends React.Component {
                   render={props => (
                     <ExpandedListItem
                       {...props}
-                      sobaya={sobaya}
+                      sobaya={sobayas[sobayaId]}
                       index={index}
                       // fetchFsqData={this.fetchFsqData}
                     />
@@ -76,7 +79,9 @@ class List extends React.Component {
               ) : (
                 <Route
                   path="/"
-                  render={props => <ListItem {...props} sobaya={sobaya} />}
+                  render={props => (
+                    <ListItem {...props} sobaya={sobayas[sobayaId]} />
+                  )}
                 />
               )}
             </div>

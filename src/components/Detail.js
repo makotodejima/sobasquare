@@ -1,24 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import styled from "styled-components";
+// import sobayas from "../data/sobaya.js";
 
-const Detail = props => {
-  const { name, neighborhood, address, recommendation, fsq } = props.sobaya;
+const Detail = ({ match }) => {
+  // const { name, neighborhood, address, recommendation, fsq } = sobayas[
+  //   match.params.id
+  // ];
   return (
     <Container>
-      <p>{name.jp}</p>
+      {/* <p>{name.jp}</p>
       <p>{name.en}</p>
       <p>{neighborhood}</p>
       <p>{recommendation}</p>
-      <p>{address}</p>
+      <p>{address}</p> */}
+      {/* <p>{fsq}</p> */}
       <p>
         my memo this place is awesome because i live nearby. Childhood memory
         comes out.
       </p>
       <p>www.url.com by Foursquare</p>
       <p>Information by Foursquare</p>
-      <p>{fsq}</p>
 
       {/* Website? */}
       {/* Foursquare says 'Lots of people like this place. by reason */}

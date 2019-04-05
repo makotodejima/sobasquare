@@ -1,7 +1,6 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Detail from "./Detail";
 
 export default function ExpandedListItem({ sobaya, match }) {
   const img = require(`../images/${sobaya.id}.jpg`);
@@ -18,10 +17,6 @@ export default function ExpandedListItem({ sobaya, match }) {
       >
         See Detail
       </Link>
-      <Route
-        path="/:id"
-        render={props => <Detail {...props} sobaya={sobaya} />}
-      />
     </div>
   );
 }

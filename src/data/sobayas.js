@@ -1,5 +1,5 @@
-const sobaya = [
-  {
+const sobayas = {
+  osakaya_sunaba: {
     id: "osakaya_sunaba",
     name: {
       jp: "大阪屋 砂場",
@@ -10,7 +10,7 @@ const sobaya = [
     fsq: "4bc3f589f8219c7427deb610",
     recommendation: "せいろ"
   },
-  {
+  tamawarai: {
     id: "tamawarai",
     name: {
       jp: "玉笑",
@@ -21,7 +21,7 @@ const sobaya = [
     fsq: "4e2264d562e1964dbb71fa6d",
     recommendation: "粗挽きせいろ"
   },
-  {
+  muromachi_sunaba: {
     id: "muromachi_sunaba",
     name: {
       jp: "室町砂場 赤坂店",
@@ -32,7 +32,7 @@ const sobaya = [
     fsq: "4b5693daf964a520aa1528e3",
     recommendation: "せいろ"
   },
-  {
+  yusui: {
     id: "yusui",
     name: {
       jp: "湧水",
@@ -43,7 +43,7 @@ const sobaya = [
     fsq: "4b6fa4daf964a520e4f82ce3",
     recommendation: "湧水そば"
   },
-  {
+  nagasaka_sarashina_nunoya_tahee: {
     id: "nagasaka_sarashina_nunoya_tahee",
     name: {
       jp: "永坂更科 布屋太兵衛",
@@ -54,7 +54,7 @@ const sobaya = [
     fsq: "4c3c53197f49c9b6a5aa6be3",
     recommendation: "なめこそば（生粉打そば）"
   },
-  {
+  honmura_an: {
     id: "honmura_an",
     name: {
       jp: "HONMURA AN",
@@ -65,7 +65,7 @@ const sobaya = [
     fsq: "4c0b2058bbc676b0152c4bd5",
     recommendation: "せいろ"
   },
-  {
+  itasoba_kaoriya: {
     id: "itasoba_kaoriya",
     name: {
       jp: "板蕎麦 香り家",
@@ -76,7 +76,7 @@ const sobaya = [
     fsq: "4b5adf08f964a52030d828e3",
     recommendation: "そば切り"
   },
-  {
+  kanda_yabusoba: {
     id: "kanda_yabusoba",
     name: {
       jp: "かんだやぶそば",
@@ -88,7 +88,7 @@ const sobaya = [
     recommendation: "せいろ"
   },
 
-  {
+  kanda_matsuya: {
     id: "kanda_matsuya",
     name: {
       jp: "かんだまつや",
@@ -99,7 +99,7 @@ const sobaya = [
     fsq: "4b8a2256f964a520646132e3",
     recommendation: "せいろ"
   },
-  {
+  shirou: {
     id: "shirou",
     name: {
       jp: "しろう",
@@ -110,6 +110,6 @@ const sobaya = [
     fsq: "4b8a2256f964a520646132e3",
     recommendation: "せいろ"
   }
-];
+};
 
-export default sobaya;
+export default sobayas;
