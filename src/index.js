@@ -81,7 +81,7 @@ class List extends React.Component {
         <div className="list-container">
           {sobayas.map((sobaya, index) => (
             <div
-              className="list-item-wrapper"
+              className="item-wrapper"
               index={index}
               key={index}
               onClick={e => this.handleClick(e, index)}

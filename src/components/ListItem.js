@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import sr from "../ScrollReveal";
 
 export default function ListItem(props) {
+  let ref = React.createRef();
+
   useEffect(() => {
     const config = {
       container: document.querySelector(".list-container"),
@@ -11,15 +13,15 @@ export default function ListItem(props) {
       easing: "ease",
       reset: true
     };
-    sr.reveal(".list-item-wrapper", config);
+    sr.reveal(".item-wrapper", config);
 
     return () => {
-      sr.reveal(".list-item-wrapper", config);
+      sr.clean(".normal");
     };
   }, []);
 
   return (
-    <div className="normal list">
+    <div className="normal list" ref={ref}>
       <p>{props.sobaya.name.jp}</p>
       <p>{props.sobaya.name.en}</p>
     </div>

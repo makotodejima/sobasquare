@@ -27,24 +27,31 @@
   overflow-y: scroll;
   height: 600px;
   margin-top: 8rem;
+  z-index: -1;
 }
 
-.list {
-  border-radius: 5px;
-  margin: 2rem 1rem;
-  width: 300px;
+.item-wrapper {
+  position: relative;
+  width: auto;
   color: grey;
+  border-radius: 5px;
+  border: 2px grey solid;
+  width: 300px;
+  margin: 2rem auto;
 }
+
+/* .list {
+  margin: 2rem 1rem;
+} */
 
 .normal {
   /* height: 50px; */
-  border: 2px grey solid;
 
   /* background-color: blue; */
 }
 
 .expanded {
-  border: 2px grey solid;
+  /* border: 2px grey solid; */
   /* height: 200px; */
   /* background-color: pink; */
 }

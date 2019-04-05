@@ -33,10 +33,11 @@ export default Detail;
 
 const Container = styled.div`
   position: absolute;
+  width: 500px;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: bisque;
   padding: 5rem 2rem;
-  z-index: 1;
+  z-index: 10;
 `;
