@@ -25,34 +25,42 @@
 .list-container {
   /* background-color: salmon; */
   overflow-y: scroll;
-  height: 600px;
-  margin-top: 8rem;
+  height: 80vh;
+  margin-top: 4rem;
   z-index: -1;
   width: 100vw;
 }
 
 .item-wrapper {
-  margin: 1rem auto;
+  margin: 2rem auto;
   width: 300px;
 }
 
 .list {
   color: white;
   padding: 1rem;
-  background-color: lightseagreen;
+  background-color: darkcyan;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .jp {
-  font-weight: 500;
+  font-size: 1rem;
 }
 
 .en {
-  font-size: 1rem;
+  font-weight: 800;
 }
 
 .desc div {
   opacity: 0;
 }
+
+.foursquare-logo {
+  width: 200px;
+}
+
+/* Fade in animation */
 
 .fade-in .desc > div {
   animation: fadeIn 0.4s forwards;
@@ -66,6 +74,9 @@
 }
 .desc > div:nth-of-type(4) {
   animation-delay: 0.45s;
+}
+.desc > div:nth-of-type(5) {
+  animation-delay: 0.6s;
 }
 
 @keyframes fadeIn {

@@ -20,20 +20,21 @@ export default function ExpandedListItem({ sobaya, match, index }) {
           <div>
             <Flipped flipId={`name-${index}`} stagger="list">
               <div>
+                <Link to={`${match.path}${sobaya.id}`} className="en">
+                  {sobaya.name.en}
+                </Link>
                 <p className="jp">{sobaya.name.jp}</p>
-                <p className="en">{sobaya.name.en}</p>
               </div>
             </Flipped>
             <div className="desc">
               <div>{sobaya.neighborhood}</div>
-              <div>Likely open</div>
               <div>{sobaya.recommendation}</div>
               <div>
                 <StyledImg src={img} alt={sobaya.id} />
               </div>
-              <div>
-                <Link to={`${match.path}${sobaya.id}`}>See Detail</Link>
-              </div>
+              {/* <div> */}
+              {/* <Link to={`${match.path}${sobaya.id}`}>more</Link> */}
+              {/* </div> */}
             </div>
           </div>
         </Flipped>
@@ -43,7 +44,7 @@ export default function ExpandedListItem({ sobaya, match, index }) {
 }
 
 const StyledImg = styled.img`
-  width: 90%;
+  width: 100%;
   border-radius: 5px;
   filter: grayscale(50%);
 `;

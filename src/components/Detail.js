@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Flipped } from "react-flip-toolkit";
 import styled from "styled-components";
 import sobayas from "../data/sobayas.js";
+import Foursquare from "./FoursquareLogo.js";
 
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
@@ -41,18 +42,21 @@ const Detail = ({ match, index }) => {
   return (
     <Flipped flipId={`listItem-${index}`}>
       <Container>
-        <p>{name.jp}</p>
-        <p>{name.en}</p>
-        <p>{neighborhood}</p>
-        <p>{recommendation}</p>
+        <h1>{name.en}</h1>
+        <h2>{name.jp}</h2>
+        <h3>{neighborhood}</h3>
         <p>{address}</p>
-        <p>{fsq}</p>
+        <p>{recommendation}</p>
         <p>
           my memo this place is awesome because i live nearby. Childhood memory
           comes out.
         </p>
-        <p>www.url.com by Foursquare</p>
-        <p>Information by Foursquare</p>
+        <p>www.urlurlurlpoipoipoppopo.com</p>
+
+        <div className="foursquare-logo">
+          <Foursquare />
+        </div>
+
         {/* <h3>{`Likes on Foursqare: ${sobaya.likes}`}</h3>
       <h3>{`Now: ${sobaya.hours.status}`}</h3>
       <h3>{`Rating on Foursquare: ${sobaya.ratings}`}</h3> */}
@@ -69,11 +73,18 @@ export default Detail;
 
 const Container = styled.div`
   position: absolute;
-  width: 500px;
-  top: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 60vh;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: bisque;
-  padding: 5rem 2rem;
+  padding: 2rem 2rem;
   z-index: 10;
 `;
+
+const imageContainer = styled.div``;
