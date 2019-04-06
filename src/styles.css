@@ -50,14 +50,30 @@
   font-size: 1rem;
 }
 
-.normal {
-  /* height: 50px; */
-
-  /* background-color: blue; */
+.desc div {
+  opacity: 0;
 }
 
-.expanded {
-  /* border: 2px grey solid; */
-  /* height: 200px; */
-  /* background-color: pink; */
+.fade-in .desc > div {
+  animation: fadeIn 0.4s forwards;
+}
+
+.desc > div:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+.desc > div:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+.desc > div:nth-of-type(4) {
+  animation-delay: 0.45s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+  }
 }
