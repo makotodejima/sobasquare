@@ -32,14 +32,13 @@
 }
 
 .item-wrapper {
-  margin: 2rem auto;
+  margin: 1rem auto;
   width: 300px;
 }
 
 .list {
-  /* padding: 10px 20px; */
   color: white;
-
+  padding: 1rem;
   background-color: lightseagreen;
 }
 

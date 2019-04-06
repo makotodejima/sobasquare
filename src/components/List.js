@@ -25,7 +25,16 @@ class List extends React.Component {
 
     return (
       <div>
-        <Flipper flipKey={selected} decisionData={selected}>
+        <Flipper
+          flipKey={selected}
+          decisionData={selected}
+          spring="stiff"
+          staggerConfig={{
+            list: {
+              speed: 0.8
+            }
+          }}
+        >
           <Route
             path="/:id"
             render={props => <Detail {...props} index={selected} />}

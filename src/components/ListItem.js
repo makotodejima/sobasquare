@@ -21,11 +21,11 @@ export default function ListItem({ index, sobaya }) {
   // shouldFlip = {
   //   shouldFlip(index)
   return (
-    <Flipped flipId={`listItem-${index}`}>
+    <Flipped flipId={`listItem-${index}`} stagger="list">
       <div className="normal list">
         <Flipped inverseFlipId={`listItem-${index}`}>
           <div>
-            <Flipped flipId={`name-${index}`} shouldFlip={!shouldFlip(index)}>
+            <Flipped flipId={`name-${index}`} stagger="list">
               <div>
                 <p className="jp">{sobaya.name.jp}</p>
                 <p className="en">{sobaya.name.en}</p>

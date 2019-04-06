@@ -39,27 +39,29 @@ const Detail = ({ match, index }) => {
 
   // if (!sobaya) return <p>loading</p>;
   return (
-    <Container>
-      <p>{name.jp}</p>
-      <p>{name.en}</p>
-      <p>{neighborhood}</p>
-      <p>{recommendation}</p>
-      <p>{address}</p>
-      <p>{fsq}</p>
-      <p>
-        my memo this place is awesome because i live nearby. Childhood memory
-        comes out.
-      </p>
-      <p>www.url.com by Foursquare</p>
-      <p>Information by Foursquare</p>
-      {/* <h3>{`Likes on Foursqare: ${sobaya.likes}`}</h3>
+    <Flipped flipId={`listItem-${index}`}>
+      <Container>
+        <p>{name.jp}</p>
+        <p>{name.en}</p>
+        <p>{neighborhood}</p>
+        <p>{recommendation}</p>
+        <p>{address}</p>
+        <p>{fsq}</p>
+        <p>
+          my memo this place is awesome because i live nearby. Childhood memory
+          comes out.
+        </p>
+        <p>www.url.com by Foursquare</p>
+        <p>Information by Foursquare</p>
+        {/* <h3>{`Likes on Foursqare: ${sobaya.likes}`}</h3>
       <h3>{`Now: ${sobaya.hours.status}`}</h3>
       <h3>{`Rating on Foursquare: ${sobaya.ratings}`}</h3> */}
-      {/* Website? */}
-      {/* Foursquare says 'Lots of people like this place. by reason */}
-      {/*  Likes count, rating in the colored box */}
-      <Link to="/">back</Link>
-    </Container>
+        {/* Website? */}
+        {/* Foursquare says 'Lots of people like this place. by reason */}
+        {/*  Likes count, rating in the colored box */}
+        <Link to="/">back</Link>
+      </Container>
+    </Flipped>
   );
 };
 
