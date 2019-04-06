@@ -28,10 +28,10 @@ class List extends React.Component {
         <Flipper
           flipKey={selected}
           decisionData={selected}
-          spring="stiff"
+          spring="gentle"
           staggerConfig={{
             list: {
-              speed: 0.8
+              speed: 1
             }
           }}
         >
