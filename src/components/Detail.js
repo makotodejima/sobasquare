@@ -86,7 +86,7 @@ const Container = styled.div`
   justify-content: space-between;
   /* align-items: center; */
   width: 80%;
-  height: 60vh;
+  /* height: 60vh; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

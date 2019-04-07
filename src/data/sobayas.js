@@ -21,6 +21,17 @@ const sobayas = {
     fsq: "4bc294a7461576b0ecab7d32",
     recommendation: "ざるそば"
   },
+  asahiya: {
+    id: "asahiya",
+    name: {
+      jp: "朝日屋",
+      en: "Asahiya"
+    },
+    neighborhood: "Mita",
+    address: "芝5-14-12, Minato, Tokyo, 108-0014",
+    fsq: "4bb6b5566edc76b0b26b311c",
+    recommendation: "天おろし"
+  },
   tamawarai: {
     id: "tamawarai",
     name: {
@@ -65,6 +76,17 @@ const sobayas = {
     fsq: "4c3c53197f49c9b6a5aa6be3",
     recommendation: "なめこそば（生粉打そば）"
   },
+  kanzemizu: {
+    id: "kanzemizu",
+    name: {
+      jp: "観世水",
+      en: "Kanzemizu"
+    },
+    neighborhood: "Akasaka",
+    address: "赤坂3-12-22 (竹下ビル B1F), Minato, Tokyo, 107-0052",
+    fsq: "4ba83510f964a52051d139e3",
+    recommendation: "田舎そば？"
+  },
   honmura_an: {
     id: "honmura_an",
     name: {
@@ -76,11 +98,11 @@ const sobayas = {
     fsq: "4c0b2058bbc676b0152c4bd5",
     recommendation: "せいろ"
   },
-  itasoba_kaoriya: {
-    id: "itasoba_kaoriya",
+  kaoriya: {
+    id: "kaoriya",
     name: {
       jp: "板蕎麦 香り家",
-      en: "Itasoba Kaoriya"
+      en: "Kaoriya"
     },
     neighborhood: "Ebisu",
     address: "恵比寿4-3-10,Shibuya, Tokyo, 150-0013",
