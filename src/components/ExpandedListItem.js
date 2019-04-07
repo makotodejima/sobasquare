@@ -15,7 +15,7 @@ export default function ExpandedListItem({ sobaya, match, index }) {
         }, 100);
       }}
     >
-      <div className="expanded list">
+      <ExpandedList className="expanded list">
         <Flipped inverseFlipId={`listItem-${index}`}>
           <div>
             <Flipped flipId={`name-${index}`} stagger="list">
@@ -27,8 +27,12 @@ export default function ExpandedListItem({ sobaya, match, index }) {
               </div>
             </Flipped>
             <div className="desc">
-              <div>{sobaya.neighborhood}</div>
-              <div>{sobaya.recommendation}</div>
+              <div style={{ textAlign: `right`, fontSize: `1rem` }}>
+                {sobaya.neighborhood}
+              </div>
+              <div style={{ fontSize: `1rem`, margin: `10px 0` }}>
+                Recommendation: {sobaya.recommendation}
+              </div>
               <div>
                 <StyledImg src={img} alt={sobaya.id} />
               </div>
@@ -38,7 +42,7 @@ export default function ExpandedListItem({ sobaya, match, index }) {
             </div>
           </div>
         </Flipped>
-      </div>
+      </ExpandedList>
     </Flipped>
   );
 }
@@ -47,4 +51,21 @@ const StyledImg = styled.img`
   width: 100%;
   border-radius: 5px;
   filter: grayscale(50%);
+`;
+
+const ExpandedList = styled.div`
+  :hover {
+    background-color: lightcyan;
+    color: darkcyan;
+    /* outline: darkcyan 7px solid; */
+    box-shadow: 0 0 0 3pt lightcyan;
+    a {
+      /* text-decoration: none; */
+      color: darkcyan;
+    }
+  }
+  a {
+    /* text-decoration: none; */
+    color: white;
+  }
 `;

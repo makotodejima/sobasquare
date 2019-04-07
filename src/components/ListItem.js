@@ -31,7 +31,9 @@ export default function ListItem({ index, sobaya }) {
               <div>
                 <p className="en">{sobaya.name.en}</p>
                 <p className="jp">{sobaya.name.jp}</p>
-                <p className="jp">{sobaya.neighborhood}</p>
+                <p style={{ textAlign: `right` }} className="jp">
+                  {sobaya.neighborhood}
+                </p>
               </div>
             </Flipped>
           </div>

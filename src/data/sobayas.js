@@ -90,7 +90,7 @@ const sobayas = {
   honmura_an: {
     id: "honmura_an",
     name: {
-      jp: "HONMURA AN",
+      jp: "本むら庵",
       en: "Honmura An"
     },
     neighborhood: "Roppongi",

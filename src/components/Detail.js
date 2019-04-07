@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Flipped } from "react-flip-toolkit";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import sobayas from "../data/sobayas.js";
 import Foursquare from "./FoursquareLogo.js";
+import Times from "./Times";
 
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
@@ -47,16 +48,21 @@ const Detail = ({ match, index }) => {
   // if (!sobaya) return <p>loading</p>;
   return (
     <Container>
+      <Link to="/">
+        <Times />
+      </Link>
+
       <h1>{name.en}</h1>
       <h2>{name.jp}</h2>
       <h3>{neighborhood}</h3>
       <p>{address}</p>
-      <p>{recommendation}</p>
       <p>
-        my memo this place is awesome because i live nearby. Childhood memory
-        comes out.
+        おすすめは <strong>{recommendation}</strong>
       </p>
-      <p>www.urlurlurlpoipoipoppopo.com</p>
+      <p>
+        雰囲気も昔ながらの蕎麦屋かんがあってとてもいい。麺は硬めでとてもおいしい。
+      </p>
+      <p>www.sobaysobayasobaya.com</p>
 
       <ImgContainer>
         <div>
@@ -66,6 +72,7 @@ const Detail = ({ match, index }) => {
           <img src={img_2} alt={name} />
         </div>
       </ImgContainer>
+      <hr />
       <div className="foursquare-logo">
         <Foursquare />
       </div>
@@ -76,27 +83,34 @@ const Detail = ({ match, index }) => {
       {/* Website? */}
       {/* Foursquare says 'Lots of people like this place. by reason */}
       {/*  Likes count, rating in the colored box */}
-      <Link to="/">back</Link>
     </Container>
   );
 };
 
 export default Detail;
 
+const fadein = keyframes`
+  from {
+    opacity: 0;   
+  }
+  to   {
+    opacity: 1; 
+  } 
+`;
+
 const Container = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: center; */
   width: 80%;
-  /* height: 60vh; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: bisque;
+  background-color: lightyellow;
   padding: 2rem 2rem;
   z-index: 10;
+  animation: ${fadein} 0.3s ease-in;
 `;
 
 const ImgContainer = styled.div`
