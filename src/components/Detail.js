@@ -16,6 +16,10 @@ const Detail = ({ match, index }) => {
   const img_1 = require(`../images/${id}_1.jpg`);
   const img_2 = require(`../images/${id}_2.jpg`);
 
+  // if (`../images/${id}_3.jpg`) {
+  //   const img_3 = require(`../images/${id}_3.jpg`);
+  // }
+
   // useEffect(() => {
   //   if (!fsqData[id]) {
   //     console.log("fetching now!!");
