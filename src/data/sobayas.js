@@ -10,6 +10,17 @@ const sobayas = {
     fsq: "4bc3f589f8219c7427deb610",
     recommendation: "せいろ"
   },
+  matsunaga: {
+    id: "matsunaga",
+    name: {
+      jp: "松永",
+      en: "Matsunaga"
+    },
+    neighborhood: "Jingūmae",
+    address: "神宮前2-19-12, Shibuya, Tokyo, 150-0001",
+    fsq: "4bc294a7461576b0ecab7d32",
+    recommendation: "ざるそば"
+  },
   tamawarai: {
     id: "tamawarai",
     name: {

@@ -13,6 +13,8 @@ const Detail = ({ match, index }) => {
     match.params.id
   ];
   const [fsqData, setFsqData] = useState({});
+  const img_1 = require(`../images/${id}_1.jpg`);
+  const img_2 = require(`../images/${id}_2.jpg`);
 
   // useEffect(() => {
   //   if (!fsqData[id]) {
@@ -40,32 +42,38 @@ const Detail = ({ match, index }) => {
 
   // if (!sobaya) return <p>loading</p>;
   return (
-    <Flipped flipId={`listItem-${index}`}>
-      <Container>
-        <h1>{name.en}</h1>
-        <h2>{name.jp}</h2>
-        <h3>{neighborhood}</h3>
-        <p>{address}</p>
-        <p>{recommendation}</p>
-        <p>
-          my memo this place is awesome because i live nearby. Childhood memory
-          comes out.
-        </p>
-        <p>www.urlurlurlpoipoipoppopo.com</p>
+    <Container>
+      <h1>{name.en}</h1>
+      <h2>{name.jp}</h2>
+      <h3>{neighborhood}</h3>
+      <p>{address}</p>
+      <p>{recommendation}</p>
+      <p>
+        my memo this place is awesome because i live nearby. Childhood memory
+        comes out.
+      </p>
+      <p>www.urlurlurlpoipoipoppopo.com</p>
 
-        <div className="foursquare-logo">
-          <Foursquare />
+      <ImgContainer>
+        <div>
+          <img src={img_1} alt={id} />
         </div>
+        <div>
+          <img src={img_2} alt={name} />
+        </div>
+      </ImgContainer>
+      <div className="foursquare-logo">
+        <Foursquare />
+      </div>
 
-        {/* <h3>{`Likes on Foursqare: ${sobaya.likes}`}</h3>
+      {/* <h3>{`Likes on Foursqare: ${sobaya.likes}`}</h3>
       <h3>{`Now: ${sobaya.hours.status}`}</h3>
       <h3>{`Rating on Foursquare: ${sobaya.ratings}`}</h3> */}
-        {/* Website? */}
-        {/* Foursquare says 'Lots of people like this place. by reason */}
-        {/*  Likes count, rating in the colored box */}
-        <Link to="/">back</Link>
-      </Container>
-    </Flipped>
+      {/* Website? */}
+      {/* Foursquare says 'Lots of people like this place. by reason */}
+      {/*  Likes count, rating in the colored box */}
+      <Link to="/">back</Link>
+    </Container>
   );
 };
 
@@ -76,7 +84,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   width: 80%;
   height: 60vh;
   top: 50%;
@@ -87,4 +95,22 @@ const Container = styled.div`
   z-index: 10;
 `;
 
-const imageContainer = styled.div``;
+const ImgContainer = styled.div`
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  div {
+    flex: 1;
+    margin: auto 5px;
+    img {
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* filter: grayscale(30%); */
+    }
+  }
+  /* position: relative; */
+  /* max-width: auto; */
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+`;
