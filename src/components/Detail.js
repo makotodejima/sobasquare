@@ -52,17 +52,27 @@ const Detail = ({ match, index, likes }) => {
       <Link to="/">
         <Times />
       </Link>
-      <h1>{name.en}</h1>
-      <h2>{name.jp}</h2>
-      <h3>{neighborhood}</h3>
-      <p>{address}</p>
-      <p>
-        おすすめは <strong>{recommendation}</strong>
-      </p>
-      <p>
-        雰囲気も昔ながらの蕎麦屋かんがあってとてもいい。麺は硬めでとてもおいしい。
-      </p>
-      <p>www.sobaysobayasobaya.com</p>
+      <div className="name">
+        <h1>{name.en}</h1>
+        <h2>{name.jp}</h2>
+      </div>
+      <div className="address">
+        <h3>{neighborhood}</h3>
+        <p>{address}</p>
+      </div>
+      <div className="recommendation">
+        <p>
+          おすすめは <strong>{recommendation}</strong>
+        </p>
+      </div>
+      <div className="review">
+        <p>
+          雰囲気も昔ながらの蕎麦屋かんがあってとてもいい。麺は硬めでとてもおいしい。
+        </p>
+      </div>
+      <div className="url">
+        <p>www.sobaysobayasobaya.com</p>
+      </div>
       <ImgContainer>
         <div>
           <Img src={img_1} alt={id} loader={`Wait`} />
@@ -134,6 +144,33 @@ const Container = styled.div`
   padding: 2rem 2rem;
   z-index: 10;
   animation: ${fadein} 0.3s ease-in;
+
+  & > div {
+    opacity: 0;
+    animation: ${fadein} 0.3s ease-in forwards;
+  }
+
+  div:nth-child(2) {
+    animation-delay: 0.16s;
+  }
+  div:nth-child(3) {
+    animation-delay: 0.24s;
+  }
+  div:nth-child(4) {
+    animation-delay: 0.36s;
+  }
+  div:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  div:nth-child(6) {
+    animation-delay: 0.48s;
+  }
+  div:nth-child(7) {
+    animation-delay: 0.56s;
+  }
+  div:nth-child(8) {
+    animation-delay: 0.64s;
+  }
 `;
 
 const ImgContainer = styled.div`

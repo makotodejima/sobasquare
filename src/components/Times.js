@@ -11,9 +11,10 @@ export default function() {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.span`
   position: absolute;
   top: 2rem;
   right: 2rem;
   width: 2rem;
+  z-index: 1;
 `;
