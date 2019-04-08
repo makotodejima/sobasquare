@@ -11,9 +11,15 @@ const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
 
 const Detail = ({ match, index, likes }) => {
-  const { id, name, neighborhood, address, recommendation, fsq } = sobayas[
-    match.params.id
-  ];
+  const {
+    id,
+    name,
+    neighborhood,
+    address,
+    recommendation,
+    fsq,
+    googlemaps
+  } = sobayas[match.params.id];
   const [fsqData, setFsqData] = useState({});
 
   const img_1 = require(`../images/${id}_1.jpg`);
@@ -42,15 +48,12 @@ const Detail = ({ match, index, likes }) => {
     }
   }, []);
 
-  const sobaya = fsqData[id];
-
   // if (!sobaya) return <p>loading</p>;
   return (
     <Container>
       <Link to="/">
         <Times />
       </Link>
-
       <h1>{name.en}</h1>
       <h2>{name.jp}</h2>
       <h3>{neighborhood}</h3>
@@ -62,7 +65,6 @@ const Detail = ({ match, index, likes }) => {
         雰囲気も昔ながらの蕎麦屋かんがあってとてもいい。麺は硬めでとてもおいしい。
       </p>
       <p>www.sobaysobayasobaya.com</p>
-
       <ImgContainer>
         <div>
           <img src={img_1} alt={id} />
@@ -71,17 +73,23 @@ const Detail = ({ match, index, likes }) => {
           <img src={img_2} alt={name} />
         </div>
       </ImgContainer>
-      <hr />
-      <p>{likes[id]}</p>
-      <div className="foursquare-logo">
-        <Foursquare />
-      </div>
+      <a
+        style={{ textAlign: `right` }}
+        href={googlemaps}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        See on Google Maps
+      </a>
 
-      {/* <h3>{`Likes on Foursqare: ${sobaya.likes}`}</h3>
-      <h3>{`Now: ${sobaya.hours.status}`}</h3>
-      <h3>{`Rating on Foursquare: ${sobaya.ratings}`}</h3> */}
+      <FsqSection>
+        <p>{likes[id]}</p>
+        <div className="logo">
+          <Foursquare />
+        </div>
+      </FsqSection>
+
       {/* Website? */}
-
       {/*  Likes count, rating in the colored box */}
     </Container>
   );
@@ -134,5 +142,16 @@ const ImgContainer = styled.div`
       object-fit: contain;
       /* filter: grayscale(30%); */
     }
+  }
+`;
+
+const FsqSection = styled.div`
+  text-align: right;
+  background-color: #d76179;
+  border-radius: 5px;
+  color: white;
+  .logo {
+    width: 200px;
+    float: right;
   }
 `;
