@@ -140,7 +140,9 @@ const Container = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f8efba;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 45px -30px rgba(0, 0, 0, 0.75);
   padding: 2rem 2rem;
   z-index: 10;
   animation: ${fadein} 0.3s ease-in;

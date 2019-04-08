@@ -9,9 +9,9 @@ export default function ListItem({ index, sobaya }) {
   useEffect(() => {
     const config = {
       container: document.querySelector(".list-container"),
-      duration: 800,
+      duration: 900,
       opacity: 0,
-      scale: 0.5,
+      scale: 0.6,
       easing: "ease",
       reset: true
     };
