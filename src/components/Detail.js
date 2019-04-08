@@ -71,22 +71,29 @@ const Detail = ({ match, index, likes }) => {
           <Img src={img_2} alt={name} loader={`It's loading`} />
         </div>
       </ImgContainer>
-      <a
-        style={{ textAlign: `right` }}
-        href={googlemaps}
-        target="_blank"
-        rel="noopener noreferrer"
+      <div
+        style={{
+          display: `flex`,
+          justifyContent: `space-around`,
+          alignItems: `center`
+        }}
       >
-        See on Google Maps
-      </a>
+        <a
+          style={{ textAlign: `right` }}
+          href={googlemaps}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          See on Google Maps
+        </a>
 
-      <FsqSection>
-        {console.log(likes[id])}
-        {likes[id] === undefined ? <p>Loading</p> : <p>{likes[id]}</p>}
-        <div className="logo">
-          <Foursquare />
-        </div>
-      </FsqSection>
+        <FsqSection>
+          {likes[id] === undefined ? <p>Loading</p> : <p>{likes[id]}</p>}
+          <div className="logo">
+            <Foursquare />
+          </div>
+        </FsqSection>
+      </div>
 
       {/* Website? */}
       {/*  Likes count, rating in the colored box */}
@@ -130,7 +137,7 @@ const Container = styled.div`
 `;
 
 const ImgContainer = styled.div`
-  margin: 10px auto;
+  margin: 30px auto;
   display: flex;
   justify-content: space-between;
   div {
@@ -148,12 +155,14 @@ const ImgContainer = styled.div`
 `;
 
 const FsqSection = styled.div`
-  text-align: right;
+  padding: 5px 0;
+  text-align: center;
+  width: 40%;
   background-color: #d76179;
   border-radius: 5px;
   color: white;
   .logo {
+    margin: auto;
     width: 200px;
-    float: right;
   }
 `;
