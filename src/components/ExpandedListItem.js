@@ -31,7 +31,7 @@ export default function ExpandedListItem({ sobaya, match, index }) {
                 {sobaya.neighborhood}
               </div>
               <div style={{ fontSize: `1rem`, margin: `10px 0` }}>
-                Recommendation: {sobaya.recommendation}
+                Sobasquare Pick: {sobaya.recommendation}
               </div>
               <div>
                 <StyledImg src={img} alt={sobaya.id} />
@@ -55,21 +55,22 @@ const StyledImg = styled.img`
 
 const ExpandedList = styled.div`
   :hover {
-    background-color: #8cc0d8;
+    background-color: #bcaaa4;
     color: white;
     /* outline: darkcyan 7px solid; */
-    box-shadow: 0 0 0 3pt #8cc0d8;
+    /* box-shadow: 0 0 0 3pt #bcaaa4; */
     a {
       /* text-decoration: none; */
       color: white;
     }
+    box-shadow: 0px 0px 45px -30px rgba(0, 0, 0, 0.75);
   }
 
   a {
     /* text-decoration: none; */
     color: black;
     :hover {
-      color: lightgrey;
+      color: navy;
     }
   }
 `;

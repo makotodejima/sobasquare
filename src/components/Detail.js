@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import sobayas from "../data/sobayas.js";
-import Foursquare from "./FoursquareLogo.js";
+import FoursquareLogo from "./FoursquareLogo.js";
 import Times from "./Times";
 import { store } from "../index";
 import { connect } from "react-redux";
@@ -21,7 +21,6 @@ const Detail = ({ match, index, likes }) => {
     fsq,
     googlemaps
   } = sobayas[match.params.id];
-  const [fsqData, setFsqData] = useState({});
 
   const img_1 = require(`../images/${id}_1.jpg`);
   const img_2 = require(`../images/${id}_2.jpg`);
@@ -54,15 +53,14 @@ const Detail = ({ match, index, likes }) => {
       </Link>
       <div className="name">
         <h1>{name.en}</h1>
-        <h2>{name.jp}</h2>
+        <p className="jp">{name.jp}</p>
       </div>
-      <div className="address">
-        <h3>{neighborhood}</h3>
-        <p>{address}</p>
+      <div className="neighborhood">
+        <h3 style={{ textAlign: `right` }}>{neighborhood}</h3>
       </div>
       <div className="recommendation">
         <p>
-          おすすめは <strong>{recommendation}</strong>
+          Sobasquare Pick: <strong>{recommendation}</strong>
         </p>
       </div>
       <div className="review">
@@ -85,7 +83,8 @@ const Detail = ({ match, index, likes }) => {
         style={{
           display: `flex`,
           justifyContent: `space-around`,
-          alignItems: `center`
+          alignItems: `center`,
+          marginBottom: `30px`
         }}
       >
         <a
@@ -96,15 +95,22 @@ const Detail = ({ match, index, likes }) => {
         >
           Open in Google Maps
         </a>
-
         <FsqSection>
-          {likes[id] === undefined ? <p>Loading</p> : <p>{likes[id]}</p>}
-          <div className="logo">
-            <Foursquare />
-          </div>
+          <a
+            href={`https://foursquare.com/v/${fsq}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {likes[id] === undefined ? <p>Loading</p> : <p>{likes[id]}</p>}
+            <div className="logo">
+              <FoursquareLogo />
+            </div>
+          </a>
         </FsqSection>
       </div>
-
+      <div>
+        <p style={{ textAlign: `center`, fontSize: `1rem` }}>{address}</p>
+      </div>
       {/* Website? */}
       {/*  Likes count, rating in the colored box */}
     </Container>
@@ -173,6 +179,9 @@ const Container = styled.div`
   div:nth-child(8) {
     animation-delay: 0.64s;
   }
+  div:nth-child(9) {
+    animation-delay: 0.7s;
+  }
 `;
 
 const ImgContainer = styled.div`
@@ -202,8 +211,12 @@ const FsqSection = styled.div`
   background-color: #d76179;
   border-radius: 5px;
   color: white;
+  p {
+    font-family: "Helvetica";
+    color: white;
+  }
   .logo {
-    margin: auto;
+    margin: 0 auto;
     width: 200px;
   }
 `;
