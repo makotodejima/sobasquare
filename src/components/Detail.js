@@ -94,7 +94,7 @@ const Detail = ({ match, index, likes }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          See on Google Maps
+          Open in Google Maps
         </a>
 
         <FsqSection>
@@ -140,7 +140,7 @@ const Container = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: lightyellow;
+  background-color: #f8efba;
   padding: 2rem 2rem;
   z-index: 10;
   animation: ${fadein} 0.3s ease-in;

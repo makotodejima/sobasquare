@@ -25,6 +25,14 @@ class List extends React.Component {
 
     return (
       <div>
+        <div
+          style={{
+            width: `60px`,
+            height: `60px`,
+            backgroundColor: `black`,
+            margin: `4rem auto 3rem`
+          }}
+        />
         <Flipper
           flipKey={selected}
           decisionData={selected}
