@@ -104,7 +104,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 80%;
-  max-width: 880px;
+  max-width: 650px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

@@ -64,8 +64,12 @@ const ExpandedList = styled.div`
       color: darkcyan;
     }
   }
+
   a {
     /* text-decoration: none; */
     color: white;
+    :hover {
+      color: lightgrey;
+    }
   }
 `;
