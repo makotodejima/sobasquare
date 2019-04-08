@@ -137,6 +137,8 @@ const Container = styled.div`
 `;
 
 const ImgContainer = styled.div`
+  /* border-radius: 50px;
+  overflow: hidden; */
   margin: 30px auto;
   display: flex;
   justify-content: space-between;
