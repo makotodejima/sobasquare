@@ -58,7 +58,7 @@
   opacity: 0;
 }
 
-.cls-1 {
+.powered-by-foursquare {
   fill: white;
 }
 
@@ -89,4 +89,19 @@
   100% {
     opacity: 1;
   }
+}
+.cls-1,
+.cls-2 {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+
+.cls-1 {
+  stroke: #000;
+  stroke-width: 6px;
+}
+
+.cls-2 {
+  stroke: #c1272d;
+  stroke-width: 4px;
 }
