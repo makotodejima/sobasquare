@@ -6,6 +6,7 @@ import Foursquare from "./FoursquareLogo.js";
 import Times from "./Times";
 import { store } from "../index";
 import { connect } from "react-redux";
+import Img from "react-image";
 
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
@@ -24,10 +25,7 @@ const Detail = ({ match, index, likes }) => {
 
   const img_1 = require(`../images/${id}_1.jpg`);
   const img_2 = require(`../images/${id}_2.jpg`);
-
-  // if (`../images/${id}_3.jpg`) {
-  //   const img_3 = require(`../images/${id}_3.jpg`);
-  // }
+  // const img_3 = require(`../images/${id}_3.jpg`);
 
   useEffect(() => {
     if (!store.getState().likes[id]) {
@@ -67,10 +65,10 @@ const Detail = ({ match, index, likes }) => {
       <p>www.sobaysobayasobaya.com</p>
       <ImgContainer>
         <div>
-          <img src={img_1} alt={id} />
+          <Img src={img_1} alt={id} loader={`Wait`} />
         </div>
         <div>
-          <img src={img_2} alt={name} />
+          <Img src={img_2} alt={name} loader={`It's loading`} />
         </div>
       </ImgContainer>
       <a
@@ -83,7 +81,8 @@ const Detail = ({ match, index, likes }) => {
       </a>
 
       <FsqSection>
-        <p>{likes[id]}</p>
+        {console.log(likes[id])}
+        {likes[id] === undefined ? <p>Loading</p> : <p>{likes[id]}</p>}
         <div className="logo">
           <Foursquare />
         </div>
@@ -106,9 +105,11 @@ export default connect(mapStateToProps)(Detail);
 const fadein = keyframes`
   from {
     opacity: 0;   
+    
   }
   to   {
     opacity: 1; 
+    
   } 
 `;
 
@@ -134,6 +135,7 @@ const ImgContainer = styled.div`
   justify-content: space-between;
   div {
     flex: 1;
+    height: 180px;
     margin: auto 5px;
     img {
       margin: 0 auto;

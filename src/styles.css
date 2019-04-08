@@ -55,6 +55,10 @@
   opacity: 0;
 }
 
+.cls-1 {
+  fill: white;
+}
+
 /* Fade in animation */
 
 .fade-in .desc > div {
