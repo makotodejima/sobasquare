@@ -55,19 +55,19 @@ const StyledImg = styled.img`
 
 const ExpandedList = styled.div`
   :hover {
-    background-color: lightcyan;
-    color: darkcyan;
+    background-color: #8cc0d8;
+    color: white;
     /* outline: darkcyan 7px solid; */
-    box-shadow: 0 0 0 3pt lightcyan;
+    box-shadow: 0 0 0 3pt #8cc0d8;
     a {
       /* text-decoration: none; */
-      color: darkcyan;
+      color: white;
     }
   }
 
   a {
     /* text-decoration: none; */
-    color: white;
+    color: black;
     :hover {
       color: lightgrey;
     }

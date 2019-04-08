@@ -36,11 +36,12 @@
 }
 
 .list {
-  color: white;
+  /* color: white; */
   padding: 1rem;
-  background-color: darkcyan;
+  /* background-color: darkcyan; */
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0px 0px 45px -30px rgba(0, 0, 0, 0.75);
 }
 
 .jp {
