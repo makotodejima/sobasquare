@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Flipped } from "react-flip-toolkit";
 import styled, { keyframes } from "styled-components";
 import sobayas from "../data/sobayas.js";
 import Foursquare from "./FoursquareLogo.js";
@@ -20,6 +19,10 @@ const Detail = ({ match, index, likes }) => {
   const img_1 = require(`../images/${id}_1.jpg`);
   const img_2 = require(`../images/${id}_2.jpg`);
 
+  // if (`../images/${id}_3.jpg`) {
+  //   const img_3 = require(`../images/${id}_3.jpg`);
+  // }
+
   useEffect(() => {
     if (!store.getState().likes[id]) {
       console.log("Now fetching Likes Count!!");
@@ -38,32 +41,6 @@ const Detail = ({ match, index, likes }) => {
         });
     }
   }, []);
-
-  // if (`../images/${id}_3.jpg`) {
-  //   const img_3 = require(`../images/${id}_3.jpg`);
-  // }
-
-  // useEffect(() => {
-  //   if (!fsqData[id]) {
-  //     console.log("fetching now!!");
-  //     fetch(
-  //       `https://api.foursquare.com/v2/venues/${
-  //         sobayas[id].fsq
-  //       }?client_id=${client_id}&client_secret=${client_secret}&v=20190401`
-  //     )
-  //       .then(res => res.json())
-  //       .then(json => {
-  //         const venueData = json.response.venue;
-  //         console.log(venueData);
-
-  //         setFsqData({ ...fsqData, [id]: venueData });
-  //       })
-  //       .catch(function(err) {
-  //         console.log(err);
-  //       });
-  //   }
-  //   console.log(fsqData);
-  // }, []);
 
   const sobaya = fsqData[id];
 
@@ -104,7 +81,7 @@ const Detail = ({ match, index, likes }) => {
       <h3>{`Now: ${sobaya.hours.status}`}</h3>
       <h3>{`Rating on Foursquare: ${sobaya.ratings}`}</h3> */}
       {/* Website? */}
-      {/* Foursquare says 'Lots of people like this place. by reason */}
+
       {/*  Likes count, rating in the colored box */}
     </Container>
   );
@@ -158,7 +135,4 @@ const ImgContainer = styled.div`
       /* filter: grayscale(30%); */
     }
   }
-  /* position: relative; */
-  /* max-width: auto; */
-  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
 `;
