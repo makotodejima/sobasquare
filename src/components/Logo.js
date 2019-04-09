@@ -35,4 +35,28 @@ export default () => (
 const Wrapper = styled.div`
   width: 100px;
   margin: 3rem auto 2rem;
+  .cls-1,
+  .cls-2,
+  .cls-3 {
+    fill: none;
+    stroke-miterlimit: 10;
+  }
+
+  .cls-1,
+  .cls-2 {
+    stroke: #000;
+  }
+
+  .cls-1 {
+    stroke-width: 5px;
+  }
+
+  .cls-2 {
+    stroke-width: 6px;
+  }
+
+  .cls-3 {
+    stroke: #c1272d;
+    stroke-width: 3px;
+  }
 `;
