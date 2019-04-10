@@ -39,7 +39,7 @@
 
 .list {
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   box-shadow: 0px 0px 45px -30px rgba(0, 0, 0, 0.75);
 }
@@ -55,6 +55,7 @@
   fill: white;
 }
 
+// transparent by default
 .desc {
   div {
     opacity: 0;
@@ -62,13 +63,12 @@
 }
 
 /* Fade in animation */
-
 .fade-in {
   .desc {
     div {
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
-          animation: fadeIn 0.4s ease-out #{$i * 0.15}s forwards;
+          animation: fadeIn 0.3s ease-out #{$i * 0.15}s forwards;
         }
       }
     }
@@ -78,7 +78,7 @@
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   100% {
     opacity: 1;
