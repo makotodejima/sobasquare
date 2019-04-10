@@ -36,9 +36,6 @@ export default function ExpandedListItem({ sobaya, match, index }) {
               <div>
                 <StyledImg src={img} alt={sobaya.id} />
               </div>
-              {/* <div> */}
-              {/* <Link to={`${match.path}${sobaya.id}`}>more</Link> */}
-              {/* </div> */}
             </div>
           </div>
         </Flipped>
