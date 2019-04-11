@@ -60,7 +60,7 @@ const ExpandedList = styled.div`
   a {
     /* text-decoration: none; */
     color: black;
-    transition: color 0.3s;
+    transition: color 0.2s;
     :hover {
       color: darkcyan;
     }
