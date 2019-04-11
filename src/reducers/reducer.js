@@ -7,6 +7,7 @@ export function likes(state = {}, action) {
   }
 }
 
+// this is Middleware, logger
 export const logger = store => next => action => {
   console.log("action: ", action);
   const result = next(action);

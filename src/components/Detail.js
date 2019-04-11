@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
 import sobayas from "../data/sobayas.js";
 import FoursquareLogo from "./FoursquareLogo.js";
 import Times from "./Times";
@@ -8,36 +7,42 @@ import { store } from "../index";
 import { connect } from "react-redux";
 import Img from "react-image";
 
+import {
+  DetailContainer,
+  ImgContainer,
+  FsqSection,
+  ExternalLinks
+} from "./StyledComps";
+
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
 
 const Detail = ({ match, index, likes }) => {
-  const {
-    id,
-    name,
-    neighborhood,
-    address,
-    recommendation,
-    fsq,
-    googlemaps
-  } = sobayas[match.params.id];
+  const sobaya = sobayas[match.params.id];
 
-  const img_1 = require(`../images/${id}_1.jpg`);
-  const img_2 = require(`../images/${id}_2.jpg`);
+  const img_1 = require(`../images/${sobaya.id}_1.jpg`);
+  const img_2 = require(`../images/${sobaya.id}_2.jpg`);
   // const img_3 = require(`../images/${id}_3.jpg`);
 
   useEffect(() => {
-    if (!store.getState().likes[id]) {
+    if (!likes[sobaya.id]) {
       console.log("Now fetching Likes Count!!");
       fetch(
         `https://api.foursquare.com/v2/venues/${
-          sobayas[id].fsq
+          sobayas[sobaya.id].fsq
         }/likes?client_id=${client_id}&client_secret=${client_secret}&v=20190401`
       )
         .then(res => res.json())
         .then(json => {
+          /* response summery can be Japanese 
+          when request made by the client 
+          whose primary lang is Japanese */
           const summary = json.response.likes.summary;
-          store.dispatch({ type: "SET_LIKE", sobaya: id, likes: summary });
+          store.dispatch({
+            type: "SET_LIKE",
+            sobaya: sobaya.id,
+            likes: summary
+          });
         })
         .catch(function(err) {
           console.log(err);
@@ -45,22 +50,21 @@ const Detail = ({ match, index, likes }) => {
     }
   }, []);
 
-  // if (!sobaya) return <p>loading</p>;
   return (
-    <Container>
+    <DetailContainer>
       <Link to="/">
         <Times />
       </Link>
       <div className="name">
-        <h1>{name.en}</h1>
-        <p className="jp">{name.jp}</p>
+        <h1>{sobaya.name.en}</h1>
+        <p className="jp">{sobaya.name.jp}</p>
       </div>
       <div className="neighborhood">
-        <h3 style={{ textAlign: `right` }}>{neighborhood}</h3>
+        <h3 style={{ textAlign: `right` }}>{sobaya.neighborhood}</h3>
       </div>
       <div className="recommendation">
         <p>
-          Sobasquare Pick: <strong>{recommendation}</strong>
+          Sobasquare Pick: <strong>{sobaya.recommendation}</strong>
         </p>
       </div>
       <div className="review">
@@ -73,23 +77,16 @@ const Detail = ({ match, index, likes }) => {
       </div>
       <ImgContainer>
         <div>
-          <Img src={img_1} alt={id} loader={`Wait`} />
+          <Img src={img_1} alt={sobaya.id} loader={`Wait`} />
         </div>
         <div>
-          <Img src={img_2} alt={name} loader={`It's loading`} />
+          <Img src={img_2} alt={sobaya.name} loader={`It's loading`} />
         </div>
       </ImgContainer>
-      <div
-        style={{
-          display: `flex`,
-          justifyContent: `space-around`,
-          alignItems: `center`,
-          marginBottom: `30px`
-        }}
-      >
+      <ExternalLinks>
         <a
           style={{ textAlign: `right` }}
-          href={googlemaps}
+          href={sobaya.googlemaps}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -97,23 +94,27 @@ const Detail = ({ match, index, likes }) => {
         </a>
         <FsqSection>
           <a
-            href={`https://foursquare.com/v/${fsq}`}
+            href={`https://foursquare.com/v/${sobaya.fsq}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {likes[id] === undefined ? <p>Loading</p> : <p>{likes[id]}</p>}
+            {likes[sobaya.id] === undefined ? (
+              <p>Loading</p>
+            ) : (
+              <p>{likes[sobaya.id]}</p>
+            )}
             <div className="logo">
               <FoursquareLogo />
             </div>
           </a>
         </FsqSection>
-      </div>
+      </ExternalLinks>
       <div>
-        <p style={{ textAlign: `center`, fontSize: `1rem` }}>{address}</p>
+        <p style={{ textAlign: `center`, fontSize: `1rem` }}>
+          {sobaya.address}
+        </p>
       </div>
-      {/* Website? */}
-      {/*  Likes count, rating in the colored box */}
-    </Container>
+    </DetailContainer>
   );
 };
 
@@ -124,99 +125,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(Detail);
-
-const fadein = keyframes`
-  from {
-    opacity: 0;   
-    
-  }
-  to   {
-    opacity: 1; 
-    
-  } 
-`;
-
-const Container = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 80%;
-  max-width: 650px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0px 0px 45px -30px rgba(0, 0, 0, 0.75);
-  padding: 2rem 2rem;
-  z-index: 10;
-  animation: ${fadein} 0.3s ease-in;
-
-  & > div {
-    opacity: 0;
-    animation: ${fadein} 0.3s ease-in forwards;
-  }
-
-  div:nth-child(2) {
-    animation-delay: 0.16s;
-  }
-  div:nth-child(3) {
-    animation-delay: 0.24s;
-  }
-  div:nth-child(4) {
-    animation-delay: 0.36s;
-  }
-  div:nth-child(5) {
-    animation-delay: 0.4s;
-  }
-  div:nth-child(6) {
-    animation-delay: 0.48s;
-  }
-  div:nth-child(7) {
-    animation-delay: 0.56s;
-  }
-  div:nth-child(8) {
-    animation-delay: 0.64s;
-  }
-  div:nth-child(9) {
-    animation-delay: 0.7s;
-  }
-`;
-
-const ImgContainer = styled.div`
-  /* border-radius: 50px;
-  overflow: hidden; */
-  margin: 30px auto;
-  display: flex;
-  justify-content: space-between;
-  div {
-    flex: 1;
-    height: 180px;
-    margin: auto 5px;
-    img {
-      margin: 0 auto;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      /* filter: grayscale(30%); */
-    }
-  }
-`;
-
-const FsqSection = styled.div`
-  padding: 5px 0;
-  text-align: center;
-  width: 40%;
-  background-color: #d76179;
-  border-radius: 5px;
-  color: white;
-  p {
-    font-family: "Helvetica";
-    color: white;
-  }
-  .logo {
-    margin: 0 auto;
-    width: 200px;
-  }
-`;

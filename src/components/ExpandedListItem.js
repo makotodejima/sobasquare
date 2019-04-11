@@ -10,9 +10,7 @@ export default function ExpandedListItem({ sobaya, match, index }) {
       flipId={`listItem-${index}`}
       stagger="list"
       onStart={el => {
-        setTimeout(() => {
-          el.classList.add("fade-in");
-        }, 100);
+        el.classList.add("fade-in");
       }}
     >
       <ExpandedList className="expanded list">
@@ -30,7 +28,13 @@ export default function ExpandedListItem({ sobaya, match, index }) {
               <div style={{ textAlign: `right`, fontSize: `1rem` }}>
                 {sobaya.neighborhood}
               </div>
-              <div style={{ fontSize: `1rem`, margin: `10px 0` }}>
+              <div
+                style={{
+                  fontFamily: `Ubuntu`,
+                  fontSize: `1rem`,
+                  margin: `10px 0`
+                }}
+              >
                 Sobasquare Pick: {sobaya.recommendation}
               </div>
               <div>
@@ -51,23 +55,14 @@ const StyledImg = styled.img`
 `;
 
 const ExpandedList = styled.div`
-  :hover {
-    background-color: #bcaaa4;
-    color: white;
-    /* outline: darkcyan 7px solid; */
-    /* box-shadow: 0 0 0 3pt #bcaaa4; */
-    a {
-      /* text-decoration: none; */
-      color: white;
-    }
-    box-shadow: 0px 0px 45px -30px rgba(0, 0, 0, 0.75);
-  }
+  box-shadow: 0px 0px 45px -25px rgba(0, 0, 0, 0.75);
 
   a {
     /* text-decoration: none; */
     color: black;
+    transition: color 0.3s;
     :hover {
-      color: navy;
+      color: darkcyan;
     }
   }
 `;
