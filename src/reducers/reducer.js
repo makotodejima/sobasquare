@@ -1,4 +1,6 @@
-export function likes(state = {}, action) {
+import { combineReducers, applyMiddleware } from "redux";
+
+function likes(state = {}, action) {
   switch (action.type) {
     case "SET_LIKE":
       return { ...state, [action.sobaya]: action.likes };
@@ -7,10 +9,14 @@ export function likes(state = {}, action) {
   }
 }
 
+export default combineReducers({ likes });
+
 // this is Middleware, logger
-export const logger = store => next => action => {
+const logger = store => next => action => {
   console.log("action: ", action);
   const result = next(action);
   console.log("current state: ", store.getState());
   return result;
 };
+
+export const middleware = applyMiddleware(logger);
