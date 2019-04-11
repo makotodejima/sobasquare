@@ -3,18 +3,15 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Noto Serif", "Helvetica Neue", "Roboto", "Oxygen", -apple-system,
-    "Ubuntu", BlinkMacSystemFont, "Fira Sans", "Yu Gothic", "YuGothic",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
-  font-family: sans-serif;
+  font-family: "Noto Serif", "Helvetica Neue", "Roboto", "Oxygen", -apple-system,
+    "Ubuntu", BlinkMacSystemFont, "Fira Sans", "Yu Gothic", "YuGothic",
+    sans-serif;
   font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar {
