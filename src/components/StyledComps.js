@@ -1,6 +1,27 @@
 import styled, { keyframes } from "styled-components";
 
-// Used in Detail
+// in Expanded Detail
+
+export const ExpandedListContainer = styled.div`
+  box-shadow: 0px 0px 45px -25px rgba(0, 0, 0, 0.75);
+
+  a {
+    /* text-decoration: none; */
+    color: black;
+    transition: color 0.2s;
+    :hover {
+      color: darkcyan;
+    }
+  }
+`;
+
+export const ExpandedListImg = styled.img`
+  width: 100%;
+  border-radius: 5px;
+  filter: grayscale(50%);
+`;
+
+// in Detail
 
 export const fadein = keyframes`
   from {
@@ -60,7 +81,7 @@ export const DetailContainer = styled.div`
   }
 `;
 
-export const ImgContainer = styled.div`
+export const DetailImgContainer = styled.div`
   /* border-radius: 50px;
   overflow: hidden; */
   margin: 30px auto;

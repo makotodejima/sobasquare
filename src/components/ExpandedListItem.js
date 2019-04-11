@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { ExpandedListContainer, ExpandedListImg } from "./StyledComps";
 import { Flipped } from "react-flip-toolkit";
 
 export default function ExpandedListItem({ sobaya, match, index }) {
@@ -13,7 +13,7 @@ export default function ExpandedListItem({ sobaya, match, index }) {
         el.classList.add("fade-in");
       }}
     >
-      <ExpandedList className="expanded list">
+      <ExpandedListContainer className="expanded list">
         <Flipped inverseFlipId={`listItem-${index}`}>
           <div>
             <Flipped flipId={`name-${index}`} stagger="list">
@@ -38,31 +38,12 @@ export default function ExpandedListItem({ sobaya, match, index }) {
                 Sobasquare Pick: {sobaya.recommendation}
               </div>
               <div>
-                <StyledImg src={img} alt={sobaya.id} />
+                <ExpandedListImg src={img} alt={sobaya.id} />
               </div>
             </div>
           </div>
         </Flipped>
-      </ExpandedList>
+      </ExpandedListContainer>
     </Flipped>
   );
 }
-
-const StyledImg = styled.img`
-  width: 100%;
-  border-radius: 5px;
-  filter: grayscale(50%);
-`;
-
-const ExpandedList = styled.div`
-  box-shadow: 0px 0px 45px -25px rgba(0, 0, 0, 0.75);
-
-  a {
-    /* text-decoration: none; */
-    color: black;
-    transition: color 0.2s;
-    :hover {
-      color: darkcyan;
-    }
-  }
-`;

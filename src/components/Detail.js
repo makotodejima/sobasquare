@@ -9,7 +9,7 @@ import Img from "react-image";
 
 import {
   DetailContainer,
-  ImgContainer,
+  DetailImgContainer,
   FsqSection,
   ExternalLinks
 } from "./StyledComps";
@@ -75,14 +75,14 @@ const Detail = ({ match, index, likes }) => {
       <div className="url">
         <p>www.sobaysobayasobaya.com</p>
       </div>
-      <ImgContainer>
+      <DetailImgContainer>
         <div>
           <Img src={img_1} alt={sobaya.id} loader={`Wait`} />
         </div>
         <div>
           <Img src={img_2} alt={sobaya.name} loader={`It's loading`} />
         </div>
-      </ImgContainer>
+      </DetailImgContainer>
       <ExternalLinks>
         <a
           style={{ textAlign: `right` }}
