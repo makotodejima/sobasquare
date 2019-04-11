@@ -54,6 +54,7 @@ export default ({ sobaya, match, index }) => {
                     src={img}
                     alt={sobaya.id}
                   />
+                  <span className="preventShrink">Learn More</span>
                 </Link>
               </ImgWrapper>
             </div>

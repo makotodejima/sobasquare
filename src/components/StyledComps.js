@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 // in Expanded Detail
 export const ExpandedListContainer = styled.div`
-  box-shadow: 0px 0px 45px -25px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   a {
     color: black;
     transition: color 0.4s;
@@ -25,13 +25,13 @@ export const SbsqPick = styled.div`
 
 export const ImgWrapper = styled.div`
   position: relative;
-  ::after {
+  span {
     position: absolute;
     opacity: 0;
     transition: all 0.4s;
     font-size: 1.2rem;
     color: white;
-    content: "Learn More";
+    text-shadow: 0px 0px 8px #000000;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -41,7 +41,7 @@ export const ImgWrapper = styled.div`
   }
 
   &.on {
-    ::after {
+    span {
       opacity: 1;
     }
     img {
@@ -86,6 +86,7 @@ export const DetailContainer = styled.div`
   & > div {
     opacity: 0;
     animation: ${fadein} 0.3s ease-in forwards;
+    margin-bottom: 1.5rem;
   }
 
   div:nth-child(2) {
@@ -112,12 +113,16 @@ export const DetailContainer = styled.div`
   div:nth-child(9) {
     animation-delay: 0.7s;
   }
+
+  .address {
+    margin-bottom: 0;
+  }
 `;
 
 export const DetailImgContainer = styled.div`
   /* border-radius: 50px;
   overflow: hidden; */
-  margin: 30px auto;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   div {
@@ -158,7 +163,6 @@ export const ExternalLinks = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 30px;
 `;
 
 export const GoogleMapsLink = styled.a`

@@ -10,7 +10,6 @@ import Img from "react-image";
 import {
   DetailContainer,
   DetailImgContainer,
-  FsqSection,
   ExternalLinks,
   GoogleMapsLink,
   FsqLink
@@ -19,7 +18,7 @@ import {
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
 
-const Detail = ({ match, index, likes }) => {
+const Detail = ({ match, likes }) => {
   const sobaya = sobayas[match.params.id];
 
   const img_1 = require(`../images/${sobaya.id}_1.jpg`);
@@ -66,14 +65,14 @@ const Detail = ({ match, index, likes }) => {
       <div className="neighborhood">
         <h3 style={{ textAlign: `right` }}>{sobaya.neighborhood}</h3>
       </div>
-      <div className="recommendation">
-        <p>
-          Sobasquare Pick: <strong>{sobaya.recommendation}</strong>
-        </p>
-      </div>
       <div className="review">
         <p>
           雰囲気も昔ながらの蕎麦屋かんがあってとてもいい。麺は硬めでとてもおいしい。
+        </p>
+      </div>
+      <div className="recommendation">
+        <p style={{ fontFamily: `Ubuntu` }}>
+          SOBASQUARE Pick: <strong>{sobaya.recommendation}</strong>
         </p>
       </div>
       <div className="url">
