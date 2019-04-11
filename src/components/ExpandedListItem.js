@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ExpandedListContainer, ExpandedListImg } from "./StyledComps";
+import {
+  ExpandedListContainer,
+  Names,
+  ImgWrapper,
+  ExpandedListImg,
+  SbsqPick
+} from "./StyledComps";
 import { Flipped } from "react-flip-toolkit";
 
-export default function ExpandedListItem({ sobaya, match, index }) {
+export default ({ sobaya, match, index }) => {
   const img = require(`../images/${sobaya.id}.jpg`);
+
+  const [mouseonLink, setMouseonLink] = useState(false);
+
   return (
     <Flipped
       flipId={`listItem-${index}`}
@@ -17,33 +26,40 @@ export default function ExpandedListItem({ sobaya, match, index }) {
         <Flipped inverseFlipId={`listItem-${index}`}>
           <div>
             <Flipped flipId={`name-${index}`} stagger="list">
-              <div>
-                <Link to={`${match.path}${sobaya.id}`} className="en">
+              <Names>
+                <Link
+                  to={`${match.path}${sobaya.id}`}
+                  className={`en preventShrink ${mouseonLink ? "on" : ""}`}
+                  onMouseEnter={() => setMouseonLink(true)}
+                  onMouseLeave={() => setMouseonLink(false)}
+                >
                   {sobaya.name.en}
                 </Link>
                 <p className="jp">{sobaya.name.jp}</p>
-              </div>
+              </Names>
             </Flipped>
             <div className="desc">
               <div style={{ textAlign: `right`, fontSize: `1rem` }}>
                 {sobaya.neighborhood}
               </div>
-              <div
-                style={{
-                  fontFamily: `Ubuntu`,
-                  fontSize: `1rem`,
-                  margin: `10px 0`
-                }}
+              <SbsqPick>Sobasquare Pick: {sobaya.recommendation}</SbsqPick>
+              <ImgWrapper
+                onMouseEnter={() => setMouseonLink(true)}
+                onMouseLeave={() => setMouseonLink(false)}
+                className={`${mouseonLink ? "on" : null}`}
               >
-                Sobasquare Pick: {sobaya.recommendation}
-              </div>
-              <div>
-                <ExpandedListImg src={img} alt={sobaya.id} />
-              </div>
+                <Link to={`${match.path}${sobaya.id}`}>
+                  <ExpandedListImg
+                    className="preventShrink"
+                    src={img}
+                    alt={sobaya.id}
+                  />
+                </Link>
+              </ImgWrapper>
             </div>
           </div>
         </Flipped>
       </ExpandedListContainer>
     </Flipped>
   );
-}
+};

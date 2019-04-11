@@ -14,7 +14,7 @@ class List extends React.Component {
   };
 
   handleClick = (e, index) => {
-    if (e.target.tagName === "A") return;
+    if (e.target.classList.contains("preventShrink")) return;
 
     this.setState({
       selected: this.state.selected === index ? null : index

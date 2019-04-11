@@ -11,7 +11,9 @@ import {
   DetailContainer,
   DetailImgContainer,
   FsqSection,
-  ExternalLinks
+  ExternalLinks,
+  GoogleMapsLink,
+  FsqLink
 } from "./StyledComps";
 
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
@@ -84,15 +86,14 @@ const Detail = ({ match, index, likes }) => {
         </div>
       </DetailImgContainer>
       <ExternalLinks>
-        <a
-          style={{ textAlign: `right` }}
+        <GoogleMapsLink
           href={sobaya.googlemaps}
           target="_blank"
           rel="noopener noreferrer"
         >
           Open in Google Maps
-        </a>
-        <FsqSection>
+        </GoogleMapsLink>
+        <FsqLink>
           <a
             href={`https://foursquare.com/v/${sobaya.fsq}`}
             target="_blank"
@@ -107,7 +108,7 @@ const Detail = ({ match, index, likes }) => {
               <FoursquareLogo />
             </div>
           </a>
-        </FsqSection>
+        </FsqLink>
       </ExternalLinks>
       <div>
         <p style={{ textAlign: `center`, fontSize: `1rem` }}>
