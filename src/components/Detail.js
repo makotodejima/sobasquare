@@ -58,8 +58,10 @@ const Detail = ({ match, index, likes }) => {
         <Times />
       </Link>
       <div className="name">
-        <h1>{sobaya.name.en}</h1>
-        <p className="jp">{sobaya.name.jp}</p>
+        <h1 style={{ display: `inline` }}>{sobaya.name.en}</h1>
+        <p style={{ display: `inline`, marginLeft: `1rem` }} className="jp">
+          {sobaya.name.jp}
+        </p>
       </div>
       <div className="neighborhood">
         <h3 style={{ textAlign: `right` }}>{sobaya.neighborhood}</h3>
@@ -110,7 +112,7 @@ const Detail = ({ match, index, likes }) => {
           </a>
         </FsqLink>
       </ExternalLinks>
-      <div>
+      <div className="address">
         <p style={{ textAlign: `center`, fontSize: `1rem` }}>
           {sobaya.address}
         </p>

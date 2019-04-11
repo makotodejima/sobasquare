@@ -1,10 +1,8 @@
 import styled, { keyframes } from "styled-components";
 
 // in Expanded Detail
-
 export const ExpandedListContainer = styled.div`
   box-shadow: 0px 0px 45px -25px rgba(0, 0, 0, 0.75);
-
   a {
     color: black;
     transition: color 0.4s;
@@ -59,11 +57,9 @@ export const ExpandedListImg = styled.img`
 `;
 
 // in Detail
-
 export const fadein = keyframes`
   from {
-    opacity: 0;   
-    
+    opacity: 0;
   }
   to   {
     opacity: 1; 
@@ -84,7 +80,7 @@ export const DetailContainer = styled.div`
   border-radius: 8px;
   box-shadow: 0px 0px 45px -30px rgba(0, 0, 0, 0.75);
   padding: 2rem 2rem;
-  z-index: 10;
+  z-index: 1;
   animation: ${fadein} 0.3s ease-in;
 
   & > div {
@@ -133,7 +129,7 @@ export const DetailImgContainer = styled.div`
       width: 100%;
       height: 100%;
       object-fit: contain;
-      /* filter: grayscale(30%); */
+      filter: contrast(105%);
     }
   }
 `;
@@ -145,11 +141,9 @@ export const FsqLink = styled.div`
   a {
     text-decoration: none;
     color: #d76179;
-    font-family: "Helvetica";
   }
   /* border-radius: 5px; */
   /* color: white; */
-
   .logo {
     margin: 0 auto;
     width: 200px;
@@ -160,6 +154,7 @@ export const FsqLink = styled.div`
 `;
 
 export const ExternalLinks = styled.div`
+  font-family: "Ubuntu-Bold";
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -168,5 +163,4 @@ export const ExternalLinks = styled.div`
 
 export const GoogleMapsLink = styled.a`
   color: #4285f4;
-  text-align: right;
 `;

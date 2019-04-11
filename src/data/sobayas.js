@@ -50,7 +50,7 @@ const sobayas = {
   muromachi_sunaba: {
     id: "muromachi_sunaba",
     name: {
-      jp: "室町砂場 赤坂店",
+      jp: "室町砂場",
       en: "Muromachi Sunaba"
     },
     neighborhood: "Akasaka",
@@ -110,7 +110,7 @@ const sobayas = {
   kaoriya: {
     id: "kaoriya",
     name: {
-      jp: "板蕎麦 香り家",
+      jp: "香り家",
       en: "Kaoriya"
     },
     neighborhood: "Ebisu",
