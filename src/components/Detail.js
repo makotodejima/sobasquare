@@ -11,6 +11,8 @@ import Img from "react-image";
 import {
   DetailContainer,
   DetailImgContainer,
+  Review,
+  SbsqPick,
   ExternalLinks,
   GoogleMapsLink,
   FsqLink
@@ -66,19 +68,23 @@ const Detail = ({ match, likes }) => {
       <div className="neighborhood">
         <h3 style={{ textAlign: `right` }}>{sobaya.neighborhood}</h3>
       </div>
-      <div className="review">
+      <Review>
         <p>
           雰囲気も昔ながらの蕎麦屋かんがあってとてもいい。麺は硬めでとてもおいしい。
         </p>
-      </div>
-      <div className="recommendation">
-        <p style={{ fontFamily: `Ubuntu` }}>
+      </Review>
+      <SbsqPick>
+        <p>
           SOBASQUARE Pick: <strong>{sobaya.recommendation}</strong>
         </p>
-      </div>
-      <div className="url">
-        <p>www.sobaysobayasobaya.com</p>
-      </div>
+      </SbsqPick>
+
+      {sobaya.url && (
+        <div className="url">
+          <p>{sobaya.url}</p>
+        </div>
+      )}
+
       <DetailImgContainer>
         <div>
           <Img src={img_1} alt={sobaya.id} loader={`Wait`} />
@@ -94,7 +100,7 @@ const Detail = ({ match, likes }) => {
           rel="noopener noreferrer"
         >
           <GoogleMapsIcon />
-          Open in Google Maps
+          Google Maps
         </GoogleMapsLink>
         <FsqLink>
           <a

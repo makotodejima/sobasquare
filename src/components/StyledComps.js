@@ -1,5 +1,13 @@
 import styled, { keyframes } from "styled-components";
 
+// Shared
+
+export const SbsqPick = styled.div`
+  font-family: "Ubuntu";
+  font-size: 1rem;
+  margin: 10px 0;
+`;
+
 // in Expanded Detail
 export const ExpandedListContainer = styled.div`
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
@@ -15,12 +23,6 @@ export const Names = styled.div`
       color: #c1272d;
     }
   }
-`;
-
-export const SbsqPick = styled.div`
-  font-family: "Ubuntu";
-  font-size: 1rem;
-  margin: 10px 0;
 `;
 
 export const ImgWrapper = styled.div`
@@ -119,6 +121,10 @@ export const DetailContainer = styled.div`
   }
 `;
 
+export const Review = styled.div`
+  font-size: 1rem;
+`;
+
 export const DetailImgContainer = styled.div`
   /* border-radius: 50px;
   overflow: hidden; */
@@ -140,7 +146,7 @@ export const DetailImgContainer = styled.div`
 `;
 
 export const FsqLink = styled.div`
-  padding: 5px 0;
+  padding: 2px 0;
   text-align: center;
   width: 40%;
   a {
@@ -151,7 +157,8 @@ export const FsqLink = styled.div`
   /* color: white; */
   .logo {
     margin: 0 auto;
-    width: 200px;
+    width: 120px;
+    font-size: 1rem;
   }
   .powered-by-foursquare {
     fill: #d76179;
@@ -166,6 +173,6 @@ export const ExternalLinks = styled.div`
 `;
 
 export const GoogleMapsLink = styled.a`
+  display: flex;
   color: #4285f4;
-  display: inline;
 `;

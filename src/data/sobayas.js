@@ -9,7 +9,8 @@ const sobayas = {
     address: "1 Chome-10-6, Toranomon, Minato, Tokyo 105-0001",
     googlemaps: "https://goo.gl/maps/vA5QGn71YHH2",
     fsq: "4bc3f589f8219c7427deb610",
-    recommendation: "せいろ"
+    recommendation: "せいろ",
+    url: "www.test.jp"
   },
   matsunaga: {
     id: "matsunaga",

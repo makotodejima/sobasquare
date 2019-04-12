@@ -17,5 +17,5 @@ export default () => (
 );
 
 const Wrapper = styled.div`
-  width: 20px;
+  width: 01rem;
 `;
