@@ -167,4 +167,5 @@ export const ExternalLinks = styled.div`
 
 export const GoogleMapsLink = styled.a`
   color: #4285f4;
+  display: inline;
 `;
