@@ -17,5 +17,6 @@ export default () => (
 );
 
 const Wrapper = styled.div`
-  width: 01rem;
+  width: 1rem;
+  margin-right: 10px;
 `;

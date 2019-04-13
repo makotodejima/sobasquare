@@ -111,7 +111,10 @@ const Detail = ({ match, likes }) => {
             {likes[sobaya.id] === undefined ? (
               <p>Loading</p>
             ) : (
-              <p>{likes[sobaya.id]}</p>
+              <p>
+                {likes[sobaya.id]}
+                <span> on Foursquare</span>
+              </p>
             )}
             <div className="logo">
               <FoursquareLogo />

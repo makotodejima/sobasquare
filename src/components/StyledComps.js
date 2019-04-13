@@ -7,6 +7,11 @@ to {
     stroke-dashoffset: 0;
   }
 `;
+export const line = keyframes`
+to {
+    transform: rotate(0);
+  }
+`;
 
 export const SbsqPick = styled.div`
   font-family: "Ubuntu";
@@ -28,11 +33,14 @@ export const ExpandedListContainer = styled.div`
     transform: translateX(50px);
     width: 2rem;
     cursor: pointer;
-    #line-1,
+    #line-1 {
+      transform: rotate(-22.5deg);
+      animation: ${line} 0.4s forwards;
+    }
     #line-2 {
-      stroke-dasharray: 105.36px;
-      stroke-dashoffset: 105.36px;
-      animation: ${dash} 0.4s ease-in forwards;
+      transform: rotate(22.5deg);
+      animation: ${line} 0.4s forwards;
+      transform-origin: top right;
     }
   }
 `;
@@ -166,15 +174,14 @@ export const DetailImgContainer = styled.div`
 `;
 
 export const FsqLink = styled.div`
+  font-size: 1.3rem;
   padding: 2px 0;
   text-align: center;
   width: 40%;
   a {
-    text-decoration: none;
+    /* text-decoration: none; */
     color: #d76179;
   }
-  /* border-radius: 5px; */
-  /* color: white; */
   .logo {
     margin: 0 auto;
     width: 120px;
