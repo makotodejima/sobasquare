@@ -2,6 +2,12 @@ import styled, { keyframes } from "styled-components";
 
 // Shared
 
+export const dash = keyframes`
+to {
+    stroke-dashoffset: 0;
+  }
+`;
+
 export const SbsqPick = styled.div`
   font-family: "Ubuntu";
   font-size: 1rem;
@@ -14,6 +20,20 @@ export const ExpandedListContainer = styled.div`
   a {
     color: black;
     transition: color 0.4s;
+  }
+  #close {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    transform: translateX(50px);
+    width: 2rem;
+    cursor: pointer;
+    #line-1,
+    #line-2 {
+      stroke-dasharray: 105.36px;
+      stroke-dashoffset: 105.36px;
+      animation: ${dash} 0.4s ease-in forwards;
+    }
   }
 `;
 
@@ -80,7 +100,7 @@ export const DetailContainer = styled.div`
   transform: translate(-50%, -50%);
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0px 0px 45px -30px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.07);
   padding: 2rem 2rem;
   z-index: 1;
   animation: ${fadein} 0.3s ease-in;
