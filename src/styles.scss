@@ -81,3 +81,18 @@
     opacity: 1;
   }
 }
+
+#collapse {
+  position: absolute;
+  top: 0.8rem;
+  right: 0;
+  transform: translateX(3.6rem);
+  width: 2.5rem;
+  cursor: pointer;
+  // animation: fadeIn 0.4s ease-out;
+  .collapse {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+  }
+}

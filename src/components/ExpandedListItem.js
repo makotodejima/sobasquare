@@ -7,6 +7,7 @@ import {
   ExpandedListImg,
   SbsqPick
 } from "./StyledComps";
+import Collapse from "./collapse";
 import { Flipped } from "react-flip-toolkit";
 
 export default ({ sobaya, match, index }) => {
@@ -23,6 +24,7 @@ export default ({ sobaya, match, index }) => {
       }}
     >
       <ExpandedListContainer className="expanded list">
+        <Collapse />
         <Flipped inverseFlipId={`listItem-${index}`}>
           <div>
             <Flipped flipId={`name-${index}`} stagger="list">
