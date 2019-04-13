@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import sobayas from "../data/sobayas.js";
 import FoursquareLogo from "./FoursquareLogo.js";
 import GoogleMapsIcon from "./GoogleMapsIcon";
-import Times from "./Times";
+import { ReactComponent as Close } from "../images/close.svg";
 import { store } from "../index";
 import { connect } from "react-redux";
 import Img from "react-image";
@@ -57,7 +57,7 @@ const Detail = ({ match, likes }) => {
   return (
     <DetailContainer>
       <Link to="/">
-        <Times />
+        <Close />
       </Link>
       <div className="name">
         <h1 style={{ display: `inline` }}>{sobaya.name.en}</h1>

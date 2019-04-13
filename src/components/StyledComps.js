@@ -35,11 +35,11 @@ export const ExpandedListContainer = styled.div`
     cursor: pointer;
     #line-1 {
       transform: rotate(-22.5deg);
-      animation: ${line} 0.4s forwards;
+      animation: ${line} 0.4s ease-in forwards;
     }
     #line-2 {
       transform: rotate(22.5deg);
-      animation: ${line} 0.4s forwards;
+      animation: ${line} 0.4s ease-in forwards;
       transform-origin: top right;
     }
   }
@@ -112,6 +112,22 @@ export const DetailContainer = styled.div`
   padding: 2rem 2rem;
   z-index: 1;
   animation: ${fadein} 0.3s ease-in;
+
+  #close {
+    position: absolute;
+    right: 2rem;
+    width: 2.2rem;
+    z-index: 1;
+    #line-1 {
+      transform: rotate(-22.5deg);
+      animation: ${line} 0.5s ease-in forwards;
+    }
+    #line-2 {
+      transform: rotate(22.5deg);
+      animation: ${line} 0.5s ease-in forwards;
+      transform-origin: top right;
+    }
+  }
 
   & > div {
     opacity: 0;
