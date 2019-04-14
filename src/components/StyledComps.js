@@ -81,6 +81,12 @@ export const Names = styled.div`
   }
 `;
 
+export const Description = styled.div`
+  div {
+    opacity: 0;
+  }
+`;
+
 export const ImgWrapper = styled.div`
   position: relative;
   span {

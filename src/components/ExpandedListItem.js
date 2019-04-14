@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {
   ExpandedListWrapper,
   Names,
+  Description,
   ImgWrapper,
   ExpandedListImg,
   SbsqPick
@@ -40,7 +41,7 @@ export default ({ sobaya, match, index }) => {
                 <p className="jp">{sobaya.name.jp}</p>
               </Names>
             </Flipped>
-            <div className="desc">
+            <Description className="desc">
               <div style={{ textAlign: `right`, fontSize: `1rem` }}>
                 {sobaya.neighborhood}
               </div>
@@ -59,7 +60,7 @@ export default ({ sobaya, match, index }) => {
                   <span className="preventShrink">Learn More</span>
                 </Link>
               </ImgWrapper>
-            </div>
+            </Description>
           </div>
         </Flipped>
       </ExpandedListWrapper>
