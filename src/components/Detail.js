@@ -75,7 +75,7 @@ const Detail = ({ match, likes }) => {
       </Review>
       <SbsqPick>
         <p>
-          SOBASQUARE Pick: <strong>{sobaya.recommendation}</strong>
+          SOBASQUARE Pick: <strong>{sobaya.pick.en}</strong>
         </p>
       </SbsqPick>
 

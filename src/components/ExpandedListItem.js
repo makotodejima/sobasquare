@@ -44,7 +44,7 @@ export default ({ sobaya, match, index }) => {
               <div style={{ textAlign: `right`, fontSize: `1rem` }}>
                 {sobaya.neighborhood}
               </div>
-              <SbsqPick>Sobasquare Pick: {sobaya.recommendation}</SbsqPick>
+              <SbsqPick>Sobasquare Pick: {sobaya.pick.en}</SbsqPick>
               <ImgWrapper
                 onMouseEnter={() => setMouseonLink(true)}
                 onMouseLeave={() => setMouseonLink(false)}
