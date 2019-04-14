@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ExpandedListContainer,
+  ExpandedListWrapper,
   Names,
   ImgWrapper,
   ExpandedListImg,
@@ -23,7 +23,7 @@ export default ({ sobaya, match, index }) => {
         el.classList.add("fade-in");
       }}
     >
-      <ExpandedListContainer className="expanded list">
+      <ExpandedListWrapper className="expanded list">
         <Close />
         <Flipped inverseFlipId={`listItem-${index}`}>
           <div>
@@ -62,7 +62,7 @@ export default ({ sobaya, match, index }) => {
             </div>
           </div>
         </Flipped>
-      </ExpandedListContainer>
+      </ExpandedListWrapper>
     </Flipped>
   );
 };

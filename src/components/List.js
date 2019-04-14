@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Flipper } from "react-flip-toolkit";
-
+import { ListContrainer, OuterItemWrapper } from "./StyledComps";
 import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
 import Detail from "./Detail";
@@ -41,11 +41,9 @@ class List extends React.Component {
             path="/:id"
             render={props => <Detail {...props} index={selected} />}
           />
-
-          <div className="list-container">
+          <ListContrainer>
             {Object.keys(sobayas).map((sobayaId, index) => (
-              <div
-                className="item-wrapper"
+              <OuterItemWrapper
                 key={index}
                 onClick={e => this.handleClick(e, index)}
               >
@@ -72,9 +70,9 @@ class List extends React.Component {
                     )}
                   />
                 )}
-              </div>
+              </OuterItemWrapper>
             ))}
-          </div>
+          </ListContrainer>
         </Flipper>
       </div>
     );

@@ -19,31 +19,6 @@
   background: transparent;
 }
 
-.list-container {
-  overflow-y: scroll;
-  height: 70vh;
-  z-index: -1;
-  width: 100%;
-}
-
-.item-wrapper {
-  margin: 2rem auto;
-  width: 300px;
-}
-
-.list {
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.07);
-  transition: box-shadow 0.4s;
-  &.normal {
-    cursor: pointer;
-    &:hover {
-      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.12);
-    }
-  }
-}
-
 .jp {
   font-size: 1rem;
 }

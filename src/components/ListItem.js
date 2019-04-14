@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Flipper, Flipped } from "react-flip-toolkit";
 import sr from "../ScrollReveal";
+import { NormalListWrapper } from "./StyledComps";
 
 const shouldFlip = index => (prevDecisionData, currentDecisionData) =>
   index === prevDecisionData || index === currentDecisionData;
@@ -20,7 +21,7 @@ export default function ListItem({ index, sobaya }) {
 
   return (
     <Flipped flipId={`listItem-${index}`} stagger="list">
-      <div className="normal list">
+      <NormalListWrapper>
         <Flipped inverseFlipId={`listItem-${index}`}>
           <div>
             <Flipped
@@ -38,7 +39,7 @@ export default function ListItem({ index, sobaya }) {
             </Flipped>
           </div>
         </Flipped>
-      </div>
+      </NormalListWrapper>
     </Flipped>
   );
 }

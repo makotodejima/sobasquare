@@ -1,5 +1,17 @@
 import styled, { keyframes } from "styled-components";
 
+export const ListContrainer = styled.div`
+  overflow-y: scroll;
+  height: 70vh;
+  z-index: -1;
+  width: 100%;
+`;
+
+export const OuterItemWrapper = styled.div`
+  margin: 2rem auto;
+  width: 300px;
+`;
+
 // Shared
 
 export const dash = keyframes`
@@ -19,8 +31,24 @@ export const SbsqPick = styled.div`
   margin: 10px 0;
 `;
 
-// in Expanded Detail
-export const ExpandedListContainer = styled.div`
+// Normal List
+
+export const NormalListWrapper = styled.div`
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.4s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.12);
+  }
+`;
+
+// in Expanded List
+export const ExpandedListWrapper = styled.div`
+  padding: 1rem;
+  border-radius: 10px;
+  transition: box-shadow 0.4s;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   a {
     color: black;
