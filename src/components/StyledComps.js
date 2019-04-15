@@ -253,4 +253,8 @@ export const ExternalLinks = styled.div`
 export const GoogleMapsLink = styled.a`
   display: flex;
   color: #4285f4;
+  #googlemaps_icon {
+    transform: translateY(5px);
+    margin-right: 5px;
+  }
 `;

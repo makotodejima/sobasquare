@@ -52,6 +52,12 @@ export default {
     pick: {
       jp: "天おろし",
       en: "Ten Oroshi"
+    },
+    review: {
+      en:
+        "One of the most easy-going soba place on Sobasquare. There is a TV in the corner on which you can enjoy baseball game, I guess. The atmosphere almost makes you to want to order too much. Variety of side menus such as 'Potato salad'. Mita's 'salary-man' vibes.",
+      jp:
+        "Sobasquareの中でももっとも easy-going なお蕎麦屋さんのひとつ。1階にはTVあり、野球の中継が楽しめる。なんだか、「固くならなくていいんだよ」と語りかけられているような雰囲気で、目に飛び込んでくる「ポテトサラダ」などそば意外のものも注文したくなる。天おろしのつめたいやつを食べて、おいしい。三田のサラリーマン率が高い。"
     }
   },
   tamawarai: {

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import sobayas from "../data/sobayas.js";
 import FoursquareLogo from "./FoursquareLogo.js";
 import GoogleMapsIcon from "./GoogleMapsIcon";
+import { ReactComponent as Gmaps } from "../images/google-maps.svg";
 import { ReactComponent as Close } from "../images/close.svg";
 import { store } from "../index";
 import { connect } from "react-redux";
@@ -99,7 +100,7 @@ const Detail = ({ match, likes }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <GoogleMapsIcon />
+          <Gmaps />
           Google Maps
         </GoogleMapsLink>
         <FsqLink>
