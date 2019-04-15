@@ -46,6 +46,7 @@ export const NormalListWrapper = styled.div`
 
 // in Expanded List
 export const ExpandedListWrapper = styled.div`
+  position: relative;
   padding: 1rem;
   border-radius: 10px;
   transition: box-shadow 0.4s;
@@ -67,8 +68,8 @@ export const ExpandedListWrapper = styled.div`
     }
     #line-2 {
       transform: rotate(22.5deg);
-      animation: ${line} 0.4s ease-in forwards;
       transform-origin: top right;
+      animation: ${line} 0.4s ease-in forwards;
     }
   }
 `;

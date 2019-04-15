@@ -10,7 +10,13 @@ export default {
     googlemaps: "https://goo.gl/maps/vA5QGn71YHH2",
     fsq: "4bc3f589f8219c7427deb610",
     pick: { jp: "せいろ", en: "Seiro" },
-    url: "www.test.jp"
+    url: "www.test.jp",
+    review: {
+      en:
+        'Carrying the name of "Sunaba", meaning "sandbox", this historic soba place has its origin in Osaka. With over a hundred years of history, the building is registered as a cultural property by the government. If you are not a fan of soba, you should see this beautiful building and feel the authentic soba-place vibes inside. Oh please.',
+      jp:
+        "とにかく建物自体がよい。夕方くらいに交差点の反対側から見るととても美しい2階建ての建物にうっとりする。中もとてもよい雰囲気で、なんども通いたくなる。おそばもおいしいのだが、カレーうどんもおいしい。"
+    }
   },
   matsunaga: {
     id: "matsunaga",
@@ -25,6 +31,12 @@ export default {
     pick: {
       jp: "ざるそば",
       en: "Zaru Soba"
+    },
+    review: {
+      en:
+        "Small and very neat place between Sendagaya and Omotesando. You may sense a bit of hipster vibes when you look around. Noodles are cooked perfectly, relatively thin and a little firm, and I like it. Nice soba.",
+      jp:
+        "おしゃれな町並みのなかにあるだけあって、おしゃれな人率がたかい。すこし固めに茹でられている印象で個人的には好き。雰囲気はきれいでありながらも、硬すぎない。もりそばとざるそばって何がちがうんだっけ、という疑問に悩まされる。カウンター細めの麺。"
     }
   },
   asahiya: {

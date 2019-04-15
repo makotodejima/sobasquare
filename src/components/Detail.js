@@ -68,11 +68,11 @@ const Detail = ({ match, likes }) => {
       <div className="neighborhood">
         <h3 style={{ textAlign: `right` }}>{sobaya.neighborhood}</h3>
       </div>
-      <Review>
-        <p>
-          雰囲気も昔ながらの蕎麦屋かんがあってとてもいい。麺は硬めでとてもおいしい。
-        </p>
-      </Review>
+      {sobaya.review && (
+        <Review>
+          <p>{sobaya.review.en}</p>
+        </Review>
+      )}
       <SbsqPick>
         <p>
           SOBASQUARE Pick: <strong>{sobaya.pick.en}</strong>
