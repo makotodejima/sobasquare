@@ -13,7 +13,7 @@ export default {
     url: "www.test.jp",
     review: {
       en:
-        'Carrying the name of "Sunaba", meaning "sandbox", this historic soba place has its origin in Osaka. With over a hundred years of history, the building is registered as a cultural property by the government. If you are not a fan of soba, you should see this beautiful building and feel the authentic soba-place vibes inside. Oh please.',
+        'Carrying the name of "Sunaba", meaning "sandbox", this historic soba place has its origin in Osaka. With over a hundred years of history, the building is registered as a cultural property by the government. If you are not a fan of soba, you should see this beautiful building and feel the authentic soba-place vibes inside. Oh yes.',
       jp:
         "とにかく建物自体がよい。夕方くらいに交差点の反対側から見るととても美しい2階建ての建物にうっとりする。中もとてもよい雰囲気で、なんども通いたくなる。おそばもおいしいのだが、カレーうどんもおいしい。"
     }
@@ -175,9 +175,14 @@ export default {
     address: "Kanda Awaji-cho 2-10, Chiyoda, Tokyo 101-0063",
     googlemaps: "https://goo.gl/maps/isM2csp9maD2",
     fsq: "4b8a2256f964a520646132e3",
+    url: "http://www.yabusoba.net/",
     pick: {
       jp: "せいろ",
       en: "seiro"
+    },
+    review: {
+      en:
+        'A successor to "Yabu Soba", one of "The Big Three of Soba". This old-school place in Kanda, once suffered from a fire in 2013 after over a hundred years of its history, successfully made a comeback in 2014 and people are delighted. Some people still talk about "the good old days" before the fire, but who cares. Just have a nice soba.'
     }
   },
 
