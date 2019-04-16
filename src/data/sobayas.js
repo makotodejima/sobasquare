@@ -55,7 +55,7 @@ export default {
     },
     review: {
       en:
-        "One of the most easy-going soba place on Sobasquare. There is a TV in the corner on which you can enjoy baseball game, I guess. The atmosphere almost makes you to want to order too much. Variety of side menus such as 'Potato salad'. Mita's 'salary-man' vibes.",
+        'One of the most easy-going soba place on Sobasquare. There is a TV in the corner on which you can enjoy baseball game, I guess. The atmosphere almost makes you to want to order too much. Variety of side menus such as "Potato salad". Mita\'s "salary-man" vibes.',
       jp:
         "Sobasquareの中でももっとも easy-going なお蕎麦屋さんのひとつ。1階にはTVあり、野球の中継が楽しめる。なんだか、「固くならなくていいんだよ」と語りかけられているような雰囲気で、目に飛び込んでくる「ポテトサラダ」などそば意外のものも注文したくなる。天おろしのつめたいやつを食べて、おいしい。三田のサラリーマン率が高い。"
     }
@@ -177,12 +177,12 @@ export default {
     fsq: "4b8a2256f964a520646132e3",
     url: "http://www.yabusoba.net/",
     pick: {
-      jp: "せいろ",
-      en: "seiro"
+      jp: "せいろうそば、なめこそば",
+      en: "Seirou Soba, Nameko Soba"
     },
     review: {
       en:
-        'A successor to "Yabu Soba", one of "The Big Three of Soba". This old-school place in Kanda, once suffered from a fire in 2013 after over a hundred years of its history, successfully made a comeback in 2014 and people are delighted. Some people still talk about "the good old days" before the fire, but who cares. Just have a nice soba.'
+        'A successor to "Yabu Soba", one of "The Big Three of Soba". This old-school place in Kanda, once suffered from a fire in 2013 after over a hundred years of its history, successfully made a comeback in 2014 and people are delighted. Some people talk about "the good old days" before the fire, but who cares. Just have a nice soba.'
     }
   },
 

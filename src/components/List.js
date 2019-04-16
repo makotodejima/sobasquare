@@ -41,9 +41,10 @@ class List extends React.Component {
             path="/:id"
             render={props => <Detail {...props} index={selected} />}
           />
-          <ListContrainer>
+          <ListContrainer className="list-container">
             {Object.keys(sobayas).map((sobayaId, index) => (
               <OuterItemWrapper
+                className="item-wrapper"
                 key={index}
                 onClick={e => this.handleClick(e, index)}
               >

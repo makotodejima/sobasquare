@@ -82,7 +82,9 @@ const Detail = ({ match, likes }) => {
 
       {sobaya.url && (
         <div className="url">
-          <p>{sobaya.url}</p>
+          <a href={sobaya.url} target="_blank" rel="noopener noreferrer">
+            <p>{sobaya.url}</p>
+          </a>
         </div>
       )}
 

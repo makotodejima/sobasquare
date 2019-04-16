@@ -195,6 +195,14 @@ export const DetailContainer = styled.div`
     animation-delay: 0.7s;
   }
 
+  .url {
+    font-family: "Ubuntu";
+    font-size: 1rem;
+    a {
+      color: blue;
+    }
+  }
+
   .address {
     margin-bottom: 0;
   }
@@ -202,6 +210,7 @@ export const DetailContainer = styled.div`
 
 export const Review = styled.div`
   font-size: 1rem;
+  line-height: 1.6;
 `;
 
 export const DetailImgContainer = styled.div`

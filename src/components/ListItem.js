@@ -10,10 +10,10 @@ export default function ListItem({ index, sobaya }) {
   useEffect(() => {
     const config = {
       container: document.querySelector(".list-container"),
-      duration: 900,
+      duration: 800,
       opacity: 0,
-      scale: 0.6,
-      easing: "ease",
+      scale: 0.4,
+      easing: "ease-out",
       reset: true
     };
     sr.reveal(".item-wrapper", config);
