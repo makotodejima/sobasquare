@@ -255,5 +255,25 @@ export default {
       jp: "三とろ",
       en: "Santoro"
     }
+  },
+  nioka: {
+    id: "nioka",
+    name: {
+      jp: "二丘",
+      en: "Nioka"
+    },
+    neighborhood: "Shirokane Takanawa",
+    address: "Takanawa 1-4-21 2F, Minato, Tokyo, Japan",
+    googlemaps: "https://goo.gl/maps/qszFVHEeE27dWHDp6",
+    fsq: "4c0dc430336220a1d64bcb77",
+    pick: {
+      jp: "もりそば",
+      en: "Mori Soba"
+    },
+    review: {
+      en:
+        "Nice and cozy soba place in Shirokane Takanawa, Noe Valley of Tokyo. Noodles have tender texture and are flavorful at the same time. There’s another entrance on the main street, not on the uphill on the back.",
+      jp: ""
+    }
   }
 };
