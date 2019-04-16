@@ -42,10 +42,17 @@ export default ({ sobaya, match, index }) => {
               </Names>
             </Flipped>
             <Description className="desc">
-              <div style={{ textAlign: `right`, fontSize: `1rem` }}>
+              <div
+                style={{
+                  textAlign: `right`,
+                  fontSize: `1rem`
+                }}
+              >
                 {sobaya.neighborhood}
               </div>
-              <SbsqPick>Sobasquare Pick: {sobaya.pick.en}</SbsqPick>
+              <SbsqPick>
+                Sobasquare Pick: <strong>{sobaya.pick.en}</strong>
+              </SbsqPick>
               <ImgWrapper
                 onMouseEnter={() => setMouseonLink(true)}
                 onMouseLeave={() => setMouseonLink(false)}

@@ -241,6 +241,7 @@ export const FsqLink = styled.div`
   a {
     /* text-decoration: none; */
     color: #d76179;
+    font-family: "Ubuntu";
   }
   .logo {
     margin: 0 auto;
@@ -253,7 +254,6 @@ export const FsqLink = styled.div`
 `;
 
 export const ExternalLinks = styled.div`
-  font-family: "Ubuntu-Bold";
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -262,6 +262,9 @@ export const ExternalLinks = styled.div`
 export const GoogleMapsLink = styled.a`
   display: flex;
   color: #4285f4;
+
+  font-family: "Ubuntu";
+
   #googlemaps_icon {
     transform: translateY(5px);
     margin-right: 5px;
