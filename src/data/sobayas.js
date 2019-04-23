@@ -199,6 +199,12 @@ export default {
     pick: {
       jp: "やまかけ",
       en: "Yamakake"
+    },
+    review: {
+      en:
+        'Another prestigious soba place in Kanda. Good-looking old building, nice staffs, and above all it has amazing atmosphere harmonized with their great dishes and service. It is, literally, lively but relaxing for some reason. I like "Yamakake" which is cold soba noodle with Japanese yam\'s soup.',
+      jp:
+        "雰囲気がとてもいい。人気も高く、ヴァイブスがかなりよい。なんだか、昔の蕎麦屋さんってこんな感じだったんだろうかというかんじ。店員さんは、「せわしない」という言葉がぴったりだ。気分もよくなるので、ついつい何かいつもと違うものを食べたくなる。私は「山かけ」が大好きだ。黄金に輝いた表面を見ると、うっとりしてしまう。冷たい麺をぜひすすりたい。"
     }
   },
   shirou: {

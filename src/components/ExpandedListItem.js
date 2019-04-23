@@ -13,7 +13,6 @@ import { Flipped } from "react-flip-toolkit";
 
 export default ({ sobaya, match, index }) => {
   const img = require(`../images/${sobaya.id}.jpg`);
-
   const [mouseonLink, setMouseonLink] = useState(false);
 
   return (
