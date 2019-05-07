@@ -11,7 +11,7 @@ function likes(state = {}, action) {
 
 export default combineReducers({ likes });
 
-// this is Middleware, logger
+// this is Logger Middleware, not a reducer
 const logger = store => next => action => {
   console.log("action: ", action);
   const result = next(action);

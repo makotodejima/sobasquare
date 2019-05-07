@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import sobayas from "../data/sobayas.js";
 import FoursquareLogo from "./FoursquareLogo.js";
-import GoogleMapsIcon from "./GoogleMapsIcon";
 import { ReactComponent as Gmaps } from "../images/google-maps.svg";
 import { ReactComponent as Close } from "../images/close.svg";
 import { store } from "../index";
@@ -41,7 +40,7 @@ const Detail = ({ match, likes }) => {
         .then(json => {
           /* response summery can be Japanese 
           when request made by the client 
-          whose primary lang is Japanese */
+          whose primary language is Japanese */
           const summary = json.response.likes.summary;
           store.dispatch({
             type: "SET_LIKE",

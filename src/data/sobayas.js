@@ -148,6 +148,11 @@ export default {
     pick: {
       jp: "せいろ",
       en: "Seiro"
+    },
+    review: {
+      en:
+        "Nice soba place close to Roppongi station. They once had a soba restaurant in New York city but it's now closed. You might feel modern vibes inside and of course soba and tasty dipping sauce are great. Seems like something with Uni (sea urchin) is a thing but I've never tried yet. Look forward to next visit.",
+      jp: ""
     }
   },
   kaoriya: {
