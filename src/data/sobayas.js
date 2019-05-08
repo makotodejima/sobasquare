@@ -1,5 +1,5 @@
-export default {
-  osakaya_sunaba: {
+export default [
+  {
     id: "osakaya_sunaba",
     name: {
       jp: "大阪屋 砂場",
@@ -18,7 +18,7 @@ export default {
         "とにかく建物自体がよい。夕方くらいに交差点の反対側から見るととても美しい2階建ての建物にうっとりする。中もとてもよい雰囲気で、なんども通いたくなる。おそばもおいしいのだが、カレーうどんもおいしい。"
     }
   },
-  matsunaga: {
+  {
     id: "matsunaga",
     name: {
       jp: "松永",
@@ -39,7 +39,7 @@ export default {
         "おしゃれな町並みのなかにあるだけあって、おしゃれな人率がたかい。すこし固めに茹でられている印象で個人的には好き。雰囲気はきれいでありながらも、硬すぎない。もりそばとざるそばって何がちがうんだっけ、という疑問に悩まされる。カウンター細めの麺。"
     }
   },
-  asahiya: {
+  {
     id: "asahiya",
     name: {
       jp: "朝日屋",
@@ -60,7 +60,7 @@ export default {
         "Sobasquareの中でももっとも easy-going なお蕎麦屋さんのひとつ。1階にはTVあり、野球の中継が楽しめる。なんだか、「固くならなくていいんだよ」と語りかけられているような雰囲気で、目に飛び込んでくる「ポテトサラダ」などそば意外のものも注文したくなる。天おろしのつめたいやつを食べて、おいしい。三田のサラリーマン率が高い。"
     }
   },
-  tamawarai: {
+  {
     id: "tamawarai",
     name: {
       jp: "玉笑",
@@ -75,7 +75,7 @@ export default {
       en: "Arabiki Seiro"
     }
   },
-  muromachi_sunaba: {
+  {
     id: "muromachi_sunaba",
     name: {
       jp: "室町砂場",
@@ -90,7 +90,7 @@ export default {
       en: "Seiro"
     }
   },
-  yusui: {
+  {
     id: "yusui",
     name: {
       jp: "湧水",
@@ -105,7 +105,7 @@ export default {
       en: "Yusui Soba"
     }
   },
-  nagasaka_sarashina_nunoya_tahee: {
+  {
     id: "nagasaka_sarashina_nunoya_tahee",
     name: {
       jp: "永坂更科 布屋太兵衛",
@@ -120,7 +120,7 @@ export default {
       en: "Nameko Soba"
     }
   },
-  kanzemizu: {
+  {
     id: "kanzemizu",
     name: {
       jp: "観世水",
@@ -135,7 +135,7 @@ export default {
       en: "Inaka Soba"
     }
   },
-  honmura_an: {
+  {
     id: "honmura_an",
     name: {
       jp: "本むら庵",
@@ -155,7 +155,7 @@ export default {
       jp: ""
     }
   },
-  kaoriya: {
+  {
     id: "kaoriya",
     name: {
       jp: "香り家",
@@ -170,7 +170,7 @@ export default {
       en: "Sobakiri"
     }
   },
-  kanda_yabusoba: {
+  {
     id: "kanda_yabusoba",
     name: {
       jp: "かんだやぶそば",
@@ -191,7 +191,7 @@ export default {
     }
   },
 
-  kanda_matsuya: {
+  {
     id: "kanda_matsuya",
     name: {
       jp: "かんだまつや",
@@ -212,7 +212,7 @@ export default {
         "雰囲気がとてもいい。人気も高く、ヴァイブスがかなりよい。なんだか、昔の蕎麦屋さんってこんな感じだったんだろうかというかんじ。店員さんは、「せわしない」という言葉がぴったりだ。気分もよくなるので、ついつい何かいつもと違うものを食べたくなる。私は「山かけ」が大好きだ。黄金に輝いた表面を見ると、うっとりしてしまう。冷たい麺をぜひすすりたい。"
     }
   },
-  shirou: {
+  {
     id: "shirou",
     name: {
       jp: "しろう",
@@ -227,7 +227,7 @@ export default {
       en: "Seiro"
     }
   },
-  toshian: {
+  {
     id: "toshian",
     name: {
       jp: "利庵",
@@ -242,7 +242,7 @@ export default {
       en: "Yuzukiri Soba"
     }
   },
-  shogetsu: {
+  {
     id: "shogetsu",
     name: {
       jp: "松月",
@@ -257,7 +257,7 @@ export default {
       en: "Shogetsu Seiro"
     }
   },
-  hoteiya: {
+  {
     id: "hoteiya",
     name: {
       jp: "布袋屋",
@@ -272,7 +272,7 @@ export default {
       en: "Santoro"
     }
   },
-  nioka: {
+  {
     id: "nioka",
     name: {
       jp: "二丘",
@@ -292,4 +292,4 @@ export default {
       jp: ""
     }
   }
-};
+];
