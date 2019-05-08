@@ -42,7 +42,7 @@ class List extends React.Component {
         <p
           onClick={() => {
             this.setState({
-              selected: null
+              selected: -1
             });
             store.dispatch({ type: "SORT_SOBAYAS" });
           }}
@@ -53,7 +53,7 @@ class List extends React.Component {
         <Flipper
           flipKey={selected}
           decisionData={selected}
-          spring="gentle"
+          spring="veryGentle"
           staggerConfig={{
             list: {
               speed: 1
