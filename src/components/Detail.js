@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import sobayas from "../data/sobayas.js";
 import FoursquareLogo from "./FoursquareLogo.js";
 import { ReactComponent as Gmaps } from "../images/google-maps.svg";
 import { ReactComponent as Close } from "../images/close.svg";
@@ -21,8 +20,8 @@ import {
 const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
 
-const Detail = ({ match, likes }) => {
-  const sobaya = sobayas[match.params.id];
+const Detail = ({ match, likes, sobayas }) => {
+  const sobaya = sobayas.find(sobaya => sobaya.id === match.params.id);
 
   const img_1 = require(`../images/${sobaya.id}_1.jpg`);
   const img_2 = require(`../images/${sobaya.id}_2.jpg`);
@@ -33,13 +32,13 @@ const Detail = ({ match, likes }) => {
       console.log("Now fetching Likes Count!!");
       fetch(
         `https://api.foursquare.com/v2/venues/${
-          sobayas[sobaya.id].fsq
+          sobaya.fsq
         }/likes?client_id=${client_id}&client_secret=${client_secret}&v=20190401`
       )
         .then(res => res.json())
         .then(json => {
-          /* response summery can be Japanese 
-          when request made by the client 
+          /* response summery can be Japanese
+          when request made by the client
           whose primary language is Japanese */
           const summary = json.response.likes.summary;
           store.dispatch({
@@ -59,6 +58,7 @@ const Detail = ({ match, likes }) => {
       <Link to="/">
         <Close />
       </Link>
+
       <div className="name">
         <h1 style={{ display: `inline` }}>{sobaya.name.en}</h1>
         <p style={{ display: `inline`, marginLeft: `1rem` }} className="jp">
@@ -135,6 +135,7 @@ const Detail = ({ match, likes }) => {
 
 const mapStateToProps = state => {
   return {
+    sobayas: state.sobayas,
     likes: state.likes
   };
 };

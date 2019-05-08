@@ -20,12 +20,12 @@ export default function ListItem({ index, sobaya }) {
   }, []);
 
   return (
-    <Flipped flipId={`listItem-${index}`} stagger="list">
+    <Flipped flipId={`listItem-${sobaya.id}`} stagger="list">
       <NormalListWrapper>
-        <Flipped inverseFlipId={`listItem-${index}`}>
+        <Flipped inverseFlipId={`listItem-${sobaya.id}`}>
           <div>
             <Flipped
-              flipId={`name-${index}`}
+              flipId={`name-${sobaya.id}`}
               shoudFlip={shouldFlip(index)}
               stagger="list"
             >

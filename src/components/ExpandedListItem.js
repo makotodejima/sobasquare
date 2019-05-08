@@ -11,13 +11,13 @@ import {
 import { ReactComponent as Close } from "../images/close.svg";
 import { Flipped } from "react-flip-toolkit";
 
-export default ({ sobaya, match, index }) => {
+const ExpandedListItem = ({ sobaya, index, match }) => {
   const img = require(`../images/${sobaya.id}.jpg`);
   const [mouseonLink, setMouseonLink] = useState(false);
 
   return (
     <Flipped
-      flipId={`listItem-${index}`}
+      flipId={`listItem-${sobaya.id}`}
       stagger="list"
       onStart={el => {
         el.classList.add("fade-in");
@@ -25,9 +25,9 @@ export default ({ sobaya, match, index }) => {
     >
       <ExpandedListWrapper className="expanded list">
         <Close />
-        <Flipped inverseFlipId={`listItem-${index}`}>
+        <Flipped inverseFlipId={`listItem-${sobaya.id}`}>
           <div>
-            <Flipped flipId={`name-${index}`} stagger="list">
+            <Flipped flipId={`name-${sobaya.id}`} stagger="list">
               <Names>
                 <Link
                   to={`${match.path}${sobaya.id}`}
@@ -73,3 +73,5 @@ export default ({ sobaya, match, index }) => {
     </Flipped>
   );
 };
+
+export default ExpandedListItem;

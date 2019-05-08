@@ -2,10 +2,12 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { Flipper } from "react-flip-toolkit";
 import { ListContrainer, OuterItemWrapper } from "./StyledComps";
+import { store } from "../index";
+import { connect } from "react-redux";
 import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
 import Detail from "./Detail";
-import sobayas from "../data/sobayas.js";
+import sobayas from "../data/sobayas.js"; // only use for loading initial sobaya data!!! For Sobaya data, use data on props.
 import Logo from "./Logo";
 
 class List extends React.Component {
@@ -21,12 +23,33 @@ class List extends React.Component {
     });
   };
 
+  componentDidMount() {
+    store.dispatch({
+      type: "SET_SOBAYAS",
+      sobayas: sobayas
+    });
+  }
+
   render() {
     const { selected } = this.state;
-
+    // if (this.props.sobayas.length <= 0) {
+    //   console.log("ITs 0 length");
+    //   return null;
+    // }
     return (
       <div>
         <Logo />
+        <p
+          onClick={() => {
+            this.setState({
+              selected: null
+            });
+            store.dispatch({ type: "SORT_SOBAYAS" });
+          }}
+        >
+          sort
+        </p>
+
         <Flipper
           flipKey={selected}
           decisionData={selected}
@@ -37,12 +60,9 @@ class List extends React.Component {
             }
           }}
         >
-          <Route
-            path="/:id"
-            render={props => <Detail {...props} index={selected} />}
-          />
+          <Route path="/:id" render={props => <Detail {...props} />} />
           <ListContrainer className="list-container">
-            {Object.keys(sobayas).map((sobayaId, index) => (
+            {this.props.sobayas.map((sobaya, index) => (
               <OuterItemWrapper
                 className="item-wrapper"
                 key={index}
@@ -54,7 +74,7 @@ class List extends React.Component {
                     render={props => (
                       <ExpandedListItem
                         {...props}
-                        sobaya={sobayas[sobayaId]}
+                        sobaya={sobaya}
                         index={index}
                       />
                     )}
@@ -63,11 +83,7 @@ class List extends React.Component {
                   <Route
                     path="/"
                     render={props => (
-                      <ListItem
-                        {...props}
-                        sobaya={sobayas[sobayaId]}
-                        index={index}
-                      />
+                      <ListItem {...props} sobaya={sobaya} index={index} />
                     )}
                   />
                 )}
@@ -80,4 +96,10 @@ class List extends React.Component {
   }
 }
 
-export default List;
+const mapStateToProps = state => {
+  return {
+    sobayas: state.sobayas
+  };
+};
+
+export default connect(mapStateToProps)(List);
