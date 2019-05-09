@@ -26,7 +26,7 @@ export default function ListItem({ index, sobaya }) {
           <div>
             <Flipped
               flipId={`name-${sobaya.id}`}
-              shoudFlip={shouldFlip(index)}
+              // shoudFlip={shouldFlip(index)}
               stagger="list"
             >
               <div>

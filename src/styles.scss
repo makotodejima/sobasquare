@@ -14,6 +14,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#logo {
+  display: block;
+  width: 100px;
+  margin: 3rem auto 0;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;

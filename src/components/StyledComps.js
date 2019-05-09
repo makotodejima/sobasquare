@@ -14,6 +14,11 @@ export const OuterItemWrapper = styled.div`
 
 // Shared
 
+// export const LogoWrap = styled.div`
+//   display: inline-block;
+//   margin: 2rem auto;
+// `;
+
 export const dash = keyframes`
 to {
     stroke-dashoffset: 0;

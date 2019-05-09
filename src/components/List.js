@@ -1,14 +1,14 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Flipper } from "react-flip-toolkit";
-import { ListContrainer, OuterItemWrapper } from "./StyledComps";
+import { ListContrainer, OuterItemWrapper, LogoWrap } from "./StyledComps";
 import { store } from "../index";
 import { connect } from "react-redux";
 import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
 import Detail from "./Detail";
 import sobayas from "../data/sobayas.js"; // only use for loading initial sobaya data!!! For Sobaya data, use data on props.
-import Logo from "./Logo";
+import logo from "../images/logo.svg";
 
 class List extends React.Component {
   state = {
@@ -38,7 +38,9 @@ class List extends React.Component {
     // }
     return (
       <div>
-        <Logo />
+        {/* <LogoWrap> */}
+        <img src={logo} id="logo" />
+        {/* </LogoWrap> */}
         <p
           onClick={() => {
             this.setState({
@@ -53,10 +55,10 @@ class List extends React.Component {
         <Flipper
           flipKey={selected}
           decisionData={selected}
-          spring="veryGentle"
+          // spring="noWobble"
           staggerConfig={{
             list: {
-              speed: 1
+              speed: 0.1
             }
           }}
         >
