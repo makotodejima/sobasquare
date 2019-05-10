@@ -5,15 +5,28 @@ function sobayas(state = [], action) {
     case "SET_SOBAYAS":
       return [...action.sobayas];
     case "SORT_SOBAYAS":
-      return [...state].sort((a, b) => {
-        if (a.id < b.id) {
-          return -1;
-        } else if (a.id > b.id) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
+      if (action.order == "asc") {
+        return [...state].sort((a, b) => {
+          if (a.id < b.id) {
+            return -1;
+          } else if (a.id > b.id) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+      } else if (action.order == "desc") {
+        return [...state].sort((a, b) => {
+          if (a.id > b.id) {
+            return -1;
+          } else if (a.id < b.id) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+      }
+
     default:
       return state;
   }

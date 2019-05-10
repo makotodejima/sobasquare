@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
 import Detail from "./Detail";
-import sobayas from "../data/sobayas.js"; // only use for loading initial sobaya data!!! For Sobaya data, use data on props.
+import sobayas from "../data/sobayas.js"; // only use for loading initial sobaya data!!! For Sobaya data, use data on state.
 import logo from "../images/logo.svg";
 
 class List extends React.Component {
@@ -46,7 +46,7 @@ class List extends React.Component {
             this.setState({
               selected: -1
             });
-            store.dispatch({ type: "SORT_SOBAYAS" });
+            store.dispatch({ type: "SORT_SOBAYAS", order: "desc" });
           }}
         >
           sort
