@@ -30,7 +30,7 @@ const ExpandedListItem = ({ sobaya, index, match }) => {
             <Flipped flipId={`name-${sobaya.id}`} stagger="list">
               <Names>
                 <Link
-                  to={`${match.path}${sobaya.id}`}
+                  to={`/sobaya${match.path}${sobaya.id}`}
                   className={`en preventShrink ${mouseonLink ? "on" : ""}`}
                   onMouseEnter={() => setMouseonLink(true)}
                   onMouseLeave={() => setMouseonLink(false)}

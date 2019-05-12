@@ -5,7 +5,7 @@ function sobayas(state = [], action) {
     case "SET_SOBAYAS":
       return [...action.sobayas];
     case "SORT_SOBAYAS":
-      if (action.order == "asc") {
+      if (action.order === "asc") {
         return [...state].sort((a, b) => {
           if (a.id < b.id) {
             return -1;
@@ -15,7 +15,7 @@ function sobayas(state = [], action) {
             return 0;
           }
         });
-      } else if (action.order == "desc") {
+      } else if (action.order === "desc") {
         return [...state].sort((a, b) => {
           if (a.id > b.id) {
             return -1;
@@ -26,7 +26,7 @@ function sobayas(state = [], action) {
           }
         });
       }
-
+      break;
     default:
       return state;
   }

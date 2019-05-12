@@ -1,7 +1,7 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import { Flipper } from "react-flip-toolkit";
-import { ListContrainer, OuterItemWrapper, LogoWrap } from "./StyledComps";
+import { ListContrainer, OuterItemWrapper } from "./StyledComps";
 import { store } from "../index";
 import { connect } from "react-redux";
 import ListItem from "./ListItem";
@@ -9,7 +9,7 @@ import ExpandedListItem from "./ExpandedListItem";
 import Detail from "./Detail";
 import sobayas from "../data/sobayas.js"; // only use for loading initial sobaya data!!! For Sobaya data, use data on state.
 import logo from "../images/logo.svg";
-import GoogleMap from "./GoogleMap";
+import GoogleMaps from "./GoogleMaps";
 
 class List extends React.Component {
   state = {
@@ -33,15 +33,11 @@ class List extends React.Component {
 
   render() {
     const { selected } = this.state;
-    // if (this.props.sobayas.length <= 0) {
-    //   console.log("ITs 0 length");
-    //   return null;
-    // }
     return (
       <div>
-        {/* <LogoWrap> */}
-        <img src={logo} id="logo" />
-        {/* </LogoWrap> */}
+        <Link to={`/`}>
+          <img src={logo} alt="Sobasquare logo" id="logo" />
+        </Link>
         <p
           onClick={() => {
             this.setState({
@@ -50,7 +46,10 @@ class List extends React.Component {
             store.dispatch({ type: "SORT_SOBAYAS", order: "desc" });
           }}
         >
-          sort
+          Sort Button
+        </p>
+        <p>
+          <Link to={`/map/`}>SHOW MAP</Link>
         </p>
 
         <Flipper
@@ -63,7 +62,8 @@ class List extends React.Component {
             }
           }}
         >
-          <Route path="/:id" render={props => <Detail {...props} />} />
+          <Route path="/sobaya/:id" render={props => <Detail {...props} />} />
+          <Route path="/map/" render={props => <GoogleMaps {...props} />} />
           <ListContrainer className="list-container">
             {this.props.sobayas.map((sobaya, index) => (
               <OuterItemWrapper
@@ -94,7 +94,7 @@ class List extends React.Component {
             ))}
           </ListContrainer>
         </Flipper>
-        <GoogleMap />
+        {/* <GoogleMaps /> */}
       </div>
     );
   }
