@@ -9,6 +9,7 @@ import ExpandedListItem from "./ExpandedListItem";
 import Detail from "./Detail";
 import sobayas from "../data/sobayas.js"; // only use for loading initial sobaya data!!! For Sobaya data, use data on state.
 import logo from "../images/logo.svg";
+import GoogleMap from "./GoogleMap";
 
 class List extends React.Component {
   state = {
@@ -93,6 +94,7 @@ class List extends React.Component {
             ))}
           </ListContrainer>
         </Flipper>
+        <GoogleMap />
       </div>
     );
   }
