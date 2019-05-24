@@ -168,7 +168,8 @@ export default [
     pick: {
       jp: "そば切り",
       en: "Sobakiri"
-    }
+    },
+    url: "http://foodgate.net/shop/kaoriya.html"
   },
   {
     id: "kanda_yabusoba",
@@ -330,6 +331,27 @@ export default [
     review: {
       en:
         "Another cozy soba place in Kanda area. Having nearly 100 years of the history, they are well known for wide variety of food. Besides fine-tuned soba noodles, you can enjoy almost whatever you have in your mind like Tenpura, Yakitori and Sake. I guess it's great for Nomi-kai (Party-like use), too.",
+      jp: ""
+    }
+  },
+  {
+    id: "santoko",
+    name: {
+      jp: "山灯香",
+      en: "Santoko"
+    },
+    neighborhood: "Misyuku",
+    address: "Taishido 1 Chome−4−35, Setagaya, Tokyo",
+    googlemaps: "https://goo.gl/maps/Ss4WdDoHuRP8f44f9",
+    fsq: "4b55a829f964a520abea27e3",
+    pick: {
+      jp: "fill",
+      en: "fill"
+    },
+    url: "http://foodgate.net/shop/santoko.html",
+    review: {
+      en:
+        'As a brother of Kaoriya in Ebisu, they have that cool long tray-like soba plate. Somewhat thick and flavorful noodles are great. According to the website, the concept is "Jazz and soba". Yes. Also good for Izakaya-style use. Although bit far from the stations (Sangen-chaya or Ikejiri-Ohashi), it\'s worth to walk.',
       jp: ""
     }
   }
