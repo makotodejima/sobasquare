@@ -4,7 +4,8 @@ export const ListContrainer = styled.div`
   overflow-y: scroll;
   height: 70vh;
   z-index: -1;
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
 `;
 
 export const OuterItemWrapper = styled.div`

@@ -291,5 +291,46 @@ export default [
         "Nice and cozy soba place in Shirokane Takanawa, Noe Valley of Tokyo. Noodles have tender texture and are flavorful at the same time. There’s another entrance on the main street, not on the uphill on the back.",
       jp: ""
     }
+  },
+  {
+    id: "notoji",
+    name: {
+      jp: "能登治",
+      en: "Notoji"
+    },
+    neighborhood: "Shimbashi",
+    address: "Shinbashi 3−7−5, Notoji Bldg 1F, Minato, Tokyo",
+    googlemaps: "https://goo.gl/maps/NyhY8yro5KafgKFw5",
+    fsq: "4bf3788794af2d7fc08f3972",
+    pick: {
+      jp: "fill",
+      en: "fill"
+    },
+    url: "http://shinbashi.notoji.jp/",
+    review: {
+      en:
+        "Small nice soba place in Shimbashi. They directly buy buckwheat flour from the contracted farm in Hokkaido. Feels traditional and yet easy-going atmosphere. As you might guess, abundant Shimbashi-salary-man vibes here. By the way, go check out their beautiful parallax website.",
+      jp: ""
+    }
+  },
+  {
+    id: "owariya",
+    name: {
+      jp: "尾張屋",
+      en: "Owariya"
+    },
+    neighborhood: "Kanda",
+    address: "1-24-7 Kanda Sudacho, Chiyoda, Tokyo",
+    googlemaps: "https://goo.gl/maps/R9cH1kCnh2GMyXHx5",
+    fsq: "4bfdf6fb8992a593c1f7acb0",
+    pick: {
+      jp: "fill",
+      en: "fill"
+    },
+    review: {
+      en:
+        "Another cozy soba place in Kanda area. Having nearly 100 years of the history, they are well known for wide variety of food. Besides fine-tuned soba noodles, you can enjoy almost whatever you have in your mind like Tenpura, Yakitori and Sake. I guess it's great for Nomi-kai (Party-like use), too.",
+      jp: ""
+    }
   }
 ];
