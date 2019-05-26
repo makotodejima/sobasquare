@@ -33,19 +33,28 @@ const Detail = ({ match, likes, sobayas }) => {
       fetch(
         `https://api.foursquare.com/v2/venues/${
           sobaya.fsq
-        }/likes?client_id=${client_id}&client_secret=${client_secret}&v=20190526`
+        }?client_id=${client_id}&client_secret=${client_secret}&v=20190526`
       )
         .then(res => res.json())
         .then(json => {
           /* response summery can be Japanese
           when request made by the client
           whose primary language is Japanese */
-          const summary = json.response.likes.summary;
-          store.dispatch({
-            type: "SET_LIKE",
-            sobaya: sobaya.id,
-            likes: summary
-          });
+          const name = json.response.venue.name;
+          const lat = json.response.venue.location.lat;
+          const lng = json.response.venue.location.lng;
+          console.table(
+            name +
+              "\n" +
+              "\n" +
+              "coords: {" +
+              "lat: " +
+              lat +
+              ",\n" +
+              "lng: " +
+              lng +
+              "},"
+          );
         })
         .catch(function(err) {
           console.log(err);
