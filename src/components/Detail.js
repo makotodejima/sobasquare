@@ -33,7 +33,7 @@ const Detail = ({ match, likes, sobayas }) => {
       fetch(
         `https://api.foursquare.com/v2/venues/${
           sobaya.fsq
-        }/likes?client_id=${client_id}&client_secret=${client_secret}&v=20190401`
+        }/likes?client_id=${client_id}&client_secret=${client_secret}&v=20190526`
       )
         .then(res => res.json())
         .then(json => {
