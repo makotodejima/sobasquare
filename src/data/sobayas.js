@@ -9,6 +9,7 @@ export default [
     address: "1-10-6, Toranomon, Minato, Tokyo 105-0001",
     googlemaps: "https://goo.gl/maps/vA5QGn71YHH2",
     fsq: "4bc3f589f8219c7427deb610",
+    coords: { lat: 35.66822545367157, lng: 139.75069642066956 },
     pick: { jp: "せいろ", en: "Seiro" },
     url: "www.test.jp",
     review: {
@@ -28,6 +29,7 @@ export default [
     address: "Jingūmae 2-19-12, Shibuya, Tokyo 150-0001",
     googlemaps: "https://goo.gl/maps/PdXi9rijKLB2",
     fsq: "4bc294a7461576b0ecab7d32",
+    coords: { lat: 35.673569558713105, lng: 139.71011635849277 },
     pick: {
       jp: "ざるそば",
       en: "Zaru Soba"
@@ -49,6 +51,7 @@ export default [
     address: "Shiba 5-14-12, Minato, Tokyo 108-0014",
     googlemaps: "https://goo.gl/maps/vqoVC6qtGoD2",
     fsq: "4bb6b5566edc76b0b26b311c",
+    coords: { lat: 35.647987119944425, lng: 139.74446479406564 },
     pick: {
       jp: "天おろし",
       en: "Ten Oroshi"
@@ -70,6 +73,7 @@ export default [
     address: "Jingūmae 5-23-3, Shibuya, Tokyo 150-0001",
     googlemaps: "https://goo.gl/maps/F9HA2rjSi6L2",
     fsq: "4e2264d562e1964dbb71fa6d",
+    coords: { lat: 35.66450796317949, lng: 139.70461370807925 },
     pick: {
       jp: "粗挽きせいろ",
       en: "Arabiki Seiro"
@@ -85,6 +89,8 @@ export default [
     address: "Akasaka 6-3-5, Minato, Tokyo 107-0062",
     googlemaps: "https://goo.gl/maps/ZwFRKHjqSfv",
     fsq: "4b5693daf964a520aa1528e3",
+
+    coords: { lat: 35.671166, lng: 139.736184 },
     pick: {
       jp: "せいろ",
       en: "Seiro"
@@ -100,6 +106,7 @@ export default [
     address: "Jindaiji Motomachi 5-9-1, Chōfu-shi, Tokyo 182-0017",
     googlemaps: "https://goo.gl/maps/c2NHsb47WVr",
     fsq: "4b6fa4daf964a520e4f82ce3",
+    coords: { lat: 35.66761350347936, lng: 139.54694504363616 },
     pick: {
       jp: "湧水そば",
       en: "Yusui Soba"
@@ -115,6 +122,7 @@ export default [
     address: "Azabujūban 1-8-7, Minato, Tokyo 106-0045",
     googlemaps: "https://goo.gl/maps/78NUdR34w8w",
     fsq: "4c3c53197f49c9b6a5aa6be3",
+    coords: { lat: 35.655785, lng: 139.735781 },
     pick: {
       jp: "なめこそば（生粉打）",
       en: "Nameko Soba"
@@ -130,6 +138,7 @@ export default [
     address: "Akasaka 3-12-22 B1F, Minato, Tokyo 107-0052",
     googlemaps: "https://goo.gl/maps/ud87UUGKn9x",
     fsq: "4ba83510f964a52051d139e3",
+    coords: { lat: 35.674314140162565, lng: 139.7376952013867 },
     pick: {
       jp: "田舎そば？",
       en: "Inaka Soba"
@@ -145,6 +154,7 @@ export default [
     address: "Roppongi 7-14-18, Minato, Tokyo 106-0032",
     googlemaps: "https://goo.gl/maps/M6wusTwwj8R2",
     fsq: "4c0b2058bbc676b0152c4bd5",
+    coords: { lat: 35.663327112759944, lng: 139.7306648673925 },
     pick: {
       jp: "せいろ",
       en: "Seiro"
@@ -165,6 +175,7 @@ export default [
     address: "Ebisu 4-3-10,Shibuya, Tokyo 150-0013",
     googlemaps: "https://goo.gl/maps/9VCbwJL7AaJ2",
     fsq: "4b5adf08f964a52030d828e3",
+    coords: { lat: 35.64569911831459, lng: 139.7119438648224 },
     pick: {
       jp: "そば切り",
       en: "Sobakiri"
@@ -181,6 +192,7 @@ export default [
     address: "Kanda Awaji-cho 2-10, Chiyoda, Tokyo 101-0063",
     googlemaps: "https://goo.gl/maps/isM2csp9maD2",
     fsq: "4b8a2256f964a520646132e3",
+    coords: { lat: 35.696997829457445, lng: 139.76867727935314 },
     url: "http://www.yabusoba.net/",
     pick: {
       jp: "せいろうそば、なめこそば",
@@ -202,6 +214,7 @@ export default [
     address: "1 Chome-13 Kanda Sudacho, Chiyoda, Tokyo 101-0041",
     googlemaps: "https://goo.gl/maps/vB4bmTUW3nS2",
     fsq: "4b8a2256f964a520646132e3",
+    coords: { lat: 35.696997829457445, lng: 139.76867727935314 },
     pick: {
       jp: "やまかけ",
       en: "Yamakake"
@@ -223,6 +236,7 @@ export default [
     address: "Jingūmae 3-5-1, Shibuya, Tokyo 150-0001",
     googlemaps: "https://goo.gl/maps/ssbGUS5hujt",
     fsq: "4b8a2256f964a520646132e3",
+    coords: { lat: 35.696997829457445, lng: 139.76867727935314 },
     pick: {
       jp: "せいろ",
       en: "Seiro"
@@ -238,6 +252,7 @@ export default [
     address: "Shirokanedai 5-17-2, Minato, Tokyo 108-0071",
     googlemaps: "https://goo.gl/maps/V38aUyuK5n42",
     fsq: "4b234413f964a520cc5424e3",
+    coords: { lat: 35.63770283027483, lng: 139.72357039903517 },
     pick: {
       jp: "ゆず切りそば",
       en: "Yuzukiri Soba"
@@ -253,6 +268,7 @@ export default [
     address: "Shirokane 5-7-12, 港区, 東京都 108-0072",
     googlemaps: "https://goo.gl/maps/yzM59UnFoU92",
     fsq: "4bc4291bf8219c74d707b710",
+    coords: { lat: 35.64407177834142, lng: 139.7276585122843 },
     pick: {
       jp: "松月せいろ",
       en: "Shogetsu Seiro"
@@ -268,6 +284,7 @@ export default [
     address: "Higashi-Azabu 1-7-2, Minato, Tokyo 106-0044",
     googlemaps: "https://goo.gl/maps/YgMAsbzqmDF2",
     fsq: "4f1e2694e4b0475df9cdfed7",
+    coords: { lat: 35.657808630397646, lng: 139.74368515566425 },
     pick: {
       jp: "三とろ",
       en: "Santoro"
@@ -283,6 +300,7 @@ export default [
     address: "Takanawa 1-4-21 2F, Minato, Tokyo, Japan",
     googlemaps: "https://goo.gl/maps/qszFVHEeE27dWHDp6",
     fsq: "4c0dc430336220a1d64bcb77",
+    coords: { lat: 35.643852, lng: 139.736016 },
     pick: {
       jp: "もりそば",
       en: "Mori Soba"
@@ -303,6 +321,7 @@ export default [
     address: "Shinbashi 3−7−5, Notoji Bldg 1F, Minato, Tokyo",
     googlemaps: "https://goo.gl/maps/NyhY8yro5KafgKFw5",
     fsq: "4bf3788794af2d7fc08f3972",
+    coords: { lat: 35.66549887652342, lng: 139.7550630569458 },
     pick: {
       jp: "fill",
       en: "fill"
@@ -324,6 +343,8 @@ export default [
     address: "1-24-7 Kanda Sudacho, Chiyoda, Tokyo",
     googlemaps: "https://goo.gl/maps/R9cH1kCnh2GMyXHx5",
     fsq: "4bfdf6fb8992a593c1f7acb0",
+
+    coords: { lat: 35.69437172490809, lng: 139.770980535169 },
     pick: {
       jp: "fill",
       en: "fill"
@@ -344,6 +365,7 @@ export default [
     address: "Taishido 1 Chome−4−35, Setagaya, Tokyo",
     googlemaps: "https://goo.gl/maps/Ss4WdDoHuRP8f44f9",
     fsq: "4b55a829f964a520abea27e3",
+    coords: { lat: 35.646719, lng: 139.677588 },
     pick: {
       jp: "fill",
       en: "fill"
@@ -365,6 +387,7 @@ export default [
     address: "2-29-11 Asakusabashi, Taito, Tokyo",
     googlemaps: "https://goo.gl/maps/ETrTeVLEoQptL5Rm9",
     fsq: "4d009e80ba1da1cdb4928928",
+    coords: { lat: 35.69959922597898, lng: 139.78774806740597 },
     pick: {
       jp: "fill",
       en: "fill"
@@ -385,6 +408,7 @@ export default [
     address: "1-2-7 Azabujūban, Minato, Tokyo",
     googlemaps: "https://goo.gl/maps/TqHojKWQywkGP6vb6",
     fsq: "4b56ef49f964a520ce1f28e3",
+    coords: { lat: 35.6564766474301, lng: 139.73693673986588 },
     pick: {
       jp: "fill",
       en: "fill"
@@ -405,6 +429,7 @@ export default [
     address: "5-6-5 3F, Ginza, Chuo, Tokyo",
     googlemaps: "https://goo.gl/maps/StqLSUqHbbjqLjdC8",
     fsq: "555304dd498e23b3f40a0027",
+    coords: { lat: 35.671167955251235, lng: 139.7642431111445 },
     pick: {
       jp: "fill",
       en: "fill"
