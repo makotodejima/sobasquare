@@ -63,9 +63,9 @@ const InfoWindow = props => {
 };
 
 class GoogleMaps extends Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   createInfoWindow(e, map) {
     const infoWindow = new window.google.maps.InfoWindow({
@@ -84,7 +84,7 @@ class GoogleMaps extends Component {
         id="myMap"
         options={{
           center: { lat: 35.671166, lng: 139.736184 },
-          zoom: 13
+          zoom: 11
         }}
         onMapLoad={map =>
           this.props.coords.map(point => {
