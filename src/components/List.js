@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
 import Detail from "./Detail";
-import sobayas from "../data/sobayas.js"; // only use for loading initial sobaya data!!! For Sobaya data, use data on state.
+import sobayas from "../data/sobayas.js"; // only use for initial loading of sobayas data!!! Use data on Redux state!!
 import logo from "../images/logo.svg";
 import GoogleMaps from "./GoogleMaps";
 
