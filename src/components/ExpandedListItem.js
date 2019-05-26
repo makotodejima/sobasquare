@@ -57,7 +57,7 @@ const ExpandedListItem = ({ sobaya, index, match }) => {
                 onMouseLeave={() => setMouseonLink(false)}
                 className={`${mouseonLink ? "on" : null}`}
               >
-                <Link to={`${match.path}${sobaya.id}`}>
+                <Link to={`/sobaya${match.path}${sobaya.id}`}>
                   <ExpandedListImg
                     className="preventShrink"
                     src={img}
