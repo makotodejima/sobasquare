@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import { connect } from "react-redux";
 
 class Map extends React.Component {
   constructor(props) {
@@ -62,14 +63,6 @@ const InfoWindow = props => {
 };
 
 class GoogleMaps extends Component {
-  state = {
-    position: [
-      { lat: 35.65, lng: 139.84 },
-      { lat: 35.65, lng: 139.81 },
-      { lat: 35.6, lng: 139.84 }
-    ]
-  };
-
   constructor() {
     super();
   }
@@ -90,11 +83,11 @@ class GoogleMaps extends Component {
       <Map
         id="myMap"
         options={{
-          center: { lat: 35.652832, lng: 139.839478 },
-          zoom: 10
+          center: { lat: 35.671166, lng: 139.736184 },
+          zoom: 13
         }}
         onMapLoad={map =>
-          this.state.position.map(point => {
+          this.props.coords.map(point => {
             var marker = new window.google.maps.Marker({
               position: point,
               map: map,
@@ -109,4 +102,11 @@ class GoogleMaps extends Component {
     );
   }
 }
-export default GoogleMaps;
+
+const mapStateToProps = state => {
+  return {
+    coords: state.sobayas.map(sobaya => sobaya.coords)
+  };
+};
+
+export default connect(mapStateToProps)(GoogleMaps);

@@ -213,8 +213,8 @@ export default [
     neighborhood: "Kanda Awaji-cho",
     address: "1 Chome-13 Kanda Sudacho, Chiyoda, Tokyo 101-0041",
     googlemaps: "https://goo.gl/maps/vB4bmTUW3nS2",
-    fsq: "4b8a2256f964a520646132e3",
-    coords: { lat: 35.696997829457445, lng: 139.76867727935314 },
+    fsq: "4b568608f964a520ea1328e3",
+    coords: { lat: 35.696122436509405, lng: 139.76877804030664 },
     pick: {
       jp: "やまかけ",
       en: "Yamakake"
