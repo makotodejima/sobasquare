@@ -340,7 +340,7 @@ export default [
       jp: "山灯香",
       en: "Santoko"
     },
-    neighborhood: "Misyuku",
+    neighborhood: "Mishuku",
     address: "Taishido 1 Chome−4−35, Setagaya, Tokyo",
     googlemaps: "https://goo.gl/maps/Ss4WdDoHuRP8f44f9",
     fsq: "4b55a829f964a520abea27e3",
@@ -352,6 +352,67 @@ export default [
     review: {
       en:
         'As a brother of Kaoriya in Ebisu, they have that cool long tray-like soba plate. Somewhat thick and flavorful noodles are great. According to the website, the concept is "Jazz and soba". Yes. Also good for Izakaya-style use. Although bit far from the stations (Sangen-chaya or Ikejiri-Ohashi), it\'s worth to walk.',
+      jp: ""
+    }
+  },
+  {
+    id: "asada",
+    name: {
+      jp: "あさだ",
+      en: "Asada"
+    },
+    neighborhood: "Asakusa-bashi",
+    address: "2-29-11 Asakusabashi, Taito, Tokyo",
+    googlemaps: "https://goo.gl/maps/ETrTeVLEoQptL5Rm9",
+    fsq: "4d009e80ba1da1cdb4928928",
+    pick: {
+      jp: "fill",
+      en: "fill"
+    },
+    url: "https://www.asada-soba.co.jp",
+    review: {
+      en: "",
+      jp: ""
+    }
+  },
+  {
+    id: "azabu_nagasaka_sarashina_hq",
+    name: {
+      jp: "麻布永坂更科本店",
+      en: "Azabu Nagasaka Sarashina HQ"
+    },
+    neighborhood: "Azabu Juban",
+    address: "1-2-7 Azabujūban, Minato, Tokyo",
+    googlemaps: "https://goo.gl/maps/TqHojKWQywkGP6vb6",
+    fsq: "4b56ef49f964a520ce1f28e3",
+    pick: {
+      jp: "fill",
+      en: "fill"
+    },
+    url: "http://www.sarashina-honten.com",
+    review: {
+      en: "",
+      jp: ""
+    }
+  },
+  {
+    id: "sanada",
+    name: {
+      jp: "真田",
+      en: "Sanada"
+    },
+    neighborhood: "Ginza",
+    address: "5-6-5 3F, Ginza, Chuo, Tokyo",
+    googlemaps: "https://goo.gl/maps/StqLSUqHbbjqLjdC8",
+    fsq: "555304dd498e23b3f40a0027",
+    pick: {
+      jp: "fill",
+      en: "fill"
+    },
+    url: "http://www.sarashina-honten.com",
+    review: {
+      en:
+        "Nice and modern feeling soba place at the center of Ginza. They serve Shin-shu (Nagano Prefecture) style soba and very neat small appetizers like Tofu or Miso and other things. Another branch is  in Ginza Six building.",
       jp: ""
     }
   }
