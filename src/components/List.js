@@ -29,6 +29,7 @@ class List extends React.Component {
       type: "SET_SOBAYAS",
       sobayas: sobayas
     });
+    store.dispatch({ type: "SORT_SOBAYAS", order: "asc" });
   }
 
   render() {
@@ -41,13 +42,24 @@ class List extends React.Component {
         <p
           onClick={() => {
             this.setState({
+              selected: -2
+            });
+            store.dispatch({ type: "SORT_SOBAYAS", order: "asc" });
+          }}
+        >
+          Sort ASC
+        </p>
+        <p
+          onClick={() => {
+            this.setState({
               selected: -1
             });
             store.dispatch({ type: "SORT_SOBAYAS", order: "desc" });
           }}
         >
-          Sort Button
+          Sort DESC
         </p>
+
         <p>
           <Link to={`/map/`}>SHOW MAP</Link>
         </p>
