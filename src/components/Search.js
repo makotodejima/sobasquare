@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { store } from "../index";
 
 class Search extends React.Component {
   state = { searchString: "" };
@@ -9,21 +10,21 @@ class Search extends React.Component {
   };
 
   render() {
-    let items = [];
-    var searchString = this.state.searchString.trim().toLowerCase();
     const { sobayas } = this.props;
+    let results = [];
+    var searchString = this.state.searchString.trim().toLowerCase();
 
     if (sobayas.length > 0) {
-      items = sobayas.map(sobaya => sobaya.name.en);
+      results = sobayas;
     }
 
     if (searchString.length > 0) {
-      // We are searching. Filter the results.
-
-      items = items.filter(function(i) {
-        return i.toLowerCase().match(searchString);
+      // Filter the results.
+      results = sobayas.filter(function(s) {
+        return s.name.en.toLowerCase().match(searchString);
       });
     }
+    // store.dispatch({ type: "SET_SOBAYAS", sobayas: results });
 
     return (
       <div>
@@ -37,13 +38,20 @@ class Search extends React.Component {
             />
 
             <ul>
-              {items.map(function(i) {
+              {results.map(function(s) {
                 return (
-                  <li key={i}>
-                    {i} <a href={i}>{i}</a>
+                  <li key={s.name.en}>
+                    {s.name.en} <a href="#">{s.name.jp}</a>
                   </li>
                 );
               })}
+              <button
+                onClick={() =>
+                  store.dispatch({ type: "SET_SOBAYAS", sobayas: results })
+                }
+              >
+                search
+              </button>
             </ul>
           </>
         ) : null}
