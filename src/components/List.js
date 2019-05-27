@@ -37,7 +37,7 @@ class List extends React.Component {
     const { selected } = this.state;
     return (
       <div>
-        <Search items={this.props.sobayas} />
+        <Search />
         <Link to={`/`}>
           <img src={logo} alt="Sobasquare logo" id="logo" />
         </Link>
