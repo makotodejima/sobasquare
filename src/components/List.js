@@ -10,6 +10,7 @@ import Detail from "./Detail";
 import sobayas from "../data/sobayas.js"; // only use for initial loading of sobayas data!!! Use data on Redux state!!
 import logo from "../images/logo.svg";
 import GoogleMaps from "./GoogleMaps";
+import Search from "./Search";
 
 class List extends React.Component {
   state = {
@@ -36,6 +37,7 @@ class List extends React.Component {
     const { selected } = this.state;
     return (
       <div>
+        <Search />
         <Link to={`/`}>
           <img src={logo} alt="Sobasquare logo" id="logo" />
         </Link>
