@@ -21,7 +21,11 @@ class Search extends React.Component {
     if (searchString.length > 0) {
       // Filter the results.
       results = sobayas.filter(function(s) {
-        return s.name.en.toLowerCase().match(searchString);
+        return (
+          s.name.en.toLowerCase().match(searchString) ||
+          s.address.toLowerCase().match(searchString) ||
+          s.neighborhood.toLowerCase().match(searchString)
+        );
       });
     }
     // store.dispatch({ type: "SET_SOBAYAS", sobayas: results });
@@ -32,8 +36,12 @@ class Search extends React.Component {
           <>
             <input
               type="text"
+              style={{ height: `2rem`, fontSize: "2rem" }}
               value={this.state.searchString}
-              onChange={this.handleChange}
+              onChange={e => {
+                this.handleChange(e);
+                // store.dispatch({ type: "SET_SOBAYAS", sobayas: results });
+              }}
               placeholder="Type here"
             />
 
@@ -45,13 +53,6 @@ class Search extends React.Component {
                   </li>
                 );
               })}
-              <button
-                onClick={() =>
-                  store.dispatch({ type: "SET_SOBAYAS", sobayas: results })
-                }
-              >
-                search
-              </button>
             </ul>
           </>
         ) : null}
