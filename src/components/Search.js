@@ -28,22 +28,22 @@ import React from "react";
 
 // Let's create a "real-time search" component
 
-var items = [
-  { name: "Backbone.js", url: "https://documentcloud.github.io/backbone/" },
-  { name: "AngularJS", url: "https://angularjs.org/" },
-  { name: "jQuery", url: "https://jquery.com/" },
-  { name: "Prototype", url: "http://www.prototypejs.org/" },
-  { name: "React", url: "https://facebook.github.io/react/" },
-  { name: "Ember", url: "http://emberjs.com/" },
-  { name: "Knockout.js", url: "https://knockoutjs.com/" },
-  { name: "Dojo", url: "http://dojotoolkit.org/" },
-  { name: "Mootools", url: "http://mootools.net/" },
-  { name: "Underscore", url: "https://documentcloud.github.io/underscore/" },
-  { name: "Lodash", url: "http://lodash.com/" },
-  { name: "Moment", url: "https://momentjs.com/" },
-  { name: "Express", url: "http://expressjs.com/" },
-  { name: "Koa", url: "http://koajs.com/" }
-];
+// var items = [
+//   { name: "Backbone.js", url: "https://documentcloud.github.io/backbone/" },
+//   { name: "AngularJS", url: "https://angularjs.org/" },
+//   { name: "jQuery", url: "https://jquery.com/" },
+//   { name: "Prototype", url: "http://www.prototypejs.org/" },
+//   { name: "React", url: "https://facebook.github.io/react/" },
+//   { name: "Ember", url: "http://emberjs.com/" },
+//   { name: "Knockout.js", url: "https://knockoutjs.com/" },
+//   { name: "Dojo", url: "http://dojotoolkit.org/" },
+//   { name: "Mootools", url: "http://mootools.net/" },
+//   { name: "Underscore", url: "https://documentcloud.github.io/underscore/" },
+//   { name: "Lodash", url: "http://lodash.com/" },
+//   { name: "Moment", url: "https://momentjs.com/" },
+//   { name: "Express", url: "http://expressjs.com/" },
+//   { name: "Koa", url: "http://koajs.com/" }
+// ];
 
 class Search extends React.Component {
   state = { searchString: "" };
@@ -58,35 +58,44 @@ class Search extends React.Component {
 
   render() {
     // var libraries = this.props.items,
-    var libraries = items,
-      searchString = this.state.searchString.trim().toLowerCase();
+    console.log(this.props.items);
+    // var items = [],
+    var searchString = this.state.searchString.trim().toLowerCase();
+
+    if (this.props.items.length > 0) {
+      var items = [this.props.items[0].name.en, this.props.items[5].name.en];
+    }
 
     if (searchString.length > 0) {
       // We are searching. Filter the results.
 
-      libraries = libraries.filter(function(l) {
-        return l.name.toLowerCase().match(searchString);
+      items = items.filter(function(i) {
+        return i.toLowerCase().match(searchString);
       });
     }
 
     return (
       <div>
-        <input
-          type="text"
-          value={this.state.searchString}
-          onChange={this.handleChange}
-          placeholder="Type here"
-        />
+        {this.props.items.length > 0 ? (
+          <>
+            <input
+              type="text"
+              value={this.state.searchString}
+              onChange={this.handleChange}
+              placeholder="Type here"
+            />
 
-        <ul>
-          {libraries.map(function(l) {
-            return (
-              <li>
-                {l.name} <a href={l.url}>{l.url}</a>
-              </li>
-            );
-          })}
-        </ul>
+            <ul>
+              {items.map(function(i) {
+                return (
+                  <li key={i}>
+                    {i} <a href={i}>{i}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </>
+        ) : null}
       </div>
     );
   }
