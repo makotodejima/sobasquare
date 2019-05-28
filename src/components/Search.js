@@ -23,14 +23,12 @@ const Search = props => {
     setResults(
       sobayas.filter(function(s) {
         return (
-          s.name.en.toLowerCase().match(input) ||
-          s.address.toLowerCase().match(input) ||
-          s.neighborhood.toLowerCase().match(input)
+          s.name.en.toLowerCase().match(input.toLowerCase()) ||
+          s.address.toLowerCase().match(input.toLowerCase()) ||
+          s.neighborhood.toLowerCase().match(input.toLowerCase())
         );
       })
     );
-    console.log(input);
-    console.log(results);
   };
 
   return (
@@ -45,16 +43,19 @@ const Search = props => {
           }}
           placeholder="Type here"
         />
-
-        <ul>
-          {results.map(function(s) {
-            return (
-              <li key={s.name.en}>
-                {s.name.en} <a href="#">{s.name.jp}</a>
-              </li>
-            );
-          })}
-        </ul>
+        {results.length > 0 ? (
+          <ul>
+            {results.map(function(s) {
+              return (
+                <li key={s.name.en}>
+                  {s.name.en} <a href="#">{s.name.jp}</a>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p>No Match!!</p>
+        )}
       </>
     </div>
   );

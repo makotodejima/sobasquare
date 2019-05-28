@@ -14,7 +14,8 @@ import Search from "./Search";
 
 class List extends React.Component {
   state = {
-    selected: undefined
+    selected: undefined,
+    isSearching: false
   };
 
   handleClick = (e, index) => {
@@ -108,7 +109,6 @@ class List extends React.Component {
             ))}
           </ListContrainer>
         </Flipper>
-        {/* <GoogleMaps /> */}
       </div>
     );
   }
