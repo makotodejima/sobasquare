@@ -1,65 +1,65 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { store } from "../index";
 
-class Search extends React.Component {
-  state = { searchString: "" };
+const Search = props => {
+  const sobayas = props.sobayas;
+  const [input, updateInput] = useState("");
+  const [results, setResults] = useState([]);
 
-  handleChange = e => {
-    this.setState({ searchString: e.target.value });
+  useEffect(() => {
+    setResults(sobayas);
+  }, [sobayas]);
+
+  useEffect(() => {
+    UpdateDisplayedResults(input);
+  }, [input]);
+
+  const handleChange = e => {
+    updateInput(e.target.value);
   };
 
-  render() {
-    const { sobayas } = this.props;
-    let results = [];
-    var searchString = this.state.searchString.trim().toLowerCase();
-
-    if (sobayas.length > 0) {
-      results = sobayas;
-    }
-
-    if (searchString.length > 0) {
-      // Filter the results.
-      results = sobayas.filter(function(s) {
+  const UpdateDisplayedResults = () => {
+    setResults(
+      sobayas.filter(function(s) {
         return (
-          s.name.en.toLowerCase().match(searchString) ||
-          s.address.toLowerCase().match(searchString) ||
-          s.neighborhood.toLowerCase().match(searchString)
+          s.name.en.toLowerCase().match(input.toLowerCase()) ||
+          s.address.toLowerCase().match(input.toLowerCase()) ||
+          s.neighborhood.toLowerCase().match(input.toLowerCase())
         );
-      });
-    }
-    // store.dispatch({ type: "SET_SOBAYAS", sobayas: results });
-
-    return (
-      <div>
-        {sobayas.length > 0 ? (
-          <>
-            <input
-              type="text"
-              style={{ height: `2rem`, fontSize: "2rem" }}
-              value={this.state.searchString}
-              onChange={e => {
-                this.handleChange(e);
-                // store.dispatch({ type: "SET_SOBAYAS", sobayas: results });
-              }}
-              placeholder="Type here"
-            />
-
-            <ul>
-              {results.map(function(s) {
-                return (
-                  <li key={s.name.en}>
-                    {s.name.en} <a href="#">{s.name.jp}</a>
-                  </li>
-                );
-              })}
-            </ul>
-          </>
-        ) : null}
-      </div>
+      })
     );
-  }
-}
+  };
+
+  return (
+    <div>
+      <>
+        <input
+          type="text"
+          style={{ height: `2rem`, fontSize: "2rem" }}
+          value={input}
+          onChange={e => {
+            handleChange(e);
+          }}
+          placeholder="Type here"
+        />
+        {results.length > 0 ? (
+          <ul>
+            {results.map(function(s) {
+              return (
+                <li key={s.name.en}>
+                  {s.name.en} <a href="#">{s.name.jp}</a>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p>No Match!!</p>
+        )}
+      </>
+    </div>
+  );
+};
 
 const mapStateToProps = state => {
   return {
