@@ -27,8 +27,6 @@ function sobayas(state = [], action) {
         });
       }
       break;
-    case "SEARCH_SOBAYAS":
-      return state;
     default:
       return state;
   }

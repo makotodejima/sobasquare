@@ -15,15 +15,8 @@ import Search from "./Search";
 class List extends React.Component {
   state = {
     selected: undefined,
-    isSearching: false
-  };
-
-  handleClick = (e, index) => {
-    if (e.target.classList.contains("preventShrink")) return;
-
-    this.setState({
-      selected: this.state.selected === index ? null : index
-    });
+    isSearching: false,
+    searchResults: []
   };
 
   componentDidMount() {
@@ -34,11 +27,80 @@ class List extends React.Component {
     store.dispatch({ type: "SORT_SOBAYAS", order: "asc" });
   }
 
-  render() {
+  handleClick = (e, index) => {
+    if (e.target.classList.contains("preventShrink")) return;
+
+    this.setState({
+      selected: this.state.selected === index ? null : index
+    });
+  };
+
+  updateSearchResults = results => {
+    this.setState({
+      searchResults: results
+    });
+  };
+
+  toggleIsSearching = bool => {
+    this.setState({
+      isSearching: bool
+    });
+  };
+
+  renderList = sobayas => {
     const { selected } = this.state;
+    if (!sobayas.length > 0) return <h1>Oh nothing to show!</h1>;
+    return (
+      <Flipper
+        flipKey={selected}
+        decisionData={selected}
+        // spring="noWobble"
+        staggerConfig={{
+          list: {
+            speed: 0.1
+          }
+        }}
+      >
+        <ListContrainer className="list-container">
+          {sobayas.map((sobaya, index) => (
+            <OuterItemWrapper
+              className="item-wrapper"
+              key={index}
+              onClick={e => this.handleClick(e, index)}
+            >
+              {selected === index ? (
+                <Route
+                  path="/"
+                  render={props => (
+                    <ExpandedListItem
+                      {...props}
+                      sobaya={sobaya}
+                      index={index}
+                    />
+                  )}
+                />
+              ) : (
+                <Route
+                  path="/"
+                  render={props => (
+                    <ListItem {...props} sobaya={sobaya} index={index} />
+                  )}
+                />
+              )}
+            </OuterItemWrapper>
+          ))}
+        </ListContrainer>
+      </Flipper>
+    );
+  };
+
+  render() {
     return (
       <div>
-        <Search />
+        <Search
+          updateSearchResults={this.updateSearchResults}
+          toggleIsSearching={this.toggleIsSearching}
+        />
         <Link to={`/`}>
           <img src={logo} alt="Sobasquare logo" id="logo" />
         </Link>
@@ -62,53 +124,14 @@ class List extends React.Component {
         >
           Sort DESC
         </p>
-
         <p>
           <Link to={`/map/`}>SHOW MAP</Link>
         </p>
-
-        <Flipper
-          flipKey={selected}
-          decisionData={selected}
-          // spring="noWobble"
-          staggerConfig={{
-            list: {
-              speed: 0.1
-            }
-          }}
-        >
-          <Route path="/sobaya/:id" render={props => <Detail {...props} />} />
-          <Route path="/map/" render={props => <GoogleMaps {...props} />} />
-          <ListContrainer className="list-container">
-            {this.props.sobayas.map((sobaya, index) => (
-              <OuterItemWrapper
-                className="item-wrapper"
-                key={index}
-                onClick={e => this.handleClick(e, index)}
-              >
-                {selected === index ? (
-                  <Route
-                    path="/"
-                    render={props => (
-                      <ExpandedListItem
-                        {...props}
-                        sobaya={sobaya}
-                        index={index}
-                      />
-                    )}
-                  />
-                ) : (
-                  <Route
-                    path="/"
-                    render={props => (
-                      <ListItem {...props} sobaya={sobaya} index={index} />
-                    )}
-                  />
-                )}
-              </OuterItemWrapper>
-            ))}
-          </ListContrainer>
-        </Flipper>
+        <Route path="/sobaya/:id" render={props => <Detail {...props} />} />
+        <Route path="/map/" render={props => <GoogleMaps {...props} />} />
+        {this.state.isSearching
+          ? this.renderList(this.state.searchResults)
+          : this.renderList(this.props.sobayas)}
       </div>
     );
   }

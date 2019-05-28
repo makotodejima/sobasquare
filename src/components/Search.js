@@ -12,14 +12,23 @@ const Search = props => {
   }, [sobayas]);
 
   useEffect(() => {
-    UpdateDisplayedResults(input);
+    UpdateResults(input);
+    if (input.length > 0) {
+      props.toggleIsSearching(true);
+    } else {
+      props.toggleIsSearching(false);
+    }
   }, [input]);
+
+  useEffect(() => {
+    props.updateSearchResults(results);
+  }, [results]);
 
   const handleChange = e => {
     updateInput(e.target.value);
   };
 
-  const UpdateDisplayedResults = () => {
+  const UpdateResults = () => {
     setResults(
       sobayas.filter(function(s) {
         return (
@@ -43,7 +52,7 @@ const Search = props => {
           }}
           placeholder="Type here"
         />
-        {results.length > 0 ? (
+        {/* {results.length > 0 ? (
           <ul>
             {results.map(function(s) {
               return (
@@ -55,7 +64,7 @@ const Search = props => {
           </ul>
         ) : (
           <p>No Match!!</p>
-        )}
+        )} */}
       </>
     </div>
   );
