@@ -82,6 +82,8 @@ const Wrapper = styled.div`
     padding: 5px 1rem;
     border: solid 2px lightgrey;
     border-radius: 30px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 30px;
     width: 100%;
     line-height: 1.4;
     /* box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.09); */
