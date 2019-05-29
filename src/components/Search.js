@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { store } from "../index";
@@ -7,6 +7,8 @@ const SearchBar = props => {
   const sobayas = props.sobayas;
   const [input, updateInput] = useState("");
   const [results, setResults] = useState([]);
+
+  const inputEl = useRef("aaa");
 
   useEffect(() => {
     setResults(sobayas);
@@ -29,6 +31,11 @@ const SearchBar = props => {
     updateInput(e.target.value);
   };
 
+  const clearInput = () => {
+    inputEl.current.value = "";
+    updateInput("");
+  };
+
   const UpdateResults = () => {
     setResults(
       sobayas.filter(function(s) {
@@ -44,13 +51,16 @@ const SearchBar = props => {
   return (
     <Wrapper>
       <input
+        autoFocus
         type="text"
+        ref={inputEl}
         value={input}
         onChange={e => {
           handleChange(e);
         }}
-        placeholder='Try "Kanda" or "Sarashina"'
+        placeholder='Try "Kanda" or "Azabu"'
       />
+      <button onClick={clearInput}>x</button>
     </Wrapper>
   );
 };
@@ -64,17 +74,20 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(SearchBar);
 
 const Wrapper = styled.div`
-  /* height: 70px; */
-  width: 200px;
-  margin: 0 auto;
+  width: 202px;
+  margin: 1rem auto 1.4rem;
   text-align: center;
   input {
+    padding: 5px 1rem;
+    border: solid 2px lightgrey;
+    border-radius: 30px;
     width: 100%;
-    line-height: 4;
-    border: none;
+    line-height: 1.4;
+    /* box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.09); */
     box-sizing: border-box;
     font-size: 16px;
-    background: transparent;
     outline: none;
+    /* border: none; */
+    /* background-color: lightyellow; */
   }
 `;
