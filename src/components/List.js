@@ -38,8 +38,6 @@ class List extends React.Component {
   updateSearchResults = results => {
     this.setState(prevState => {
       if (results.length < prevState.searchResults.length) {
-        console.log(results.length);
-        console.log(prevState.searchResults.length);
         return { searchResults: results, selected: Math.random() };
       } else {
         return { searchResults: results };
