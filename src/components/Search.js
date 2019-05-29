@@ -8,7 +8,7 @@ const SearchBar = props => {
   const [input, updateInput] = useState("");
   const [results, setResults] = useState([]);
 
-  const inputEl = useRef("aaa");
+  const inputEl = useRef("");
 
   useEffect(() => {
     setResults(sobayas);
@@ -31,10 +31,12 @@ const SearchBar = props => {
     updateInput(e.target.value);
   };
 
-  const clearInput = () => {
-    inputEl.current.value = "";
-    updateInput("");
-  };
+  // <input type="search" /> -> default delete icon
+  //
+  // const clearInput = () => {
+  //   inputEl.current.value = "";
+  //   updateInput("");
+  // };
 
   const UpdateResults = () => {
     setResults(
@@ -52,7 +54,7 @@ const SearchBar = props => {
     <Wrapper>
       <input
         autoFocus
-        type="text"
+        type="search"
         ref={inputEl}
         value={input}
         onChange={e => {
@@ -60,7 +62,6 @@ const SearchBar = props => {
         }}
         placeholder='Try "Kanda" or "Azabu"'
       />
-      <button onClick={clearInput}>x</button>
     </Wrapper>
   );
 };
