@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import { connect } from "react-redux";
 import { store } from "../index";
 
-const Search = props => {
+const SearchBar = props => {
   const sobayas = props.sobayas;
   const [input, updateInput] = useState("");
   const [results, setResults] = useState([]);
@@ -41,32 +42,16 @@ const Search = props => {
   };
 
   return (
-    <div>
-      <>
-        <input
-          type="text"
-          style={{ height: `2rem`, fontSize: "2rem" }}
-          value={input}
-          onChange={e => {
-            handleChange(e);
-          }}
-          placeholder="Type here"
-        />
-        {/* {results.length > 0 ? (
-          <ul>
-            {results.map(function(s) {
-              return (
-                <li key={s.name.en}>
-                  {s.name.en} <a href="#">{s.name.jp}</a>
-                </li>
-              );
-            })}
-          </ul>
-        ) : (
-          <p>No Match!!</p>
-        )} */}
-      </>
-    </div>
+    <Wrapper>
+      <input
+        type="text"
+        value={input}
+        onChange={e => {
+          handleChange(e);
+        }}
+        placeholder='Try "Kanda" or "Sarashina"'
+      />
+    </Wrapper>
   );
 };
 
@@ -76,4 +61,20 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Search);
+export default connect(mapStateToProps)(SearchBar);
+
+const Wrapper = styled.div`
+  /* height: 70px; */
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  input {
+    width: 100%;
+    line-height: 4;
+    border: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+  }
+`;

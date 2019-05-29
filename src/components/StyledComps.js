@@ -4,21 +4,15 @@ export const ListContrainer = styled.div`
   overflow-y: scroll;
   height: 70vh;
   z-index: -1;
-  width: 50%;
-  margin: 0 auto;
+  width: 450px;
 `;
 
 export const OuterItemWrapper = styled.div`
   margin: 2rem auto;
-  width: 300px;
+  width: 280px;
 `;
 
 // Shared
-
-// export const LogoWrap = styled.div`
-//   display: inline-block;
-//   margin: 2rem auto;
-// `;
 
 export const dash = keyframes`
 to {

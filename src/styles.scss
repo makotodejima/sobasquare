@@ -5,19 +5,22 @@
   padding: 0;
 }
 
-.App {
+body {
   font-family: "Noto Serif", "Helvetica Neue", "Roboto", "Oxygen", -apple-system,
     "Ubuntu", BlinkMacSystemFont, "Fira Sans", "Yu Gothic", "YuGothic",
     sans-serif;
   font-size: 1.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  width: 100%;
 }
 
-#logo {
-  display: block;
-  width: 100px;
-  margin: 3rem auto 0;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
 ::-webkit-scrollbar {

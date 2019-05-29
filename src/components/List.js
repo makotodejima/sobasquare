@@ -8,9 +8,9 @@ import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
 import Detail from "./Detail";
 import sobayas from "../data/sobayas.js"; // only use for initial loading of sobayas data!!! Use data on Redux state!!
-import logo from "../images/logo.svg";
+import Logo from "./Logo";
 import GoogleMaps from "./GoogleMaps";
-import Search from "./Search";
+import SearchBar from "./Search";
 
 class List extends React.Component {
   state = {
@@ -36,8 +36,12 @@ class List extends React.Component {
   };
 
   updateSearchResults = results => {
-    this.setState({
-      searchResults: results
+    this.setState(prevState => {
+      if (results.length < prevState.searchResults.length) {
+        return { searchResults: results, selected: Math.random() };
+      } else {
+        return { searchResults: results };
+      }
     });
   };
 
@@ -96,37 +100,16 @@ class List extends React.Component {
 
   render() {
     return (
-      <div>
-        <Search
+      <div className="main">
+        <Logo />
+        <SearchBar
           updateSearchResults={this.updateSearchResults}
           toggleIsSearching={this.toggleIsSearching}
         />
-        <Link to={`/`}>
-          <img src={logo} alt="Sobasquare logo" id="logo" />
-        </Link>
-        <p
-          onClick={() => {
-            this.setState({
-              selected: -2
-            });
-            store.dispatch({ type: "SORT_SOBAYAS", order: "asc" });
-          }}
-        >
-          Sort ASC
-        </p>
-        <p
-          onClick={() => {
-            this.setState({
-              selected: -1
-            });
-            store.dispatch({ type: "SORT_SOBAYAS", order: "desc" });
-          }}
-        >
-          Sort DESC
-        </p>
-        <p>
+
+        {/* <p>
           <Link to={`/map/`}>SHOW MAP</Link>
-        </p>
+        </p> */}
         <Route path="/sobaya/:id" render={props => <Detail {...props} />} />
         <Route path="/map/" render={props => <GoogleMaps {...props} />} />
         {this.state.isSearching
