@@ -17,7 +17,9 @@ export default [
         'Carrying the name of "Sunaba", meaning "sandbox", this historic soba place has its origin in Osaka. With over a hundred years of history, the building is registered as a cultural property by the government. If you are not a fan of soba, you should see this beautiful building and feel the authentic soba-place vibes inside. Oh yes.',
       jp:
         "とにかく建物自体がよい。夕方くらいに交差点の反対側から見るととても美しい2階建ての建物にうっとりする。中もとてもよい雰囲気で、なんども通いたくなる。おそばもおいしいのだが、カレーうどんもおいしい。"
-    }
+    },
+    big3: "sunaba",
+    vibes: "traditional"
   },
   {
     id: "matsunaga",
@@ -61,7 +63,8 @@ export default [
         'One of the most easy-going soba place on Sobasquare. There is a TV in the corner on which you can enjoy baseball game, I guess. The atmosphere almost makes you to want to order too much. Variety of side menus such as "Potato salad". Mita\'s "salary-man" vibes.',
       jp:
         "Sobasquareの中でももっとも easy-going なお蕎麦屋さんのひとつ。1階にはTVあり、野球の中継が楽しめる。なんだか、「固くならなくていいんだよ」と語りかけられているような雰囲気で、目に飛び込んでくる「ポテトサラダ」などそば意外のものも注文したくなる。天おろしのつめたいやつを食べて、おいしい。三田のサラリーマン率が高い。"
-    }
+    },
+    vibes: "casual"
   },
   {
     id: "tamawarai",
@@ -77,7 +80,8 @@ export default [
     pick: {
       jp: "粗挽きせいろ",
       en: "Arabiki Seiro"
-    }
+    },
+    vibes: "modern"
   },
   {
     id: "muromachi_sunaba",
@@ -94,7 +98,9 @@ export default [
     pick: {
       jp: "せいろ",
       en: "Seiro"
-    }
+    },
+    big3: "sunaba",
+    vibes: "traditional"
   },
   {
     id: "yusui",
@@ -126,7 +132,9 @@ export default [
     pick: {
       jp: "なめこそば（生粉打）",
       en: "Nameko Soba"
-    }
+    },
+    big3: "sarashina",
+    vibes: "traditional"
   },
   {
     id: "kanzemizu",
@@ -163,7 +171,8 @@ export default [
       en:
         "Nice soba place close to Roppongi station. They once had a soba restaurant in New York city but it's now closed. You might feel modern vibes inside and of course soba and tasty dipping sauce are great. Seems like something with Uni (sea urchin) is a thing but I've never tried yet. Look forward to next visit.",
       jp: ""
-    }
+    },
+    vibes: "modern"
   },
   {
     id: "kaoriya",
@@ -201,7 +210,9 @@ export default [
     review: {
       en:
         'A successor to "Yabu Soba", one of "The Big Three of Soba". This old-school place in Kanda, once suffered from a fire in 2013 after over a hundred years of its history, successfully made a comeback in 2014 and people are delighted. Some people talk about "the good old days" before the fire, but who cares. Just have a nice soba.'
-    }
+    },
+    big3: "yabu",
+    vibes: "traditional"
   },
 
   {
@@ -224,7 +235,8 @@ export default [
         'Another prestigious soba place in Kanda. Good-looking old building, nice staffs, and above all it has amazing atmosphere harmonized with their great dishes and service. It is, literally, lively but relaxing for some reason. I like "Yamakake" which is cold soba noodle with Japanese yam\'s soup.',
       jp:
         "雰囲気がとてもいい。人気も高く、ヴァイブスがかなりよい。なんだか、昔の蕎麦屋さんってこんな感じだったんだろうかというかんじ。店員さんは、「せわしない」という言葉がぴったりだ。気分もよくなるので、ついつい何かいつもと違うものを食べたくなる。私は「山かけ」が大好きだ。黄金に輝いた表面を見ると、うっとりしてしまう。冷たい麺をぜひすすりたい。"
-    }
+    },
+    vibes: "traditional"
   },
   {
     id: "shirou",
@@ -331,7 +343,8 @@ export default [
       en:
         "Small nice soba place in Shimbashi. They directly buy buckwheat flour from the contracted farm in Hokkaido. Feels traditional and yet easy-going atmosphere. As you might guess, abundant Shimbashi-salary-man vibes here. By the way, go check out their beautiful parallax website.",
       jp: ""
-    }
+    },
+    vibes: "casual"
   },
   {
     id: "owariya",
@@ -353,7 +366,8 @@ export default [
       en:
         "Another cozy soba place in Kanda area. Having nearly 100 years of the history, they are well known for wide variety of food. Besides fine-tuned soba noodles, you can enjoy almost whatever you have in your mind like Tenpura, Yakitori and Sake. I guess it's great for Nomi-kai (Party-like use), too.",
       jp: ""
-    }
+    },
+    vibes: "traditional"
   },
   {
     id: "santoko",
@@ -375,7 +389,8 @@ export default [
       en:
         'As a brother of Kaoriya in Ebisu, they have that cool long tray-like soba plate. Somewhat thick and flavorful noodles are great. According to the website, the concept is "Jazz and soba". Yes. Also good for Izakaya-style use. Although bit far from the stations (Sangen-chaya or Ikejiri-Ohashi), it\'s worth to walk.',
       jp: ""
-    }
+    },
+    vibes: "modern"
   },
   {
     id: "asada",
@@ -396,7 +411,8 @@ export default [
     review: {
       en: "",
       jp: ""
-    }
+    },
+    vibes: "traditional"
   },
   {
     id: "azabu_nagasaka_sarashina_hq",
@@ -417,7 +433,9 @@ export default [
     review: {
       en: "",
       jp: ""
-    }
+    },
+    big3: "sarashina",
+    vibes: "traditional"
   },
   {
     id: "sanada",
@@ -439,6 +457,7 @@ export default [
       en:
         "Nice and modern feeling soba place at the center of Ginza. They serve Shin-shu (Nagano Prefecture) style soba and very neat small appetizers like Tofu or Miso and other things. Another branch is  in Ginza Six building.",
       jp: ""
-    }
+    },
+    vibes: "modern"
   }
 ];
