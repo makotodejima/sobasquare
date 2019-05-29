@@ -42,9 +42,18 @@ const SearchBar = props => {
     setResults(
       sobayas.filter(function(s) {
         return (
-          s.name.en.toLowerCase().match(input.toLowerCase()) ||
-          s.address.toLowerCase().match(input.toLowerCase()) ||
-          s.neighborhood.toLowerCase().match(input.toLowerCase())
+          s.name.en
+            .toLowerCase()
+            .trim()
+            .match(input.toLowerCase().trim()) ||
+          s.address
+            .toLowerCase()
+            .trim()
+            .match(input.toLowerCase().trim()) ||
+          s.neighborhood
+            .toLowerCase()
+            .trim()
+            .match(input.toLowerCase().trim())
         );
       })
     );
