@@ -17,8 +17,7 @@ import {
   FsqLink
 } from "./StyledComps";
 
-const client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
-const client_secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
+const f_client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 
 const Detail = ({ match, likes, sobayas }) => {
   const sobaya = sobayas.find(sobaya => sobaya.id === match.params.id);
@@ -29,7 +28,9 @@ const Detail = ({ match, likes, sobayas }) => {
       fetch(
         `https://api.foursquare.com/v2/venues/${
           sobaya.fsq
-        }/likes?client_id=${client_id}&client_secret=${client_secret}&v=20190526`
+        }/likes?client_id=${f_client_id}&client_secret=${
+          process.env.REACT_APP_F_API_KEY
+        }&v=20190526`
       )
         .then(res => res.json())
         .then(json => {
