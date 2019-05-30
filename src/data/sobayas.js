@@ -27,8 +27,8 @@ export default [
       jp: "松永",
       en: "Matsunaga"
     },
-    neighborhood: "Jingūmae",
-    address: "Jingūmae 2-19-12, Shibuya, Tokyo 150-0001",
+    neighborhood: "Jingumae",
+    address: "Jingumae 2-19-12, Shibuya, Tokyo 150-0001",
     googlemaps: "https://goo.gl/maps/PdXi9rijKLB2",
     fsq: "4bc294a7461576b0ecab7d32",
     coords: { lat: 35.673569558713105, lng: 139.71011635849277 },
@@ -219,7 +219,7 @@ export default [
     id: "kanda_matsuya",
     name: {
       jp: "かんだまつや",
-      en: "Kanda Masuya"
+      en: "Kanda Matsuya"
     },
     neighborhood: "Kanda Awaji-cho",
     address: "1 Chome-13 Kanda Sudacho, Chiyoda, Tokyo 101-0041",

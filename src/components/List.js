@@ -37,8 +37,9 @@ class List extends React.Component {
 
   updateSearchResults = results => {
     this.setState(prevState => {
+      // Turn off animation when pressing backspace
       if (results.length < prevState.searchResults.length) {
-        return { searchResults: results, selected: Math.random() };
+        return { searchResults: results, selected: Math.random() * -1 };
       } else {
         return { searchResults: results };
       }
@@ -53,7 +54,18 @@ class List extends React.Component {
 
   renderList = sobayas => {
     const { selected } = this.state;
-    if (!sobayas.length > 0) return <h1>Oh nothing to show!</h1>;
+    if (sobayas.length < 1)
+      return (
+        <>
+          <h1>Oh nothing to show!</h1>
+          <p>Here's what you might want to try.</p>
+          <ul>
+            <li>Azabu</li>
+            <li>Minato</li>
+            <li>Roppongi</li>
+          </ul>
+        </>
+      );
     return (
       <Flipper
         flipKey={selected}

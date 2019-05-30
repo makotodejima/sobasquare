@@ -87,7 +87,7 @@ class GoogleMaps extends Component {
           zoom: 11
         }}
         onMapLoad={map =>
-          this.props.coords.map(point => {
+          this.props.coords.forEach(point => {
             var marker = new window.google.maps.Marker({
               position: point,
               map: map,
