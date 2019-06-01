@@ -21,7 +21,7 @@ class Map extends React.Component {
       var s = document.createElement("script");
       s.type = "text/javascript";
       s.src = `https://maps.google.com/maps/api/js?key=${
-        process.env.REACT_APP_G_API_KEY
+        process.env.REACT_APP_NOW_G_API_KEY
       }`;
       var x = document.getElementsByTagName("script")[0];
       x.parentNode.insertBefore(s, x);
