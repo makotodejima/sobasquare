@@ -1,6 +1,11 @@
 {
   "version": 2,
   "name": "Sobasquare",
+  "build": {
+    "env": {
+      "REACT_APP_NOW_F_API_KEY": "@f_api_key"
+    }
+  },
   "builds": [
     {
       "src": "package.json",

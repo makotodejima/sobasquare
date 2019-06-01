@@ -21,7 +21,10 @@ const Detail = ({ match, likes, sobayas }) => {
   const sobaya = sobayas.find(sobaya => sobaya.id === match.params.id);
 
   const f_client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
-  const f_api_key = process.env.NOW_F_API_KEY;
+
+  console.log(process.env);
+  console.log("process.env.REACT_APP_NOW_F_API_KEY");
+  console.log(process.env.REACT_APP_NOW_F_API_KEY);
 
   useEffect(() => {
     if (sobaya && !likes[sobaya.id]) {
@@ -29,7 +32,9 @@ const Detail = ({ match, likes, sobayas }) => {
       fetch(
         `https://api.foursquare.com/v2/venues/${
           sobaya.fsq
-        }/likes?client_id=${f_client_id}&client_secret=${f_api_key}&v=20190526`
+        }/likes?client_id=${f_client_id}&client_secret=${
+          process.env.REACT_APP_NOW_F_API_KEY
+        }&v=20190601`
       )
         .then(res => res.json())
         .then(json => {
