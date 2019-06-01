@@ -22,10 +22,6 @@ const Detail = ({ match, likes, sobayas }) => {
 
   const f_client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 
-  console.log(process.env);
-  console.log("process.env.REACT_APP_NOW_F_API_KEY");
-  console.log(process.env.REACT_APP_NOW_F_API_KEY);
-
   useEffect(() => {
     if (sobaya && !likes[sobaya.id]) {
       console.log("Now fetching Likes Count!!");
