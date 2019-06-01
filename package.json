@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "now-build": "react-scripts build"
+    "now-build": "react-scripts build",
+    "now-dev": "react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"
