@@ -1,34 +1,63 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useReducer } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { store } from "../index";
+
+const initialState = { input: "", results: [] };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "UPDATE_INPUT":
+      return { ...state, input: action.newInput };
+    case "UPDATE_RESULTS":
+      return { ...state, results: action.newResults };
+    default:
+      return state;
+  }
+}
 
 const SearchBar = props => {
-  const sobayas = props.sobayas;
-  const [input, updateInput] = useState("");
-  const [results, setResults] = useState([]);
-
-  const inputEl = useRef("");
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    setResults(sobayas);
-  }, [sobayas]);
+    dispatch({ type: "UPDATE_RESULTS", newResults: props.sobayas });
+  }, [props.sobayas]);
 
   useEffect(() => {
-    UpdateResults(input);
-    if (input.length > 0) {
+    UpdateResults(state.input);
+    if (state.input.length > 0) {
       props.toggleIsSearching(true);
     } else {
       props.toggleIsSearching(false);
     }
-  }, [input]);
-
-  useEffect(() => {
-    props.updateSearchResults(results);
-  }, [results]);
+  }, [state.input]);
 
   const handleChange = e => {
-    updateInput(e.target.value);
+    dispatch({ type: "UPDATE_INPUT", newInput: e.target.value });
+  };
+
+  const UpdateResults = input => {
+    const _input = input.toLowerCase().trim();
+    const _Sobayas = props.sobayas.filter(s => {
+      return (
+        s.name.en
+          .toLowerCase()
+          .trim()
+          .match(_input) ||
+        s.address
+          .toLowerCase()
+          .trim()
+          .match(_input) ||
+        s.neighborhood
+          .toLowerCase()
+          .trim()
+          .match(_input)
+      );
+    });
+    props.updateSearchResults(_Sobayas);
+    dispatch({
+      type: "UPDATE_RESULTS",
+      newResults: _Sobayas
+    });
   };
 
   // <input type="search" /> -> default delete icon
@@ -38,34 +67,12 @@ const SearchBar = props => {
   //   updateInput("");
   // };
 
-  const UpdateResults = () => {
-    setResults(
-      sobayas.filter(function(s) {
-        return (
-          s.name.en
-            .toLowerCase()
-            .trim()
-            .match(input.toLowerCase().trim()) ||
-          s.address
-            .toLowerCase()
-            .trim()
-            .match(input.toLowerCase().trim()) ||
-          s.neighborhood
-            .toLowerCase()
-            .trim()
-            .match(input.toLowerCase().trim())
-        );
-      })
-    );
-  };
-
   return (
     <Wrapper>
       <input
         autoFocus
         type="search"
-        ref={inputEl}
-        value={input}
+        value={state.input}
         onChange={e => {
           handleChange(e);
         }}
@@ -85,7 +92,7 @@ export default connect(mapStateToProps)(SearchBar);
 
 const Wrapper = styled.div`
   width: 202px;
-  margin: 1rem auto 1.4rem;
+  margin: 1rem auto 1.2rem;
   text-align: center;
   input {
     padding: 5px 1rem;
@@ -95,11 +102,8 @@ const Wrapper = styled.div`
     -webkit-border-radius: 30px;
     width: 100%;
     line-height: 1.4;
-    /* box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.09); */
     box-sizing: border-box;
     font-size: 16px;
     outline: none;
-    /* border: none; */
-    /* background-color: lightyellow; */
   }
 `;

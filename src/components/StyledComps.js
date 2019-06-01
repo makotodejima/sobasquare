@@ -37,6 +37,7 @@ export const NormalListWrapper = styled.div`
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.07);
+  background-color: #fff;
   transition: box-shadow 0.4s;
   cursor: pointer;
   &:hover {
@@ -51,6 +52,7 @@ export const ExpandedListWrapper = styled.div`
   border-radius: 10px;
   transition: box-shadow 0.4s;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   a {
     color: black;
     transition: color 0.4s;
@@ -141,7 +143,7 @@ export const DetailContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.07);
   padding: 2rem 2rem;
