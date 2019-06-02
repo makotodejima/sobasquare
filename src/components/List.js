@@ -12,6 +12,7 @@ import Logo from "./Logo";
 import GoogleMaps from "./GoogleMaps";
 import SearchBar from "./Search";
 import Footer from "./Footer";
+import Nav from "./Nav";
 
 class List extends React.Component {
   state = {
@@ -116,14 +117,13 @@ class List extends React.Component {
     return (
       <>
         <div className="main">
+          <Nav />
           <Logo />
           <SearchBar
             updateSearchResults={this.updateSearchResults}
             toggleIsSearching={this.toggleIsSearching}
           />
-          {/* <p>
-          <Link to={`/map/`}>SHOW MAP</Link>
-        </p> */}
+
           <Route path="/sobaya/:id" render={props => <Detail {...props} />} />
           <Route path="/map/" render={props => <GoogleMaps {...props} />} />
           {this.state.isSearching
