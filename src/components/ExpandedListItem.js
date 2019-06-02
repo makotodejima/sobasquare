@@ -10,6 +10,8 @@ import {
 } from "./StyledComps";
 import { ReactComponent as Close } from "../images/close.svg";
 import { Flipped } from "react-flip-toolkit";
+import Img from "react-image";
+import Spinner from "./Spinner";
 
 const ExpandedListItem = ({ sobaya, index, match }) => {
   const img = require(`../images/${sobaya.id}.jpg`);
@@ -58,10 +60,21 @@ const ExpandedListItem = ({ sobaya, index, match }) => {
                 className={`${mouseonLink ? "on" : null}`}
               >
                 <Link to={`/sobaya${match.path}${sobaya.id}`}>
-                  <ExpandedListImg
+                  {/* <ExpandedListImg
                     className="preventShrink"
                     src={img}
                     alt={sobaya.id}
+                  /> */}
+
+                  <Img
+                    className="preventShrink"
+                    src={img}
+                    alt={sobaya.id}
+                    loader={
+                      <div className="wrap">
+                        <Spinner />
+                      </div>
+                    }
                   />
                   <span className="preventShrink">Learn More</span>
                 </Link>
