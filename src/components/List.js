@@ -118,7 +118,6 @@ class List extends React.Component {
           updateSearchResults={this.updateSearchResults}
           toggleIsSearching={this.toggleIsSearching}
         />
-
         {/* <p>
           <Link to={`/map/`}>SHOW MAP</Link>
         </p> */}
