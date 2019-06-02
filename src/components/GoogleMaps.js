@@ -69,16 +69,16 @@ class GoogleMaps extends Component {
   //   super();
   // }
 
-  createInfoWindow(e, map) {
-    const infoWindow = new window.google.maps.InfoWindow({
-      content: '<div id="infoWindow" />',
-      position: { lat: e.latLng.lat(), lng: e.latLng.lng() }
-    });
-    infoWindow.addListener("domready", e => {
-      render(<InfoWindow />, document.getElementById("infoWindow"));
-    });
-    infoWindow.open(map);
-  }
+  // createInfoWindow(e, map) {
+  // content: '<div id="infoWindow" />',
+  // position: { lat: e.latLng.lat(), lng: e.latLng.lng() }
+  // });
+  // infoWindow.addListener("domready", e => {
+  //   render(<InfoWindow />, document.getElementById("infoWindow"));
+  // });
+
+  //   infoWindow.open(map);
+  // }
 
   render() {
     return (
@@ -88,18 +88,25 @@ class GoogleMaps extends Component {
           center: { lat: 35.671166, lng: 139.736184 },
           zoom: 11
         }}
-        onMapLoad={map =>
+        onMapLoad={map => {
+          const infoWindow = new window.google.maps.InfoWindow();
           this.props.coords.forEach(point => {
             var marker = new window.google.maps.Marker({
               position: point,
               map: map,
               title: "Hello Istanbul!"
             });
-            marker.addListener("click", e => {
-              this.createInfoWindow(e, map);
+
+            window.google.maps.event.addListener(marker, "click", function(e) {
+              console.log(e);
+              infoWindow.close(); // Close previously opened infowindow
+              infoWindow.setContent(
+                "<div id='infowindow'>" + "TESTEEEE" + "</div>"
+              );
+              infoWindow.open(map, marker);
             });
-          })
-        }
+          });
+        }}
       />
     );
   }
