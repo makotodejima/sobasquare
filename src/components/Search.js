@@ -40,18 +40,23 @@ const SearchBar = props => {
       .toLowerCase()
       .trim()
       .replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
-    const _Sobayas = props.sobayas.filter(s => {
+
+    const seeMatch = str => {
+      return str.match(new RegExp(_input, "i"));
+    };
+
+    const _sobayas = props.sobayas.filter(s => {
       return (
-        s.name.en.match(new RegExp(_input, "i")) ||
-        s.name.jp.match(new RegExp(_input, "i")) ||
-        s.address.match(new RegExp(_input, "i")) ||
-        s.neighborhood.match(new RegExp(_input, "i"))
+        seeMatch(s.name.en) ||
+        seeMatch(s.name.jp) ||
+        seeMatch(s.address) ||
+        seeMatch(s.neighborhood)
       );
     });
-    props.updateSearchResults(_Sobayas);
+    props.updateSearchResults(_sobayas);
     dispatch({
       type: "UPDATE_RESULTS",
-      newResults: _Sobayas
+      newResults: _sobayas
     });
   };
 
