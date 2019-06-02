@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 import { render } from "react-dom";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { ReactComponent as Close } from "../images/close.svg";
 
 class Map extends React.Component {
   constructor(props) {
@@ -37,72 +40,89 @@ class Map extends React.Component {
 
   render() {
     return (
-      <div
-        style={{
-          backgroundColor: "white",
-          position: "absolute",
-          bottom: 0,
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "80%",
-          height: "80%",
-          zIndex: "10"
-        }}
-        id={this.props.id}
-      />
+      <>
+        <Ovarlay />
+        <Link to="/">
+          <h1 style={{ transform: `translateY(-80px)` }}>CLOSE</h1>
+        </Link>
+        <div
+          style={{
+            // backgroundColor: "transparent",
+            position: "absolute",
+            bottom: "10%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "80%",
+            height: "70%",
+            opacity: "1",
+            zIndex: "99"
+          }}
+          id={this.props.id}
+        />
+      </>
     );
   }
 }
 
+const Ovarlay = styled.div`
+  position: absolute;
+  opacity: 0.7;
+  background-color: lightblue;
+  width: 100%;
+  height: 100%;
+`;
+
 const InfoWindow = props => {
+  const id = props.id;
+  const { en, jp } = props.name;
+  const neighborhood = props.neighborhood;
   return (
-    <>
-      <h4>Sobaya's name</h4>
-      <div>Sobaya address</div>
-      <div>Sobaya link</div>
-    </>
+    <InfoWindowWrap>
+      <h2>{en}</h2>
+      <h4>{jp}</h4>
+      <div>{neighborhood}</div>
+      <a href={`/sobaya/${id}`}>Learn More</a>
+      {/* <Link to={`/`}>top</Link> */}
+    </InfoWindowWrap>
   );
 };
 
+const InfoWindowWrap = styled.div`
+  padding: 5px 10px;
+`;
+
 class GoogleMaps extends Component {
-  // constructor() {
-  //   super();
-  // }
-
-  // createInfoWindow(e, map) {
-  // content: '<div id="infoWindow" />',
-  // position: { lat: e.latLng.lat(), lng: e.latLng.lng() }
-  // });
-  // infoWindow.addListener("domready", e => {
-  //   render(<InfoWindow />, document.getElementById("infoWindow"));
-  // });
-
-  //   infoWindow.open(map);
-  // }
-
   render() {
+    const { sobayasInfo } = this.props;
     return (
       <Map
         id="myMap"
         options={{
-          center: { lat: 35.671166, lng: 139.736184 },
-          zoom: 11
+          center: { lat: 35.673569558713105, lng: 139.71011635849277 },
+          zoom: 11.5
         }}
         onMapLoad={map => {
           const infoWindow = new window.google.maps.InfoWindow();
-          this.props.coords.forEach(point => {
+          sobayasInfo.coords.forEach((point, idx) => {
             var marker = new window.google.maps.Marker({
               position: point,
               map: map,
-              title: "Hello Istanbul!"
+              title: "Sobaya's Info"
             });
 
             window.google.maps.event.addListener(marker, "click", function(e) {
-              console.log(e);
               infoWindow.close(); // Close previously opened infowindow
-              infoWindow.setContent(
-                "<div id='infowindow'>" + "TESTEEEE" + "</div>"
-              );
+              infoWindow.setContent(`<div id='infoWindow'></div>`);
+              infoWindow.addListener("domready", e => {
+                render(
+                  <InfoWindow
+                    id={sobayasInfo.id[idx]}
+                    name={sobayasInfo.name[idx]}
+                    neighborhood={sobayasInfo.neighborhood[idx]}
+                  />,
+                  document.getElementById("infoWindow")
+                );
+              });
               infoWindow.open(map, marker);
             });
           });
@@ -112,9 +132,14 @@ class GoogleMaps extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ sobayas }) => {
   return {
-    coords: state.sobayas.map(sobaya => sobaya.coords)
+    sobayasInfo: {
+      id: sobayas.map(s => s.id),
+      name: sobayas.map(s => s.name),
+      neighborhood: sobayas.map(s => s.neighborhood),
+      coords: sobayas.map(s => s.coords)
+    }
   };
 };
 

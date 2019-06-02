@@ -13,9 +13,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div>
-          <Route path="/" component={List} />
-        </div>
+        <Route path="/" component={List} />
       </Router>
     </Provider>
   );
