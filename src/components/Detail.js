@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FoursquareLogo from "./FoursquareLogo.js";
+import Spinner from "./Spinner";
 import { ReactComponent as Gmaps } from "../images/google-maps.svg";
 import { ReactComponent as Close } from "../images/close.svg";
 import { store } from "../index";
@@ -90,14 +91,14 @@ const Detail = ({ match, likes, sobayas }) => {
               <Img
                 src={require(`../images/${sobaya.id}_1.jpg`)}
                 alt={sobaya.id}
-                loader={`Wait`}
+                loader={<Spinner />}
               />
             </div>
             <div>
               <Img
                 src={require(`../images/${sobaya.id}_2.jpg`)}
                 alt={sobaya.name}
-                loader={`It's loading`}
+                loader={<Spinner />}
               />
             </div>
           </DetailImgContainer>
