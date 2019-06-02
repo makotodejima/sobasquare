@@ -76,7 +76,7 @@ const SearchBar = props => {
         onChange={e => {
           handleChange(e);
         }}
-        placeholder='Try "Kanda" or "Azabu"'
+        placeholder="Kanda, Sunaba..."
       />
     </Wrapper>
   );
@@ -91,7 +91,7 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(SearchBar);
 
 const Wrapper = styled.div`
-  width: 220px;
+  width: 210px;
   margin: 1rem auto 1.2rem;
   text-align: center;
   input {

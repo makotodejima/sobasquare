@@ -25,6 +25,7 @@ class List extends React.Component {
       sobayas: sobayas
     });
     store.dispatch({ type: "SORT_SOBAYAS", order: "asc" });
+    // setTimeout(() => this.setState({ loading: false }), 1000);
   }
 
   handleClick = (e, index) => {
