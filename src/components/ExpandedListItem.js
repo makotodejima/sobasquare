@@ -5,7 +5,6 @@ import {
   Names,
   Description,
   ImgWrapper,
-  ExpandedListImg,
   SbsqPick
 } from "./StyledComps";
 import { ReactComponent as Close } from "../images/close.svg";
@@ -60,12 +59,6 @@ const ExpandedListItem = ({ sobaya, index, match }) => {
                 className={`${mouseonLink ? "on" : null}`}
               >
                 <Link to={`/sobaya${match.path}${sobaya.id}`}>
-                  {/* <ExpandedListImg
-                    className="preventShrink"
-                    src={img}
-                    alt={sobaya.id}
-                  /> */}
-
                   <Img
                     className="preventShrink"
                     src={img}
