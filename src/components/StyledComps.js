@@ -92,6 +92,9 @@ export const Description = styled.div`
 
 export const ImgWrapper = styled.div`
   position: relative;
+  width: 100%;
+  height: 141.7px;
+
   span {
     position: absolute;
     opacity: 0;
@@ -103,8 +106,18 @@ export const ImgWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   img {
     transition: all 0.8s;
+    width: 100%;
+    border-radius: 5px;
+    filter: grayscale(50%);
   }
 
   &.on {
@@ -124,6 +137,7 @@ export const ExpandedListImg = styled.img`
 `;
 
 // in Detail
+
 export const fadein = keyframes`
   from {
     opacity: 0;
@@ -222,8 +236,9 @@ export const DetailImgContainer = styled.div`
   display: flex;
   justify-content: space-between;
   div {
-    flex: 1;
+    /* flex: 1; */
     height: 180px;
+    width: 315px;
     margin: auto 5px;
     img {
       margin: 0 auto;
