@@ -91,7 +91,7 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(SearchBar);
 
 const Wrapper = styled.div`
-  width: 202px;
+  width: 220px;
   margin: 1rem auto 1.2rem;
   text-align: center;
   input {
