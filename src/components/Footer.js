@@ -14,12 +14,12 @@ export default () => (
 const Footer = styled.footer`
   p {
     font-size: 0.8rem;
-    margin-right: 1rem;
+    margin-left: 1rem;
   }
   position: fixed;
   bottom: 0;
   width: 100%;
 
   height: 1.5rem;
-  text-align: right;
+  text-align: left;
 `;

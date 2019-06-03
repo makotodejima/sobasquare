@@ -18,7 +18,7 @@ export default Nav;
 const Wrapper = styled.nav`
   position: fixed;
   top: 35px;
-  left: 40px;
+  right: 40px;
   width: 45px;
   /* height: 70px; */
 `;
