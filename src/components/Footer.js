@@ -10,7 +10,7 @@ export default () => (
       </p>
     </div>
     <div className="right">
-      <p>Missing your favorite? Please let us know!</p>
+      {/* <p>Missing your favorite? Please let us know!</p> */}
     </div>
   </Footer>
 );

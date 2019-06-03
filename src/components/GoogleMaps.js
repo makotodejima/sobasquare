@@ -75,12 +75,17 @@ const CloseButton = styled.span`
       stroke-miterlimit: 10;
     }
   }
+  @media (max-width: 414px) {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+  }
 `;
 
 const StyledMap = styled.div`
   background-color: white;
   position: absolute;
-  bottom: 10%;
+  top: 9rem;
   left: 50%;
   transform: translateX(-50%);
   max-width: 830px;
@@ -88,6 +93,11 @@ const StyledMap = styled.div`
   height: 70%;
   opacity: 1;
   z-index: 99;
+  @media (max-width: 414px) {
+    top: 5rem;
+    width: 95%;
+    height: 85%;
+  }
 `;
 
 const InfoWindow = props => {

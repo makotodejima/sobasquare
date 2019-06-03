@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { Flipper } from "react-flip-toolkit";
 import { ListContrainer, OuterItemWrapper } from "./StyledComps";
 import { store } from "../index";

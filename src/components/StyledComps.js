@@ -4,12 +4,20 @@ export const ListContrainer = styled.div`
   overflow-y: scroll;
   height: 70vh;
   z-index: -1;
-  width: 450px;
+  width: 414px;
+  @media (max-width: 414px) {
+    width: 100%;
+    min-width: 290px;
+  }
 `;
 
 export const OuterItemWrapper = styled.div`
   margin: 2rem auto;
   width: 280px;
+  @media (max-width: 414px) {
+    margin: 1rem auto;
+    width: 270px;
+  }
 `;
 
 // Shared

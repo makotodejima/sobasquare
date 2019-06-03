@@ -16,9 +16,13 @@ const Nav = () => {
 export default Nav;
 
 const Wrapper = styled.nav`
-  position: fixed;
+  position: absolute;
   top: 35px;
   right: 40px;
   width: 45px;
-  /* height: 70px; */
+  @media (max-width: 414px) {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+  }
 `;

@@ -106,4 +106,7 @@ const Wrapper = styled.div`
     font-size: 16px;
     outline: none;
   }
+  @media (max-width: 414px) {
+    margin: 0.4rem auto 0.8rem;
+  }
 `;

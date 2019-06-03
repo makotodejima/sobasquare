@@ -14,4 +14,8 @@ export default props => (
 const Container = styled.div`
   width: 100px;
   margin: 2rem auto 0;
+  @media (max-width: 414px) {
+    width: 80px;
+    margin: 1rem auto 0;
+  }
 `;
