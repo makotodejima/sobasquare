@@ -160,16 +160,19 @@ export const DetailContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 80%;
-  max-width: 650px;
-  top: 50%;
+  max-width: 700px;
+  top: 6rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.07);
   padding: 2rem 2rem;
   z-index: 1;
   animation: ${fadein} 0.3s ease-in;
+  @media (max-width: 414px) {
+    width: 90%;
+  }
 
   #close {
     position: absolute;
@@ -237,13 +240,10 @@ export const Review = styled.div`
 `;
 
 export const DetailImgContainer = styled.div`
-  /* border-radius: 50px;
-  overflow: hidden; */
   margin: auto;
   display: flex;
   justify-content: space-between;
   div {
-    /* flex: 1; */
     height: 180px;
     width: 315px;
     margin: auto 5px;
@@ -254,6 +254,23 @@ export const DetailImgContainer = styled.div`
       object-fit: contain;
       filter: contrast(105%);
     }
+  }
+  @media (max-width: 414px) {
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+`;
+
+export const ExternalLinks = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @media (max-width: 414px) {
+    flex-direction: column;
   }
 `;
 
@@ -275,12 +292,6 @@ export const FsqLink = styled.div`
   .powered-by-foursquare {
     fill: #d76179;
   }
-`;
-
-export const ExternalLinks = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 `;
 
 export const GoogleMapsLink = styled.a`

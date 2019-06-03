@@ -38,4 +38,8 @@ const Footer = styled.footer`
     font-size: 1rem;
     margin-right: 1rem;
   }
+
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
