@@ -3,6 +3,7 @@
       #line-1, #line-2 {
         fill: none;
         stroke: #000;
+        stroke-width: 2px;
         stroke-miterlimit: 10;
       }
     </style>
