@@ -42,9 +42,11 @@ class Map extends React.Component {
     return (
       <>
         <Ovarlay />
-        <Link to="/">
-          <h1 style={{ transform: `translateY(-80px)` }}>CLOSE</h1>
-        </Link>
+        <CloseButton>
+          <Link to="/">
+            <Close alt="Close Map" />
+          </Link>
+        </CloseButton>
         <StyledMap id={this.props.id} />
       </>
     );
@@ -53,17 +55,35 @@ class Map extends React.Component {
 
 const Ovarlay = styled.div`
   position: absolute;
-  opacity: 0.7;
-  background-color: lightblue;
+  opacity: 0.9;
+  background-color: white;
   width: 100%;
   height: 100%;
 `;
 
+const CloseButton = styled.span`
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  width: 45px;
+  #close {
+    #line-1,
+    #line-2 {
+      fill: none;
+      stroke-width: 4px;
+      stroke: #000;
+      stroke-miterlimit: 10;
+    }
+  }
+`;
+
 const StyledMap = styled.div`
+  background-color: white;
   position: absolute;
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
+  max-width: 830px;
   width: 80%;
   height: 70%;
   opacity: 1;
