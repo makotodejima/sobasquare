@@ -30,6 +30,10 @@ class List extends React.Component {
     // setTimeout(() => this.setState({ loading: false }), 1000);
   }
 
+  init = () => {
+    this.setState({ selected: null });
+  };
+
   handleClick = (e, index) => {
     if (e.target.classList.contains("preventShrink")) return;
 
@@ -118,7 +122,7 @@ class List extends React.Component {
       <>
         <div className="main">
           <Nav />
-          <Logo />
+          <Logo init={this.init} />
           <SearchBar
             updateSearchResults={this.updateSearchResults}
             toggleIsSearching={this.toggleIsSearching}
