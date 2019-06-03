@@ -171,6 +171,7 @@ export const DetailContainer = styled.div`
   z-index: 1;
   animation: ${fadein} 0.3s ease-in;
   @media (max-width: 414px) {
+    box-shadow: none;
     width: 90%;
   }
 
