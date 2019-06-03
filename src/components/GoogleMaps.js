@@ -96,17 +96,41 @@ const InfoWindow = props => {
   const neighborhood = props.neighborhood;
   return (
     <InfoWindowWrap>
-      <h2>{en}</h2>
-      <h4>{jp}</h4>
-      <div>{neighborhood}</div>
-      <a href={`/sobaya/${id}`}>Learn More</a>
-      {/* <Link to={`/`}>top</Link> */}
+      <h2 className="en">{en}</h2>
+      <h4 className="jp">{jp}</h4>
+      <div className="neighborhood">{neighborhood}</div>
+      <a className="link" href={`/sobaya/${id}`}>
+        Learn More{" "}
+        <span role="img" aria-label="Look">
+          👀
+        </span>
+      </a>
     </InfoWindowWrap>
   );
 };
 
 const InfoWindowWrap = styled.div`
   padding: 5px 10px;
+  font-family: ubuntu;
+  .jp {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  .neighborhood {
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+  .link {
+    text-align: center;
+    display: block;
+    font-size: 1.3rem;
+    text-decoration: none;
+    /* border: solid 3px #4285f4; */
+    background-color: #4285f4;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
 `;
 
 class GoogleMaps extends Component {
