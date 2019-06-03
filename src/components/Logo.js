@@ -3,8 +3,8 @@ import logo from "../images/logo.svg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export default () => (
-  <Container>
+export default props => (
+  <Container onClick={props.init}>
     <Link to={`/`}>
       <img src={logo} alt="Sobasquare logo" />
     </Link>
