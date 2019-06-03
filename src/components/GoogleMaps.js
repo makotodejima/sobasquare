@@ -45,20 +45,7 @@ class Map extends React.Component {
         <Link to="/">
           <h1 style={{ transform: `translateY(-80px)` }}>CLOSE</h1>
         </Link>
-        <div
-          style={{
-            // backgroundColor: "transparent",
-            position: "absolute",
-            bottom: "10%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "80%",
-            height: "70%",
-            opacity: "1",
-            zIndex: "99"
-          }}
-          id={this.props.id}
-        />
+        <StyledMap id={this.props.id} />
       </>
     );
   }
@@ -70,6 +57,17 @@ const Ovarlay = styled.div`
   background-color: lightblue;
   width: 100%;
   height: 100%;
+`;
+
+const StyledMap = styled.div`
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 70%;
+  opacity: 1;
+  z-index: 99;
 `;
 
 const InfoWindow = props => {
