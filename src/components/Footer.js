@@ -6,11 +6,23 @@ export default () => (
     <div className="left">
       <p>
         Designed and developed by{" "}
-        <a href="https://madmak.me/"> Makoto Dejima</a>
+        <a href="https://madmak.me/" target="_blank" rel="noopener noreferrer">
+          {" "}
+          Makoto Dejima
+        </a>
       </p>
     </div>
     <div className="right">
-      {/* <p>Missing your favorite? Please let us know!</p> */}
+      <p>
+        Missing your favorite?{" "}
+        <a
+          href="https://makotodejima.typeform.com/to/nQ0S6u"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Please tell us about your pick.
+        </a>
+      </p>
     </div>
   </Footer>
 );
@@ -37,9 +49,23 @@ const Footer = styled.footer`
   .right p {
     font-size: 1rem;
     margin-right: 1rem;
+    a {
+      color: #4285f4;
+      /* text-decoration: none; */
+    }
   }
 
-  @media (max-width: 414px) {
-    display: none;
+  @media (max-width: 768px) {
+    justify-content: flex-end;
+    .left {
+      display: none;
+    }
+    .right p {
+      margin-right: 1rem;
+      font-size: 0.8rem;
+      @media (max-width: 380px) {
+        font-size: 0.7rem;
+      }
+    }
   }
 `;
