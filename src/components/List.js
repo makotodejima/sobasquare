@@ -13,6 +13,7 @@ import GoogleMaps from "./GoogleMaps";
 import SearchBar from "./Search";
 import Footer from "./Footer";
 import Nav from "./Nav";
+import NoResults from "./NoResults";
 
 class List extends React.Component {
   state = {
@@ -61,18 +62,7 @@ class List extends React.Component {
 
   renderList = sobayas => {
     const { selected } = this.state;
-    if (sobayas.length < 1)
-      return (
-        <>
-          <h1>Oh nothing to show!</h1>
-          <p>Here's what you might want to try.</p>
-          <ul>
-            <li>Azabu</li>
-            <li>Minato</li>
-            <li>Roppongi</li>
-          </ul>
-        </>
-      );
+    if (sobayas.length < 1) return <NoResults />;
     return (
       <Flipper
         flipKey={selected}
