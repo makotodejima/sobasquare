@@ -60,16 +60,18 @@ export default () => (
 
 const Footer = styled.footer`
   position: fixed;
-  background-color: rgba(255, 255, 255, 1);
-  bottom: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 0;
   width: 100%;
+  height: 30px;
   display: flex;
   justify-content: space-between;
   font-family: ubuntu;
-  z-index: 100;
 
   .left {
-    margin-left: 1rem;
+    position: absolute;
+    bottom: 5px;
+    left: 1rem;
     @media (max-width: 380px) {
       #logo {
         width: 50px;
@@ -79,10 +81,9 @@ const Footer = styled.footer`
 
   .right p {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 5px;
+    right: 1rem;
     font-size: 1rem;
-    margin-right: 1rem;
     a {
       color: #4285f4;
       text-decoration: none;
@@ -94,7 +95,6 @@ const Footer = styled.footer`
     .left {
     }
     .right p {
-      margin-right: 1rem;
       font-size: 0.8rem;
       @media (max-width: 414px) {
         font-size: 0.7rem;
