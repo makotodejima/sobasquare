@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 export const ListContrainer = styled.div`
   overflow-y: scroll;
-  height: 70vh;
+  height: 75vh;
   z-index: -1;
   width: 414px;
   @media (max-width: 414px) {

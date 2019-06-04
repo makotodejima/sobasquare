@@ -59,12 +59,14 @@ export default () => (
 );
 
 const Footer = styled.footer`
-  position: absolute;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 1);
   bottom: 5px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   font-family: ubuntu;
+  z-index: 100;
 
   .left {
     margin-left: 1rem;
