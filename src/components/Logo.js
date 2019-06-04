@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/logo.svg";
+import logo from "../images/sbsq_logo.svg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -12,8 +12,8 @@ export default props => (
 );
 
 const Container = styled.div`
-  width: 100px;
-  margin: 2rem auto 0;
+  width: 120px;
+  margin: 1.5rem auto 0;
   @media (max-width: 414px) {
     width: 80px;
     margin: 1rem auto 0;
