@@ -121,7 +121,7 @@ export const ImgWrapper = styled.div`
   }
 
   img {
-    transition: all 0.8s;
+    transition: filter 0.5s;
     width: 100%;
     border-radius: 5px;
     filter: grayscale(50%);
