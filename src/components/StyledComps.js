@@ -333,7 +333,8 @@ export const FsqLink = styled.span`
     padding: 4px 20px;
     border: 2px solid #d76179;
     border-radius: 5px;
-    color: #d76179;
+    color: #fff;
+    background-color: #d76179;
     text-decoration: none;
     transition: all 0.2s;
     .likes {
@@ -347,18 +348,16 @@ export const FsqLink = styled.span`
         bottom: 5px;
         right: 20px;
         font-size: 1rem;
-        color: #fff;
+        color: #d76179;
       }
     }
     #fsq_logo {
       width: 150px;
-      .powered-by-foursquare {
-        fill: #d76179;
-      }
+      fill: #fff;
     }
     &:hover {
-      color: white;
-      background-color: #d76179;
+      color: #d76179;
+      background-color: #fff;
     }
   }
 `;
@@ -375,22 +374,23 @@ export const GoogleMapsLink = styled.span`
     padding: 4px 20px;
     border: 2px solid #4285f4;
     border-radius: 5px;
-    color: #4285f4;
+    color: #fff;
+    background-color: #4285f4;
     text-decoration: none;
     transition: all 0.2s;
     .text {
     }
     #googlemaps_icon {
-      fill: #4285f4;
+      fill: #fff;
       transform: translateY(3px);
       margin-left: 5px;
       transition: all 0.2s;
     }
     &:hover {
-      color: white;
-      background-color: #4285f4;
+      color: #4285f4;
+      background-color: #fff;
       #googlemaps_icon {
-        fill: white;
+        fill: #4285f4;
       }
     }
   }
