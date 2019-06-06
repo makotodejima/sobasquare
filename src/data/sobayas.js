@@ -399,7 +399,7 @@ export default [
         'As a brother of Kaoriya in Ebisu, they have that cool long tray-like soba plate. Somewhat thick and flavorful noodles are great. According to the website, the concept is "Jazz and soba". Yes. Also good for Izakaya-style use. Although bit far from the stations (Sangen-chaya or Ikejiri-Ohashi), it\'s worth to walk.',
       jp: ""
     },
-    vibe: "modern"
+    vibe: ["modern"]
   },
   {
     id: "asada",
@@ -422,7 +422,7 @@ export default [
         'Opened over 150 years ago by the guy who was a grain merchant. Since then, it has been passed down for eight generations. With the spirit of "Edo-mae", this iconic sobaya (Soba place) serves its own 100% buckwheat noodle, all sorts of small elegant dishes and sake.',
       jp: ""
     },
-    vibe: "traditional"
+    vibe: ["traditional"]
   },
   {
     id: "azabu_nagasaka_sarashina_hq",
@@ -445,7 +445,7 @@ export default [
       jp: ""
     },
     big3: "sarashina",
-    vibe: "traditional"
+    vibe: ["traditional"]
   },
   {
     id: "sanada",
@@ -468,6 +468,6 @@ export default [
         "Nice and modern feeling soba place at the center of Ginza. They serve Shin-shu (Nagano Prefecture) style soba and very neat small appetizers like Tofu or Miso and other things. Another branch is  in Ginza Six building.",
       jp: ""
     },
-    vibe: "modern"
+    vibe: ["modern"]
   }
 ];
