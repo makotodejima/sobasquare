@@ -22,6 +22,15 @@ export const OuterItemWrapper = styled.div`
 
 // Shared
 
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: ${props => props.d};
+  justify-content: ${props => props.j};
+  @media (max-width: 414px) {
+    flex-direction: column;
+  }
+`;
+
 export const dash = keyframes`
 to {
     stroke-dashoffset: 0;
@@ -37,6 +46,30 @@ export const SbsqPick = styled.div`
   font-family: "Ubuntu";
   font-size: 1rem;
   margin: 10px 0;
+`;
+
+export const Website = styled.div`
+  font-family: "Ubuntu";
+  font-size: 1rem;
+  text-align: center;
+  margin: auto 0 auto;
+  a {
+    margin: 0 auto;
+    font-size: 1.1rem;
+    padding: 2px 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s;
+    &:hover {
+      color: white;
+      background-color: #333;
+    }
+  }
+  @media (max-width: 414px) {
+    margin: 10px auto auto 0;
+  }
 `;
 
 // Normal List
@@ -225,12 +258,15 @@ export const DetailContainer = styled.div`
   .url {
     font-family: "Ubuntu";
     font-size: 1rem;
+
     a {
       color: blue;
     }
   }
 
   .address {
+    font-size: 1rem;
+    text-align: center;
     margin-bottom: 0;
   }
 `;

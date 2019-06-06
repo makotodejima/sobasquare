@@ -13,6 +13,8 @@ import {
   DetailImgContainer,
   Review,
   SbsqPick,
+  Website,
+  FlexContainer,
   ExternalLinks,
   GoogleMapsLink,
   FsqLink
@@ -72,19 +74,20 @@ const Detail = ({ match, likes, sobayas }) => {
               <p>{sobaya.review.en}</p>
             </Review>
           )}
-          <SbsqPick>
-            <p>
-              SOBASQUARE Pick: <strong>{sobaya.pick.en}</strong>
-            </p>
-          </SbsqPick>
-
-          {sobaya.url && (
-            <div className="url">
-              <a href={sobaya.url} target="_blank" rel="noopener noreferrer">
-                <p>{sobaya.url}</p>
-              </a>
-            </div>
-          )}
+          <FlexContainer d="row" j="space-between">
+            <SbsqPick>
+              <p>
+                SOBASQUARE Pick: <strong>{sobaya.pick.en}</strong>
+              </p>
+            </SbsqPick>
+            {sobaya.url && (
+              <Website>
+                <a href={sobaya.url} target="_blank" rel="noopener noreferrer">
+                  <span>Visit website</span>
+                </a>
+              </Website>
+            )}
+          </FlexContainer>
 
           <DetailImgContainer>
             <div>
@@ -131,11 +134,8 @@ const Detail = ({ match, likes, sobayas }) => {
               </a>
             </FsqLink>
           </ExternalLinks>
-          <div className="address">
-            <p style={{ textAlign: `center`, fontSize: `1rem` }}>
-              {sobaya.address}
-            </p>
-          </div>
+
+          <div className="address">{sobaya.address}</div>
         </>
       )}
     </DetailContainer>
