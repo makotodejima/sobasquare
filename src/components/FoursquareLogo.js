@@ -3,7 +3,7 @@ import React from "react";
 const FoursquareLogo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    id="Layer_1"
+    id="fsq_logo"
     data-name="Layer 1"
     viewBox="0 0 711.31 45.31"
   >

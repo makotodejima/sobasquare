@@ -311,21 +311,30 @@ export const ExternalLinks = styled.div`
   }
 `;
 
-export const FsqLink = styled.div`
+export const FsqLink = styled.span`
+  font-family: Ubuntu;
   font-size: 1.3rem;
-  padding: 2px 0;
   text-align: center;
-  width: 40%;
   a {
-    /* text-decoration: none; */
+    padding: 4px 20px;
+    border: 1px solid #d76179;
+    border-radius: 5px;
     color: #d76179;
-    font-family: "Ubuntu";
+    text-decoration: none;
+    transition: all 0.2s;
+    .likes {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    #fsq_logo {
+      width: 150px;
+    }
+    &:hover {
+      color: white;
+      background-color: #d76179;
+    }
   }
-  .logo {
-    margin: 0 auto;
-    width: 120px;
-    font-size: 1rem;
-  }
+
   .powered-by-foursquare {
     fill: #d76179;
   }

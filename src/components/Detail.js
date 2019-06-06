@@ -112,7 +112,7 @@ const Detail = ({ match, likes, sobayas }) => {
               rel="noopener noreferrer"
             >
               <Gmaps />
-              Google Maps
+              Open in Google Maps
             </GoogleMapsLink>
             <FsqLink>
               <a
@@ -121,16 +121,13 @@ const Detail = ({ match, likes, sobayas }) => {
                 rel="noopener noreferrer"
               >
                 {likes[sobaya.id] === undefined ? (
-                  <p>Loading</p>
+                  <div>Loading</div>
                 ) : (
-                  <p>
-                    {likes[sobaya.id]}
-                    <span> on Foursquare</span>
-                  </p>
+                  <>
+                    <span className="likes">{likes[sobaya.id]}</span>
+                    <FoursquareLogo />
+                  </>
                 )}
-                <div className="logo">
-                  <FoursquareLogo />
-                </div>
               </a>
             </FsqLink>
           </ExternalLinks>
