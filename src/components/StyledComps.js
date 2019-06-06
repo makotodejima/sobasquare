@@ -207,9 +207,10 @@ export const DetailContainer = styled.div`
   z-index: 1;
   animation: ${fadein} 0.3s ease-in;
   @media (max-width: 414px) {
+    top: 6.5rem;
     box-shadow: none;
     width: 90%;
-    padding: 2rem 0;
+    padding: 32px 6px;
   }
 
   #close {
@@ -227,6 +228,7 @@ export const DetailContainer = styled.div`
       transform-origin: top right;
     }
     @media (max-width: 414px) {
+      top: 5px;
       right: 0;
       width: 1.8rem;
     }

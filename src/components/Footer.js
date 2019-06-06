@@ -70,7 +70,7 @@ const Footer = styled.footer`
 
   .left {
     position: absolute;
-    bottom: 5px;
+    bottom: 8px;
     left: 1rem;
     @media (max-width: 380px) {
       #logo {
@@ -81,7 +81,7 @@ const Footer = styled.footer`
 
   .right p {
     position: absolute;
-    bottom: 5px;
+    bottom: 8px;
     right: 1rem;
     font-size: 1rem;
     a {

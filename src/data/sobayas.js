@@ -11,7 +11,6 @@ export default [
     fsq: "4bc3f589f8219c7427deb610",
     coords: { lat: 35.66822545367157, lng: 139.75069642066956 },
     pick: { jp: "せいろ", en: "Seiro" },
-    url: "www.test.jp",
     review: {
       en:
         'Carrying the name of "Sunaba", meaning "sandbox", this historic soba place has its origin in Osaka. With over a hundred years of history, the building is registered as a cultural property by the government. If you are not a fan of soba, you should see this beautiful building and feel the authentic soba-place vibe inside. Oh yes.',
@@ -110,7 +109,7 @@ export default [
       en: "Yusui"
     },
     neighborhood: "Chofu",
-    address: "Jindaiji Motomachi 5-9-1, Chōfu-shi, Tokyo 182-0017",
+    address: "Jindaiji Motomachi 5-9-1, Chofu, Tokyo 182-0017",
     googlemaps: "https://goo.gl/maps/c2NHsb47WVr",
     fsq: "4b6fa4daf964a520e4f82ce3",
     coords: { lat: 35.66761350347936, lng: 139.54694504363616 },
@@ -249,7 +248,7 @@ export default [
       en: "Shirou"
     },
     neighborhood: "Omotesando",
-    address: "Jingūmae 3-5-1, Shibuya, Tokyo 150-0001",
+    address: "Jingumae 3-5-1, Shibuya, Tokyo 150-0001",
     googlemaps: "https://goo.gl/maps/ssbGUS5hujt",
     fsq: "4b8a2256f964a520646132e3",
     coords: { lat: 35.696997829457445, lng: 139.76867727935314 },
@@ -283,7 +282,7 @@ export default [
       en: "Shogetsu"
     },
     neighborhood: "Shirokane",
-    address: "Shirokane 5-7-12, 港区, 東京都 108-0072",
+    address: "Shirokane 5-7-12, Minato, Tokyo 108-0072",
     googlemaps: "https://goo.gl/maps/yzM59UnFoU92",
     fsq: "4bc4291bf8219c74d707b710",
     coords: { lat: 35.64407177834142, lng: 139.7276585122843 },
