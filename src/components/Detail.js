@@ -123,7 +123,7 @@ const Detail = ({ match, likes, sobayas }) => {
                 rel="noopener noreferrer"
               >
                 {likes[sobaya.id] === undefined ? (
-                  <div>Loading</div>
+                  <>LOADING</>
                 ) : (
                   <>
                     <span className="likes">{likes[sobaya.id]}</span>

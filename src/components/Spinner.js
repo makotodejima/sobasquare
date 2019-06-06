@@ -7,14 +7,13 @@ const stretchdelay = keyframes`
 `;
 
 const Spinner = styled.div`
-  opacity: 1;
   margin: auto;
+  width: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
   font-size: 10px;
   > div {
-    opacity: 1;
     background-color: #333;
     height: 60px;
     margin: auto 3px;

@@ -100,9 +100,9 @@ export const ExpandedListWrapper = styled.div`
   }
   #close {
     position: absolute;
-    top: 1rem;
+    top: 0.5rem;
     right: 0;
-    transform: translateX(50px);
+    transform: translateX(45px);
     width: 2rem;
     cursor: pointer;
     #line-1 {
@@ -113,6 +113,9 @@ export const ExpandedListWrapper = styled.div`
       transform: rotate(22.5deg);
       transform-origin: top right;
       animation: ${line} 0.4s ease-in forwards;
+    }
+    @media (max-width: 414px) {
+      display: none;
     }
   }
 `;
@@ -278,12 +281,14 @@ export const Review = styled.div`
 
 export const DetailImgContainer = styled.div`
   margin: auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 3rem !important;
   div {
-    height: 180px;
-    width: 315px;
-    margin: auto 5px;
+    height: 185px;
+    width: 100%;
+    margin: 0;
     img {
       margin: 0 auto;
       width: 100%;
@@ -306,8 +311,12 @@ export const ExternalLinks = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 3rem !important;
   @media (max-width: 414px) {
     flex-direction: column;
+    > span {
+      margin: 12px 0;
+    }
   }
 `;
 
@@ -316,6 +325,9 @@ export const FsqLink = styled.span`
   font-family: Ubuntu;
   font-size: 1.3rem;
   text-align: center;
+  @media (max-width: 414px) {
+    width: 100%;
+  }
   a {
     position: relative;
     padding: 4px 20px;
@@ -333,7 +345,7 @@ export const FsqLink = styled.span`
         position: absolute;
         content: "Open FOURSQUARE";
         bottom: 5px;
-        left: 88px;
+        right: 20px;
         font-size: 1rem;
         color: #fff;
       }
@@ -356,6 +368,9 @@ export const GoogleMapsLink = styled.span`
   font-family: "Ubuntu";
   font-size: 1.3rem;
   text-align: center;
+  @media (max-width: 414px) {
+    width: 100%;
+  }
   a {
     padding: 4px 20px;
     border: 2px solid #4285f4;
