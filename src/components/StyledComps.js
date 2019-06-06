@@ -209,6 +209,7 @@ export const DetailContainer = styled.div`
   @media (max-width: 414px) {
     box-shadow: none;
     width: 90%;
+    padding: 2rem 0;
   }
 
   #close {
@@ -224,6 +225,10 @@ export const DetailContainer = styled.div`
       transform: rotate(22.5deg);
       animation: ${line} 0.5s ease-in forwards;
       transform-origin: top right;
+    }
+    @media (max-width: 414px) {
+      right: 0;
+      width: 1.8rem;
     }
   }
 
