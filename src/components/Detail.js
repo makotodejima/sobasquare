@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FoursquareLogo from "./FoursquareLogo.js";
+import GoogleMapsIcon from "./GoogleMapsIcon.js";
 import Spinner from "./Spinner";
-import { ReactComponent as Gmaps } from "../images/google-maps.svg";
 import { ReactComponent as Close } from "../images/close.svg";
 import { store } from "../index";
 import { connect } from "react-redux";
@@ -106,13 +106,15 @@ const Detail = ({ match, likes, sobayas }) => {
             </div>
           </DetailImgContainer>
           <ExternalLinks>
-            <GoogleMapsLink
-              href={sobaya.googlemaps}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Gmaps />
-              Open in Google Maps
+            <GoogleMapsLink>
+              <a
+                href={sobaya.googlemaps}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="text">Open in Google Maps</span>
+                <GoogleMapsIcon />
+              </a>
             </GoogleMapsLink>
             <FsqLink>
               <a

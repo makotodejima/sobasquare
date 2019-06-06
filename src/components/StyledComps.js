@@ -312,12 +312,14 @@ export const ExternalLinks = styled.div`
 `;
 
 export const FsqLink = styled.span`
+  width: 50%;
   font-family: Ubuntu;
   font-size: 1.3rem;
   text-align: center;
   a {
+    position: relative;
     padding: 4px 20px;
-    border: 1px solid #d76179;
+    border: 2px solid #d76179;
     border-radius: 5px;
     color: #d76179;
     text-decoration: none;
@@ -326,28 +328,55 @@ export const FsqLink = styled.span`
       font-weight: bold;
       margin-right: 10px;
     }
+    &:hover {
+      .likes::after {
+        position: absolute;
+        content: "Open FOURSQUARE";
+        bottom: 5px;
+        left: 88px;
+        font-size: 1rem;
+        color: #fff;
+      }
+    }
     #fsq_logo {
       width: 150px;
+      .powered-by-foursquare {
+        fill: #d76179;
+      }
     }
     &:hover {
       color: white;
       background-color: #d76179;
     }
   }
-
-  .powered-by-foursquare {
-    fill: #d76179;
-  }
 `;
 
-export const GoogleMapsLink = styled.a`
-  display: flex;
-  color: #4285f4;
-
+export const GoogleMapsLink = styled.span`
+  width: 50%;
   font-family: "Ubuntu";
-
-  #googlemaps_icon {
-    transform: translateY(5px);
-    margin-right: 5px;
+  font-size: 1.3rem;
+  text-align: center;
+  a {
+    padding: 4px 20px;
+    border: 2px solid #4285f4;
+    border-radius: 5px;
+    color: #4285f4;
+    text-decoration: none;
+    transition: all 0.2s;
+    .text {
+    }
+    #googlemaps_icon {
+      fill: #4285f4;
+      transform: translateY(3px);
+      margin-left: 5px;
+      transition: all 0.2s;
+    }
+    &:hover {
+      color: white;
+      background-color: #4285f4;
+      #googlemaps_icon {
+        fill: white;
+      }
+    }
   }
 `;
