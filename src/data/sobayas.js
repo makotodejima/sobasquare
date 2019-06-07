@@ -81,6 +81,10 @@ export default [
       jp: "粗挽きせいろ",
       en: "Arabiki Seiro"
     },
+    review: {
+      en:
+        'Highly acclaimed Michelin-Star soba place in Meiji-jingu. Nice flavorful and beautiful soba noodles are served in sophisticated space. "Arabiki Seiro", meaning coarse-grained, is strongly recommended must-have menu. Also "Sobagaki" and Tofu dishes. Reservation recommended.'
+    },
     vibe: ["modern"]
   },
   {
