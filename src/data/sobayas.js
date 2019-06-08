@@ -204,8 +204,8 @@ export default [
       jp: "かんだやぶそば",
       en: "Kanda Yabusoba"
     },
-    neighborhood: "Kanda Awaji-cho",
-    address: "Kanda Awaji-cho 2-10, Chiyoda, Tokyo 101-0063",
+    neighborhood: "Kanda Awajicho",
+    address: "Kanda Awajicho 2-10, Chiyoda, Tokyo 101-0063",
     googlemaps: "https://goo.gl/maps/isM2csp9maD2",
     fsq: "4b8a2256f964a520646132e3",
     coords: { lat: 35.696997829457445, lng: 139.76867727935314 },
@@ -228,7 +228,7 @@ export default [
       jp: "かんだまつや",
       en: "Kanda Matsuya"
     },
-    neighborhood: "Kanda Awaji-cho",
+    neighborhood: "Kanda Sudacho",
     address: "1 Chome-13 Kanda Sudacho, Chiyoda, Tokyo 101-0041",
     googlemaps: "https://goo.gl/maps/vB4bmTUW3nS2",
     fsq: "4b568608f964a520ea1328e3",
@@ -368,7 +368,7 @@ export default [
       jp: "尾張屋",
       en: "Owariya"
     },
-    neighborhood: "Kanda",
+    neighborhood: "Kanda Sudacho",
     address: "1-24-7 Kanda Sudacho, Chiyoda, Tokyo",
     googlemaps: "https://goo.gl/maps/R9cH1kCnh2GMyXHx5",
     fsq: "4bfdf6fb8992a593c1f7acb0",
