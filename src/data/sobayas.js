@@ -13,7 +13,7 @@ export default [
     pick: { jp: "せいろ", en: "Seiro" },
     review: {
       en:
-        'Carrying the name of "Sunaba", meaning "sandbox", this historic soba place has its origin in Osaka. With over a hundred years of history, the building is registered as a cultural property by the government. If you are not a fan of soba, you should see this beautiful building and feel the authentic soba-place vibe inside. Oh yes.',
+        'Carrying the name of "Sunaba", meaning "sandbox", this historic soba place has its origin in Osaka. With over a hundred years of history, the building is registered as a cultural property by the government. If you are not a big fan of soba, you should see this beautiful building and feel the authentic soba-place vibe inside. Oh yes.',
       jp:
         "とにかく建物自体がよい。夕方くらいに交差点の反対側から見るととても美しい2階建ての建物にうっとりする。中もとてもよい雰囲気で、なんども通いたくなる。おそばもおいしいのだが、カレーうどんもおいしい。"
     },
@@ -60,7 +60,7 @@ export default [
     },
     review: {
       en:
-        'One of the most easy-going soba place on Sobasquare. There is a TV in the corner on which you can enjoy baseball game, I guess. The atmosphere almost makes you to want to order too much. Variety of side menus such as "Potato salad". Mita\'s "salary-man" vibe.',
+        'One of the most easy-going soba place on Sobasquare. You can even enjoy baseball game on the TV, I guess. The atmosphere almost makes you to want to order too much. Variety of side menus such as "Potato salad". Mita\'s "salary-man" vibe.',
       jp:
         "Sobasquareの中でももっとも easy-going なお蕎麦屋さんのひとつ。1階にはTVあり、野球の中継が楽しめる。なんだか、「固くならなくていいんだよ」と語りかけられているような雰囲気で、目に飛び込んでくる「ポテトサラダ」などそば意外のものも注文したくなる。天おろしのつめたいやつを食べて、おいしい。三田のサラリーマン率が高い。"
     },
@@ -277,6 +277,10 @@ export default [
       jp: "ゆず切りそば",
       en: "Yuzukiri Soba"
     },
+    review: {
+      en:
+        "Remodeled Japanese-style old house creates traditional but friendly vibe. Given that location, Shirokanedai, in other words Polk Street of Tokyo, you'd pick up classy and yet cozy feelings along the way. Yuzu-kiri (Yuzu flavored soba noodles) is especially perfect for hot days. Seems like Tenpura and Dashimaki-tamago are very popular, too."
+    },
     vibe: ["casual"]
   },
   {
@@ -376,7 +380,7 @@ export default [
     },
     review: {
       en:
-        "Another cozy soba place in Kanda area. Having nearly 100 years of the history, they are well known for wide variety of food. Besides fine-tuned soba noodles, you can enjoy almost whatever you have in your mind like Tenpura, Yakitori and Sake. I guess it's great for Nomi-kai (Party-like use), too.",
+        "Another cozy soba place in Kanda neighborhood. Having nearly 100 years of the history, they are well known for wide variety of food. Besides fine-tuned soba noodles, you can enjoy almost whatever you have in your mind like Tenpura, Yakitori and Sake. I guess it's great for Nomi-kai (Party-like use), too.",
       jp: ""
     },
     vibe: ["traditional", "casual"]
