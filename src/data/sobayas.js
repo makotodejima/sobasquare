@@ -281,7 +281,7 @@ export default [
       en:
         "Remodeled Japanese-style old house creates traditional but friendly vibe. Given that location, Shirokanedai, in other words Polk Street of Tokyo, you'd pick up classy and yet cozy feelings along the way. Yuzu-kiri (Yuzu flavored soba noodles) is especially perfect for hot days. Seems like Tenpura and Dashimaki-tamago are very popular, too."
     },
-    vibe: ["casual"]
+    vibe: ["casual", "traditional"]
   },
   {
     id: "shogetsu",

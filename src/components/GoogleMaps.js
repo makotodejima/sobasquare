@@ -104,11 +104,17 @@ const InfoWindow = props => {
   const id = props.id;
   const { en, jp } = props.name;
   const neighborhood = props.neighborhood;
+  const vibes = props.vibe;
   return (
     <InfoWindowWrap>
       <h2 className="en">{en}</h2>
       <h4 className="jp">{jp}</h4>
       <div className="neighborhood">{neighborhood}</div>
+      <div className="vibe">
+        {vibes.map((v, idx) => (
+          <span key={idx}>{v}</span>
+        ))}
+      </div>
       <a className="link" href={`/sobaya/${id}`}>
         Learn More{" "}
         <span role="img" aria-label="Look">
@@ -127,19 +133,28 @@ const InfoWindowWrap = styled.div`
     font-weight: 400;
   }
   .neighborhood {
-    margin-top: 10px;
+    text-align: right;
     margin-bottom: 12px;
+  }
+  .vibe span {
+    display: inline-block;
+    margin-bottom: 12px;
+    margin-right: 3px;
+    border-radius: 5px;
+    padding: 0 4px;
+    border: solid 1px grey;
+    color: grey;
   }
   .link {
     text-align: center;
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-decoration: none;
-    /* border: solid 3px #4285f4; */
+
     background-color: #4285f4;
     color: #fff;
-    padding: 2px 8px;
-    border-radius: 10px;
+    padding: 0px 8px;
+    border-radius: 5px;
   }
 `;
 
@@ -171,6 +186,7 @@ class GoogleMaps extends Component {
                     id={sobayasInfo.id[idx]}
                     name={sobayasInfo.name[idx]}
                     neighborhood={sobayasInfo.neighborhood[idx]}
+                    vibe={sobayasInfo.vibe[idx]}
                   />,
                   document.getElementById("infoWindow")
                 );
@@ -190,7 +206,8 @@ const mapStateToProps = ({ sobayas }) => {
       id: sobayas.map(s => s.id),
       name: sobayas.map(s => s.name),
       neighborhood: sobayas.map(s => s.neighborhood),
-      coords: sobayas.map(s => s.coords)
+      coords: sobayas.map(s => s.coords),
+      vibe: sobayas.map(s => s.vibe)
     }
   };
 };
