@@ -469,7 +469,7 @@ export default [
       jp: "fill",
       en: "fill"
     },
-    url: "http://www.sarashina-honten.com",
+    url: "https://ginza-sanada.com",
     review: {
       en:
         "Nice and modern feeling soba place at the center of Ginza. They serve Shin-shu (Nagano Prefecture) style soba and very neat small appetizers like Tofu or Miso and other things. Another branch is  in Ginza Six building.",
