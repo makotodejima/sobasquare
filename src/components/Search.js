@@ -60,13 +60,6 @@ const SearchBar = props => {
     });
   };
 
-  // <input type="search" /> -> default delete icon
-  //
-  // const clearInput = () => {
-  //   inputEl.current.value = "";
-  //   updateInput("");
-  // };
-
   return (
     <Wrapper>
       <input

@@ -27,7 +27,6 @@ const Detail = ({ match, likes, sobayas }) => {
 
   useEffect(() => {
     if (sobaya && !likes[sobaya.id]) {
-      console.log("Now fetching Likes Count!!");
       fetch(
         `https://api.foursquare.com/v2/venues/${
           sobaya.fsq
