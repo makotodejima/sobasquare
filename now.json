@@ -30,6 +30,7 @@
       "headers": { "cache-control": "s-maxage=0" },
       "dest": "/service-worker.js"
     },
+    { "src": "/(.*)", "dest": "/index.html" },
     {
       "src": "/(.*)",
       "headers": { "cache-control": "s-maxage=0" },
