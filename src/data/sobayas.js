@@ -351,8 +351,8 @@ export default [
     fsq: "4bf3788794af2d7fc08f3972",
     coords: { lat: 35.66549887652342, lng: 139.7550630569458 },
     pick: {
-      jp: "fill",
-      en: "fill"
+      jp: "胡麻せいろ",
+      en: "Goma(sesame) Seiro"
     },
     url: "http://shinbashi.notoji.jp/",
     review: {
@@ -375,8 +375,8 @@ export default [
 
     coords: { lat: 35.69437172490809, lng: 139.770980535169 },
     pick: {
-      jp: "fill",
-      en: "fill"
+      jp: "カレー南蛮",
+      en: "Curry namban"
     },
     review: {
       en:
