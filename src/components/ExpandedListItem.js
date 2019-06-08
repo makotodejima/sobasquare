@@ -56,7 +56,7 @@ const ExpandedListItem = ({ sobaya, index, match }) => {
               <ImgWrapper
                 onMouseEnter={() => setMouseonLink(true)}
                 onMouseLeave={() => setMouseonLink(false)}
-                className={`${mouseonLink ? "on" : null}`}
+                className={mouseonLink ? "on" : null}
               >
                 <Link to={`/sobaya${match.path}${sobaya.id}`}>
                   <Img
