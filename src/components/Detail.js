@@ -22,20 +22,6 @@ import {
 
 const Detail = ({ match, likes, sobayas }) => {
   const sobaya = sobayas.find(sobaya => sobaya.id === match.params.id);
-  const image_1 = (
-    <Img
-      src={require(`../images/${sobaya.id}_1.jpg`)}
-      alt={sobaya.name}
-      loader={<Spinner />}
-    />
-  );
-  const image_2 = (
-    <Img
-      src={require(`../images/${sobaya.id}_2.jpg`)}
-      alt={sobaya.name}
-      loader={<Spinner />}
-    />
-  );
 
   const f_client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 
@@ -104,8 +90,20 @@ const Detail = ({ match, likes, sobayas }) => {
           </FlexContainer>
 
           <DetailImgContainer>
-            <div>{image_1}</div>
-            <div>{image_2}</div>
+            <div>
+              <Img
+                src={require(`../images/${sobaya.id}_1.jpg`)}
+                alt={sobaya.name}
+                loader={<Spinner />}
+              />
+            </div>
+            <div>
+              <Img
+                src={require(`../images/${sobaya.id}_2.jpg`)}
+                alt={sobaya.name}
+                loader={<Spinner />}
+              />
+            </div>
           </DetailImgContainer>
           <ExternalLinks>
             <GoogleMapsLink>
