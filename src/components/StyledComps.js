@@ -181,6 +181,7 @@ export const ExpandedListImg = styled.img`
 
 // in Detail
 
+// for Detail's fadein animation
 export const fadein = keyframes`
   from {
     opacity: 0;
