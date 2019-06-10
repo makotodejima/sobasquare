@@ -298,6 +298,10 @@ export default [
       jp: "松月せいろ",
       en: "Shogetsu Seiro"
     },
+    review: {
+      en:
+        'One of the most easy-going soba place on Sobasquare. While the location, Shirokane, is recognized as an affluent neighborhood, this place is very casual and relaxed. The original menu, "Shogetsu Seiro" comes with somewhat sweet dipping soup and hot noodles. 10 min walk from Shirokane-Takanawa Station.'
+    },
     vibe: ["casual"]
   },
   {
