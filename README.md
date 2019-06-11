@@ -10,6 +10,7 @@ Not sure where to have great soba experience in Tokyo? Well... not anymore!!
 ### Features
 - Simple usage
 - Instant search
+- Beautiful animation
 - Fully responsive
 - Locate soba places on Google Maps
 - Friendly reviews
