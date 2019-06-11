@@ -139,7 +139,12 @@ export default [
       en: "Nameko Soba"
     },
     big3: "sarashina",
-    vibe: ["traditional"]
+    vibe: ["traditional"],
+    url: "http://www.nagasakasarasina.co.jp/index.html",
+    review: {
+      en:
+        'The flagship of over 20 places of Tahee\'s family. Originally founded in Azabu-juban by the man who was selling fabric (also good at making soba) a long time ago. Clean, plenty of seats, traditional but friendly vibe. Noodles come with two types of dipping soup, labeled "Spicy" and "Sweet", and to be really honest, "Spicy" is not spicy at all. Frankly it\'s "Sweet" and "Slightly less sweet".'
+    }
   },
   {
     id: "kanzesui",
