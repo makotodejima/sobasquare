@@ -97,14 +97,14 @@ export default [
     address: "Akasaka 6-3-5, Minato, Tokyo 107-0062",
     googlemaps: "https://goo.gl/maps/ZwFRKHjqSfv",
     fsq: "4b5693daf964a520aa1528e3",
-
     coords: { lat: 35.671166, lng: 139.736184 },
     pick: {
       jp: "せいろ",
       en: "Seiro"
     },
     big3: "sunaba",
-    vibe: ["traditional"]
+    vibe: ["traditional"],
+    review: { en: "" }
   },
   {
     id: "yusui",
