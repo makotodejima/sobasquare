@@ -13,7 +13,7 @@ export default [
     pick: { jp: "せいろ", en: "Seiro" },
     review: {
       en:
-        'Carrying the name of "Sunaba", meaning "sandbox", this historic soba place has its origin in Osaka. With over a hundred years of history, the building is registered as a cultural property by the government. If you are not a big fan of soba, you should see this beautiful building and feel the authentic soba-place vibe inside. Oh yes.',
+        'Carrying the name of Sunaba, meaning "sandbox", this historic soba place has its origin in Osaka. With over a hundred years of history, the building is registered as a cultural property by the government. If you are not a big fan of soba, you should see this beautiful building and feel the authentic soba-place vibe inside. Oh yes.',
       jp:
         "とにかく建物自体がよい。夕方くらいに交差点の反対側から見るととても美しい2階建ての建物にうっとりする。中もとてもよい雰囲気で、なんども通いたくなる。おそばもおいしいのだが、カレーうどんもおいしい。"
     },
@@ -83,7 +83,7 @@ export default [
     },
     review: {
       en:
-        'Highly acclaimed Michelin-Star soba place in Meiji-jingu. Nice flavorful and beautiful soba noodles are served in sophisticated space. "Arabiki Seiro", meaning coarse-grained, is strongly recommended must-have menu. Also "Sobagaki" and Tofu dishes. Reservation recommended.'
+        "Highly acclaimed Michelin-Star soba place in Meiji-jingu. Nice flavorful and beautiful soba noodles are served in sophisticated space. Arabiki Seiro, meaning coarse-grained, is strongly recommended must-have menu. Also Sobagaki and Tofu dishes. Reservation recommended."
     },
     vibe: ["modern"]
   },
@@ -224,7 +224,7 @@ export default [
     },
     review: {
       en:
-        'A successor to "Yabu Soba", one of "The Big Three of Soba". This old-school place in Kanda, once suffered from a fire in 2013 after over a hundred years of its history, successfully made a comeback in 2014 and people are delighted. Some people talk about "the good old days" before the fire, but who cares. Just have a nice soba.'
+        'A successor to Yabu Soba, one of The Big Three of Soba. This old-school place in Kanda, once suffered from a fire in 2013 after over a hundred years of its history, successfully made a comeback in 2014 and people are delighted. Some people talk about "the good old days" before the fire, but who cares. Just have a nice soba.'
     },
     big3: "yabu",
     vibe: ["traditional"]
@@ -308,7 +308,7 @@ export default [
     },
     review: {
       en:
-        'One of the most easy-going soba place on Sobasquare. While the location, Shirokane, is recognized as an affluent neighborhood, this place is very casual and relaxed. The original menu, "Shogetsu Seiro" comes with somewhat sweet dipping soup and hot noodles. 10 min walk from Shirokane-Takanawa Station.'
+        "One of the most easy-going soba place on Sobasquare. While the location, Shirokane, is recognized as an affluent neighborhood, this place is very casual and relaxed. The original menu, Shogetsu Seiro comes with somewhat sweet dipping soup and hot noodles. 10 min walk from Shirokane-Takanawa Station."
     },
     vibe: ["casual"]
   },
@@ -438,7 +438,7 @@ export default [
     url: "https://www.asada-soba.co.jp",
     review: {
       en:
-        'Opened over 150 years ago by the guy who was a grain merchant. Since then, it has been passed down for eight generations. With the spirit of "Edo-mae", this iconic sobaya (Soba place) serves its own 100% buckwheat noodle, all sorts of small elegant dishes and sake.',
+        "Opened over 150 years ago by the guy who was a grain merchant. Since then, it has been passed down for eight generations. With the spirit of Edo-mae, this iconic sobaya (Soba place) serves its own 100% buckwheat noodle, all sorts of small elegant dishes and sake.",
       jp: ""
     },
     vibe: ["traditional"]
