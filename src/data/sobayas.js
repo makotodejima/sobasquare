@@ -99,8 +99,8 @@ export default [
     fsq: "4b5693daf964a520aa1528e3",
     coords: { lat: 35.671166, lng: 139.736184 },
     pick: {
-      jp: "せいろ",
-      en: "Seiro"
+      jp: "もり",
+      en: "Mori"
     },
     big3: "sunaba",
     vibe: ["traditional"],
@@ -450,7 +450,7 @@ export default [
       en: "Azabu Nagasaka Sarashina HQ"
     },
     neighborhood: "Azabu Juban",
-    address: "1-2-7 Azabujūban, Minato, Tokyo",
+    address: "1-2-7 Azabujuban, Minato, Tokyo",
     googlemaps: "https://goo.gl/maps/TqHojKWQywkGP6vb6",
     fsq: "4b56ef49f964a520ce1f28e3",
     coords: { lat: 35.6564766474301, lng: 139.73693673986588 },
