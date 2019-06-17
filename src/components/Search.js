@@ -49,6 +49,7 @@ const SearchBar = props => {
       return (
         seeMatch(s.name.en) ||
         seeMatch(s.name.jp) ||
+        seeMatch(s.name.hiragana) ||
         seeMatch(s.address) ||
         seeMatch(s.neighborhood)
       );

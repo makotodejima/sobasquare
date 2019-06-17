@@ -178,7 +178,8 @@ export default [
     id: "honmura_an",
     name: {
       jp: "本むら庵",
-      en: "Honmura An"
+      en: "Honmura An",
+      hiragana: ""
     },
     neighborhood: "Roppongi",
     address: "Roppongi 7-14-18, Minato, Tokyo 106-0032",
@@ -200,7 +201,8 @@ export default [
     id: "kaoriya",
     name: {
       jp: "香り家",
-      en: "Kaoriya"
+      en: "Kaoriya",
+      hiragana: ""
     },
     neighborhood: "Ebisu",
     address: "Ebisu 4-3-10,Shibuya, Tokyo 150-0013",
@@ -218,7 +220,8 @@ export default [
     id: "kanda_yabusoba",
     name: {
       jp: "かんだやぶそば",
-      en: "Kanda Yabusoba"
+      en: "Kanda Yabusoba",
+      hiragana: ""
     },
     neighborhood: "Kanda Awajicho",
     address: "Kanda Awajicho 2-10, Chiyoda, Tokyo 101-0063",
@@ -242,7 +245,8 @@ export default [
     id: "kanda_matsuya",
     name: {
       jp: "かんだまつや",
-      en: "Kanda Matsuya"
+      en: "Kanda Matsuya",
+      hiragana: ""
     },
     neighborhood: "Kanda Sudacho",
     address: "1 Chome-13 Kanda Sudacho, Chiyoda, Tokyo 101-0041",
@@ -265,7 +269,8 @@ export default [
     id: "shirou",
     name: {
       jp: "しろう",
-      en: "Shirou"
+      en: "Shirou",
+      hiragana: ""
     },
     neighborhood: "Omotesando",
     address: "Jingumae 3-5-1, Shibuya, Tokyo 150-0001",
@@ -282,7 +287,8 @@ export default [
     id: "toshian",
     name: {
       jp: "利庵",
-      en: "Toshian"
+      en: "Toshian",
+      hiragana: ""
     },
     neighborhood: "Shirokanedai",
     address: "Shirokanedai 5-17-2, Minato, Tokyo 108-0071",
@@ -303,7 +309,8 @@ export default [
     id: "shogetsu",
     name: {
       jp: "松月",
-      en: "Shogetsu"
+      en: "Shogetsu",
+      hiragana: ""
     },
     neighborhood: "Shirokane",
     address: "Shirokane 5-7-12, Minato, Tokyo 108-0072",
@@ -324,7 +331,8 @@ export default [
     id: "hoteiya",
     name: {
       jp: "布袋屋",
-      en: "Hoteiya"
+      en: "Hoteiya",
+      hiragana: ""
     },
     neighborhood: "Higashi Azabu",
     address: "Higashi-Azabu 1-7-2, Minato, Tokyo 106-0044",
@@ -341,7 +349,8 @@ export default [
     id: "nioka",
     name: {
       jp: "二丘",
-      en: "Nioka"
+      en: "Nioka",
+      hiragana: ""
     },
     neighborhood: "Shirokane Takanawa",
     address: "Takanawa 1-4-21 2F, Minato, Tokyo, Japan",
@@ -363,7 +372,8 @@ export default [
     id: "notoji",
     name: {
       jp: "能登治",
-      en: "Notoji"
+      en: "Notoji",
+      hiragana: ""
     },
     neighborhood: "Shimbashi",
     address: "Shinbashi 3−7−5, Notoji Bldg 1F, Minato, Tokyo",
@@ -386,7 +396,8 @@ export default [
     id: "owariya",
     name: {
       jp: "尾張屋",
-      en: "Owariya"
+      en: "Owariya",
+      hiragana: ""
     },
     neighborhood: "Kanda Sudacho",
     address: "1-24-7 Kanda Sudacho, Chiyoda, Tokyo",
@@ -409,7 +420,8 @@ export default [
     id: "santoko",
     name: {
       jp: "山灯香",
-      en: "Santoko"
+      en: "Santoko",
+      hiragana: ""
     },
     neighborhood: "Mishuku",
     address: "Taishido 1 Chome−4−35, Setagaya, Tokyo",
@@ -432,7 +444,8 @@ export default [
     id: "asada",
     name: {
       jp: "あさだ",
-      en: "Asada"
+      en: "Asada",
+      hiragana: ""
     },
     neighborhood: "Asakusa-bashi",
     address: "2-29-11 Asakusabashi, Taito, Tokyo",
@@ -455,7 +468,8 @@ export default [
     id: "azabu_nagasaka_sarashina_hq",
     name: {
       jp: "麻布永坂更科本店",
-      en: "Azabu Nagasaka Sarashina HQ"
+      en: "Azabu Nagasaka Sarashina HQ",
+      hiragana: ""
     },
     neighborhood: "Azabu Juban",
     address: "1-2-7 Azabujuban, Minato, Tokyo",
@@ -478,7 +492,8 @@ export default [
     id: "sanada",
     name: {
       jp: "真田",
-      en: "Sanada"
+      en: "Sanada",
+      hiragana: ""
     },
     neighborhood: "Ginza",
     address: "5-6-5 3F, Ginza, Chuo, Tokyo",
