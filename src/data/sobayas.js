@@ -455,8 +455,8 @@ export default [
     fsq: "4b56ef49f964a520ce1f28e3",
     coords: { lat: 35.6564766474301, lng: 139.73693673986588 },
     pick: {
-      jp: "fill",
-      en: "fill"
+      jp: "御膳そば",
+      en: "Gozen soba"
     },
     url: "http://www.sarashina-honten.com",
     review: {
