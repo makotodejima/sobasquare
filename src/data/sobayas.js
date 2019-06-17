@@ -104,7 +104,10 @@ export default [
     },
     big3: "sunaba",
     vibe: ["traditional"],
-    review: { en: "" }
+    review: {
+      en:
+        "One of the most beloved soba place in Tokyo. This historical sobaya sits quietly on the narrow street right beside Akasaka Station. It's small but very rich sobaya feeling. If you are lucky, you can take the Tatami seat on the back. Straight forward flavoful Sunaba style soba. You might want to go with Omiri(big size)."
+    }
   },
   {
     id: "yusui",
