@@ -3,7 +3,8 @@ export default [
     id: "osakaya_sunaba",
     name: {
       jp: "大阪屋 砂場",
-      en: "Osakaya Sunaba"
+      en: "Osakaya Sunaba",
+      hiragana: "おおさかや　すなば"
     },
     neighborhood: "Toranomon",
     address: "1-10-6, Toranomon, Minato, Tokyo 105-0001",
@@ -24,7 +25,8 @@ export default [
     id: "matsunaga",
     name: {
       jp: "松永",
-      en: "Matsunaga"
+      en: "Matsunaga",
+      hiragana: "まつなが"
     },
     neighborhood: "Jingumae",
     address: "Jingumae 2-19-12, Shibuya, Tokyo 150-0001",
@@ -47,7 +49,8 @@ export default [
     id: "asahiya",
     name: {
       jp: "朝日屋",
-      en: "Asahiya"
+      en: "Asahiya",
+      hiragana: "あさひや"
     },
     neighborhood: "Mita",
     address: "Shiba 5-14-12, Minato, Tokyo 108-0014",
@@ -70,7 +73,8 @@ export default [
     id: "tamawarai",
     name: {
       jp: "玉笑",
-      en: "Tamawarai"
+      en: "Tamawarai",
+      hiragana: "たまわらい"
     },
     neighborhood: "Omotesando",
     address: "Jingūmae 5-23-3, Shibuya, Tokyo 150-0001",
@@ -91,7 +95,8 @@ export default [
     id: "muromachi_sunaba",
     name: {
       jp: "室町砂場",
-      en: "Muromachi Sunaba"
+      en: "Muromachi Sunaba",
+      hiragana: "むろまちすなば"
     },
     neighborhood: "Akasaka",
     address: "Akasaka 6-3-5, Minato, Tokyo 107-0062",
@@ -113,7 +118,8 @@ export default [
     id: "yusui",
     name: {
       jp: "湧水",
-      en: "Yusui"
+      en: "Yusui",
+      hiragana: "ゆうすい"
     },
     neighborhood: "Chofu",
     address: "Jindaiji Motomachi 5-9-1, Chofu, Tokyo 182-0017",
@@ -130,7 +136,8 @@ export default [
     id: "nagasaka_sarashina_nunoya_tahee",
     name: {
       jp: "永坂更科 布屋太兵衛",
-      en: "Nagasaka Sarashina Nunoya Tahee"
+      en: "Nagasaka Sarashina Nunoya Tahee",
+      hiragana: "ながさかさらしな　ぬのやたへい"
     },
     neighborhood: "Azabu Juban",
     address: "Azabujūban 1-8-7, Minato, Tokyo 106-0045",
@@ -153,7 +160,8 @@ export default [
     id: "kanzesui",
     name: {
       jp: "観世水",
-      en: "Kanzesui"
+      en: "Kanzesui",
+      hiragana: "かんぜすい"
     },
     neighborhood: "Akasaka",
     address: "Akasaka 3-12-22 B1F, Minato, Tokyo 107-0052",
