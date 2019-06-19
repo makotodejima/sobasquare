@@ -20,7 +20,7 @@ function App() {
   return (
     <Provider store={store}>
       <Helmet>
-        <meta property="og:image" content={ogimg} />
+        <meta property="og:image" content={`https://soba.madmak.me${ogimg}`} />
       </Helmet>
       <Router>
         <Route path="/" component={List} />
