@@ -7,7 +7,6 @@ import reducers, { middleware } from "./reducers/reducer";
 import "./styles.scss";
 import List from "./components/List";
 import ReactGA from "react-ga";
-import { Helmet } from "react-helmet";
 import ogimg from "./images/og-sbsq.jpg";
 
 // Using react-ga
@@ -19,9 +18,6 @@ export const store = createStore(reducers, middleware);
 function App() {
   return (
     <Provider store={store}>
-      <Helmet>
-        <meta property="og:image" content={`https://soba.madmak.me${ogimg}`} />
-      </Helmet>
       <Router>
         <Route path="/" component={List} />
       </Router>
