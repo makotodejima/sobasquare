@@ -14,7 +14,6 @@ import SearchBar from "./Search";
 import Footer from "./Footer";
 import Nav from "./Nav";
 import NoResults from "./NoResults";
-import ogimg from "../images/og-sbsq.jpg";
 
 class List extends React.Component {
   state = {
