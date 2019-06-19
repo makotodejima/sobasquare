@@ -7,10 +7,11 @@
     "react-dom": "^16.8.6",
     "react-flip-toolkit": "^6.5.9",
     "react-ga": "^2.5.7",
+    "react-helmet": "^5.2.1",
     "react-image": "^2.1.1",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "^2.1.8",
+    "react-scripts": "^3.0.1",
     "redux": "^4.0.1",
     "scrollreveal": "^4.0.5",
     "styled-components": "^4.2.0"
