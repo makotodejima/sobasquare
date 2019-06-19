@@ -14,6 +14,7 @@ import SearchBar from "./Search";
 import Footer from "./Footer";
 import Nav from "./Nav";
 import NoResults from "./NoResults";
+import ogimg from "../images/og-sbsq.jpg";
 
 class List extends React.Component {
   state = {
@@ -28,7 +29,6 @@ class List extends React.Component {
       sobayas: sobayas
     });
     store.dispatch({ type: "SORT_SOBAYAS", order: "asc" });
-    // setTimeout(() => this.setState({ loading: false }), 1000);
   }
 
   init = () => {
