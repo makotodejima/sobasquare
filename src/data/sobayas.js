@@ -482,7 +482,8 @@ export default [
     },
     url: "http://www.sarashina-honten.com",
     review: {
-      en: "",
+      en:
+        "One of three Sarashina family members in Azabu-juban. The signature, Gozen Soba, is fine white soba noodles and very nice feeling. Plenty of option to order, including tasty Dashi-maki (Japanese-style omelet). Soba menus are smaller potion in general so that you have the room to enjoy different dishes and drinks.",
       jp: ""
     },
     big3: "sarashina",
