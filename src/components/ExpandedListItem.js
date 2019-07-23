@@ -5,7 +5,7 @@ import {
   Names,
   Description,
   ImgWrapper,
-  SbsqPick
+  SbsqPick,
 } from "./StyledComps";
 import { ReactComponent as Close } from "../images/close.svg";
 import { Flipped } from "react-flip-toolkit";
@@ -19,7 +19,6 @@ const ExpandedListItem = ({ sobaya, index, match }) => {
   return (
     <Flipped
       flipId={`listItem-${sobaya.id}`}
-      stagger="list"
       onStart={el => {
         el.classList.add("fade-in");
       }}
@@ -28,7 +27,7 @@ const ExpandedListItem = ({ sobaya, index, match }) => {
         <Close />
         <Flipped inverseFlipId={`listItem-${sobaya.id}`}>
           <div>
-            <Flipped flipId={`name-${sobaya.id}`} stagger="list">
+            <Flipped flipId={`name-${sobaya.id}`}>
               <Names>
                 <Link
                   to={`/sobaya/${sobaya.id}`}
@@ -45,7 +44,7 @@ const ExpandedListItem = ({ sobaya, index, match }) => {
               <div
                 style={{
                   textAlign: `right`,
-                  fontSize: `1rem`
+                  fontSize: `1rem`,
                 }}
               >
                 {sobaya.neighborhood}

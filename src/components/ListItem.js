@@ -14,17 +14,17 @@ export default function ListItem({ index, sobaya, shouldFlip }) {
       opacity: 0,
       scale: 0.4,
       easing: "ease-out",
-      reset: true
+      reset: true,
     };
     sr.reveal(".item-wrapper", config);
   }, []);
 
   return (
-    <Flipped flipId={`listItem-${sobaya.id}`} stagger="list">
+    <Flipped flipId={`listItem-${sobaya.id}`}>
       <NormalListWrapper>
         <Flipped inverseFlipId={`listItem-${sobaya.id}`}>
           <div>
-            <Flipped flipId={`name-${sobaya.id}`} stagger="list">
+            <Flipped flipId={`name-${sobaya.id}`}>
               <div>
                 <p className="en">{sobaya.name.en}</p>
                 <p className="jp">{sobaya.name.jp}</p>

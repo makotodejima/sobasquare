@@ -50,7 +50,7 @@ const Detail = ({ match, likes, sobayas }) => {
           console.log(err);
         });
     }
-  }, [sobayas]);
+  }, [likes, sobaya, sobayas]);
 
   return (
     <DetailContainer>

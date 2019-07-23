@@ -19,13 +19,13 @@ class List extends React.Component {
   state = {
     selected: undefined,
     isSearching: false,
-    searchResults: []
+    searchResults: [],
   };
 
   componentDidMount() {
     store.dispatch({
       type: "SET_SOBAYAS",
-      sobayas: sobayas
+      sobayas: sobayas,
     });
     store.dispatch({ type: "SORT_SOBAYAS", order: "asc" });
   }
@@ -38,7 +38,7 @@ class List extends React.Component {
     if (e.target.classList.contains("preventShrink")) return;
 
     this.setState({
-      selected: this.state.selected === index ? null : index
+      selected: this.state.selected === index ? null : index,
     });
   };
 
@@ -55,7 +55,7 @@ class List extends React.Component {
 
   toggleIsSearching = bool => {
     this.setState({
-      isSearching: bool
+      isSearching: bool,
     });
   };
 
@@ -66,11 +66,10 @@ class List extends React.Component {
       <Flipper
         flipKey={selected}
         decisionData={selected}
-        // spring="noWobble"
         staggerConfig={{
           list: {
-            speed: 0.1
-          }
+            speed: 0.1,
+          },
         }}
       >
         <ListContrainer className="list-container">
@@ -131,7 +130,7 @@ class List extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    sobayas: state.sobayas
+    sobayas: state.sobayas,
   };
 };
 
