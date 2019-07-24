@@ -29,7 +29,7 @@ const SearchBar = props => {
     } else {
       props.toggleIsSearching(false);
     }
-  }, [state.input]);
+  }, [UpdateResults, props, state.input]);
 
   const handleChange = e => {
     dispatch({ type: "UPDATE_INPUT", newInput: e.target.value });
@@ -57,7 +57,7 @@ const SearchBar = props => {
     props.updateSearchResults(_sobayas);
     dispatch({
       type: "UPDATE_RESULTS",
-      newResults: _sobayas
+      newResults: _sobayas,
     });
   };
 
@@ -78,7 +78,7 @@ const SearchBar = props => {
 
 const mapStateToProps = state => {
   return {
-    sobayas: state.sobayas
+    sobayas: state.sobayas,
   };
 };
 

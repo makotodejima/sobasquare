@@ -63,15 +63,7 @@ class List extends React.Component {
     const { selected } = this.state;
     if (sobayas.length < 1) return <NoResults />;
     return (
-      <Flipper
-        flipKey={selected}
-        decisionData={selected}
-        staggerConfig={{
-          list: {
-            speed: 0.1,
-          },
-        }}
-      >
+      <Flipper flipKey={selected} decisionData={selected}>
         <ListContrainer className="list-container">
           {sobayas.map((sobaya, index) => (
             <OuterItemWrapper
@@ -115,7 +107,6 @@ class List extends React.Component {
             updateSearchResults={this.updateSearchResults}
             toggleIsSearching={this.toggleIsSearching}
           />
-
           <Route path="/sobaya/:id" render={props => <Detail {...props} />} />
           <Route path="/map/" render={props => <GoogleMaps {...props} />} />
           {this.state.isSearching
