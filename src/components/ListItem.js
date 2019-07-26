@@ -1,24 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Flipped } from "react-flip-toolkit";
-import sr from "../ScrollReveal";
 import { NormalListWrapper } from "./StyledComps";
 
 // const shouldFlip = index => (prevDecisionData, currentDecisionData) =>
 // index === prevDecisionData || index === currentDecisionData;
 
-export default function ListItem({ index, sobaya, shouldFlip }) {
-  useEffect(() => {
-    const config = {
-      container: document.querySelector(".list-container"),
-      duration: 800,
-      opacity: 0,
-      scale: 0.4,
-      easing: "ease-out",
-      reset: true,
-    };
-    sr.reveal(".item-wrapper", config);
-  }, []);
-
+export default function ListItem({ sobaya, shouldFlip }) {
   return (
     <Flipped flipId={`listItem-${sobaya.id}`}>
       <NormalListWrapper>

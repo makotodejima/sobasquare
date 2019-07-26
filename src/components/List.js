@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Route } from "react-router-dom";
 import { Flipper } from "react-flip-toolkit";
 import { ListContrainer, OuterItemWrapper } from "./StyledComps";
@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
 import Detail from "./Detail";
+import initSr from "./ScrollReveal";
 import Logo from "./Logo";
 import GoogleMaps from "./GoogleMaps";
 import SearchBar, { filterSobayas } from "./Search";
@@ -15,10 +16,11 @@ import NoResults from "./NoResults";
 
 const List = ({ sobayas, visibilityFilter }) => {
   const [selected, setSelected] = useState(undefined);
+  const containerRef = useRef();
 
-  const init = () => {
-    setSelected(undefined);
-  };
+  useEffect(() => {
+    initSr(containerRef.current, ".item-wrapper");
+  }, []);
 
   const handleClick = (e, index) => {
     if (e.target.classList.contains("preventShrink")) return;
@@ -36,10 +38,10 @@ const List = ({ sobayas, visibilityFilter }) => {
         <Route path="/map/" render={props => <GoogleMaps {...props} />} />
         {/* Routes */}
         <Nav />
-        <Logo init={init} />
+        <Logo />
         <SearchBar />
         <Flipper flipKey={selected} decisionData={selected}>
-          <ListContrainer className="list-container">
+          <ListContrainer className="list-container" ref={containerRef}>
             {visibleSobayas.length > 0 ? (
               visibleSobayas.map((sobaya, index) => (
                 <OuterItemWrapper
