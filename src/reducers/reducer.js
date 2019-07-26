@@ -1,48 +1,61 @@
-import { combineReducers, applyMiddleware } from "redux";
+import { applyMiddleware } from "redux";
 import sobayas from "../data/sobayas";
 
-const initialState = { sobayas: sobayas };
+const initialState = { sobayas: sobayas, visibilityFilter: "" };
 
 function rootReducers(state = initialState, action) {
   switch (action.type) {
-    case "SET_SOBAYAS":
-      return [...action.sobayas];
+    // case "SET_SOBAYAS":
+    //   return [...action.sobayas];
+    case "SET_VISIBILITY_FILTER":
+      return setVisibilityFilter(state, action);
     case "SET_LIKE":
-      return setLikes(state, action);
+      return setLike(state, action);
+
     case "SORT_SOBAYAS":
-      if (action.order === "asc") {
-        return [...state].sort((a, b) => {
-          if (a.id < b.id) {
-            return -1;
-          } else if (a.id > b.id) {
-            return 1;
-          } else {
-            return 0;
-          }
-        });
-      } else if (action.order === "desc") {
-        return [...state].sort((a, b) => {
-          if (a.id > b.id) {
-            return -1;
-          } else if (a.id < b.id) {
-            return 1;
-          } else {
-            return 0;
-          }
-        });
-      }
-      break;
+      return sortSobayas(state, action);
     default:
       return state;
   }
 }
 
-function setLikes(state, action) {
+function setVisibilityFilter(state, action) {
+  return {
+    ...state,
+    visibilityFilter: action.visibilityFilter,
+  };
+}
+
+function setLike(state, action) {
   switch (action.type) {
     case "SET_LIKE":
       return { ...state, [action.sobaya]: action.likes };
     default:
       return state;
+  }
+}
+
+function sortSobayas(state, action) {
+  if (action.order === "asc") {
+    return [...state].sort((a, b) => {
+      if (a.id < b.id) {
+        return -1;
+      } else if (a.id > b.id) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  } else if (action.order === "desc") {
+    return [...state].sort((a, b) => {
+      if (a.id > b.id) {
+        return -1;
+      } else if (a.id < b.id) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
   }
 }
 

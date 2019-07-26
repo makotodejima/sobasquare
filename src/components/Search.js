@@ -2,40 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
-const SearchBar = props => {
+const SearchBar = ({ sobayas, setVisibilityFilter }) => {
   const inputRef = useRef();
   const [input, setInput] = useState("");
 
   useEffect(() => {
-    inputRef.current.focus();
-
-    const _input = input
-      .toLowerCase()
-      .trim()
-      .replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
-
-    const seeMatch = str => {
-      return str.match(new RegExp(_input, "i"));
-    };
-
-    const _sobayas = props.sobayas.filter(s => {
-      return (
-        seeMatch(s.name.en) ||
-        seeMatch(s.name.jp) ||
-        seeMatch(s.name.hiragana) ||
-        seeMatch(s.address) ||
-        seeMatch(s.neighborhood)
-      );
-    });
-    props.updateSearchResults(_sobayas);
-    // props.update(_sobayas);
-
-    if (input.length > 0) {
-      props.toggleIsSearching(true);
-    } else {
-      props.toggleIsSearching(false);
-    }
-  }, [props, input]);
+    setVisibilityFilter(input);
+  }, [input, setVisibilityFilter]);
 
   return (
     <Wrapper>
@@ -50,12 +23,34 @@ const SearchBar = props => {
   );
 };
 
+export const filterSobayas = (sobayas, keyword) => {
+  const formattedKeyword = keyword
+    .toLowerCase()
+    .trim()
+    .replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+
+  const seeMatch = str => {
+    return str.match(new RegExp(formattedKeyword, "i"));
+  };
+
+  const results = sobayas.filter(s => {
+    return (
+      seeMatch(s.name.en) ||
+      seeMatch(s.name.jp) ||
+      seeMatch(s.name.hiragana) ||
+      seeMatch(s.address) ||
+      seeMatch(s.neighborhood)
+    );
+  });
+  return results;
+};
+
 const mapDispatchToProps = dispatch => {
   return {
-    update: _sobayas =>
+    setVisibilityFilter: keyword =>
       dispatch({
-        type: "UPDATE_RESULTS",
-        newResults: _sobayas,
+        type: "SET_VISIBILITY_FILTER",
+        visibilityFilter: keyword,
       }),
   };
 };
@@ -63,6 +58,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     sobayas: state.sobayas,
+    visibilityFilter: state.visibilityFilter,
   };
 };
 
