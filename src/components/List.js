@@ -56,7 +56,7 @@ class List extends React.Component {
 
   renderList = sobayas => {
     const { selected } = this.state;
-    // if (sobayas.length < 1) return <NoResults />;
+    if (sobayas.length < 1) return <NoResults />;
     return (
       <Flipper flipKey={selected} decisionData={selected}>
         <ListContrainer className="list-container">

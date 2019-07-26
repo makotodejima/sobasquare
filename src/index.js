@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { createStore } from "redux";
+import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
 import reducers, { middleware } from "./reducers/reducer";
 import "./styles.scss";
@@ -12,7 +12,11 @@ import ReactGA from "react-ga";
 ReactGA.initialize("UA-141671732-1");
 ReactGA.pageview(window.location.pathname + window.location.search);
 
-const store = createStore(reducers, middleware);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  reducers,
+  /* preloadedState, */ composeEnhancers(middleware),
+);
 
 function App() {
   return (

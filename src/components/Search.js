@@ -28,7 +28,7 @@ const SearchBar = props => {
       );
     });
     props.updateSearchResults(_sobayas);
-    props.update(_sobayas);
+    // props.update(_sobayas);
 
     if (input.length > 0) {
       props.toggleIsSearching(true);
