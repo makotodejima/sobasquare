@@ -1,21 +1,16 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
-const SearchBar = ({ setVisibilityFilter }) => {
+const SearchBar = ({ visibilityFilter, setVisibilityFilter }) => {
   const inputRef = useRef();
-  const [input, setInput] = useState("");
-
-  useEffect(() => {
-    setVisibilityFilter(input);
-  }, [input, setVisibilityFilter]);
 
   return (
     <Wrapper>
       <input
         type="search"
-        value={input}
-        onChange={() => setInput(inputRef.current.value)}
+        value={visibilityFilter}
+        onChange={() => setVisibilityFilter(inputRef.current.value)}
         ref={inputRef}
         placeholder="Kanda, Azabu, 砂場..."
       />
@@ -57,7 +52,6 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return {
-    sobayas: state.sobayas,
     visibilityFilter: state.visibilityFilter,
   };
 };
