@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { Flipper } from "react-flip-toolkit";
 import { ListContrainer, OuterItemWrapper } from "./StyledComps";
@@ -9,13 +9,20 @@ import { filterSobayas } from "./Search";
 import initSr from "./ScrollReveal";
 import { sortSobayas } from "../reducers/reducer";
 
-const List = ({ sobayas, visibilityFilter, sortBy, setSortBy }) => {
-  const [selected, setSelected] = useState(undefined);
+const List = ({
+  sobayas,
+  visibilityFilter,
+  sortBy,
+  selected,
+  setSortBy,
+  setSelected,
+}) => {
   const containerRef = useRef();
 
   useEffect(() => {
     initSr(containerRef.current, ".item-wrapper");
-  }, []);
+    // If not subscribe, reveal effect go off after reset search bar
+  }, [visibilityFilter]);
 
   const handleClick = (e, index) => {
     if (e.target.classList.contains("preventShrink")) return;
@@ -64,19 +71,25 @@ const List = ({ sobayas, visibilityFilter, sortBy, setSortBy }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setSortBy: order =>
+    setSortBy: sortBy =>
       dispatch({
         type: "SET_SORT_BY",
-        sortBy: order,
+        sortBy,
+      }),
+    setSelected: id =>
+      dispatch({
+        type: "SET_SELECTED",
+        id,
       }),
   };
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ sobayas, visibilityFilter, sortBy, selected }) => {
   return {
-    sobayas: state.sobayas,
-    visibilityFilter: state.visibilityFilter,
-    sortBy: state.sortBy,
+    sobayas,
+    visibilityFilter,
+    sortBy,
+    selected,
   };
 };
 

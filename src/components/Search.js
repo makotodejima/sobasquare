@@ -5,12 +5,16 @@ import { connect } from "react-redux";
 const SearchBar = ({ visibilityFilter, setVisibilityFilter }) => {
   const inputRef = useRef();
 
+  const handleInputChange = () => {
+    setVisibilityFilter(inputRef.current.value);
+  };
+
   return (
     <Wrapper>
       <input
         type="search"
         value={visibilityFilter}
-        onChange={() => setVisibilityFilter(inputRef.current.value)}
+        onChange={handleInputChange}
         ref={inputRef}
         placeholder="Kanda, Azabu, 砂場..."
       />
