@@ -1,9 +1,14 @@
 import { combineReducers, applyMiddleware } from "redux";
+import sobayas from "../data/sobayas";
 
-function sobayas(state = [], action) {
+const initialState = { sobayas: sobayas };
+
+function rootReducers(state = initialState, action) {
   switch (action.type) {
     case "SET_SOBAYAS":
       return [...action.sobayas];
+    case "SET_LIKE":
+      return setLikes(state, action);
     case "SORT_SOBAYAS":
       if (action.order === "asc") {
         return [...state].sort((a, b) => {
@@ -32,7 +37,7 @@ function sobayas(state = [], action) {
   }
 }
 
-function likes(state = {}, action) {
+function setLikes(state, action) {
   switch (action.type) {
     case "SET_LIKE":
       return { ...state, [action.sobaya]: action.likes };
@@ -41,7 +46,7 @@ function likes(state = {}, action) {
   }
 }
 
-export default combineReducers({ sobayas, likes });
+export default rootReducers;
 
 // this is Logger Middleware, not a reducer
 const logger = store => next => action => {

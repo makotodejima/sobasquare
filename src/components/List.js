@@ -2,7 +2,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { Flipper } from "react-flip-toolkit";
 import { ListContrainer, OuterItemWrapper } from "./StyledComps";
-import { store } from "../index";
 import { connect } from "react-redux";
 import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
@@ -23,11 +22,7 @@ class List extends React.Component {
   };
 
   componentDidMount() {
-    store.dispatch({
-      type: "SET_SOBAYAS",
-      sobayas: sobayas,
-    });
-    store.dispatch({ type: "SORT_SOBAYAS", order: "asc" });
+    // this.props.sortSobayas();
   }
 
   init = () => {
@@ -61,37 +56,38 @@ class List extends React.Component {
 
   renderList = sobayas => {
     const { selected } = this.state;
-    if (sobayas.length < 1) return <NoResults />;
+    // if (sobayas.length < 1) return <NoResults />;
     return (
       <Flipper flipKey={selected} decisionData={selected}>
         <ListContrainer className="list-container">
-          {sobayas.map((sobaya, index) => (
-            <OuterItemWrapper
-              className="item-wrapper"
-              key={index}
-              onClick={e => this.handleClick(e, index)}
-            >
-              {selected === index ? (
-                <Route
-                  path="/"
-                  render={props => (
-                    <ExpandedListItem
-                      {...props}
-                      sobaya={sobaya}
-                      index={index}
-                    />
-                  )}
-                />
-              ) : (
-                <Route
-                  path="/"
-                  render={props => (
-                    <ListItem {...props} sobaya={sobaya} index={index} />
-                  )}
-                />
-              )}
-            </OuterItemWrapper>
-          ))}
+          {sobayas &&
+            sobayas.map((sobaya, index) => (
+              <OuterItemWrapper
+                className="item-wrapper"
+                key={index}
+                onClick={e => this.handleClick(e, index)}
+              >
+                {selected === index ? (
+                  <Route
+                    path="/"
+                    render={props => (
+                      <ExpandedListItem
+                        {...props}
+                        sobaya={sobaya}
+                        index={index}
+                      />
+                    )}
+                  />
+                ) : (
+                  <Route
+                    path="/"
+                    render={props => (
+                      <ListItem {...props} sobaya={sobaya} index={index} />
+                    )}
+                  />
+                )}
+              </OuterItemWrapper>
+            ))}
         </ListContrainer>
       </Flipper>
     );
@@ -119,10 +115,28 @@ class List extends React.Component {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    sortSobayas: () =>
+      dispatch({
+        type: "SET_SOBAYAS",
+        sobayas: sobayas,
+      }),
+    setSobayas: () =>
+      dispatch({
+        type: "SORT_SOBAYAS",
+        sobayas: sobayas,
+      }),
+  };
+};
+
 const mapStateToProps = state => {
   return {
     sobayas: state.sobayas,
   };
 };
 
-export default connect(mapStateToProps)(List);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(List);

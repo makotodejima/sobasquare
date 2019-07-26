@@ -1,41 +1,14 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
-const initialState = { input: "", results: [] };
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "UPDATE_INPUT":
-      return { ...state, input: action.newInput };
-    case "UPDATE_RESULTS":
-      return { ...state, results: action.newResults };
-    default:
-      return state;
-  }
-}
-
 const SearchBar = props => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const inputRef = useRef();
+  const [input, setInput] = useState("");
 
   useEffect(() => {
-    dispatch({ type: "UPDATE_RESULTS", newResults: props.sobayas });
-  }, [props.sobayas]);
+    inputRef.current.focus();
 
-  useEffect(() => {
-    UpdateResults(state.input);
-    if (state.input.length > 0) {
-      props.toggleIsSearching(true);
-    } else {
-      props.toggleIsSearching(false);
-    }
-  }, [UpdateResults, props, state.input]);
-
-  const handleChange = e => {
-    dispatch({ type: "UPDATE_INPUT", newInput: e.target.value });
-  };
-
-  const UpdateResults = input => {
     const _input = input
       .toLowerCase()
       .trim()
@@ -55,25 +28,36 @@ const SearchBar = props => {
       );
     });
     props.updateSearchResults(_sobayas);
-    dispatch({
-      type: "UPDATE_RESULTS",
-      newResults: _sobayas,
-    });
-  };
+    props.update(_sobayas);
+
+    if (input.length > 0) {
+      props.toggleIsSearching(true);
+    } else {
+      props.toggleIsSearching(false);
+    }
+  }, [props, input]);
 
   return (
     <Wrapper>
       <input
-        autoFocus
         type="search"
-        value={state.input}
-        onChange={e => {
-          handleChange(e);
-        }}
+        value={input}
+        onChange={() => setInput(inputRef.current.value)}
+        ref={inputRef}
         placeholder="Kanda, Azabu, 砂場..."
       />
     </Wrapper>
   );
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    update: _sobayas =>
+      dispatch({
+        type: "UPDATE_RESULTS",
+        newResults: _sobayas,
+      }),
+  };
 };
 
 const mapStateToProps = state => {
@@ -82,7 +66,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(SearchBar);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SearchBar);
 
 const Wrapper = styled.div`
   width: 220px;

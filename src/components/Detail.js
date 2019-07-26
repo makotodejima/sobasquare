@@ -4,7 +4,7 @@ import FoursquareLogo from "./FoursquareLogo.js";
 import GoogleMapsIcon from "./GoogleMapsIcon.js";
 import Spinner from "./Spinner";
 import { ReactComponent as Close } from "../images/close.svg";
-import { store } from "../index";
+// import { store } from "../index";
 import { connect } from "react-redux";
 import Img from "react-image";
 
@@ -17,7 +17,7 @@ import {
   FlexContainer,
   ExternalLinks,
   GoogleMapsLink,
-  FsqLink
+  FsqLink,
 } from "./StyledComps";
 
 const Detail = ({ match, likes, sobayas }) => {
@@ -25,32 +25,32 @@ const Detail = ({ match, likes, sobayas }) => {
 
   const f_client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 
-  useEffect(() => {
-    if (sobaya && !likes[sobaya.id]) {
-      fetch(
-        `https://api.foursquare.com/v2/venues/${
-          sobaya.fsq
-        }/likes?client_id=${f_client_id}&client_secret=${
-          process.env.REACT_APP_NOW_F_API_KEY
-        }&v=20190601`
-      )
-        .then(res => res.json())
-        .then(json => {
-          /* response summery can be Japanese
-          when request made by the client
-          whose primary language is Japanese */
-          const summary = json.response.likes.summary;
-          store.dispatch({
-            type: "SET_LIKE",
-            sobaya: sobaya.id,
-            likes: summary
-          });
-        })
-        .catch(function(err) {
-          console.log(err);
-        });
-    }
-  }, [likes, sobaya, sobayas]);
+  // useEffect(() => {
+  //   if (sobaya && !likes[sobaya.id]) {
+  //     fetch(
+  //       `https://api.foursquare.com/v2/venues/${
+  //         sobaya.fsq
+  //       }/likes?client_id=${f_client_id}&client_secret=${
+  //         process.env.REACT_APP_NOW_F_API_KEY
+  //       }&v=20190601`,
+  //     )
+  //       .then(res => res.json())
+  //       .then(json => {
+  //         /* response summery can be Japanese
+  //         when request made by the client
+  //         whose primary language is Japanese */
+  //         const summary = json.response.likes.summary;
+  //         // store.dispatch({
+  //         //   type: "SET_LIKE",
+  //         //   sobaya: sobaya.id,
+  //         //   likes: summary
+  //         // });
+  //       })
+  //       .catch(function(err) {
+  //         console.log(err);
+  //       });
+  //   }
+  // }, [likes, sobaya, sobayas]);
 
   return (
     <DetailContainer>
@@ -121,14 +121,14 @@ const Detail = ({ match, likes, sobayas }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {likes[sobaya.id] === undefined ? (
+                {/* {likes[sobaya.id] === undefined ? (
                   <>LOADING</>
                 ) : (
                   <>
                     <span className="likes">{likes[sobaya.id]}</span>
                     <FoursquareLogo />
                   </>
-                )}
+                )} */}
               </a>
             </FsqLink>
           </ExternalLinks>
@@ -143,7 +143,7 @@ const Detail = ({ match, likes, sobayas }) => {
 const mapStateToProps = state => {
   return {
     sobayas: state.sobayas,
-    likes: state.likes
+    likes: state.likes,
   };
 };
 
