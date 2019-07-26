@@ -50,30 +50,6 @@ function setSortBy(state, action) {
   }
 }
 
-export function sortSobayas(sobayas, sortBy) {
-  if (sortBy === "asc") {
-    return sobayas.sort((a, b) => {
-      if (a.id < b.id) {
-        return -1;
-      } else if (a.id > b.id) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-  } else if (sortBy === "desc") {
-    return sobayas.sort((a, b) => {
-      if (a.id > b.id) {
-        return -1;
-      } else if (a.id < b.id) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-  }
-}
-
 export default rootReducer;
 
 // this is Logger Middleware, not a reducer

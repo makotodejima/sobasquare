@@ -2,11 +2,15 @@ import React, { useRef } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
-const SearchBar = ({ visibilityFilter, setVisibilityFilter }) => {
+const SearchBar = ({ visibilityFilter, setVisibilityFilter, setSelected }) => {
   const inputRef = useRef();
 
   const handleInputChange = () => {
-    setVisibilityFilter(inputRef.current.value);
+    const searchword = inputRef.current.value;
+    if (searchword.length > visibilityFilter.length) {
+      setSelected(`adding-seatch-word-${searchword}`);
+    }
+    setVisibilityFilter(searchword);
   };
 
   return (
@@ -51,6 +55,11 @@ const mapDispatchToProps = dispatch => {
       dispatch({
         type: "SET_VISIBILITY_FILTER",
         visibilityFilter: keyword,
+      }),
+    setSelected: id =>
+      dispatch({
+        type: "SET_SELECTED",
+        id,
       }),
   };
 };

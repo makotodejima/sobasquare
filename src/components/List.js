@@ -6,8 +6,8 @@ import NoResults from "./NoResults";
 import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
 import { filterSobayas } from "./VisibilityControl/Search";
+import { sortSobayas } from "./VisibilityControl/Sort";
 import initSr from "./ScrollReveal";
-import { sortSobayas } from "../reducers/reducer";
 
 const List = ({
   sobayas,

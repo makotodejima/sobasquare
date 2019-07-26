@@ -39,9 +39,9 @@ const Detail = ({ match, setLike, like, sobayas }) => {
       )
         .then(res => res.json())
         .then(json => {
-          /* response summery can be Japanese
-          when request made by the client
-          whose primary language is Japanese */
+          /*  response summery can be Japanese   *
+           *  when request made by the client    *
+           *  whose primary language is Japanese */
           const summary = json.response.likes.summary;
           setLike(sobaya.id, summary);
         })
