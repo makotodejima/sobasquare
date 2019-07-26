@@ -1,7 +1,12 @@
 import { applyMiddleware } from "redux";
 import sobayas from "../data/sobayas";
 
-const initialState = { sobayas: sobayas, visibilityFilter: "", sortBy: "asc" };
+const initialState = {
+  sobayas: sobayas,
+  visibilityFilter: "",
+  sortBy: "asc",
+  like: {},
+};
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
@@ -26,7 +31,8 @@ function setVisibilityFilter(state, action) {
 function setLike(state, action) {
   switch (action.type) {
     case "SET_LIKE":
-      return { ...state, [action.sobaya]: action.likes };
+      const like = { ...state.like, [action.id]: action.likeSummary };
+      return { ...state, like };
     default:
       return state;
   }
