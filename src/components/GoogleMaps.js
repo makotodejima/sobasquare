@@ -54,9 +54,11 @@ class Map extends React.Component {
 }
 
 const Ovarlay = styled.div`
-  position: absolute;
+  position: fixed;
   opacity: 0.9;
   background-color: white;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 `;
