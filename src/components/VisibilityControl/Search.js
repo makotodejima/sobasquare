@@ -22,6 +22,7 @@ const SearchBar = ({ visibilityFilter, setVisibilityFilter }) => {
   );
 };
 
+// Used in List
 export const filterSobayas = (sobayas, keyword) => {
   const formattedKeyword = keyword
     .toLowerCase()

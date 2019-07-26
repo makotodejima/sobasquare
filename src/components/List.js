@@ -5,7 +5,7 @@ import { ListContrainer, OuterItemWrapper } from "./StyledComps";
 import NoResults from "./NoResults";
 import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
-import { filterSobayas } from "./Search";
+import { filterSobayas } from "./VisibilityControl/Search";
 import initSr from "./ScrollReveal";
 import { sortSobayas } from "../reducers/reducer";
 
@@ -19,14 +19,14 @@ const List = ({
 }) => {
   const containerRef = useRef();
 
-  useEffect(() => {
-    initSr(containerRef.current, ".item-wrapper");
-    // If not subscribe, reveal effect go off after reset search bar
-  }, [visibilityFilter]);
+  // useEffect(() => {
+  //   initSr(containerRef.current, ".item-wrapper");
+  //   // If not subscribe, reveal effect go off after reset search bar
+  // }, [visibilityFilter]);
 
-  const handleClick = (e, index) => {
+  const handleClick = (e, id) => {
     if (e.target.classList.contains("preventShrink")) return;
-    setSelected(selected === index ? null : index);
+    setSelected(selected === id ? null : id);
   };
 
   // First filter by Search
@@ -35,37 +35,27 @@ const List = ({
   const sortedVisibleSobayas = sortSobayas(visibleSobayas, sortBy);
 
   return (
-    <>
-      <button
-        onClick={() => {
-          setSortBy("desc");
-          setSelected(selected - 100);
-        }}
-      >
-        TEST SORT
-      </button>
-      <Flipper flipKey={selected} decisionData={selected}>
-        <ListContrainer className="list-container" ref={containerRef}>
-          {sortedVisibleSobayas.length > 0 ? (
-            sortedVisibleSobayas.map((sobaya, index) => (
-              <OuterItemWrapper
-                className="item-wrapper"
-                key={index}
-                onClick={e => handleClick(e, index)}
-              >
-                {selected === index ? (
-                  <ExpandedListItem sobaya={sobaya} index={index} />
-                ) : (
-                  <ListItem sobaya={sobaya} index={index} />
-                )}
-              </OuterItemWrapper>
-            ))
-          ) : (
-            <NoResults />
-          )}
-        </ListContrainer>
-      </Flipper>
-    </>
+    <Flipper flipKey={selected} decisionData={selected}>
+      <ListContrainer className="list-container" ref={containerRef}>
+        {sortedVisibleSobayas.length > 0 ? (
+          sortedVisibleSobayas.map(sobaya => (
+            <OuterItemWrapper
+              className="item-wrapper"
+              key={sobaya.id}
+              onClick={e => handleClick(e, sobaya.id)}
+            >
+              {selected === sobaya.id ? (
+                <ExpandedListItem sobaya={sobaya} />
+              ) : (
+                <ListItem sobaya={sobaya} />
+              )}
+            </OuterItemWrapper>
+          ))
+        ) : (
+          <NoResults />
+        )}
+      </ListContrainer>
+    </Flipper>
   );
 };
 
