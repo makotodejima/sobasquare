@@ -1,19 +1,16 @@
 import { applyMiddleware } from "redux";
 import sobayas from "../data/sobayas";
 
-const initialState = { sobayas: sobayas, visibilityFilter: "" };
+const initialState = { sobayas: sobayas, visibilityFilter: "", sortBy: "asc" };
 
-function rootReducers(state = initialState, action) {
+function rootReducer(state = initialState, action) {
   switch (action.type) {
-    // case "SET_SOBAYAS":
-    //   return [...action.sobayas];
     case "SET_VISIBILITY_FILTER":
       return setVisibilityFilter(state, action);
     case "SET_LIKE":
       return setLike(state, action);
-
-    case "SORT_SOBAYAS":
-      return sortSobayas(state, action);
+    case "SET_SORT_BY":
+      return setSortBy(state, action);
     default:
       return state;
   }
@@ -35,9 +32,18 @@ function setLike(state, action) {
   }
 }
 
-function sortSobayas(state, action) {
-  if (action.order === "asc") {
-    return [...state].sort((a, b) => {
+function setSortBy(state, action) {
+  switch (action.type) {
+    case "SET_SORT_BY":
+      return { ...state, sortBy: action.sortBy };
+    default:
+      return state;
+  }
+}
+
+export function sortSobayas(sobayas, sortBy) {
+  if (sortBy === "asc") {
+    return sobayas.sort((a, b) => {
       if (a.id < b.id) {
         return -1;
       } else if (a.id > b.id) {
@@ -46,8 +52,8 @@ function sortSobayas(state, action) {
         return 0;
       }
     });
-  } else if (action.order === "desc") {
-    return [...state].sort((a, b) => {
+  } else if (sortBy === "desc") {
+    return sobayas.sort((a, b) => {
       if (a.id > b.id) {
         return -1;
       } else if (a.id < b.id) {
@@ -59,7 +65,7 @@ function sortSobayas(state, action) {
   }
 }
 
-export default rootReducers;
+export default rootReducer;
 
 // this is Logger Middleware, not a reducer
 const logger = store => next => action => {

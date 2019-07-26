@@ -12,7 +12,7 @@ import { Flipped } from "react-flip-toolkit";
 import Img from "react-image";
 import Spinner from "./Spinner";
 
-const ExpandedListItem = ({ sobaya, index }) => {
+const ExpandedListItem = ({ sobaya }) => {
   const img = require(`../images/${sobaya.id}.jpg`);
   const [mouseonLink, setMouseonLink] = useState(false);
 

@@ -13,8 +13,9 @@ import SearchBar, { filterSobayas } from "./Search";
 import Footer from "./Footer";
 import Nav from "./Nav";
 import NoResults from "./NoResults";
+import { sortSobayas } from "../reducers/reducer";
 
-const List = ({ sobayas, visibilityFilter }) => {
+const List = ({ sobayas, visibilityFilter, sortBy, setSortBy }) => {
   const [selected, setSelected] = useState(undefined);
   const containerRef = useRef();
 
@@ -29,6 +30,8 @@ const List = ({ sobayas, visibilityFilter }) => {
 
   // Search
   const visibleSobayas = filterSobayas(sobayas, visibilityFilter);
+  // Then sort
+  const sortedVisibleSobayas = sortSobayas(visibleSobayas, sortBy);
 
   return (
     <>
@@ -40,10 +43,11 @@ const List = ({ sobayas, visibilityFilter }) => {
         <Nav />
         <Logo />
         <SearchBar />
+        <button onClick={() => setSortBy("desc")}> TEST SORT</button>
         <Flipper flipKey={selected} decisionData={selected}>
           <ListContrainer className="list-container" ref={containerRef}>
-            {visibleSobayas.length > 0 ? (
-              visibleSobayas.map((sobaya, index) => (
+            {sortedVisibleSobayas.length > 0 ? (
+              sortedVisibleSobayas.map((sobaya, index) => (
                 <OuterItemWrapper
                   className="item-wrapper"
                   key={index}
@@ -69,13 +73,10 @@ const List = ({ sobayas, visibilityFilter }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    sortSobayas: () =>
+    setSortBy: order =>
       dispatch({
-        type: "SET_SOBAYAS",
-      }),
-    setSobayas: () =>
-      dispatch({
-        type: "SORT_SOBAYAS",
+        type: "SET_SORT_BY",
+        sortBy: order,
       }),
   };
 };
@@ -84,6 +85,7 @@ const mapStateToProps = state => {
   return {
     sobayas: state.sobayas,
     visibilityFilter: state.visibilityFilter,
+    sortBy: state.sortBy,
   };
 };
 
