@@ -36,12 +36,12 @@ const List = ({ sobayas, visibilityFilter, sortBy, setSortBy }) => {
   return (
     <>
       <div className="main">
+        <Nav />
+        <Logo />
         {/* Routes */}
         <Route path="/sobaya/:id" render={props => <Detail {...props} />} />
         <Route path="/map/" render={props => <GoogleMaps {...props} />} />
         {/* Routes */}
-        <Nav />
-        <Logo />
         <SearchBar />
         <button onClick={() => setSortBy("desc")}> TEST SORT</button>
         <Flipper flipKey={selected} decisionData={selected}>

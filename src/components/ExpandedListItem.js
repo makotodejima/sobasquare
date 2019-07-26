@@ -32,8 +32,8 @@ const ExpandedListItem = ({ sobaya }) => {
                 <Link
                   to={`/sobaya/${sobaya.id}`}
                   className={`en preventShrink ${mouseonLink ? "on" : ""}`}
-                  onMouseEnter={() => setMouseonLink(true)}
-                  onMouseLeave={() => setMouseonLink(false)}
+                  onMouseOver={() => setMouseonLink(true)}
+                  onMouseOut={() => setMouseonLink(false)}
                 >
                   {sobaya.name.en}
                 </Link>
@@ -53,8 +53,8 @@ const ExpandedListItem = ({ sobaya }) => {
                 Sobasquare Pick: <strong>{sobaya.pick.en}</strong>
               </SbsqPick>
               <ImgWrapper
-                onMouseEnter={() => setMouseonLink(true)}
-                onMouseLeave={() => setMouseonLink(false)}
+                onMouseOver={() => setMouseonLink(true)}
+                onMouseOut={() => setMouseonLink(false)}
                 className={mouseonLink ? "on" : null}
               >
                 <Link to={`/sobaya/${sobaya.id}`}>

@@ -14,7 +14,7 @@ class Map extends React.Component {
   onScriptLoad() {
     const map = new window.google.maps.Map(
       document.getElementById(this.props.id),
-      this.props.options
+      this.props.options,
     );
     this.props.onMapLoad(map);
   }
@@ -172,285 +172,285 @@ class GoogleMaps extends Component {
               elementType: "geometry",
               stylers: [
                 {
-                  color: "#ebe3cd"
-                }
-              ]
+                  color: "#ebe3cd",
+                },
+              ],
             },
             {
               elementType: "labels.text.fill",
               stylers: [
                 {
-                  color: "#523735"
-                }
-              ]
+                  color: "#523735",
+                },
+              ],
             },
             {
               elementType: "labels.text.stroke",
               stylers: [
                 {
-                  color: "#f5f1e6"
-                }
-              ]
+                  color: "#f5f1e6",
+                },
+              ],
             },
             {
               featureType: "administrative",
               elementType: "geometry.stroke",
               stylers: [
                 {
-                  color: "#c9b2a6"
-                }
-              ]
+                  color: "#c9b2a6",
+                },
+              ],
             },
             {
               featureType: "administrative.land_parcel",
               stylers: [
                 {
-                  visibility: "off"
-                }
-              ]
+                  visibility: "off",
+                },
+              ],
             },
             {
               featureType: "administrative.land_parcel",
               elementType: "geometry.stroke",
               stylers: [
                 {
-                  color: "#dcd2be"
-                }
-              ]
+                  color: "#dcd2be",
+                },
+              ],
             },
             {
               featureType: "administrative.land_parcel",
               elementType: "labels.text.fill",
               stylers: [
                 {
-                  color: "#ae9e90"
-                }
-              ]
+                  color: "#ae9e90",
+                },
+              ],
             },
             {
               featureType: "administrative.neighborhood",
               stylers: [
                 {
-                  visibility: "off"
-                }
-              ]
+                  visibility: "off",
+                },
+              ],
             },
             {
               featureType: "landscape.natural",
               elementType: "geometry",
               stylers: [
                 {
-                  color: "#dfd2ae"
-                }
-              ]
+                  color: "#dfd2ae",
+                },
+              ],
             },
             {
               featureType: "poi",
               elementType: "geometry",
               stylers: [
                 {
-                  color: "#dfd2ae"
-                }
-              ]
+                  color: "#dfd2ae",
+                },
+              ],
             },
             {
               featureType: "poi",
               elementType: "labels.text",
               stylers: [
                 {
-                  visibility: "off"
-                }
-              ]
+                  visibility: "off",
+                },
+              ],
             },
             {
               featureType: "poi",
               elementType: "labels.text.fill",
               stylers: [
                 {
-                  color: "#93817c"
-                }
-              ]
+                  color: "#93817c",
+                },
+              ],
             },
             {
               featureType: "poi.business",
               stylers: [
                 {
-                  visibility: "off"
-                }
-              ]
+                  visibility: "off",
+                },
+              ],
             },
             {
               featureType: "poi.park",
               elementType: "geometry.fill",
               stylers: [
                 {
-                  color: "#a5b076"
-                }
-              ]
+                  color: "#a5b076",
+                },
+              ],
             },
             {
               featureType: "poi.park",
               elementType: "labels.text",
               stylers: [
                 {
-                  visibility: "off"
-                }
-              ]
+                  visibility: "off",
+                },
+              ],
             },
             {
               featureType: "poi.park",
               elementType: "labels.text.fill",
               stylers: [
                 {
-                  color: "#447530"
-                }
-              ]
+                  color: "#447530",
+                },
+              ],
             },
             {
               featureType: "road",
               elementType: "geometry",
               stylers: [
                 {
-                  color: "#f5f1e6"
-                }
-              ]
+                  color: "#f5f1e6",
+                },
+              ],
             },
             {
               featureType: "road",
               elementType: "labels",
               stylers: [
                 {
-                  visibility: "off"
-                }
-              ]
+                  visibility: "off",
+                },
+              ],
             },
             {
               featureType: "road.arterial",
               elementType: "geometry",
               stylers: [
                 {
-                  color: "#fdfcf8"
-                }
-              ]
+                  color: "#fdfcf8",
+                },
+              ],
             },
             {
               featureType: "road.highway",
               elementType: "geometry",
               stylers: [
                 {
-                  color: "#f8c967"
-                }
-              ]
+                  color: "#f8c967",
+                },
+              ],
             },
             {
               featureType: "road.highway",
               elementType: "geometry.stroke",
               stylers: [
                 {
-                  color: "#e9bc62"
+                  color: "#e9bc62",
                 },
                 {
-                  weight: 1
-                }
-              ]
+                  weight: 1,
+                },
+              ],
             },
             {
               featureType: "road.highway.controlled_access",
               elementType: "geometry",
               stylers: [
                 {
-                  color: "#e98d58"
+                  color: "#e98d58",
                 },
                 {
-                  weight: 1.5
-                }
-              ]
+                  weight: 1.5,
+                },
+              ],
             },
             {
               featureType: "road.highway.controlled_access",
               elementType: "geometry.stroke",
               stylers: [
                 {
-                  color: "#db8555"
+                  color: "#db8555",
                 },
                 {
-                  weight: 0.5
-                }
-              ]
+                  weight: 0.5,
+                },
+              ],
             },
             {
               featureType: "road.local",
               elementType: "labels.text.fill",
               stylers: [
                 {
-                  color: "#806b63"
-                }
-              ]
+                  color: "#806b63",
+                },
+              ],
             },
             {
               featureType: "transit.line",
               elementType: "geometry",
               stylers: [
                 {
-                  color: "#aaaaaa"
-                }
-              ]
+                  color: "#aaaaaa",
+                },
+              ],
             },
             {
               featureType: "transit.line",
               elementType: "labels.text.fill",
               stylers: [
                 {
-                  color: "#8f7d77"
-                }
-              ]
+                  color: "#8f7d77",
+                },
+              ],
             },
             {
               featureType: "transit.line",
               elementType: "labels.text.stroke",
               stylers: [
                 {
-                  color: "#ebe3cd"
-                }
-              ]
+                  color: "#ebe3cd",
+                },
+              ],
             },
             {
               featureType: "transit.station",
               elementType: "geometry",
               stylers: [
                 {
-                  color: "#dfd2ae"
-                }
-              ]
+                  color: "#dfd2ae",
+                },
+              ],
             },
             {
               featureType: "water",
               elementType: "geometry.fill",
               stylers: [
                 {
-                  color: "#b9d3c2"
-                }
-              ]
+                  color: "#b9d3c2",
+                },
+              ],
             },
             {
               featureType: "water",
               elementType: "labels.text",
               stylers: [
                 {
-                  visibility: "off"
-                }
-              ]
+                  visibility: "off",
+                },
+              ],
             },
             {
               featureType: "water",
               elementType: "labels.text.fill",
               stylers: [
                 {
-                  color: "#92998d"
-                }
-              ]
-            }
-          ]
+                  color: "#92998d",
+                },
+              ],
+            },
+          ],
         }}
         onMapLoad={map => {
           const infoWindow = new window.google.maps.InfoWindow();
@@ -458,7 +458,7 @@ class GoogleMaps extends Component {
             var marker = new window.google.maps.Marker({
               position: point,
               map: map,
-              title: "Sobaya's Info"
+              title: "Sobaya's Info",
             });
 
             window.google.maps.event.addListener(marker, "click", function(e) {
@@ -472,7 +472,7 @@ class GoogleMaps extends Component {
                     neighborhood={sobayasInfo.neighborhood[idx]}
                     vibe={sobayasInfo.vibe[idx]}
                   />,
-                  document.getElementById("infoWindow")
+                  document.getElementById("infoWindow"),
                 );
               });
               infoWindow.open(map, marker);
@@ -491,8 +491,8 @@ const mapStateToProps = ({ sobayas }) => {
       name: sobayas.map(s => s.name),
       neighborhood: sobayas.map(s => s.neighborhood),
       coords: sobayas.map(s => s.coords),
-      vibe: sobayas.map(s => s.vibe)
-    }
+      vibe: sobayas.map(s => s.vibe),
+    },
   };
 };
 
