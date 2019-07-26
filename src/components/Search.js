@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
-const SearchBar = ({ sobayas, setVisibilityFilter }) => {
+const SearchBar = ({ setVisibilityFilter }) => {
   const inputRef = useRef();
   const [input, setInput] = useState("");
 
