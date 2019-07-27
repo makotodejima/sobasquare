@@ -7,6 +7,7 @@ import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
 import { filterSobayas } from "./VisibilityControl/Search";
 import { sortSobayas } from "./VisibilityControl/Sort";
+import { setSortBy, setSelected } from "../reducers/actions";
 
 const List = ({
   sobayas,
@@ -53,19 +54,9 @@ const List = ({
   );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setSortBy: sortBy =>
-      dispatch({
-        type: "SET_SORT_BY",
-        sortBy,
-      }),
-    setSelected: id =>
-      dispatch({
-        type: "SET_SELECTED",
-        id,
-      }),
-  };
+const mapDispatchToProps = {
+  setSortBy,
+  setSelected,
 };
 
 const mapStateToProps = ({ sobayas, visibilityFilter, sortBy, selected }) => {
