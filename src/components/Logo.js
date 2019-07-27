@@ -1,15 +1,47 @@
 import React from "react";
+import { connect } from "react-redux";
 import logo from "../images/sbsq_logo.svg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export default props => (
-  <Container onClick={props.init}>
+const Logo = ({ setVisibilityFilter, setSortBy, setSelected }) => (
+  <Container
+    onClick={() => {
+      setVisibilityFilter("");
+      setSortBy("asc");
+      setSelected("init");
+    }}
+  >
     <Link to={`/`}>
       <img src={logo} alt="Sobasquare logo" />
     </Link>
   </Container>
 );
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setVisibilityFilter: keyword =>
+      dispatch({
+        type: "SET_VISIBILITY_FILTER",
+        visibilityFilter: keyword,
+      }),
+    setSortBy: sortBy =>
+      dispatch({
+        type: "SET_SORT_BY",
+        sortBy,
+      }),
+    setSelected: id =>
+      dispatch({
+        type: "SET_SELECTED",
+        id,
+      }),
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Logo);
 
 const Container = styled.div`
   width: 120px;
