@@ -32,7 +32,7 @@ const Detail = ({ match, setLike, like, sobayas }) => {
           sobaya.fsq
         }/likes?client_id=${f_client_id}&client_secret=${
           process.env.REACT_APP_NOW_F_API_KEY
-        }&v=20190701`,
+        }&v=20190727`,
       )
         .then(res => res.json())
         .then(json => {

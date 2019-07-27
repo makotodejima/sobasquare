@@ -9,14 +9,7 @@ import { filterSobayas } from "./VisibilityControl/Search";
 import { sortSobayas } from "./VisibilityControl/Sort";
 import { setSortBy, setSelected } from "../reducers/actions";
 
-const List = ({
-  sobayas,
-  visibilityFilter,
-  sortBy,
-  selected,
-  setSortBy,
-  setSelected,
-}) => {
+const List = ({ sobayas, visibilityFilter, sortBy, selected, setSelected }) => {
   const containerRef = useRef();
 
   const handleClick = (e, id) => {

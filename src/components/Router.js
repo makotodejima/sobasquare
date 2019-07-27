@@ -12,7 +12,7 @@ const Router = () => {
       <Layout>
         <VisibilityControl />
         <Route path="/" component={List} />
-        <Route path="/sobaya/:id" render={props => <Detail {...props} />} />
+        <Route path="/sobaya/:id" component={Detail} />
         <Route path="/map/" component={GoogleMaps} />
       </Layout>
     </BrowserRouter>
