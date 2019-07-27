@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import { setSortBy, setSelected } from "../../reducers/actions";
 
 const Sort = ({ setSortBy, sortBy, setSelected }) => {
   return (
@@ -23,49 +24,40 @@ const Sort = ({ setSortBy, sortBy, setSelected }) => {
 };
 
 export function sortSobayas(sobayas, sortBy) {
-  if (sortBy === "asc") {
-    return sobayas.sort((a, b) => {
-      if (a.id < b.id) {
-        return -1;
-      } else if (a.id > b.id) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-  } else if (sortBy === "desc") {
-    return sobayas.sort((a, b) => {
-      if (a.id > b.id) {
-        return -1;
-      } else if (a.id < b.id) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
+  switch (sortBy) {
+    case "asc":
+      return sobayas.sort((a, b) => {
+        if (a.id < b.id) {
+          return -1;
+        } else if (a.id > b.id) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+    case "desc":
+      return sobayas.sort((a, b) => {
+        if (a.id > b.id) {
+          return -1;
+        } else if (a.id < b.id) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+    default:
+      return sobayas;
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setSortBy: sortBy =>
-      dispatch({
-        type: "SET_SORT_BY",
-        sortBy,
-      }),
-    setSelected: id =>
-      dispatch({
-        type: "SET_SELECTED",
-        id,
-      }),
-  };
+const mapDispatchToProps = {
+  setSortBy,
+  setSelected,
 };
 
-const mapStateToProps = ({ sortBy }) => {
-  return {
-    sortBy,
-  };
-};
+const mapStateToProps = ({ sortBy }) => ({
+  sortBy,
+});
 
 export default connect(
   mapStateToProps,

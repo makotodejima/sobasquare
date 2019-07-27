@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import { setVisibilityFilter, setSelected } from "../reducers/actions";
 
 const NoResults = ({ setVisibilityFilter, setSelected }) => {
   const handleClick = e => {
@@ -22,19 +23,9 @@ const NoResults = ({ setVisibilityFilter, setSelected }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setVisibilityFilter: keyword =>
-      dispatch({
-        type: "SET_VISIBILITY_FILTER",
-        visibilityFilter: keyword,
-      }),
-    setSelected: id =>
-      dispatch({
-        type: "SET_SELECTED",
-        id,
-      }),
-  };
+const mapDispatchToProps = {
+  setVisibilityFilter,
+  setSelected,
 };
 
 export default connect(

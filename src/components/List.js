@@ -7,7 +7,6 @@ import ListItem from "./ListItem";
 import ExpandedListItem from "./ExpandedListItem";
 import { filterSobayas } from "./VisibilityControl/Search";
 import { sortSobayas } from "./VisibilityControl/Sort";
-import initSr from "./ScrollReveal";
 
 const List = ({
   sobayas,
@@ -18,11 +17,6 @@ const List = ({
   setSelected,
 }) => {
   const containerRef = useRef();
-
-  // useEffect(() => {
-  //   initSr(containerRef.current, ".item-wrapper");
-  //   // If not subscribe, reveal effect go off after reset search bar
-  // }, [visibilityFilter]);
 
   const handleClick = (e, id) => {
     if (e.target.classList.contains("preventShrink")) return;

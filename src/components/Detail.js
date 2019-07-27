@@ -4,6 +4,7 @@ import FoursquareLogo from "./FoursquareLogo.js";
 import GoogleMapsIcon from "./GoogleMapsIcon.js";
 import Spinner from "./Spinner";
 import { ReactComponent as Close } from "../images/close.svg";
+import { setLike } from "../reducers/actions";
 import { connect } from "react-redux";
 import Img from "react-image";
 
@@ -24,17 +25,13 @@ const Detail = ({ match, setLike, like, sobayas }) => {
 
   const f_client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 
-  // DELETE ME
-  const secret = "OJIQWBR4LNP31ZUHV2PCYH1AQK4Z3FH3KXBRC344FJCT00JD";
-
   useEffect(() => {
     if (!like[sobaya.id]) {
       fetch(
         `https://api.foursquare.com/v2/venues/${
           sobaya.fsq
         }/likes?client_id=${f_client_id}&client_secret=${
-          // process.env.REACT_APP_NOW_F_API_KEY
-          secret
+          process.env.REACT_APP_NOW_F_API_KEY
         }&v=20190701`,
       )
         .then(res => res.json())
@@ -139,11 +136,8 @@ const Detail = ({ match, setLike, like, sobayas }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setLike: (id, likeSummary) =>
-      dispatch({ type: "SET_LIKE", id, likeSummary }),
-  };
+const mapDispatchToProps = {
+  setLike,
 };
 
 const mapStateToProps = state => {
