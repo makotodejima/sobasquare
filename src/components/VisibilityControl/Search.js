@@ -77,7 +77,7 @@ export default connect(
 
 const Wrapper = styled.div`
   width: 220px;
-  margin: 1rem auto 1.2rem;
+  margin: 1rem 0.4rem 1.2rem;
   text-align: center;
   input {
     padding: 5px 1rem;

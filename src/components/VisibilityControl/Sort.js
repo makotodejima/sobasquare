@@ -4,23 +4,20 @@ import { connect } from "react-redux";
 
 const Sort = ({ setSortBy, sortBy, setSelected }) => {
   return (
-    <Wrapper>
-      <button
-        onClick={() => {
-          setSortBy("asc");
-          setSelected(Math.random() * -1);
-        }}
+    <Wrapper
+      onClick={() => {
+        setSortBy(sortBy === "asc" ? "desc" : "asc");
+        setSelected(sortBy === "asc" ? "desc" : "asc");
+      }}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
       >
-        ASC
-      </button>
-      <button
-        onClick={() => {
-          setSortBy("desc");
-          setSelected(Math.random() * -1);
-        }}
-      >
-        DESC
-      </button>
+        <path d="M12 0l8 10h-16l8-10zm8 14h-16l8 10 8-10z" />
+      </svg>
     </Wrapper>
   );
 };
@@ -76,6 +73,8 @@ export default connect(
 )(Sort);
 
 const Wrapper = styled.div`
+  margin: auto 0.4rem;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
