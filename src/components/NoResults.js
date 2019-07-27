@@ -14,9 +14,10 @@ const NoResults = ({ setVisibilityFilter, setSelected }) => {
       <h1>No Results</h1>
       <p>Try these keywords?</p>
       <Button onClick={handleClick}>Azabu</Button>
-      <Button onClick={handleClick}>Minato</Button>
+      <Button onClick={handleClick}>Kanda</Button>
       <Button onClick={handleClick}>Sarashina</Button>
       <Button onClick={handleClick}>Roppongi</Button>
+      <Button onClick={handleClick}>Minato</Button>
     </Wrapper>
   );
 };
