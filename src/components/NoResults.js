@@ -10,15 +10,15 @@ const NoResults = ({ setVisibilityFilter, setSelected }) => {
     setSelected("Pressed-button-" + keyword);
   };
 
+  const items = ["Azabu", "Kanda", "Sarashina", "Roppongi", "Minato"];
+
   return (
     <Wrapper>
       <h1>No Results</h1>
       <p>Try these keywords?</p>
-      <Button onClick={handleClick}>Azabu</Button>
-      <Button onClick={handleClick}>Kanda</Button>
-      <Button onClick={handleClick}>Sarashina</Button>
-      <Button onClick={handleClick}>Roppongi</Button>
-      <Button onClick={handleClick}>Minato</Button>
+      {items.map(item => (
+        <Button onClick={handleClick}>{item}</Button>
+      ))}
     </Wrapper>
   );
 };
