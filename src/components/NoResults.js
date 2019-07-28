@@ -7,7 +7,7 @@ const NoResults = ({ setVisibilityFilter, setSelected }) => {
   const handleClick = e => {
     const keyword = e.target.textContent;
     setVisibilityFilter(keyword);
-    setSelected("Pressed-button-" + keyword);
+    setSelected("Pressed-button-" + keyword); // To change Flipkey
   };
 
   const items = ["Azabu", "Kanda", "Sarashina", "Roppongi", "Minato"];
