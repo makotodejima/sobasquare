@@ -22,30 +22,27 @@ import {
 
 const Detail = ({ match, setLike, like, sobayas }) => {
   const sobaya = sobayas.find(sobaya => sobaya.id === match.params.id);
-
   const f_client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
 
   useEffect(() => {
-    if (!like[sobaya.id]) {
-      fetch(
-        `https://api.foursquare.com/v2/venues/${
-          sobaya.fsq
-        }/likes?client_id=${f_client_id}&client_secret=${
-          process.env.REACT_APP_NOW_F_API_KEY
-        }&v=20190727`,
-      )
-        .then(res => res.json())
-        .then(json => {
-          /*  response summery can be Japanese   *
-           *  when request made by the client    *
-           *  whose primary language is Japanese */
-          const summary = json.response.likes.summary;
-          setLike(sobaya.id, summary);
-        })
-        .catch(function(err) {
-          console.log(err);
-        });
+    async function getLikeCount() {
+      if (!like[sobaya.id]) {
+        const res = await fetch(
+          `https://api.foursquare.com/v2/venues/${
+            sobaya.fsq
+          }/likes?client_id=${f_client_id}&client_secret=${
+            process.env.REACT_APP_NOW_F_API_KEY
+          }&v=20190727`,
+        );
+        const data = await res.json();
+        /*  response summery can be Japanese   *
+         *  when request made by the client    *
+         *  whose primary language is Japanese */
+        const summary = data.response.likes.summary;
+        setLike(sobaya.id, summary);
+      }
     }
+    getLikeCount().catch(err => console.error(err));
   }, [like, setLike, sobaya.fsq, sobaya.id]);
 
   return (
