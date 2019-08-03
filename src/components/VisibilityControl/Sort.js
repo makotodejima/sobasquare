@@ -1,31 +1,32 @@
-import React from "react";
-import styled from "styled-components";
-import { connect } from "react-redux";
-import { setSortBy, setSelected } from "../../reducers/actions";
+import React from 'react';
+import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSortBy, setSelected } from '../../reducers/actions';
 
-const Sort = ({ setSortBy, sortBy, setSelected }) => {
+const Sort = () => {
+  // Trying new react-redux hooks
+  const sortBy = useSelector(state => state.sortBy);
+  const dispatch = useDispatch();
+
   return (
     <Wrapper
       onClick={() => {
-        setSortBy(sortBy === "asc" ? "desc" : "asc");
-        setSelected(sortBy === "asc" ? "desc" : "asc");
+        // Trying new react-redux hooks
+        dispatch(setSortBy(sortBy === 'asc' ? 'desc' : 'asc'));
+        dispatch(setSelected(sortBy === 'asc' ? 'desc' : 'asc'));
       }}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
         <path d="M12 0l8 10h-16l8-10zm8 14h-16l8 10 8-10z" />
       </svg>
     </Wrapper>
   );
 };
 
+// used in List comp
 export function sortSobayas(sobayas, sortBy) {
   switch (sortBy) {
-    case "asc":
+    case 'asc':
       return sobayas.sort((a, b) => {
         if (a.id < b.id) {
           return -1;
@@ -35,7 +36,7 @@ export function sortSobayas(sobayas, sortBy) {
           return 0;
         }
       });
-    case "desc":
+    case 'desc':
       return sobayas.sort((a, b) => {
         if (a.id > b.id) {
           return -1;
@@ -50,19 +51,8 @@ export function sortSobayas(sobayas, sortBy) {
   }
 }
 
-const mapDispatchToProps = {
-  setSortBy,
-  setSelected,
-};
-
-const mapStateToProps = ({ sortBy }) => ({
-  sortBy,
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Sort);
+// Avoid using connect thanks to react-redux hooks
+export default Sort;
 
 const Wrapper = styled.div`
   margin: auto 0.4rem;

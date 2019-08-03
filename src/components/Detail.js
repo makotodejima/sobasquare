@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import FoursquareLogo from "./FoursquareLogo.js";
-import GoogleMapsIcon from "./GoogleMapsIcon.js";
-import Spinner from "./Spinner";
-import { ReactComponent as Close } from "../images/close.svg";
-import { setLike } from "../reducers/actions";
-import { connect } from "react-redux";
-import Img from "react-image";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import FoursquareLogo from './FoursquareLogo.js';
+import GoogleMapsIcon from './GoogleMapsIcon.js';
+import Spinner from './Spinner';
+import { ReactComponent as Close } from '../images/close.svg';
+import { setLike } from '../reducers/actions';
+import { connect } from 'react-redux';
+import Img from 'react-image';
 
 import {
   DetailContainer,
@@ -18,19 +18,17 @@ import {
   ExternalLinks,
   GoogleMapsLink,
   FsqLink,
-} from "./StyledComps";
+} from './StyledComps';
 
 const Detail = ({ match, setLike, like, sobayas }) => {
   const sobaya = sobayas.find(sobaya => sobaya.id === match.params.id);
-  const f_client_id = "XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX";
+  const f_client_id = 'XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX';
 
   useEffect(() => {
     async function getLikeCount() {
       if (!like[sobaya.id]) {
         const res = await fetch(
-          `https://api.foursquare.com/v2/venues/${
-            sobaya.fsq
-          }/likes?client_id=${f_client_id}&client_secret=${
+          `https://api.foursquare.com/v2/venues/${sobaya.fsq}/likes?client_id=${f_client_id}&client_secret=${
             process.env.REACT_APP_NOW_F_API_KEY
           }&v=20190727`,
         );
@@ -83,37 +81,21 @@ const Detail = ({ match, setLike, like, sobayas }) => {
 
           <DetailImgContainer>
             <div>
-              <Img
-                src={require(`../images/${sobaya.id}_1.jpg`)}
-                alt={sobaya.name}
-                loader={<Spinner />}
-              />
+              <Img src={require(`../images/${sobaya.id}_1.jpg`)} alt={sobaya.name} loader={<Spinner />} />
             </div>
             <div>
-              <Img
-                src={require(`../images/${sobaya.id}_2.jpg`)}
-                alt={sobaya.name}
-                loader={<Spinner />}
-              />
+              <Img src={require(`../images/${sobaya.id}_2.jpg`)} alt={sobaya.name} loader={<Spinner />} />
             </div>
           </DetailImgContainer>
           <ExternalLinks>
             <GoogleMapsLink>
-              <a
-                href={sobaya.googlemaps}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={sobaya.googlemaps} target="_blank" rel="noopener noreferrer">
                 <span className="text">Open in Google Maps</span>
                 <GoogleMapsIcon />
               </a>
             </GoogleMapsLink>
             <FsqLink>
-              <a
-                href={`https://foursquare.com/v/${sobaya.fsq}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={`https://foursquare.com/v/${sobaya.fsq}`} target="_blank" rel="noopener noreferrer">
                 {like[sobaya.id] === undefined ? (
                   <>LOADING</>
                 ) : (
@@ -133,10 +115,6 @@ const Detail = ({ match, setLike, like, sobayas }) => {
   );
 };
 
-const mapDispatchToProps = {
-  setLike,
-};
-
 const mapStateToProps = state => {
   return {
     sobayas: state.sobayas,
@@ -146,5 +124,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  { setLike },
 )(Detail);

@@ -1,10 +1,10 @@
-import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import Layout from "./Layout";
-import VisibilityControl from "./VisibilityControl/index";
-import Detail from "./Detail";
-import GoogleMaps from "./GoogleMaps";
-import List from "./List";
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Layout from './Layout';
+import VisibilityControl from './VisibilityControl/index';
+import Detail from './Detail';
+import GoogleMaps from './GoogleMaps';
+import List from './List';
 
 const Router = () => {
   return (
