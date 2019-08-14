@@ -5,7 +5,7 @@ import { setSortBy, setSelected } from '../../reducers/actions';
 
 const Sort = () => {
   // Trying new react-redux hooks
-  const sortBy = useSelector(state => state.sortBy);
+  const sortBy = useSelector((state) => state.sortBy);
   const dispatch = useDispatch();
 
   return (
@@ -30,21 +30,19 @@ export function sortSobayas(sobayas, sortBy) {
       return sobayas.sort((a, b) => {
         if (a.id < b.id) {
           return -1;
-        } else if (a.id > b.id) {
+        } if (a.id > b.id) {
           return 1;
-        } else {
-          return 0;
         }
+        return 0;
       });
     case 'desc':
       return sobayas.sort((a, b) => {
         if (a.id > b.id) {
           return -1;
-        } else if (a.id < b.id) {
+        } if (a.id < b.id) {
           return 1;
-        } else {
-          return 0;
         }
+        return 0;
       });
     default:
       return sobayas;

@@ -1,13 +1,13 @@
-import ScrollReveal from "scrollreveal";
+import ScrollReveal from 'scrollreveal';
 
 function initSr(container, item) {
   const config = {
     duration: 800,
     opacity: 0,
     scale: 0.4,
-    easing: "ease-out",
+    easing: 'ease-out',
     reset: true,
-    container: container,
+    container,
   };
 
   ScrollReveal().reveal(item, config);

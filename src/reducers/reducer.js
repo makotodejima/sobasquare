@@ -1,23 +1,23 @@
-import { applyMiddleware } from "redux";
-import sobayas from "../data/sobayas";
+import { applyMiddleware } from 'redux';
+import sobayas from '../data/sobayas';
 
 const initialState = {
   selected: null,
-  sobayas: sobayas,
-  visibilityFilter: "",
-  sortBy: "asc",
+  sobayas,
+  visibilityFilter: '',
+  sortBy: 'asc',
   like: {},
 };
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case "SET_SELECTED":
+    case 'SET_SELECTED':
       return { ...state, selected: action.id };
-    case "SET_VISIBILITY_FILTER":
+    case 'SET_VISIBILITY_FILTER':
       return setVisibilityFilter(state, action);
-    case "SET_LIKE":
+    case 'SET_LIKE':
       return setLike(state, action);
-    case "SET_SORT_BY":
+    case 'SET_SORT_BY':
       return setSortBy(state, action);
     default:
       return state;
@@ -33,7 +33,7 @@ function setVisibilityFilter(state, action) {
 
 function setLike(state, action) {
   switch (action.type) {
-    case "SET_LIKE":
+    case 'SET_LIKE':
       const like = { ...state.like, [action.id]: action.likeSummary };
       return { ...state, like };
     default:
@@ -43,7 +43,7 @@ function setLike(state, action) {
 
 function setSortBy(state, action) {
   switch (action.type) {
-    case "SET_SORT_BY":
+    case 'SET_SORT_BY':
       return { ...state, sortBy: action.sortBy };
     default:
       return state;
@@ -53,10 +53,10 @@ function setSortBy(state, action) {
 export default rootReducer;
 
 // Logger Middleware
-const logger = store => next => action => {
-  console.log("will dispatch: ", action);
+const logger = (store) => (next) => (action) => {
+  console.log('will dispatch: ', action);
   const result = next(action);
-  console.log("current state: ", store.getState());
+  console.log('current state: ', store.getState());
   return result;
 };
 

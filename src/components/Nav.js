@@ -1,17 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { ReactComponent as Mapicon } from "../images/mapicon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { ReactComponent as Mapicon } from '../images/mapicon.svg';
 
-const Nav = () => {
-  return (
-    <Wrapper>
-      <Link to={`/map/`}>
-        <Mapicon />
-      </Link>
-    </Wrapper>
-  );
-};
+const Nav = () => (
+  <Wrapper>
+    <Link to="/map/">
+      <Mapicon />
+    </Link>
+  </Wrapper>
+);
 
 export default Nav;
 

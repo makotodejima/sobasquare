@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Logo = () => (
   <a href="https://madmak.me/" target="_blank" rel="noopener noreferrer">

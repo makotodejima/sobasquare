@@ -1,14 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { createStore, compose } from "redux";
-import { Provider } from "react-redux";
-import reducers, { middleware } from "./reducers/reducer";
-import "./styles.scss";
-import Router from "./components/Router";
-import ReactGA from "react-ga";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore, compose } from 'redux';
+import { Provider } from 'react-redux';
+import reducers, { middleware } from './reducers/reducer';
+import './styles.scss';
+import Router from './components/Router';
+import ReactGA from 'react-ga';
 
 // Using react-ga
-ReactGA.initialize("UA-141671732-1");
+ReactGA.initialize('UA-141671732-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 // Redux devtool
@@ -23,4 +23,4 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

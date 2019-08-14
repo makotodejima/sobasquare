@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 
 const stretchdelay = keyframes`
     0%, 40%, 100% { -webkit-transform: scaleY(0.4) }

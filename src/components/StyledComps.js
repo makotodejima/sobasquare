@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 export const ListContrainer = styled.div`
   overflow-y: scroll;
@@ -24,8 +24,8 @@ export const OuterItemWrapper = styled.div`
 
 export const FlexContainer = styled.div`
   display: flex;
-  flex-direction: ${props => props.d};
-  justify-content: ${props => props.j};
+  flex-direction: ${(props) => props.d};
+  justify-content: ${(props) => props.j};
   @media (max-width: 414px) {
     flex-direction: column;
   }

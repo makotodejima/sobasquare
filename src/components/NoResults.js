@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import { setVisibilityFilter, setSelected } from '../reducers/actions';
 
 const NoResults = ({ setVisibilityFilter, setSelected }) => {
-  const handleClick = e => {
+  const handleClick = (e) => {
     const keyword = e.target.textContent;
     setVisibilityFilter(keyword);
-    setSelected('Pressed-button-' + keyword); // To change Flipkey
+    setSelected(`Pressed-button-${keyword}`); // To change Flipkey
   };
 
   const items = ['Azabu', 'Kanda', 'Sarashina', 'Roppongi', 'Minato'];
@@ -16,7 +16,7 @@ const NoResults = ({ setVisibilityFilter, setSelected }) => {
     <Wrapper>
       <h1>No Results</h1>
       <p>Try these keywords?</p>
-      {items.map(item => (
+      {items.map((item) => (
         <Button key={item} onClick={handleClick}>
           {item}
         </Button>

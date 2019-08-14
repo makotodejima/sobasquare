@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import FoursquareLogo from './FoursquareLogo.js';
-import GoogleMapsIcon from './GoogleMapsIcon.js';
+import { connect } from 'react-redux';
+import Img from 'react-image';
+import FoursquareLogo from './FoursquareLogo';
+import GoogleMapsIcon from './GoogleMapsIcon';
 import Spinner from './Spinner';
 import { ReactComponent as Close } from '../images/close.svg';
 import { setLike } from '../reducers/actions';
-import { connect } from 'react-redux';
-import Img from 'react-image';
 
 import {
   DetailContainer,
@@ -20,8 +20,10 @@ import {
   FsqLink,
 } from './StyledComps';
 
-const Detail = ({ match, setLike, like, sobayas }) => {
-  const sobaya = sobayas.find(sobaya => sobaya.id === match.params.id);
+const Detail = ({
+  match, setLike, like, sobayas,
+}) => {
+  const sobaya = sobayas.find((sobaya) => sobaya.id === match.params.id);
   const f_client_id = 'XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX';
 
   useEffect(() => {
@@ -36,11 +38,11 @@ const Detail = ({ match, setLike, like, sobayas }) => {
         /*  response summery can be Japanese   *
          *  when request made by the client    *
          *  whose primary language is Japanese */
-        const summary = data.response.likes.summary;
+        const { summary } = data.response.likes;
         setLike(sobaya.id, summary);
       }
     }
-    getLikeCount().catch(err => console.error(err));
+    getLikeCount().catch((err) => console.error(err));
   }, [like, setLike, sobaya.fsq, sobaya.id]);
 
   return (
@@ -51,23 +53,28 @@ const Detail = ({ match, setLike, like, sobayas }) => {
       {sobaya && (
         <>
           <div className="name">
-            <h1 style={{ display: `inline` }}>{sobaya.name.en}</h1>
-            <p style={{ display: `inline`, marginLeft: `1rem` }} className="jp">
+            <h1 style={{ display: 'inline' }}>{sobaya.name.en}</h1>
+            <p style={{ display: 'inline', marginLeft: '1rem' }} className="jp">
               {sobaya.name.jp}
             </p>
           </div>
           <div className="neighborhood">
-            <h3 style={{ textAlign: `right` }}>{sobaya.neighborhood}</h3>
+            <h3 style={{ textAlign: 'right' }}>{sobaya.neighborhood}</h3>
           </div>
           {sobaya.review && (
             <Review>
-              <p>{sobaya.review.en}</p>
+              <p>
+
+                {sobaya.review.en}
+              </p>
             </Review>
           )}
           <FlexContainer d="row" j="space-between">
             <SbsqPick>
               <p>
-                SOBASQUARE Pick: <strong>{sobaya.pick.en}</strong>
+                SOBASQUARE Pick:
+                {' '}
+                <strong>{sobaya.pick.en}</strong>
               </p>
             </SbsqPick>
             {sobaya.url && (
@@ -115,12 +122,10 @@ const Detail = ({ match, setLike, like, sobayas }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    sobayas: state.sobayas,
-    like: state.like,
-  };
-};
+const mapStateToProps = (state) => ({
+  sobayas: state.sobayas,
+  like: state.like,
+});
 
 export default connect(
   mapStateToProps,

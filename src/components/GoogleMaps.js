@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { render } from "react-dom";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { ReactComponent as Close } from "../images/close.svg";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { render } from 'react-dom';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { ReactComponent as Close } from '../images/close.svg';
 
 class Map extends React.Component {
   constructor(props) {
@@ -21,16 +21,16 @@ class Map extends React.Component {
 
   componentDidMount() {
     if (!window.google) {
-      var s = document.createElement("script");
-      s.type = "text/javascript";
+      const s = document.createElement('script');
+      s.type = 'text/javascript';
       s.src = `https://maps.google.com/maps/api/js?key=${
         process.env.REACT_APP_NOW_G_API_KEY
       }`;
-      var x = document.getElementsByTagName("script")[0];
+      const x = document.getElementsByTagName('script')[0];
       x.parentNode.insertBefore(s, x);
       // Below is important.
-      //We cannot access google.maps until it's finished loading
-      s.addEventListener("load", e => {
+      // We cannot access google.maps until it's finished loading
+      s.addEventListener('load', (e) => {
         this.onScriptLoad();
       });
     } else {
@@ -102,10 +102,10 @@ const StyledMap = styled.div`
   }
 `;
 
-const InfoWindow = props => {
-  const id = props.id;
+const InfoWindow = (props) => {
+  const { id } = props;
   const { en, jp } = props.name;
-  const neighborhood = props.neighborhood;
+  const { neighborhood } = props;
   const vibes = props.vibe;
   return (
     <InfoWindowWrap>
@@ -118,7 +118,8 @@ const InfoWindow = props => {
         ))}
       </div>
       <a className="link" href={`/sobaya/${id}`}>
-        Learn More{" "}
+        Learn More
+        {' '}
         <span role="img" aria-label="Look">
           👀
         </span>
@@ -171,185 +172,185 @@ class GoogleMaps extends Component {
           zoom: 11.5,
           styles: [
             {
-              elementType: "geometry",
+              elementType: 'geometry',
               stylers: [
                 {
-                  color: "#ebe3cd",
+                  color: '#ebe3cd',
                 },
               ],
             },
             {
-              elementType: "labels.text.fill",
+              elementType: 'labels.text.fill',
               stylers: [
                 {
-                  color: "#523735",
+                  color: '#523735',
                 },
               ],
             },
             {
-              elementType: "labels.text.stroke",
+              elementType: 'labels.text.stroke',
               stylers: [
                 {
-                  color: "#f5f1e6",
+                  color: '#f5f1e6',
                 },
               ],
             },
             {
-              featureType: "administrative",
-              elementType: "geometry.stroke",
+              featureType: 'administrative',
+              elementType: 'geometry.stroke',
               stylers: [
                 {
-                  color: "#c9b2a6",
+                  color: '#c9b2a6',
                 },
               ],
             },
             {
-              featureType: "administrative.land_parcel",
+              featureType: 'administrative.land_parcel',
               stylers: [
                 {
-                  visibility: "off",
+                  visibility: 'off',
                 },
               ],
             },
             {
-              featureType: "administrative.land_parcel",
-              elementType: "geometry.stroke",
+              featureType: 'administrative.land_parcel',
+              elementType: 'geometry.stroke',
               stylers: [
                 {
-                  color: "#dcd2be",
+                  color: '#dcd2be',
                 },
               ],
             },
             {
-              featureType: "administrative.land_parcel",
-              elementType: "labels.text.fill",
+              featureType: 'administrative.land_parcel',
+              elementType: 'labels.text.fill',
               stylers: [
                 {
-                  color: "#ae9e90",
+                  color: '#ae9e90',
                 },
               ],
             },
             {
-              featureType: "administrative.neighborhood",
+              featureType: 'administrative.neighborhood',
               stylers: [
                 {
-                  visibility: "off",
+                  visibility: 'off',
                 },
               ],
             },
             {
-              featureType: "landscape.natural",
-              elementType: "geometry",
+              featureType: 'landscape.natural',
+              elementType: 'geometry',
               stylers: [
                 {
-                  color: "#dfd2ae",
+                  color: '#dfd2ae',
                 },
               ],
             },
             {
-              featureType: "poi",
-              elementType: "geometry",
+              featureType: 'poi',
+              elementType: 'geometry',
               stylers: [
                 {
-                  color: "#dfd2ae",
+                  color: '#dfd2ae',
                 },
               ],
             },
             {
-              featureType: "poi",
-              elementType: "labels.text",
+              featureType: 'poi',
+              elementType: 'labels.text',
               stylers: [
                 {
-                  visibility: "off",
+                  visibility: 'off',
                 },
               ],
             },
             {
-              featureType: "poi",
-              elementType: "labels.text.fill",
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
               stylers: [
                 {
-                  color: "#93817c",
+                  color: '#93817c',
                 },
               ],
             },
             {
-              featureType: "poi.business",
+              featureType: 'poi.business',
               stylers: [
                 {
-                  visibility: "off",
+                  visibility: 'off',
                 },
               ],
             },
             {
-              featureType: "poi.park",
-              elementType: "geometry.fill",
+              featureType: 'poi.park',
+              elementType: 'geometry.fill',
               stylers: [
                 {
-                  color: "#a5b076",
+                  color: '#a5b076',
                 },
               ],
             },
             {
-              featureType: "poi.park",
-              elementType: "labels.text",
+              featureType: 'poi.park',
+              elementType: 'labels.text',
               stylers: [
                 {
-                  visibility: "off",
+                  visibility: 'off',
                 },
               ],
             },
             {
-              featureType: "poi.park",
-              elementType: "labels.text.fill",
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
               stylers: [
                 {
-                  color: "#447530",
+                  color: '#447530',
                 },
               ],
             },
             {
-              featureType: "road",
-              elementType: "geometry",
+              featureType: 'road',
+              elementType: 'geometry',
               stylers: [
                 {
-                  color: "#f5f1e6",
+                  color: '#f5f1e6',
                 },
               ],
             },
             {
-              featureType: "road",
-              elementType: "labels",
+              featureType: 'road',
+              elementType: 'labels',
               stylers: [
                 {
-                  visibility: "off",
+                  visibility: 'off',
                 },
               ],
             },
             {
-              featureType: "road.arterial",
-              elementType: "geometry",
+              featureType: 'road.arterial',
+              elementType: 'geometry',
               stylers: [
                 {
-                  color: "#fdfcf8",
+                  color: '#fdfcf8',
                 },
               ],
             },
             {
-              featureType: "road.highway",
-              elementType: "geometry",
+              featureType: 'road.highway',
+              elementType: 'geometry',
               stylers: [
                 {
-                  color: "#f8c967",
+                  color: '#f8c967',
                 },
               ],
             },
             {
-              featureType: "road.highway",
-              elementType: "geometry.stroke",
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
               stylers: [
                 {
-                  color: "#e9bc62",
+                  color: '#e9bc62',
                 },
                 {
                   weight: 1,
@@ -357,11 +358,11 @@ class GoogleMaps extends Component {
               ],
             },
             {
-              featureType: "road.highway.controlled_access",
-              elementType: "geometry",
+              featureType: 'road.highway.controlled_access',
+              elementType: 'geometry',
               stylers: [
                 {
-                  color: "#e98d58",
+                  color: '#e98d58',
                 },
                 {
                   weight: 1.5,
@@ -369,11 +370,11 @@ class GoogleMaps extends Component {
               ],
             },
             {
-              featureType: "road.highway.controlled_access",
-              elementType: "geometry.stroke",
+              featureType: 'road.highway.controlled_access',
+              elementType: 'geometry.stroke',
               stylers: [
                 {
-                  color: "#db8555",
+                  color: '#db8555',
                 },
                 {
                   weight: 0.5,
@@ -381,92 +382,92 @@ class GoogleMaps extends Component {
               ],
             },
             {
-              featureType: "road.local",
-              elementType: "labels.text.fill",
+              featureType: 'road.local',
+              elementType: 'labels.text.fill',
               stylers: [
                 {
-                  color: "#806b63",
+                  color: '#806b63',
                 },
               ],
             },
             {
-              featureType: "transit.line",
-              elementType: "geometry",
+              featureType: 'transit.line',
+              elementType: 'geometry',
               stylers: [
                 {
-                  color: "#aaaaaa",
+                  color: '#aaaaaa',
                 },
               ],
             },
             {
-              featureType: "transit.line",
-              elementType: "labels.text.fill",
+              featureType: 'transit.line',
+              elementType: 'labels.text.fill',
               stylers: [
                 {
-                  color: "#8f7d77",
+                  color: '#8f7d77',
                 },
               ],
             },
             {
-              featureType: "transit.line",
-              elementType: "labels.text.stroke",
+              featureType: 'transit.line',
+              elementType: 'labels.text.stroke',
               stylers: [
                 {
-                  color: "#ebe3cd",
+                  color: '#ebe3cd',
                 },
               ],
             },
             {
-              featureType: "transit.station",
-              elementType: "geometry",
+              featureType: 'transit.station',
+              elementType: 'geometry',
               stylers: [
                 {
-                  color: "#dfd2ae",
+                  color: '#dfd2ae',
                 },
               ],
             },
             {
-              featureType: "water",
-              elementType: "geometry.fill",
+              featureType: 'water',
+              elementType: 'geometry.fill',
               stylers: [
                 {
-                  color: "#b9d3c2",
+                  color: '#b9d3c2',
                 },
               ],
             },
             {
-              featureType: "water",
-              elementType: "labels.text",
+              featureType: 'water',
+              elementType: 'labels.text',
               stylers: [
                 {
-                  visibility: "off",
+                  visibility: 'off',
                 },
               ],
             },
             {
-              featureType: "water",
-              elementType: "labels.text.fill",
+              featureType: 'water',
+              elementType: 'labels.text.fill',
               stylers: [
                 {
-                  color: "#92998d",
+                  color: '#92998d',
                 },
               ],
             },
           ],
         }}
-        onMapLoad={map => {
+        onMapLoad={(map) => {
           const infoWindow = new window.google.maps.InfoWindow();
           sobayasInfo.coords.forEach((point, idx) => {
-            var marker = new window.google.maps.Marker({
+            const marker = new window.google.maps.Marker({
               position: point,
-              map: map,
+              map,
               title: "Sobaya's Info",
             });
 
-            window.google.maps.event.addListener(marker, "click", function(e) {
+            window.google.maps.event.addListener(marker, 'click', (e) => {
               infoWindow.close(); // Close previously opened infowindow
-              infoWindow.setContent(`<div id='infoWindow'></div>`);
-              infoWindow.addListener("domready", e => {
+              infoWindow.setContent('<div id=\'infoWindow\'></div>');
+              infoWindow.addListener('domready', (e) => {
                 render(
                   <InfoWindow
                     id={sobayasInfo.id[idx]}
@@ -474,7 +475,7 @@ class GoogleMaps extends Component {
                     neighborhood={sobayasInfo.neighborhood[idx]}
                     vibe={sobayasInfo.vibe[idx]}
                   />,
-                  document.getElementById("infoWindow"),
+                  document.getElementById('infoWindow'),
                 );
               });
               infoWindow.open(map, marker);
@@ -486,16 +487,14 @@ class GoogleMaps extends Component {
   }
 }
 
-const mapStateToProps = ({ sobayas }) => {
-  return {
-    sobayasInfo: {
-      id: sobayas.map(s => s.id),
-      name: sobayas.map(s => s.name),
-      neighborhood: sobayas.map(s => s.neighborhood),
-      coords: sobayas.map(s => s.coords),
-      vibe: sobayas.map(s => s.vibe),
-    },
-  };
-};
+const mapStateToProps = ({ sobayas }) => ({
+  sobayasInfo: {
+    id: sobayas.map((s) => s.id),
+    name: sobayas.map((s) => s.name),
+    neighborhood: sobayas.map((s) => s.neighborhood),
+    coords: sobayas.map((s) => s.coords),
+    vibe: sobayas.map((s) => s.vibe),
+  },
+});
 
 export default connect(mapStateToProps)(GoogleMaps);
