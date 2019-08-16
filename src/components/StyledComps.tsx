@@ -22,10 +22,10 @@ export const OuterItemWrapper = styled.div`
 
 // Shared
 
-export const FlexContainer = styled.div`
+export const FlexContainer = styled.div<{ d: string; j: string }>`
   display: flex;
-  flex-direction: ${(props) => props.d};
-  justify-content: ${(props) => props.j};
+  flex-direction: ${props => props.d};
+  justify-content: ${props => props.j};
   @media (max-width: 414px) {
     flex-direction: column;
   }
@@ -43,13 +43,13 @@ to {
 `;
 
 export const SbsqPick = styled.div`
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   font-size: 1rem;
   margin: 10px 0;
 `;
 
 export const Website = styled.div`
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   font-size: 1rem;
   text-align: center;
   margin: auto 0 auto;
@@ -267,7 +267,7 @@ export const DetailContainer = styled.div`
   }
 
   .url {
-    font-family: "Ubuntu";
+    font-family: 'Ubuntu';
     font-size: 1rem;
 
     a {
@@ -352,7 +352,7 @@ export const FsqLink = styled.span`
     &:hover {
       .likes::after {
         position: absolute;
-        content: "Open FOURSQUARE";
+        content: 'Open FOURSQUARE';
         bottom: 5px;
         right: 20px;
         font-size: 1rem;
@@ -372,7 +372,7 @@ export const FsqLink = styled.span`
 
 export const GoogleMapsLink = styled.span`
   width: 50%;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   font-size: 1.3rem;
   text-align: center;
   @media (max-width: 414px) {

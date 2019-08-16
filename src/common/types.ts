@@ -48,6 +48,13 @@ export interface IExpandedListItemProps {
   sobaya: ISobaya;
 }
 
+export interface IDetailProps {
+  match: any;
+  setLike: setLikeType;
+  like: any;
+  sobayas: sobayasType;
+}
+
 export interface IRootState {
   selected: number;
   sobayas: ISobaya[];

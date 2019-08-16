@@ -7,6 +7,7 @@ import GoogleMapsIcon from './GoogleMapsIcon';
 import Spinner from './Spinner';
 import { ReactComponent as Close } from '../images/close.svg';
 import { setLike } from '../reducers/actions';
+import { IDetailProps, ISobaya, IRootState } from '../common/types';
 
 import {
   DetailContainer,
@@ -20,13 +21,16 @@ import {
   FsqLink,
 } from './StyledComps';
 
-const Detail = ({ match, setLike, like, sobayas }) => {
-  const sobaya = sobayas.find(sobaya => sobaya.id === match.params.id);
+const Detail = ({ match, setLike, like, sobayas }: IDetailProps) => {
+  const sobaya: ISobaya | undefined = sobayas.find(sobaya => {
+    return sobaya.id === match.params.id;
+  });
   const f_client_id = 'XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX';
 
   useEffect(() => {
     async function getLikeCount() {
-      if (!like[sobaya.id]) {
+      // prevent undefined sobaya
+      if (sobaya && !like[sobaya.id]) {
         const res = await fetch(
           `https://api.foursquare.com/v2/venues/${sobaya.fsq}/likes?client_id=${f_client_id}&client_secret=${process.env.REACT_APP_NOW_F_API_KEY}&v=20190727`,
         );
@@ -39,7 +43,7 @@ const Detail = ({ match, setLike, like, sobayas }) => {
       }
     }
     getLikeCount().catch(err => console.error(err));
-  }, [like, setLike, sobaya.fsq, sobaya.id]);
+  }, [like, setLike, sobaya]);
 
   return (
     <DetailContainer>
@@ -129,7 +133,7 @@ const Detail = ({ match, setLike, like, sobayas }) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: IRootState) => ({
   sobayas: state.sobayas,
   like: state.like,
 });
