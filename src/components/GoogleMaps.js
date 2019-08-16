@@ -23,14 +23,12 @@ class Map extends React.Component {
     if (!window.google) {
       const s = document.createElement('script');
       s.type = 'text/javascript';
-      s.src = `https://maps.google.com/maps/api/js?key=${
-        process.env.REACT_APP_NOW_G_API_KEY
-      }`;
+      s.src = `https://maps.google.com/maps/api/js?key=${process.env.REACT_APP_NOW_G_API_KEY}`;
       const x = document.getElementsByTagName('script')[0];
       x.parentNode.insertBefore(s, x);
       // Below is important.
       // We cannot access google.maps until it's finished loading
-      s.addEventListener('load', (e) => {
+      s.addEventListener('load', e => {
         this.onScriptLoad();
       });
     } else {
@@ -102,7 +100,7 @@ const StyledMap = styled.div`
   }
 `;
 
-const InfoWindow = (props) => {
+const InfoWindow = props => {
   const { id } = props;
   const { en, jp } = props.name;
   const { neighborhood } = props;
@@ -118,8 +116,7 @@ const InfoWindow = (props) => {
         ))}
       </div>
       <a className="link" href={`/sobaya/${id}`}>
-        Learn More
-        {' '}
+        Learn More{' '}
         <span role="img" aria-label="Look">
           👀
         </span>
@@ -455,7 +452,7 @@ class GoogleMaps extends Component {
             },
           ],
         }}
-        onMapLoad={(map) => {
+        onMapLoad={map => {
           const infoWindow = new window.google.maps.InfoWindow();
           sobayasInfo.coords.forEach((point, idx) => {
             const marker = new window.google.maps.Marker({
@@ -464,10 +461,10 @@ class GoogleMaps extends Component {
               title: "Sobaya's Info",
             });
 
-            window.google.maps.event.addListener(marker, 'click', (e) => {
+            window.google.maps.event.addListener(marker, 'click', e => {
               infoWindow.close(); // Close previously opened infowindow
-              infoWindow.setContent('<div id=\'infoWindow\'></div>');
-              infoWindow.addListener('domready', (e) => {
+              infoWindow.setContent("<div id='infoWindow'></div>");
+              infoWindow.addListener('domready', e => {
                 render(
                   <InfoWindow
                     id={sobayasInfo.id[idx]}
@@ -489,11 +486,11 @@ class GoogleMaps extends Component {
 
 const mapStateToProps = ({ sobayas }) => ({
   sobayasInfo: {
-    id: sobayas.map((s) => s.id),
-    name: sobayas.map((s) => s.name),
-    neighborhood: sobayas.map((s) => s.neighborhood),
-    coords: sobayas.map((s) => s.coords),
-    vibe: sobayas.map((s) => s.vibe),
+    id: sobayas.map(s => s.id),
+    name: sobayas.map(s => s.name),
+    neighborhood: sobayas.map(s => s.neighborhood),
+    coords: sobayas.map(s => s.coords),
+    vibe: sobayas.map(s => s.vibe),
   },
 });
 

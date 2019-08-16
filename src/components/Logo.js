@@ -18,19 +18,22 @@ const Logo = ({ setVisibilityFilter, setSortBy, setSelected }) => (
   </Container>
 );
 
-const mapDispatchToProps = (dispatch) => ({
-  setVisibilityFilter: (keyword) => dispatch({
-    type: 'SET_VISIBILITY_FILTER',
-    visibilityFilter: keyword,
-  }),
-  setSortBy: (sortBy) => dispatch({
-    type: 'SET_SORT_BY',
-    sortBy,
-  }),
-  setSelected: (id) => dispatch({
-    type: 'SET_SELECTED',
-    id,
-  }),
+const mapDispatchToProps = dispatch => ({
+  setVisibilityFilter: keyword =>
+    dispatch({
+      type: 'SET_VISIBILITY_FILTER',
+      visibilityFilter: keyword,
+    }),
+  setSortBy: sortBy =>
+    dispatch({
+      type: 'SET_SORT_BY',
+      sortBy,
+    }),
+  setSelected: id =>
+    dispatch({
+      type: 'SET_SELECTED',
+      id,
+    }),
 });
 
 export default connect(

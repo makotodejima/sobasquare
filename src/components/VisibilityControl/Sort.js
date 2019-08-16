@@ -5,7 +5,7 @@ import { setSortBy, setSelected } from '../../reducers/actions';
 
 const Sort = () => {
   // Trying new react-redux hooks
-  const sortBy = useSelector((state) => state.sortBy);
+  const sortBy = useSelector(state => state.sortBy);
   const dispatch = useDispatch();
 
   return (
@@ -13,10 +13,15 @@ const Sort = () => {
       onClick={() => {
         // Trying new react-redux hooks
         dispatch(setSortBy(sortBy === 'asc' ? 'desc' : 'asc'));
-        dispatch(setSelected(sortBy === 'asc' ? 'desc' : 'asc'));
+        dispatch(setSelected(Math.random() * -1));
       }}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+      >
         <path d="M12 0l8 10h-16l8-10zm8 14h-16l8 10 8-10z" />
       </svg>
     </Wrapper>
@@ -30,7 +35,8 @@ export function sortSobayas(sobayas, sortBy) {
       return sobayas.sort((a, b) => {
         if (a.id < b.id) {
           return -1;
-        } if (a.id > b.id) {
+        }
+        if (a.id > b.id) {
           return 1;
         }
         return 0;
@@ -39,7 +45,8 @@ export function sortSobayas(sobayas, sortBy) {
       return sobayas.sort((a, b) => {
         if (a.id > b.id) {
           return -1;
-        } if (a.id < b.id) {
+        }
+        if (a.id < b.id) {
           return 1;
         }
         return 0;

@@ -9,9 +9,7 @@ import { filterSobayas } from './VisibilityControl/Search';
 import { sortSobayas } from './VisibilityControl/Sort';
 import { setSortBy, setSelected } from '../reducers/actions';
 
-const List = ({
-  sobayas, visibilityFilter, sortBy, selected, setSelected,
-}) => {
+const List = ({ sobayas, visibilityFilter, sortBy, selected, setSelected }) => {
   const containerRef = useRef();
 
   const handleClick = (e, id) => {
@@ -28,11 +26,11 @@ const List = ({
     <Flipper flipKey={selected} decisionData={selected}>
       <ListContrainer className="list-container" ref={containerRef}>
         {sortedVisibleSobayas.length > 0 ? (
-          sortedVisibleSobayas.map((sobaya) => (
+          sortedVisibleSobayas.map(sobaya => (
             <OuterItemWrapper
               className="item-wrapper"
               key={sobaya.id}
-              onClick={(e) => handleClick(e, sobaya.id)}
+              onClick={e => handleClick(e, sobaya.id)}
             >
               {selected === sobaya.id ? (
                 <ExpandedListItem sobaya={sobaya} />
@@ -54,9 +52,7 @@ const mapDispatchToProps = {
   setSelected,
 };
 
-const mapStateToProps = ({
-  sobayas, visibilityFilter, sortBy, selected,
-}) => ({
+const mapStateToProps = ({ sobayas, visibilityFilter, sortBy, selected }) => ({
   sobayas,
   visibilityFilter,
   sortBy,

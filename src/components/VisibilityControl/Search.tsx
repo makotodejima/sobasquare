@@ -1,14 +1,20 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
+import { ISearchProps, IRootState, sobayasType } from '../../common/types';
 
-const SearchBar = ({ visibilityFilter, setVisibilityFilter, setSelected }) => {
-  const inputRef = useRef();
+const SearchBar = ({
+  visibilityFilter,
+  setVisibilityFilter,
+  setSelected,
+}: ISearchProps) => {
+  const inputRef = useRef<HTMLInputElement>(null!);
 
   const handleInputChange = () => {
     const searchword = inputRef.current.value;
     if (searchword.length > visibilityFilter.length) {
-      setSelected(`adding-seatch-word-${searchword}`);
+      setSelected(Math.random() * -1);
     }
     setVisibilityFilter(searchword);
   };
@@ -27,36 +33,40 @@ const SearchBar = ({ visibilityFilter, setVisibilityFilter, setSelected }) => {
 };
 
 // Used in List
-export const filterSobayas = (sobayas, keyword) => {
+export const filterSobayas = (sobayas: sobayasType, keyword: string) => {
   const formattedKeyword = keyword
     .toLowerCase()
     .trim()
     .replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
 
-  const seeMatch = (str) => str.match(new RegExp(formattedKeyword, 'i'));
+  const checkMatch = (str: string) =>
+    str.match(new RegExp(formattedKeyword, 'i'));
 
-  const results = sobayas.filter((s) => (
-    seeMatch(s.name.en)
-      || seeMatch(s.name.jp)
-      || seeMatch(s.name.hiragana)
-      || seeMatch(s.address)
-      || seeMatch(s.neighborhood)
-  ));
+  const results = sobayas.filter(
+    s =>
+      checkMatch(s.name.en) ||
+      checkMatch(s.name.jp) ||
+      checkMatch(s.name.hiragana) ||
+      checkMatch(s.address) ||
+      checkMatch(s.neighborhood),
+  );
   return results;
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  setVisibilityFilter: (keyword) => dispatch({
-    type: 'SET_VISIBILITY_FILTER',
-    visibilityFilter: keyword,
-  }),
-  setSelected: (id) => dispatch({
-    type: 'SET_SELECTED',
-    id,
-  }),
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  setVisibilityFilter: (keyword: string) =>
+    dispatch({
+      type: 'SET_VISIBILITY_FILTER',
+      visibilityFilter: keyword,
+    }),
+  setSelected: (id: string | number) =>
+    dispatch({
+      type: 'SET_SELECTED',
+      id,
+    }),
 });
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: IRootState) => ({
   visibilityFilter: state.visibilityFilter,
 });
 

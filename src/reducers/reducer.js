@@ -2,7 +2,7 @@ import { applyMiddleware } from 'redux';
 import sobayas from '../data/sobayas';
 
 const initialState = {
-  selected: null,
+  selected: -1,
   sobayas,
   visibilityFilter: '',
   sortBy: 'asc',
@@ -53,7 +53,7 @@ function setSortBy(state, action) {
 export default rootReducer;
 
 // Logger Middleware
-const logger = (store) => (next) => (action) => {
+const logger = store => next => action => {
   console.log('will dispatch: ', action);
   const result = next(action);
   console.log('current state: ', store.getState());

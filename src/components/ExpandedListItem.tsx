@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Flipped } from 'react-flip-toolkit';
 import Img from 'react-image';
+import { IExpandedListItemProps } from '../common/types';
 import {
   ExpandedListWrapper,
   Names,
@@ -12,14 +13,14 @@ import {
 import { ReactComponent as Close } from '../images/close.svg';
 import Spinner from './Spinner';
 
-const ExpandedListItem = ({ sobaya }) => {
+const ExpandedListItem = ({ sobaya }: IExpandedListItemProps) => {
   const img = require(`../images/${sobaya.id}.jpg`);
-  const [mouseonLink, setMouseonLink] = useState(false);
+  const [mouseonLink, setMouseonLink] = useState<boolean>(false);
 
   return (
     <Flipped
       flipId={`listItem-${sobaya.id}`}
-      onStart={(el) => {
+      onStart={(el: HTMLDivElement) => {
         el.classList.add('fade-in');
       }}
     >
@@ -32,7 +33,9 @@ const ExpandedListItem = ({ sobaya }) => {
                 <Link
                   to={`/sobaya/${sobaya.id}`}
                   className={`en preventShrink ${mouseonLink ? 'on' : ''}`}
+                  onFocus={() => setMouseonLink(true)}
                   onMouseOver={() => setMouseonLink(true)}
+                  onBlur={() => setMouseonLink(false)}
                   onMouseOut={() => setMouseonLink(false)}
                 >
                   {sobaya.name.en}
@@ -51,24 +54,25 @@ const ExpandedListItem = ({ sobaya }) => {
               </div>
               <SbsqPick>
                 Sobasquare Pick:
-                {' '}
                 <strong>{sobaya.pick.en}</strong>
               </SbsqPick>
               <ImgWrapper
                 onMouseOver={() => setMouseonLink(true)}
+                onFocus={() => setMouseonLink(true)}
                 onMouseOut={() => setMouseonLink(false)}
-                className={mouseonLink ? 'on' : null}
+                onBlur={() => setMouseonLink(false)}
+                className={mouseonLink ? 'on' : ''}
               >
                 <Link to={`/sobaya/${sobaya.id}`}>
                   <Img
                     className="preventShrink"
                     src={img}
                     alt={sobaya.id}
-                    loader={(
+                    loader={
                       <div className="wrap">
                         <Spinner />
                       </div>
-)}
+                    }
                   />
                   <span className="preventShrink">Learn More</span>
                 </Link>

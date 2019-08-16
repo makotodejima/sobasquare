@@ -3,9 +3,15 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { setVisibilityFilter, setSelected } from '../reducers/actions';
 
-const NoResults = ({ setVisibilityFilter, setSelected }) => {
-  const handleClick = (e) => {
-    const keyword = e.target.textContent;
+interface IProps {
+  setVisibilityFilter: (visibilityFiler: string | null) => void;
+  setSelected: (id: number | string) => void;
+}
+
+const NoResults = ({ setVisibilityFilter, setSelected }: IProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    const btnNode = e.target as HTMLElement;
+    const keyword = btnNode.textContent;
     setVisibilityFilter(keyword);
     setSelected(`Pressed-button-${keyword}`); // To change Flipkey
   };
@@ -16,7 +22,7 @@ const NoResults = ({ setVisibilityFilter, setSelected }) => {
     <Wrapper>
       <h1>No Results</h1>
       <p>Try these keywords?</p>
-      {items.map((item) => (
+      {items.map(item => (
         <Button key={item} onClick={handleClick}>
           {item}
         </Button>

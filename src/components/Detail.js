@@ -20,19 +20,15 @@ import {
   FsqLink,
 } from './StyledComps';
 
-const Detail = ({
-  match, setLike, like, sobayas,
-}) => {
-  const sobaya = sobayas.find((sobaya) => sobaya.id === match.params.id);
+const Detail = ({ match, setLike, like, sobayas }) => {
+  const sobaya = sobayas.find(sobaya => sobaya.id === match.params.id);
   const f_client_id = 'XEGDINOVCPIBZV21VRDACIZFTI4DPXKNOW5KQ1AIJUW4RSWX';
 
   useEffect(() => {
     async function getLikeCount() {
       if (!like[sobaya.id]) {
         const res = await fetch(
-          `https://api.foursquare.com/v2/venues/${sobaya.fsq}/likes?client_id=${f_client_id}&client_secret=${
-            process.env.REACT_APP_NOW_F_API_KEY
-          }&v=20190727`,
+          `https://api.foursquare.com/v2/venues/${sobaya.fsq}/likes?client_id=${f_client_id}&client_secret=${process.env.REACT_APP_NOW_F_API_KEY}&v=20190727`,
         );
         const data = await res.json();
         /*  response summery can be Japanese   *
@@ -42,7 +38,7 @@ const Detail = ({
         setLike(sobaya.id, summary);
       }
     }
-    getLikeCount().catch((err) => console.error(err));
+    getLikeCount().catch(err => console.error(err));
   }, [like, setLike, sobaya.fsq, sobaya.id]);
 
   return (
@@ -63,18 +59,13 @@ const Detail = ({
           </div>
           {sobaya.review && (
             <Review>
-              <p>
-
-                {sobaya.review.en}
-              </p>
+              <p>{sobaya.review.en}</p>
             </Review>
           )}
           <FlexContainer d="row" j="space-between">
             <SbsqPick>
               <p>
-                SOBASQUARE Pick:
-                {' '}
-                <strong>{sobaya.pick.en}</strong>
+                SOBASQUARE Pick: <strong>{sobaya.pick.en}</strong>
               </p>
             </SbsqPick>
             {sobaya.url && (
@@ -88,21 +79,37 @@ const Detail = ({
 
           <DetailImgContainer>
             <div>
-              <Img src={require(`../images/${sobaya.id}_1.jpg`)} alt={sobaya.name} loader={<Spinner />} />
+              <Img
+                src={require(`../images/${sobaya.id}_1.jpg`)}
+                alt={sobaya.name}
+                loader={<Spinner />}
+              />
             </div>
             <div>
-              <Img src={require(`../images/${sobaya.id}_2.jpg`)} alt={sobaya.name} loader={<Spinner />} />
+              <Img
+                src={require(`../images/${sobaya.id}_2.jpg`)}
+                alt={sobaya.name}
+                loader={<Spinner />}
+              />
             </div>
           </DetailImgContainer>
           <ExternalLinks>
             <GoogleMapsLink>
-              <a href={sobaya.googlemaps} target="_blank" rel="noopener noreferrer">
+              <a
+                href={sobaya.googlemaps}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="text">Open in Google Maps</span>
                 <GoogleMapsIcon />
               </a>
             </GoogleMapsLink>
             <FsqLink>
-              <a href={`https://foursquare.com/v/${sobaya.fsq}`} target="_blank" rel="noopener noreferrer">
+              <a
+                href={`https://foursquare.com/v/${sobaya.fsq}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {like[sobaya.id] === undefined ? (
                   <>LOADING</>
                 ) : (
@@ -122,7 +129,7 @@ const Detail = ({
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   sobayas: state.sobayas,
   like: state.like,
 });

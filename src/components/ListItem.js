@@ -15,7 +15,9 @@ function ListItem({ sobaya, shouldFlip }) {
               <div>
                 <p className="en">{sobaya.name.en}</p>
                 <p className="jp">{sobaya.name.jp}</p>
-                <p style={{ textAlign: 'right', fontSize: '1rem' }}>{sobaya.neighborhood}</p>
+                <p style={{ textAlign: 'right', fontSize: '1rem' }}>
+                  {sobaya.neighborhood}
+                </p>
               </div>
             </Flipped>
           </div>
