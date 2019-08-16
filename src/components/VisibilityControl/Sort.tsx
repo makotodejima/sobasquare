@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSortBy, setSelected } from '../../reducers/actions';
+import { IRootState, sobayasType } from '../../common/types';
 
 const Sort = () => {
   // Trying new react-redux hooks
-  const sortBy = useSelector(state => state.sortBy);
+  const sortBy = useSelector((state: IRootState) => state.sortBy);
   const dispatch = useDispatch();
 
   return (
@@ -29,7 +30,7 @@ const Sort = () => {
 };
 
 // used in List comp
-export function sortSobayas(sobayas, sortBy) {
+export function sortSobayas(sobayas: sobayasType, sortBy: string) {
   switch (sortBy) {
     case 'asc':
       return sobayas.sort((a, b) => {
