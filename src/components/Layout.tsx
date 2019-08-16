@@ -4,7 +4,7 @@ import Nav from './Nav';
 import Footer from './Footer';
 import Logo from './Logo';
 
-const Layout = ({ children }) => (
+const Layout = ({ children }: { children: React.ReactNode }) => (
   <Main>
     <Logo />
     <Nav />

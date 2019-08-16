@@ -21,15 +21,21 @@ export interface ISobaya {
   vibe: string[];
 }
 
-type setSortBy = (sortBy: string) => void;
-type setVisibilityFilter = (visibilityFiler: string) => void;
-type setSelected = (id: number) => void;
-type setLike = (id: string, likeSummary: string) => void;
+type setSortByType = (sortBy: string) => void;
+type setVisibilityFilterType = (visibilityFiler: string) => void;
+type setSelectedType = (id: number) => void;
+type setLikeType = (id: string, likeSummary: string) => void;
 
 export interface ISearchProps {
+  setVisibilityFilter: setVisibilityFilterType;
+  setSelected: setSelectedType;
   visibilityFilter: string;
-  setVisibilityFilter: setVisibilityFilter;
-  setSelected: setSelected;
+}
+
+export interface ILogoProps {
+  setVisibilityFilter: setVisibilityFilterType;
+  setSelected: setSelectedType;
+  setSortBy: setSortByType;
 }
 
 export interface IExpandedListItemProps {

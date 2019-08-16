@@ -1,15 +1,17 @@
 import React from 'react';
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import logo from '../images/sbsq_logo.svg';
+import { ILogoProps } from '../common/types';
 
-const Logo = ({ setVisibilityFilter, setSortBy, setSelected }) => (
+const Logo = ({ setVisibilityFilter, setSortBy, setSelected }: ILogoProps) => (
   <Container
     onClick={() => {
       setVisibilityFilter('');
       setSortBy('asc');
-      setSelected('init');
+      setSelected(Math.random() * -1);
     }}
   >
     <Link to="/">
@@ -18,18 +20,18 @@ const Logo = ({ setVisibilityFilter, setSortBy, setSelected }) => (
   </Container>
 );
 
-const mapDispatchToProps = dispatch => ({
-  setVisibilityFilter: keyword =>
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  setVisibilityFilter: (keyword: string) =>
     dispatch({
       type: 'SET_VISIBILITY_FILTER',
       visibilityFilter: keyword,
     }),
-  setSortBy: sortBy =>
+  setSortBy: (sortBy: string) =>
     dispatch({
       type: 'SET_SORT_BY',
       sortBy,
     }),
-  setSelected: id =>
+  setSelected: (id: number) =>
     dispatch({
       type: 'SET_SELECTED',
       id,
