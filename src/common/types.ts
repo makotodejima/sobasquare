@@ -13,11 +13,17 @@ export interface ISobaya {
   fsq: string;
   coords: { lat: number; lng: number };
   pick: { jp: string; en: string };
-  review: {
-    en: string;
-    jp: string;
+  /**
+  |--------------------------------------------------
+  | Need to write reviews
+  |--------------------------------------------------
+  */
+  review?: {
+    en?: string;
+    jp?: string;
   };
-  big3: string;
+  url?: string;
+  big3?: string;
   vibe: string[];
 }
 

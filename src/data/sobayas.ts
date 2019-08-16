@@ -1,4 +1,6 @@
-export default [
+import { sobayasType } from '../common/types';
+
+const sobayas: sobayasType = [
   {
     id: 'osakaya_sunaba',
     name: {
@@ -514,3 +516,5 @@ export default [
     vibe: ['modern'],
   },
 ];
+
+export default sobayas;
