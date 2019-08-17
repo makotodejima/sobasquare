@@ -61,11 +61,13 @@ const Detail = ({ match, setLike, like, sobayas }: IDetailProps) => {
           <div className="neighborhood">
             <h3 style={{ textAlign: 'right' }}>{sobaya.neighborhood}</h3>
           </div>
+
           {sobaya.review && (
             <Review>
               <p>{sobaya.review.en}</p>
             </Review>
           )}
+
           <FlexContainer d="row" j="space-between">
             <SbsqPick>
               <p>
@@ -97,6 +99,7 @@ const Detail = ({ match, setLike, like, sobayas }: IDetailProps) => {
               />
             </div>
           </DetailImgContainer>
+
           <ExternalLinks>
             <GoogleMapsLink>
               <a
