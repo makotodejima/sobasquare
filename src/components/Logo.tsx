@@ -11,7 +11,7 @@ const Logo = ({ setVisibilityFilter, setSortBy, setSelected }: ILogoProps) => (
     onClick={() => {
       setVisibilityFilter('');
       setSortBy('asc');
-      setSelected(Math.random() * -1);
+      setSelected('logoClicked');
     }}
   >
     <Link to="/">
@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
       type: 'SET_SORT_BY',
       sortBy,
     }),
-  setSelected: (id: number) =>
+  setSelected: (id: string) =>
     dispatch({
       type: 'SET_SELECTED',
       id,

@@ -8,13 +8,20 @@ import ExpandedListItem from './ExpandedListItem';
 import { filterSobayas } from './VisibilityControl/Search';
 import { sortSobayas } from './VisibilityControl/Sort';
 import { setSortBy, setSelected } from '../reducers/actions';
+import { IListProps, IRootState } from '../common/types';
 
-const List = ({ sobayas, visibilityFilter, sortBy, selected, setSelected }) => {
-  const containerRef = useRef();
+const List = ({
+  sobayas,
+  visibilityFilter,
+  sortBy,
+  selected,
+  setSelected,
+}: IListProps) => {
+  const containerRef = useRef<HTMLDivElement>(null!);
 
-  const handleClick = (e, id) => {
-    if (e.target.classList.contains('preventShrink')) return;
-    setSelected(selected === id ? null : id);
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>, id: string) => {
+    if ((e.target as Element).classList.contains('preventShrink')) return;
+    setSelected(selected === id ? 'unselected' : id);
   };
 
   // First filter by Search
@@ -52,11 +59,11 @@ const mapDispatchToProps = {
   setSelected,
 };
 
-const mapStateToProps = ({ sobayas, visibilityFilter, sortBy, selected }) => ({
-  sobayas,
-  visibilityFilter,
-  sortBy,
-  selected,
+const mapStateToProps = (state: IRootState) => ({
+  sobayas: state.sobayas,
+  visibilityFilter: state.visibilityFilter,
+  sortBy: state.sortBy,
+  selected: state.selected,
 });
 
 export default connect(

@@ -29,7 +29,7 @@ export interface ISobaya {
 
 type setSortByType = (sortBy: string) => void;
 type setVisibilityFilterType = (visibilityFiler: string) => void;
-type setSelectedType = (id: number) => void;
+type setSelectedType = (id: string) => void;
 type setLikeType = (id: string, likeSummary: string) => void;
 
 export interface ISearchProps {
@@ -55,8 +55,16 @@ export interface IDetailProps {
   sobayas: sobayasType;
 }
 
+export interface IListProps {
+  sobayas: ISobaya[];
+  visibilityFilter: string;
+  sortBy: string;
+  selected: string;
+  setSelected: setSelectedType;
+}
+
 export interface IRootState {
-  selected: number;
+  selected: string;
   sobayas: ISobaya[];
   visibilityFilter: string;
   sortBy: string;

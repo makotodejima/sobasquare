@@ -14,7 +14,7 @@ const SearchBar = ({
   const handleInputChange = () => {
     const searchword = inputRef.current.value;
     if (searchword.length > visibilityFilter.length) {
-      setSelected(Math.random() * -1);
+      setSelected(`searching-${searchword}`);
     }
     setVisibilityFilter(searchword);
   };
@@ -59,7 +59,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
       type: 'SET_VISIBILITY_FILTER',
       visibilityFilter: keyword,
     }),
-  setSelected: (id: string | number) =>
+  setSelected: (id: string) =>
     dispatch({
       type: 'SET_SELECTED',
       id,
