@@ -1,7 +1,6 @@
 {
   "version": 2,
   "name": "Sobasquare",
-  "alias": ["soba.madmak.me"],
   "build": {
     "env": {
       "REACT_APP_NOW_F_API_KEY": "@f_api_key",
