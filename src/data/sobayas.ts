@@ -89,7 +89,7 @@ const sobayas: sobayasType = [
     },
     review: {
       en:
-        'Highly acclaimed Michelin-Star soba place in Meiji-jingu. Nice flavorful and beautiful soba noodles are served in sophisticated space. Arabiki Seiro, meaning coarse-grained, is strongly recommended must-have menu. Also Sobagaki and Tofu dishes. Reservation recommended.',
+        'Highly acclaimed Michelin-Star soba place in Meiji-jingu. Nice flavorful and beautiful soba noodles are served in sophisticated space. Arabiki Seiro, meaning coarse-ground, is strongly recommended must-have menu. Also Sobagaki and Tofu dishes. Reservation recommended.',
     },
     vibe: ['modern'],
   },
@@ -280,10 +280,15 @@ const sobayas: sobayasType = [
     fsq: '4b8a2256f964a520646132e3',
     coords: { lat: 35.696997829457445, lng: 139.76867727935314 },
     pick: {
-      jp: 'せいろ',
-      en: 'Seiro',
+      jp: '粗挽き',
+      en: 'Arabiki',
     },
     vibe: ['traditional', 'modern'],
+    review: {
+      en:
+        'Relaxed, quiet soba place in Omotesando. Given the location and the quality, always busy especially at lunch time. The coarse-ground soba is the best way to taste rich soba flavor.',
+    },
+    url: 'http://www.shiro-tokyo.jp',
   },
   {
     id: 'toshian',
