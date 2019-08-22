@@ -19,7 +19,7 @@ export interface ISobaya {
   |--------------------------------------------------
   */
   review?: {
-    en?: string;
+    en: string;
     jp?: string;
   };
   url?: string;

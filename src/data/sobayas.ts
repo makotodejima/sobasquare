@@ -138,6 +138,7 @@ const sobayas: sobayasType = [
         "One-hour trip from the center of Tokyo, the neighborhood has historically know for good water springs. Amongst dozens of soba place, Yusui is clearly the most renowned place with a number of thoughtful dishes. Simple and sophisticated soba noodles and yet very friendly and casual vibe. It's also recommended to stop by Jindaiji temple. Half-day soba trip.",
       jp: '',
     },
+    url: 'http://www.yusui.co.jp',
   },
   {
     id: 'nagasaka_sarashina_nunoya_tahee',
