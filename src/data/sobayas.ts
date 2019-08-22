@@ -180,6 +180,9 @@ const sobayas: sobayasType = [
       jp: '田舎そば',
       en: 'Inaka Soba',
     },
+    review: {
+      en: '', // FIX ME
+    },
     vibe: ['modern', 'casual'],
   },
   {
@@ -220,6 +223,9 @@ const sobayas: sobayasType = [
     pick: {
       jp: 'そば切り',
       en: 'Sobakiri',
+    },
+    review: {
+      en: '', // FIX ME
     },
     url: 'http://foodgate.net/shop/kaoriya.html',
     vibe: ['modern', 'casual'],
@@ -355,6 +361,9 @@ const sobayas: sobayasType = [
     pick: {
       jp: '三とろ',
       en: 'Santoro',
+    },
+    review: {
+      en: '', // FIX ME
     },
     vibe: ['casual'],
   },
