@@ -18,7 +18,7 @@ export interface ISobaya {
   | Need to write reviews
   |--------------------------------------------------
   */
-  review?: {
+  review: {
     en?: string;
     jp?: string;
   };

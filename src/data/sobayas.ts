@@ -133,6 +133,10 @@ const sobayas: sobayasType = [
       en: 'Yusui Soba',
     },
     vibe: ['traditional', 'casual'],
+    review: {
+      en: '',
+      jp: '',
+    },
   },
   {
     id: 'nagasaka_sarashina_nunoya_tahee',
