@@ -293,7 +293,7 @@ export const DetailImgContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem !important;
-  div {
+  > div {
     height: 185px;
     width: 100%;
     margin: 0;
@@ -308,7 +308,7 @@ export const DetailImgContainer = styled.div`
   @media (max-width: 414px) {
     flex-direction: column;
     justify-content: space-between;
-    div {
+    > div {
       width: 100%;
       margin: 5px 0;
     }
