@@ -177,8 +177,8 @@ const sobayas: sobayasType = [
     fsq: '4ba83510f964a52051d139e3',
     coords: { lat: 35.674314140162565, lng: 139.7376952013867 },
     pick: {
-      jp: '田舎そば',
-      en: 'Inaka Soba',
+      jp: '田舎もり',
+      en: 'Inaka Mori',
     },
     review: {
       en: '', // FIX ME
