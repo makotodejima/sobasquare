@@ -9,9 +9,10 @@ const stretchdelay = keyframes`
 const Spinner = styled.div`
   margin: auto;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
-  text-align: center;
+  /* align-items: center; */
   font-size: 10px;
   > div {
     background-color: #333;
