@@ -54,9 +54,9 @@ export default rootReducer;
 
 // Logger Middleware
 const logger = store => next => action => {
-  console.log('will dispatch: ', action);
+  // console.log('will dispatch: ', action);
   const result = next(action);
-  console.log('current state: ', store.getState());
+  // console.log('current state: ', store.getState());
   return result;
 };
 
