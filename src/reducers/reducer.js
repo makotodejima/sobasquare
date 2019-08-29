@@ -61,9 +61,3 @@ const logger = store => next => action => {
 };
 
 export const middleware = applyMiddleware(logger);
-
-// unnecc comment 01
-
-// unnecc commnet -2
-
-// 03030
