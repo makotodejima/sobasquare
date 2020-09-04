@@ -2,7 +2,7 @@
   "name": "sobasquare",
   "version": "0.1.0",
   "dependencies": {
-    "node-sass": "4.12.0",
+    "node-sass": "4.13.1",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-flip-toolkit": "7.0.5",
