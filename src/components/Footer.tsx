@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Logo = () => (
-  <a href="https://madmak.me/" target="_blank" rel="noopener noreferrer">
+  <a href="https://makoto.io/" target="_blank" rel="noopener noreferrer">
     <SVG id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.3 91.46">
       <title>md</title>
       <path
